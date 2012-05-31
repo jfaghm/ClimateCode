@@ -23,28 +23,26 @@ if matlabpool('size') == 0
     matlabpool open
 end
 
+tic
 PIData = cell(size(time, 1), 1);
-
-for i = 1:size(time, 1)
-   PIData{i} = runPIHelper(sst(:, :, i), centralPressure(:,:,i), levels, temps(:,:,1:27,i), mixingRatio(:,:,1:27,i)); 
-end
-
-
-for currTime = 1:size(time, 1)
-    parfor i = 1:size(sst, 1)
+parfor currTime = 1:size(time, 1)
+    for i = 1:size(sst, 1)
         vMaxRow = zeros(1, size(sst, 2));
         for j = 1:size(sst, 2)
-            [~,vMax, ~, ifl] = mpikerry(sst(i, j, currTime), pres(i, j, currTime), levels, temps(i, j, :, currTime), mixRatio(i, j, :), currTime);
+            currSST = sst(i, j, currTime);
+            pres = centralPressure(i, j, currTime);
+            t = squeeze(temps(i, j, :, currTime));
+            mr = squeeze(mixingRatio(i, j, :, currTime));
+            [~,vMax, ~, ifl] = mpikerry(currSST, pres, levels, t, mr);
             if ifl == 2
                 error('mpikerry failed');
             end
-            vMaxRow(j) = vMax;
+            vMaxRow(1, j) = vMax;
         end
-        vMaxMat(i, :) = vMaxRow;
+        PIData{currTime}(i, :) = vMaxRow;
         i
     end
-PIData{currTime} = vMaxMat';
 end
-
-
+computeTime = toc;
+save('newPIData.mat', 'PIData', 'computeTime');
 

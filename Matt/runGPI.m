@@ -1,66 +1,47 @@
-%This script is used to load the data necessary for running the genesis
-%potential index algorithm
+%This script is used to load and scale the data correctly in order to
+%calculate the genesis potential index.  The output of this script is a
+%cell array, where each cell corresponds to a point in time with respect to
+%the time vector that is read in line 16.  Each cell within the array
+%contains a 256x512 matrix, where each point corresponds a point on the
+%map, and represents the genesis potential index at that point.  The data
+%that is used in this script was taken from rda.ucar.edu.  Information
+%about the variables used can be found at:                       
+%        http://rda.ucar.edu/datasets/ds627.1/metadata/grib.html
 
 tic
-if ~exist('dataLoaded', 'var') || ~dataLoaded
+if ~exist('dataLoaded', 'var') || dataLoaded == false    
     dataPath = '/project/expeditions/lem/data/pressureLevelData_1979-present.nc';
-    windPath = '/project/expeditions/lem/data/windSpeeds_1979_2010.nc';
-    
     lat = ncread(dataPath, 'lat');
- 
     lon = ncread(dataPath, 'lon');
-    
     time = ncread(dataPath, 'time');
-
-    levels = ncread(dataPath, 'lev');
-    %change levels from Pa to mb
-    levels = levels*.01;
-    
+    levels = ncread(dataPath, 'lev')*.01;
     relHumidity = ncread(dataPath, 'var157');
-    %only need relative humidity from 700mb
-    relHumidity = relHumidity(:, : , levels(:) == 700, :);
-    relHumidity = permute(relHumidity, [2 1 4 3]);
-    
-    
+    relHumidity = squeeze(relHumidity(:, :, levels(:) == 700, :));
     relVorticity = ncread(dataPath, 'var138');
-    %only need vorticity at 850 mb
-    relVorticity = relVorticity(:, :, levels(:) == 850, :);
-    relVorticity = permute(relVorticity, [2 1 4 3]);
-    earthRotation = 2*pi/24/60/60; %rad/sec
-    %earth vorticity assumes that degrees are always positive.  i.e. they
-    %range from 90 degrees north to 90 degrees south
-    absVorticity = zeros(size(relVorticity));
-    for i = 1:size(lat, 1)
-        for j = 1:size(lon, 1)
-            absVorticity(i, j, :) = 2*earthRotation * sin(degtorad(abs(lat(i)))) + relVorticity(i, j,:, :);
-        end
-    end
-    
-    uWindSpeeds = ncread(windPath, 'var131');
-    vWindSpeeds = ncread(windPath, 'var132');
-    windLevels = ncread(windPath, 'lev');
-    windLevels = windLevels*.01;
-    %wind shear = sqrt(u200-u850)^2+(v200-v850)^2
-    vWindShear = sqrt((uWindSpeeds(:, :, windLevels(:) == 200, :) - uWindSpeeds(:, :, windLevels(:) == 850, :)).^2);
-    vWindShear = vWindShear + sqrt((vWindSpeeds(:, :, windLevels(:) == 200, :) - vWindSpeeds(:,:,windLevels == 850, :)).^2);
-    vWindShear = permute(vWindShear, [2 1 4 3]);
-    load PIMaps.mat;
-    maxWindSpeeds = zeros(size(absVorticity, 1), size(absVorticity, 2), size(absVorticity, 3));
-    for i = 1:size(time, 1)
-        maxWindSpeeds(:, :, i) = PIData{i, 1};
-    end
-    
+    relVorticity = squeeze(relVorticity(:, :, levels(:) == 850, :));
+    earthVort = repmat(2 * (2*pi/24/60/60) *(ones(512, 1) * sin(degtorad(abs(lat')))), [1 1 size(relVorticity, 3)]);
+    absVorticity = relVorticity + earthVort;
+    uWindSpeeds = ncread(dataPath, 'var131');
+    vWindSpeeds = ncread(dataPath, 'var132');
+    vWindShear = sqrt(squeeze(uWindSpeeds(:, :, levels(:) == 200, :) - uWindSpeeds(:, :, levels(:) == 850, :)).^2);
+    vWindShear = vWindShear + sqrt(squeeze(vWindSpeeds(:, :, levels(:) == 200, :) - vWindSpeeds(:,:,levels == 850, :)).^2);
+    load PIMaps.mat
+    %Each cell in the PIData is a 256x512 matrix, so that the data is more
+    %readable when you take an image of it, however, the nc files have data
+    %in the form 512x256, so here we are transposing each cell and then
+    %reshaping it from a cell array to a three dimensional matrix.
+    PI = cellfun(@transpose, PIData, 'UniformOutput', false);
+    PI = cell2mat(PI(:, 1)');
+    PI = reshape(PI, [size(absVorticity, 1) size(absVorticity, 2) size(absVorticity, 3)]);
     dataLoaded = true;
 end
-tic
-GPIData = cell(size(vWindShear, 3), 1);
-for currTime = 1:size(absVorticity, 3)
-   GPIData{currTime} = parGPI(absVorticity(:, :, currTime), relHumidity(:, :, currTime), maxWindSpeeds(:, :, currTime), vWindShear(:, :, currTime));
-    currTime
-end
+
+gpiMat = ((10^5 *absVorticity).^(3/2)) .* ((relHumidity./50).^3) .* (PI./70).^3 .* ((1+(0.1*vWindShear)).^-2);
+gpiMat(imag(gpiMat) ~= 0) = 0;
+%Here we are changing the three dimensional matrix that has all of the gpi
+%data to a cell array, that way it can be viewed by the matlab gui if
+%necessary.  Also, we are transposing each cell so that it is a 256x512
+%matrix, thus making it easier to view in imagesc.
+gpiMat = squeeze(mat2cell(gpiMat, 512, 256, 1*ones(1, 384)));
+gpiMat = cellfun(@transpose, gpiMat, 'UniformOutput', false);
 toc
-
-time = toc;
-%save('GPIData.mat', 'GPIData', 'time');
-
-
