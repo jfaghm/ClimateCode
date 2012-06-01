@@ -45,3 +45,5 @@ gpiMat(imag(gpiMat) ~= 0) = 0;
 gpiMat = squeeze(mat2cell(gpiMat, 512, 256, 1*ones(1, 384)));
 gpiMat = cellfun(@transpose, gpiMat, 'UniformOutput', false);
 toc
+
+save('GPIData.mat', 'gpiMat', 'time', 'lat', 'lon');

@@ -20,7 +20,7 @@ end
 
 %Open up the matlabpool so that the parfor runs in parallel
 if matlabpool('size') == 0
-    matlabpool open
+    matlabpool open 1
 end
 
 tic

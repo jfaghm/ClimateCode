@@ -1,3 +1,5 @@
+%This script is used to load the data necessary to compute the convective
+%yearly gensis potential described in the menkes paper.
 if ~exist('dataLoaded', 'var') || dataLoaded == false
    dataPath = '/project/expeditions/lem/data/pressureLevelData_1979-present.nc';
    
@@ -35,9 +37,6 @@ Is = (windShear + 3).^-1;
 
 P0 = 3; %taken from menkes paper on the last page.
 k = 2;
-CYGPTempData = f.*Iv.*Is.*(k*(convPrec - P0));
-CYGPData = cell(size(CYGPTempData, 3), 1);
-
-for i = 1:size(CYGPTempData, 3)
-   CYGPData{i} = CYGPTempData(:, :, i); 
-end
+CYGPData = f.*Iv.*Is.*(k*(convPrec - P0));
+CYGPData = squeeze(mat2cell(CYGPData, 512, 256, 1*ones(1, 384)));
+CYGPData = cellfun(@transpose, CYGPData, 'UniformOutput', false);

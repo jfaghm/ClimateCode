@@ -1,12 +1,14 @@
 
 %relHumid = ncread('/project/expeditions/lem/data/pressureLevelData_1979-present.nc', 'var157');
-%relVort = ncread('/project/expeditions/lem/data/pressureLevelData_1979-present.nc', 'var138') * 10^5;
+relVort = ncread('/project/expeditions/lem/data/pressureLevelData_1979-present.nc', 'var138');
 path = '/project/expeditions/lem/data/pressureLevelData_1979-present.nc';
 %time = ncread(path, 'time');
 %levels = ncread(path, 'lev');
 %levels = ncread(path, 'lev')*.01;
-
+%{
 time = ncread(path, 'time');
+lat = ncread(path, 'lat');
+lon = ncread(path, 'lon');
 levels = ncread(path, 'lev')*.01;
 uWindSpeeds = ncread(path, 'var131');
 vWindSpeeds = ncread(path, 'var132');
@@ -14,21 +16,21 @@ windShear = sqrt((uWindSpeeds(:, :, levels(:) == 200, :) - uWindSpeeds(:, :, lev
 windShear = windShear + sqrt((vWindSpeeds(:, :, levels(:) == 200, :) - vWindSpeeds(:,:,levels == 850, :)).^2);
 windShear = squeeze(windShear);
 
-[pMean, nMean, diff] = getComposites(posYears, negYears, windShear, time, 'matrix');
-save('composites/ENSO_3.4/windShearComposite.mat', 'pMean', 'nMean', 'diff');
+[pMeanIndex, nMeanIndex, diffIndex] = getComposites(posYears, negYears, windShear, time, 'matrix');
+save('composites/index/windShearComposite.mat', 'pMeanIndex', 'nMeanIndex', 'diffIndex', 'lat', 'lon');
+%}
 
-%{
-composites = cell(size(relHumid, 3), 3);
-for i = 1:size(relHumid, 3);
-    [pMean, nMean, diff] = getComposites(posYears, negYears, squeeze(relHumid(:, :, i, :)), time, 'matrix');
+composites = cell(size(relVort, 3), 3);
+for i = 1:size(relVort, 3);
+    [pMean, nMean, diff] = getComposites(posYears, negYears, squeeze(relVort(:, :, i, :)), time, 'matrix');
     composites{i, 1} = pMean;
     composites{i, 2} = nMean;
     composites{i, 3} = diff;
 end
 
-relativeHumidityComposites = composites;
-save('composites/ENSO_3.4/relativeHumidityComposites.mat', 'relativeHumidityComposites');
-%}
+relativeVorticityCompositesIndex = composites;
+save('composites/index/relativeVorticityComposites.mat', 'relativeVorticityCompositesIndex', 'levels', 'lat', 'lon');
+
 
 
 

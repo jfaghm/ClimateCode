@@ -1,6 +1,7 @@
 function [ negYears, posYears] = posNegNino3_4Years( data )
-%UNTITLED4 Summary of this function goes here
-%   Detailed explanation goes here
+%This function takes in ENSO data, and normalized the data for NINO 3.4.
+%It returns a set of positive and negative years that are at least one
+%standard deviation away from the mean.
 
 if data(1) < 1979
     data = data(data(:, 1) >= 1979, :);
