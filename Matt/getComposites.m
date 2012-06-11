@@ -5,18 +5,32 @@ function [ pMeanComp, nMeanComp, diff ] = getComposites( posYears, negYears, dat
 %   This function assumes that the time vectors are in the form "hours
 %   since 1979-01-01 00:00:00"
 
-posComposites = zeros(256, 512, size(posYears, 1) * 3);
-negComposites = zeros(256, 512, size(negYears, 1) * 3);
+
 if size(data, 1) == 512
     data = permute(data, [2, 1, 3]);
+end
+months = endMonth - startMonth + 1;
+if strcmp(dataType, 'matrix') == 1
+    posComposites = zeros(size(data, 1), size(data, 2), size(posYears, 1) * months);
+    negComposites = zeros(size(data, 1), size(data, 2), size(negYears, 1) * months);
+else
+    posComposites = zeros(256, 512, size(posYears, 1) * months);
+    negComposites = zeros(256, 512, size(posYears, 1) * months);
 end
 %The times are in hours from January 1, 1979, so we call the hoursToDate
 %function in order to change them into a hour/day/month/year form.
 dates = zeros(size(time, 1), 4);
+
 for i = 1:size(time, 1)
    dates(i, :) = hoursToDate(time(i), 1, 1979);
 end
-
+%}
+%{
+dates(:, 1) = 0;
+dates(:, 2) = 1;
+dates(:, 3) = floor(mod(time, 10000) / 100);
+dates(:, 4) = floor(time / 10000);
+%}
 if strcmp(dataType, 'cell') == 1
     year = 1; month = startMonth;
     for i = 1:size(posYears, 1) * (endMonth - startMonth +1)
