@@ -1,7 +1,3 @@
-sst = ncread('/project/expeditions/jfagh/data/ersstv3/ersstv3_1948_2010_mon_anomalies.nc', 'sst');
-sst = squeeze(sst);
-sst = permute(sst, [2 1 3]);
-sst = sst(:, :, (31*12)+1:end); %get 1979 - present
 lat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
 lon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
 lon(lon > 180) = lon(lon > 180) - 360;
@@ -23,7 +19,7 @@ indexMeans = zeros(21, 26);
 for box_north = 20:2:60
    j = 1;
    for box_col = 5:30
-       [negYears, posYears, ~] = getPosNegYearsIndex(sst, box_north, box_south, box_east, box_west, box_row, box_col);
+       [negYears, posYears, ~] = getPosNegYearsIndex();
        [~, ~, diffIndex] = getComposites(posYears, negYears, PIData, time, 'cell', false, 8, 10);
        subset = diffIndex(lati, loni);
        indexMeans(i, j) = mean(mean(subset));

@@ -1,6 +1,6 @@
-%fast method to compute the sum of sub mtarices inside a big matrix
-% in this case the routine computes the sum of all mxn submtarices inside
-% the bix matrix A
+%fast method to compute the sum of sub matrices inside a big matrix
+% in this case the routine computes the sum of all mxn submatrices inside
+% the big matrix A
 function sub_sum_A = sub_sum(A,m,n)
 
 

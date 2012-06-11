@@ -23,7 +23,7 @@ end
 stdDev = std(hurrFrequency);
 normalizedHurr = (hurrFrequency - mean(hurrFrequency)) ./ stdDev;
 
-negYears = find(normalizedHurr <= -1.1) + baseYear - 1;
+negYears = find(normalizedHurr <= -1) + baseYear - 1;
 posYears = find(normalizedHurr >= 1) + baseYear - 1;
 
 end
