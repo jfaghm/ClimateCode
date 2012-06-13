@@ -32,10 +32,249 @@ Carlson \cite{carlson1971} attempted to relate the SST along the path of African
 Shapiro \cite{shapiro1982}, correlated the first EOF mode of Aug-Oct hurricane frequency with May-July sea level pressure (SLP) to avoid the question of causality (did the hurricanes influence large-scale patterns or vice versa). Low MJJ SLP had -0.5 correlation with ASO hurricanes counts. Low SLP coincided with active hurricane seasons. The author similarly analyzed the correlation of variance normalized MJJ SST ($10-45^\circ$ N - $110-0^\circ$ W) from 1899-1967 with ASO hurricanes. The highest correlation was 0.55 in the MDR near the west African coast (as in \cite{carlson1971}). The author argues that that hurricane activity is sensitive to the SST of that region given that it normally experience low SSTs (on average below the 26.5 ``threshold'') associated with upwelling off the African coast. It is concluded that higher SST off the region coincides with high hurricane activity but due to inter-correlations between SST and SLP, SST provides little predictive skill.
 Goldenberg \textit{et al.} \cite{goldenberg2001} used an EOF analysis on the non-ENSO SST mode (removed ENSO effect on SST first), which represents the interannual to multidecadal variability (refereed to the Atlantic multidecadal mode or AMM). The authors find that 5-year smoothed annual means of the AMM in North Atlantic (40 to 70N) has a 0.72 correlation with 5-year smoothed major hurricanes in MDR (10 to 14N - 20 to 70W) and 0.81 with 5-year smoothed Net Tropical Cyclone activity (NTC). The author identified cycles of relative high and low Atlantic TC activity: active periods from the late 1920s through the 1960s and again beginning 1995, and inactive periods from the 1900s through the mid-1920s and during the 1970s through 1994. Heightened activity has during these active cycles coincided with a simultaneous increase in SST in tropics and North Atlantic and decrease in vertical wind shear in tropics. 
 Webster \textit{et al.} \cite{webster2005} analyzed basin-wide mean SST and seasonal TC counts in all the major basins between 1970-2005 and concluded that the upward trend in Atlantic TC seasonal counts cannot be attributed to the increased SST. This was because not all basins that had an increase in SST, had a corresponding increase in TC counts. Later, Hoyos \textit{et al.} \cite{hoyos2006} using mutual information theory to conclude that the trend of increasing numbers of category 4 and 5 hurricanes for the period 1970–2004 is directly linked to the trend in sea-surface temperature; other aspects of the tropical environment, although they influenced shorter-term variations in hurricane intensity, did not contribute substantially to the observed global trend.
-By visually analyzing hurricane and SST trends, Holland and Webster \cite{holland2007} find that, since 1900, North Atlantic hurricane activity went through three distinct phases separated by sharp transitions around 1930 and 1995; each regime experienced $50\%$ more hurricanes than the previous one. Moreover, the authors concluded that each phase shift coinsides with increased SSTs in the eastern Atlantic ($5–25^\circ$ N, $55–20^\circ$ W). The ratio of minor versus major hurricanes in any given year seemed to be connected to the SST of the Gulf of Mexico ($5–20^\circ$ N, $120–90^\circ$ W) and the proportion of hurricanes that form equatorward of $25^\circ$N. 
-Sanders and Lea \cite{saunders2008} built a multiple linear regression model using the MDR Aug-Sep SST and the 925hPa u-wind field averaged over 7.5-17.5 N, 30–100 W. They then isolated SST's impact on the model's output to conlcud that SST was responsible for the increase TC frequency at the 99th percentile. The authors concluded that the sensitivity of tropical Atlantic hurricane activity to August–September sea surface temperature over $1965-2005$ was such that a 0.5 C increase in SST was associated with a $40\%$ increase in hurricane frequency and activity. The results also indicate that local sea surface warming was responsible for $40\%$ of the increase in hurricane activity relative to the $1950–2000$ average between 1996 and 2005.
+By visually analyzing hurricane and SST trends, Holland and Webster \cite{holland2007} find that, since 1900, North Atlantic hurricane activity went through three distinct phases separated by sharp transitions around 1930 and 1995; each regime experienced $50\%$ more hurricanes than the previous one. Moreover, the authors concluded that each phase shift coincides with increased SSTs in the eastern Atlantic ($5–25^\circ$ N, $55–20^\circ$ W). The ratio of minor versus major hurricanes in any given year seemed to be connected to the SST of the Gulf of Mexico ($5–20^\circ$ N, $120–90^\circ$ W) and the proportion of hurricanes that form equator-ward of $25^\circ$N. 
+Sanders and Lea \cite{saunders2008} built a multiple linear regression model using the MDR Aug-Sep SST and the 925hPa u-wind field averaged over 7.5-17.5 N, 30–100 W. They then isolated SST's impact on the model's output to conclude that SST was responsible for the increase TC frequency at the 99th percentile. The authors concluded that the sensitivity of tropical Atlantic hurricane activity to August–September sea surface temperature over $1965-2005$ was such that a 0.5 C increase in SST was associated with a $40\%$ increase in hurricane frequency and activity. The results also indicate that local sea surface warming was responsible for $40\%$ of the increase in hurricane activity relative to the $1950–2000$ average between 1996 and 2005.
 
-As it can be seen from this brief overview, limited insight has be gained in the past 50 years as to SST's impact on TC frequency. On the one hand, the earliest studies, such as \cite{palmen1948,fisher1958,gray1968,carlson1971} were all anecdotal and it would be unreasonable to generalize their findings to all storms. On the other hand, the remaining studies all employed a variation of spatio-temporal smoothing. Shapiro \cite{shapiro1982}, despite computing global point-wise correlations, never discusses the issue of field signifcance \cite{livezey1983} or false discovery rates \cite{benjamini2001}. In addition to not discussing the significance of correlations, it is impotent to note that Goldenberg \textit{at al.}'s \cite{goldenberg2001} data had only two full oscillations and was too short to test the likelihood of a cycle \cite{aberson2009}.Similarly, when disucssing hurricane trends Webster \textit{et al.} \cite{webster2005} never take into account that the data is not indepent. This might lead to over estimating trend significance as tradtion tests assume data independence. Furthermore, their conclusion that SST cannot explain current hurricane activity was premature given that different basins could have different driving conidtions for cyclogensis. Holland and Webster \cite{holland2007} never conducted any statistical signficance testing on their trends, and as poiinted out by \cite{aberson2009} the three hurricane ``phases'' are only significant at the $50-80\%$ level and that the signal is dominated by the strong SST phases. Furthermore, when the hurricane data is properly visualized the three distinct phases become less obvious. Another important observation is that noumerous correlations are reported between smoothed observations while no physical explanation is provided \cite{goldenberg2001, webster2005}. Finally, when analyzing seasonal trends all studies looked at contemparanous correaltions where SSTs and TCs from the entire season were analyzed. Such a long temporal averaging make it difficult to deconvolute which months contributed to TC frequency.
+As it can be seen from this brief overview, limited insight has be gained in the past 50 years as to SST's impact on TC frequency. On the one hand, the earliest studies, such as \cite{palmen1948,fisher1958,gray1968,carlson1971} were all anecdotal and it would be unreasonable to generalize their findings to all storms. On the other hand, the remaining studies all employed a variation of spatio-temporal smoothing. Shapiro \cite{shapiro1982}, despite computing global point-wise correlations, never discusses the issue of field significance \cite{livezey1983} or false discovery rates \cite{benjamini2001}. In addition to not discussing the significance of correlations, it is impotent to note that Goldenberg \textit{at al.}'s \cite{goldenberg2001} data had only two full oscillations and was too short to test the likelihood of a cycle \cite{aberson2009}.Similarly, when discussing hurricane trends Webster \textit{et al.} \cite{webster2005} never take into account that the data is not independent. This might lead to over estimating trend significance as traditional tests assume data independence. Furthermore, their conclusion that SST cannot explain current hurricane activity was premature given that different basins could have different driving conditions for cyclogensis. Holland and Webster \cite{holland2007} never conducted any statistical significance testing on their trends, and as pointed out by \cite{aberson2009} the three hurricane ``phases'' are only significant at the $50-80\%$ level and that the signal is dominated by the strong SST phases. Furthermore, when the hurricane data is properly visualized the three distinct phases become less obvious. Another important observation is that numerous correlations are reported between smoothed observations while no physical explanation is provided \cite{goldenberg2001, webster2005}. Finally, when analyzing seasonal trends all studies looked at contemporaneous correlations where SSTs and TCs from the entire season were analyzed. Such a long temporal averaging make it difficult to deconvolution which months contributed to TC frequency.
+
+\section{Index Sensitivity}
+\subsection{Box Size Sensitivity Results}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+\pagebreak
+\subsection{Varying Month Ranges}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_range.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/monthRanges/index_corr_month_ranges_hurr_month_range.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month_range.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/monthRanges/index_corr_month_ranges_tcs_month_range.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\subsection{Varying Search Space (North and South Hemispheres)}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_South.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+\pagebreak
+
+\subsection{Varying Search Space (North Hemisphere)}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northHem/ACE_Index_North.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northHem/NTC_Index_North.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/northHem/TCS_Index_North.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+\pagebreak
+\subsection{Varying Hurricane Season}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\section{Average Difference Composite Maps}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf}
+\caption{Diff Pressure Composites}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf}
+\caption{Diff PI Composites}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.pdf}
+\caption{Diff Relative Humidity}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf}
+\caption{Diff SST Composites}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites.pdf}
+\caption{Diff Wind Shear}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf}
+\caption{Diff Saturation Deficit}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\section{Average Difference Bar Graphs}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf}
+\caption{Avg Diff Relative Humidity}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf}
+\caption{Avg Diff Wind Shear}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf}
+\caption{Avg Diff Central Pressure}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf}
+\caption{Avg Diff Saturation Deficit}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+\pagebreak
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesBarGraph.pdf}
+\caption{Avg Diff Central Pressure}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figs/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf}
+\caption{Avg Diff Saturation Deficit}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
 
 % Diedhiou \textit{et al.} \cite{diedhiou2010} looked at the large-scale conditions of 3 days leading to cyclogenesis off the West African coast. The potential of genesis is stronger before cyclogenesis over the West African coast than the climatology showing that strong low-level cyclonic vortices propagate from land to ocean in an atmosphere characterized by strong upper level support. Generally, before the occurrence of a cyclonic activity, the atmosphere is more unstable and African Easterly Waves are more active over West Africa than the climatology. Over the Atlantic Ocean, large scale conditions before cyclogenesis are characterized by the presence of high cyclogenesis contributors such as warmer waters, lower pressure, stronger mid-level humidity and higher degree of atmospheric instability.
 
