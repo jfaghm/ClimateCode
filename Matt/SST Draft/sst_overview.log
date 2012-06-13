@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  13 JUN 2012 10:45
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  13 JUN 2012 10:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -459,8 +459,8 @@ File: figs/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf Grap
 hic file (type pdf)
 
 <use figs/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf>
-<figs/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf, id=357, 31
-9.73784pt x 660.10396pt>
+<figs/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf, id=357, 33
+3.91974pt x 653.65764pt>
 File: figs/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf Graphi
 c file (type pdf)
 
@@ -585,7 +585,7 @@ ocal/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
 l/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/t
 exlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on sst_overview.pdf (14 pages, 1268962 bytes).
+Output written on sst_overview.pdf (14 pages, 1271814 bytes).
 PDF statistics:
  670 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
