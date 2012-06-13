@@ -30,6 +30,3 @@ for box_north = 20:2:60
 end
 
 
-
-
-
