@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  12 JUN 2012 23:25
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  13 JUN 2012 10:45
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -113,6 +113,12 @@ Package `subfloat', Version 2.14 of 2003/08/21.
 \c@subfloatfiguremax=\count97
 \c@subfloattablemax=\count98
 ) (./sst_overview.aux
+
+LaTeX Warning: Label `fig:figure1' multiply defined.
+
+
+LaTeX Warning: Label `fig:figure2' multiply defined.
+
 
 LaTeX Warning: Label `fig:figure1' multiply defined.
 
@@ -534,20 +540,39 @@ Overfull \hbox (73.44864pt too wide) in paragraph at lines 252--263
 [][]   [] 
  []
 
-(./sst_overview.bbl [12 <./figs/sensitivityResults/compositeBarGraphs/RHBarGrap
-h.pdf> <./figs/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.p
-df> <./figs/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf> 
-<./figs/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf>]
-[13]) [14] (./sst_overview.aux)
+[12 <./figs/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf> <./figs/sensi
+tivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf> <./figs/sensitiv
+ityResults/compositeBarGraphs/centralPressureBarGraph.pdf> <./figs/sensitivityR
+esults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf>]
+<figs/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesBarGraph
+.pdf, id=606, 421.76222pt x 329.54208pt>
+File: figs/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesBar
+Graph.pdf Graphic file (type pdf)
+
+<use figs/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesBarG
+raph.pdf>
+<figs/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf, id=607, 419.8275pt
+ x 328.89716pt>
+File: figs/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf Graphic file (
+type pdf)
+
+<use figs/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf>
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 266--277
+[][]   [] 
+ []
+
+(./sst_overview.bbl [13 <./figs/sensitivityResults/compositeBarGraphs/avgDiffPI
+AtlanticCompositesBarGraph.pdf> <./figs/sensitivityResults/compositeBarGraphs/s
+stBarGraph.pdf>]) [14] (./sst_overview.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3222 strings out of 493848
- 53949 string characters out of 3149207
+ 3232 strings out of 493848
+ 54601 string characters out of 3149207
  117747 words of memory out of 3000000
- 6472 multiletter control sequences out of 15000+200000
+ 6480 multiletter control sequences out of 15000+200000
  8540 words of font info for 30 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  44i,7n,42p,2147b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -560,9 +585,9 @@ ocal/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
 l/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/t
 exlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on sst_overview.pdf (14 pages, 1237293 bytes).
+Output written on sst_overview.pdf (14 pages, 1268962 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
+ 670 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
