@@ -1,7 +1,7 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2012.5.29)  13 JUN 2012 10:58
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2012.5.29)  13 JUN 2012 11:10
 entering extended mode
  %&-line parsing enabled.
-**sst_overview.tex
+**ls
 (./sst_overview.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -812,12 +812,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2338 strings out of 256217
- 34920 string characters out of 1917095
+ 2367 strings out of 256217
+ 35321 string characters out of 1917095
  93962 words of memory out of 1500000
- 5593 multiletter control sequences out of 10000+200000
+ 5622 multiletter control sequences out of 10000+200000
  8540 words of font info for 30 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 43i,6n,42p,3363b,479s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 43i,6n,42p,3349b,479s stack positions out of 5000i,500n,6000p,200000b,15000s
 
 Output written on sst_overview.dvi (16 pages, 26868 bytes).
