@@ -1,7 +1,7 @@
 function [ bestFitLines  ] = pointRegression( data )
 %This function is used to calculate the linear regression coefficients for
 %each point spatially in the data set that is provided.  
-%   This function takes in a three dimensional matrix (latxlon.time).  and
+%   This function takes in a three dimensional matrix (latxlonxtime).  and
 %   outputs another three dimensional matrix, where the first and second
 %   dimensions are latitude and longitude respectively, and the third
 %   dimension is of size 2, one for the intercept, and one for the slope.
