@@ -22,10 +22,6 @@ for i =1:12:size(sst_1971_2010,3)
     count = count+1;
 end
 
-
-
-box_north = 10;
-box_south = -10;
 box_west = 140;
 box_east = 270;
 box_row =5;

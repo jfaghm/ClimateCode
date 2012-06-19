@@ -1,4 +1,4 @@
-function [ bestFitLines  ] = pointRegression( data )
+function [ regressionMatrix, corrMatrix  ] = pointRegression( data )
 %This function is used to calculate the linear regression coefficients for
 %each point spatially in the data set that is provided.  
 %   This function takes in a three dimensional matrix (latxlonxtime).  and
@@ -8,9 +8,6 @@ function [ bestFitLines  ] = pointRegression( data )
 if size(data, 1) == 512
     data = permute(data, [2 1 3]);
 end
-time = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'time');
-dates = zeros(size(time, 1), 4);
-
 sst = ncread('/project/expeditions/jfagh/data/ersstv3/ersstv3_1948_2010_mon_anomalies.nc', 'sst');
 sst = squeeze(sst);
 sst = permute(sst, [2 1 3]);
@@ -27,33 +24,59 @@ lon=0:2:358;
 addpath('../sst_project/')
 index = zeros(size(data, 3) / 12, 1);
 month = 1;
+year = 1;
+annualSST = zeros(size(sst, 1), size(sst, 2), size(sst, 3)/12);
 for i = 1:12:size(data, 3)
-     index(month) = buildIndex(sst(:, :, i), box_north, box_south, box_west, box_east, lat, lon, box_row, box_col);
-     month = month+1;
+    annualSST(:, :, year) = nanmean(sst(:, :, i+7:i+9), 3);
+    year = year+1;
 end
 
-for i = 1:size(time, 1)
-   dates(i, :) = hoursToDate(time(i), 1, 1979);
+for i = 1:12:size(data, 3)
+     index(month) = buildIndex(annualSST(:, :, month), box_north, box_south, box_west, box_east, lat, lon, box_row, box_col);
+     month = month+1;
 end
 yearlyData = zeros(size(data, 1), size(data, 2), size(data, 3)/12, 1);
 i = 1;
 for month = 1:12:size(data, 3)
-    yearlyData(:, :, i) = data(:, :, month);
+    yearlyData(:, :, i) = nanmean(data(:, :, month+7:month+9), 3);
+    
     i = i+1;
 end
-bestFitLines = zeros(size(data, 1), size(data, 2), 2);
+regressionMatrix = zeros(size(data, 1), size(data, 2), 3);
 if matlabpool('size') == 0
     matlabpool open;
 end
 parfor i = 1:size(data, 1)
-    bflRow = zeros(1, size(data, 2), 2);
+    bflRow = zeros(1, size(data, 2), 3);
     for j = 1:size(data, 2)
-        p = polyfit(index, squeeze(yearlyData(i, j, :)), 1);
-        bflRow(1, j, 1) = p(1);
-        bflRow(1, j, 2) = p(2);
+        yd = squeeze(yearlyData(i, j, :));
+        
+        if isnan(yd(1)) == true
+            bflRow(1, j, 1) = NaN;
+            bflRow(1, j, 2) = NaN;
+            bflRow(1, j, 3) = 1;
+            continue
+        end        
+        s = regstats(yd, index, 'linear', 'beta');
+        bflRow(1, j, 1) = s.beta(1); %intercept
+        bflRow(1, j, 2) = s.beta(2); %slope
+        bflRow(1, j, 3) = 0;%s.tstat.pval; %pvalue
     end
-    bestFitLines(i, :, :) = bflRow;
+    regressionMatrix(i, :, :) = bflRow;
+end
+corrMatrix = zeros(size(data, 1), size(data, 2));
+parfor i = 1:size(data, 1)
+    corrRow = zeros(1, size(data, 2));
+    for j = 1:size(data, 2)
+        corrRow(1, j) = corr(index, squeeze(yearlyData(i, j, :)));
+    end
+    corrMatrix(i, :) = corrRow;
 end
 
 end
+
+
+
+
+
 
