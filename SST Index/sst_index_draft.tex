@@ -5,18 +5,19 @@
 %  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 %
 \documentclass[]{article}
+%\documentclass[a4paper, 10pt]{article}
 
 % Use utf-8 encoding for foreign characters
 \usepackage[utf8]{inputenc}
 
 % Setup for fullpage use
-\usepackage{fullpage}
+%\usepackage{fullpage}
 
 % Uncomment some of the following if you use the features
 %
 % Running Headers and footers
 %\usepackage{fancyhdr}
-
+\usepackage{subfig}
 % Multipart figures
 %\usepackage{subfigure}
 
@@ -153,7 +154,245 @@ NINO 4 & -0.34 & -0.48 & -0.33 & -0.32 & -0.35\\
 
 \subsection{Sensitivity Tests}
 To validate our results, we test the sensitivity of our results to the month ranges used to build the index, the size of the ENSO box used, the size of the search space, and the months used as TC season. As it can be seen from the figures below, our results are stable with respect to parameter choice, except for search space where the correlations chance drastically based on which region we search.
+%\pagebreak
+\subsection{Box Size Sensitivity Results}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure1}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure2}
+\end{minipage}
+\end{figure}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure3}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure4}
+\end{minipage}
+\end{figure}
+\pagebreak
+\subsection{Varying Month Ranges}
 
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_range.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure5}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/monthRanges/index_corr_month_ranges_hurr_month_range.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure6}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month_range.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure7}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/monthRanges/index_corr_month_ranges_tcs_month_range.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure8}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\subsection{Varying Search Space (North and South Hemispheres)}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure9}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_South.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure10}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure11}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure12}
+\end{minipage}
+\end{figure}
+\pagebreak
+
+\subsection{Varying Search Space (North Hemisphere)}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northHem/ACE_Index_North.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure13}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure14}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northHem/NTC_Index_North.pdf}
+\caption{Corr Index vs. NTC}
+\label{fig:figure15}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/northHem/TCS_Index_North.pdf}
+\caption{Corr Index vs. TCs}
+\label{fig:figure16}
+\end{minipage}
+\end{figure}
+\pagebreak
+\subsection{Varying Hurricane Season}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure17}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure18}
+\end{minipage}
+\end{figure}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. ACE}
+\label{fig:figure19}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf}
+\caption{Corr Index vs. Major Hurricanes}
+\label{fig:figure20}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\section{Difference Composite Maps}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.55\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf}
+\caption{Diff Pressure Composites}
+\label{fig:figure21}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.55\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf}
+\caption{Diff PI Composites}
+\label{fig:figure22}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.pdf}
+\caption{Diff Relative Humidity}
+\label{fig:figure23}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf}
+\caption{Diff SST Composites}
+\label{fig:figure24}
+\end{minipage}
+\end{figure}
+
+\pagebreak
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites.pdf}
+\caption{Diff Wind Shear}
+\label{fig:figure25}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf}
+\caption{Diff Saturation Deficit}
+\label{fig:figure26}
+\end{minipage}
+\end{figure}
+
+\clearpage
+\section{Average Difference Bar Graphs}
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf}
+\caption{Avg Diff Relative Humidity}
+\label{fig:figure27}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf}
+\caption{Avg Diff Wind Shear (between 850-200mbar)}
+\label{fig:figure28}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf}
+\caption{Avg Diff Central Pressure}
+\label{fig:figure29}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf}
+\caption{Avg Diff Saturation Deficit}
+\label{fig:figure30}
+\end{minipage}
+\end{figure}
+\pagebreak
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesBarGraph.pdf}
+\caption{Avg Diff Potential Intensity}
+\label{fig:figure31}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf}
+\caption{Avg Diff SST}
+\label{fig:figure32}
+\end{minipage}
+\end{figure}
+\clearpage
 \bibliographystyle{plain}
 \bibliography{hurricanes_copy}
 \end{document}
