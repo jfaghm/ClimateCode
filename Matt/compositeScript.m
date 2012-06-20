@@ -3,10 +3,10 @@ tic
 [nYearsIndex, pYearsIndex] = getPosNegYearsIndex();
 load /project/expeditions/jfagh/data/mat/monthly_nino_data.mat;
 [nYearsENSO, pYearsENSO] = posNegNino3_4Years(data, 3, 10);
-load condensedHurDat;
+load matFiles/condensedHurDat;
 [nYearsHurr, pYearsHurr] = getPositiveAndNegativeYears(condensedHurDat);
 %%%%%%%%%%%%%%%BUILD COMPOSITES FOR INDEX
-load PIMaps.mat;
+load matFiles/PIMaps.mat;
 sst = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'var34');
 centralPressure = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'var134')*.01;
 %relVort = ncread('/project/expeditions/lem/data/pressureLevelData_1979-present.nc', 'var138');
@@ -40,18 +40,6 @@ save('composites/index/relativeHumidityComposites.mat', 'pMeanIndex', 'nMeanInde
 [pMeanIndex, nMeanIndex, diffIndex] = getComposites(pYearsIndex, nYearsIndex, centralPressure, time, 'matrix', false, 8, 10);
 save('composites/index/centralPresComposites.mat', 'pMeanIndex', 'nMeanIndex', 'diffIndex', 'lat', 'lon', 'time');
 
-%{
-composites = cell(size(relVort, 3), 3);
-for i = 1:size(relVort, 3);
-    [pMean, nMean, diff] = getComposites(pYearsIndex, nYearsIndex, squeeze(relVort(:, :, i, :)), time, 'matrix', false, 8, 10);
-    composites{i, 1} = pMean;
-    composites{i, 2} = nMean;
-    composites{i, 3} = diff;
-end
-relativeVorticityCompositesIndex = composites;
-save('composites/index/relativeVorticityComposites.mat', 'relativeVorticityCompositesIndex', 'levels', 'lat', 'lon', 'time');
-%}
-%%%%%%%%%%%%%%%%%BUILD COMPOSITES FOR ENSO
 [pMeanENSO, nMeanENSO, diffENSO] = getComposites(pYearsENSO, nYearsENSO, windShear, time, 'matrix', false, 8, 10);
 save('composites/ENSO_3.4/windShearComposite.mat', 'pMeanENSO', 'nMeanENSO', 'diffENSO', 'lat', 'lon', 'time');
 
@@ -66,18 +54,7 @@ save('composites/ENSO_3.4/relativeHumidityComposites.mat', 'pMeanENSO', 'nMeanEN
 
 [pMeanENSO, nMeanENSO, diffENSO] = getComposites(pYearsENSO, nYearsENSO, centralPressure, time, 'matrix', false, 8, 10);
 save('composites/ENSO_3.4/centralPresCompsites.mat', 'pMeanENSO', 'nMeanENSO', 'diffENSO', 'lat', 'lon', 'time');
-%{
-composites = cell(size(relVort, 3), 3);
-for i = 1:size(relVort, 3);
-    [pMean, nMean, diff] = getComposites(pYearsENSO, nYearsENSO, squeeze(relVort(:, :, i, :)), time, 'matrix', false, 8, 10);
-    composites{i, 1} = pMean;
-    composites{i, 2} = nMean;
-    composites{i, 3} = diff;
-end
 
-relativeVorticityCompositesENSO = composites;
-save('composites/ENSO_3.4/relativeVorticityComposites.mat', 'relativeVorticityCompositesENSO', 'levels', 'lat', 'lon', 'time');
-%}
 %%%%%%%%%%%%%%%%%%%%%%BUILD COMPOSITES FOR HURRICANE COUNTS
 [pMeanHurr, nMeanHurr, diffHurr] = getComposites(pYearsHurr, nYearsHurr, windShear, time, 'matrix', true, 8, 10);
 save('composites/hurricaneFrequency/windShearComposite.mat', 'pMeanHurr', 'nMeanHurr', 'diffHurr', 'lat', 'lon', 'time');
@@ -93,18 +70,7 @@ save('composites/hurricaneFrequency/relativeHumidityComposites.mat', 'pMeanHurr'
 
 [pMeanHurr, nMeanHurr, diffHurr] = getComposites(pYearsHurr, nYearsHurr, centralPressure, time, 'matrix', true, 8, 10);
 save('composites/hurricaneFrequency/centralPresComposites.mat', 'pMeanHurr', 'nMeanHurr', 'diffHurr', 'lat', 'lon', 'time');
-%{
-composites = cell(size(relVort, 3), 3);
-for i = 1:size(relVort, 3);
-    [pMean, nMean, diff] = getComposites(pYearsHurr, nYearsHurr, squeeze(relVort(:, :, i, :)), time, 'matrix', true, 8, 10);
-    composites{i, 1} = pMean;
-    composites{i, 2} = nMean;
-    composites{i, 3} = diff;
-end
 
-relativeVorticityCompositesHurr = composites;
-save('composites/hurricaneFrequency/relativeVorticityComposites.mat', 'relativeVorticityCompositesHurr', 'levels', 'lat', 'lon', 'time');
-%}
 toc
 
 

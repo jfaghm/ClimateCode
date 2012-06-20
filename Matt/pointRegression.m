@@ -8,11 +8,11 @@ function [ regressionMatrix, corrMatrix  ] = pointRegression( data )
 if size(data, 1) == 512
     data = permute(data, [2 1 3]);
 end
+%%%%%%%%%%%%%%%%%%%%%%CALCULATE INDEX%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 sst = ncread('/project/expeditions/jfagh/data/ersstv3/ersstv3_1948_2010_mon_anomalies.nc', 'sst');
 sst = squeeze(sst);
 sst = permute(sst, [2 1 3]);
 sst = sst(:, :, (31*12)+1:end); %get 1979 - present
-
 box_north = 52; 
 box_south = -6;
 box_west = 140;
@@ -30,22 +30,22 @@ for i = 1:12:size(data, 3)
     annualSST(:, :, year) = nanmean(sst(:, :, i+7:i+9), 3);
     year = year+1;
 end
-
 for i = 1:12:size(data, 3)
      index(month) = buildIndex(annualSST(:, :, month), box_north, box_south, box_west, box_east, lat, lon, box_row, box_col);
      month = month+1;
 end
+%%%%%%%%%%%%%%%%%%%%%%%%%EXTRACT YEARLY DATA%%%%%%%%%%%%%%%%%%%
 yearlyData = zeros(size(data, 1), size(data, 2), size(data, 3)/12, 1);
 i = 1;
 for month = 1:12:size(data, 3)
-    yearlyData(:, :, i) = nanmean(data(:, :, month+7:month+9), 3);
-    
+    yearlyData(:, :, i) = nanmean(data(:, :, month+7:month+9), 3);    
     i = i+1;
 end
 regressionMatrix = zeros(size(data, 1), size(data, 2), 3);
 if matlabpool('size') == 0
     matlabpool open;
 end
+%%%%%%%%%%%%%%%%%%%%GET REGRESSION COEFFICIENTS AND P-VALUES%%%%
 parfor i = 1:size(data, 1)
     bflRow = zeros(1, size(data, 2), 3);
     for j = 1:size(data, 2)
@@ -64,6 +64,7 @@ parfor i = 1:size(data, 1)
     end
     regressionMatrix(i, :, :) = bflRow;
 end
+%%%%%%%%%%%GET CORRELATION COEFFICIENTS%%%%%%%%%%%%%%%%%%%%%%%%%%
 corrMatrix = zeros(size(data, 1), size(data, 2));
 parfor i = 1:size(data, 1)
     corrRow = zeros(1, size(data, 2));
