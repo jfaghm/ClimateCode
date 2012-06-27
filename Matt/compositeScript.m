@@ -1,4 +1,3 @@
-
 tic
 [nYearsIndex, pYearsIndex] = getPosNegYearsIndex();
 load /project/expeditions/jfagh/data/mat/monthly_nino_data.mat;
@@ -23,7 +22,7 @@ vWindSpeeds = ncread(path, 'var132');
 windShear = sqrt((uWindSpeeds(:, :, levels(:) == 200, :) - uWindSpeeds(:, :, levels(:) == 850, :)).^2);
 windShear = windShear + sqrt((vWindSpeeds(:, :, levels(:) == 200, :) - vWindSpeeds(:,:,levels == 850, :)).^2);
 windShear = squeeze(windShear);
-toc 
+toc
 tic
 [pMeanIndex, nMeanIndex, diffIndex] = getComposites(pYearsIndex, nYearsIndex, windShear, time, 'matrix', false, 8, 10);
 save('composites/index/windShearComposite.mat', 'pMeanIndex', 'nMeanIndex', 'diffIndex', 'lat', 'lon', 'time');
