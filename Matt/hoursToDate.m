@@ -1,4 +1,4 @@
-function [ dates ] = hoursToDate( hours, baseMonth, baseYear )
+function [ dates ] = hoursToDate( hours, baseDay, baseMonth, baseYear )
 %This function takes in an array of hours, the base month and the base year.
 %Each entry is the number of hours from the date that is provided
 %hour 0.  Each hour entry is converted to a date.  The date matrix has four columns.
@@ -6,7 +6,7 @@ function [ dates ] = hoursToDate( hours, baseMonth, baseYear )
 %is for the year.
 
 dates = zeros(1, 4);
-days = floor(hours / 24); %gets total number of days
+days = floor(hours / 24) + baseDay - 1; %gets total number of days
 currentHours = mod(hours, 24);  %gets remaining hours
 dates(1, 1) = currentHours;  %sets the hours field of the dates matrix
 %set the base date

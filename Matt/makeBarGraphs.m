@@ -14,6 +14,14 @@ switch indexType
         load composites/NAO/CentralPressureComposite.mat;
     case 'EPNP'
         load composites/EPNP/CentralPressureComposite.mat;
+    case 'QBO'
+        load composites/QBO/CentralPressureComposite.mat;
+    case 'PNA'
+        load composites/PNA/CentralPressureComposite.mat;
+    case 'OLR'
+        load composites/OLR/CentralPressureComposite.mat;
+    case 'Index2'
+        load composites/index2/CentralPressureComposite.mat;
     otherwise
         error('Index type not recognized');
 end
@@ -21,8 +29,8 @@ load composites/hurricaneFrequency/centralPresComposites.mat;
 load composites/index/centralPresComposites.mat;
 var = 'Central Pressure';
 eval(['atlanticBoxMean(diffIndex, diff' indexType ',  indexType , diffHurr, var);']);
-eval(['clear diffIndex diff' indexType ' diffHurr ;']);
 print('-dpdf', '-r400', ['composites/barGraphs/' indexType '/avgDiffCentralPressure' indexType 'BarGraph']);
+eval(['clear diffIndex diff' indexType ' diffHurr ;']);
 load composites/hurricaneFrequency/PIComposites.mat
 load composites/index/PIComposites.mat;
 switch indexType
@@ -36,6 +44,14 @@ switch indexType
         load composites/NAO/PIComposite.mat;
     case 'EPNP'
         load composites/EPNP/PIComposite.mat;
+    case 'QBO'
+        load composites/QBO/PIComposite.mat;
+    case 'PNA'
+        load composites/PNA/PIComposite.mat;
+    case 'OLR'
+        load composites/OLR/PIComposite.mat;
+    case 'Index2'
+        load composites/index2/PIComposite.mat;
     otherwise
         error('Index type not recognized.');
 end
@@ -54,6 +70,14 @@ switch indexType
         load composites/NAO/relativeHumidityComposite.mat;
     case 'EPNP'
         load composites/EPNP/relativeHumidityComposite.mat;
+    case 'QBO'
+        load composites/QBO/relativeHumidityComposite.mat;
+    case 'PNA'
+        load composites/PNA/relativeHumidityComposite.mat;
+    case 'OLR'
+        load composites/OLR/relativeHumidityComposite.mat;
+    case 'Index2'
+        load composites/index2/relativeHumidityComposite.mat;
     otherwise
         error('Index type not recognized');
 end
@@ -74,6 +98,14 @@ switch indexType
         load composites/NAO/sstComposite.mat;
     case 'EPNP'
         load composites/EPNP/sstComposite.mat;
+    case 'QBO'
+        load composites/QBO/sstComposite.mat;
+    case 'PNA'
+        load composites/PNA/sstComposite.mat;
+    case 'OLR'
+        load composites/OLR/sstComposite.mat;
+    case 'Index2'
+        load composites/index2/sstComposite.mat;
     otherwise
         error('Index type not recognized.');
 end
@@ -94,6 +126,14 @@ switch indexType
         load composites/NAO/windShearComposite.mat
     case 'EPNP'
         load composites/EPNP/windShearComposite.mat;
+    case 'QBO'
+        load composites/QBO/windShearComposite.mat;
+    case 'PNA'
+        load composites/PNA/windShearComposite.mat;
+    case 'OLR'
+        load composites/OLR/windShearComposite.mat;
+    case 'Index2'
+        load composites/index2/windShearComposite.mat;
     otherwise
         error('Index type not recognized');
 end

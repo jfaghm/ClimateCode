@@ -25,15 +25,17 @@ else
 end
 annual_pacific = double(sst_a(southRow:northRow,westCol:eastCol,:));
 
+
+
 for t=1:size(annual_pacific,3)
    ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
 end
 
-mean_box_sst_pacific = ss(round(box_row/2):end-round(box_row/2),round(box_col/2):end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
+mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
 
 for t = 1:size(mean_box_sst_pacific,3)
    current = mean_box_sst_pacific(:,:,t);
-   [values(t) loc(t)] = max(current(:));
+   [values(t) loc(t)] = maxcurrent(:));
    [I(t),J(t)] = ind2sub(size(current),loc(t));
 end
 lon_region = box_west:box_east;

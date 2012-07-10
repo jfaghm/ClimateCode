@@ -1,7 +1,7 @@
 %builds the new pacific index, varying the start and end month
 tic
-clear
-close all
+%clear
+%close all
 load('/project/expeditions/haasken/data/stormData/atlanticStorms/condensedHurDat.mat')
 
 
@@ -16,15 +16,13 @@ varid_sst = netcdf.inqVarID(ncid,'sst');
 sst_1971_2010 =  squeeze(netcdf.getVar(ncid,varid_sst));
 sst_1971_2010(sst_1971_2010==-999)=NaN;
 sst_1971_2010 = permute(sst_1971_2010,[2 1 3])./100;
-sst_1971_2010 = sst_1971_2010(:,:,(23*12)+1:end);
+sst_1971_2010 = sst_1971_2010(:,:,(31*12)+1:end);
 netcdf.close(ncid);
-
-
 
 %test month ranges
 count2=1;
 for season_start = 1:12
-    for season_end = 1:12
+    for season_end = season_start:12
         count = 1;
         for i =1:12:size(sst_1971_2010,3)
             annual_sst(:,:,count) = nanmean(sst_1971_2010(:,:,i+(season_start-1):i+(season_end-1)),3);
@@ -56,7 +54,6 @@ for i=1:11
         if(~isempty(season{i,j}))
             index{i,j} = buildIndex(season{i,j},box_north,box_south,box_west,box_east,lat,lon,box_row,box_col);
             %SHORTEN Time series TO GO FROM 1979%
-            index{i,j} = index{i,j}(9:end);
         end
     end
 end

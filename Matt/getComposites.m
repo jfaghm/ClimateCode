@@ -22,7 +22,7 @@ end
 dates = zeros(size(time, 1), 4);
 
 for i = 1:size(time, 1)
-   dates(i, :) = hoursToDate(time(i), 1, 1979);
+   dates(i, :) = hoursToDate(time(i), 1, 1, 1979);
 end
 %}
 %{

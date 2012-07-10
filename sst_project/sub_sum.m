@@ -9,3 +9,7 @@ s = nancumsum(B,1);
 c = s(1+m:end-1,:)-s(1:end-m-1,:);
 s = nancumsum(c,2);
 sub_sum_A = s(:,1+n:end-1)-s(:,1:end-n-1);
+
+
+
+

@@ -18,7 +18,7 @@ negComposites = zeros(256, 512, 15);
 %function in order to change them into a hour/day/month/year form.
 dates = zeros(size(time, 1), 4);
 for i = 1:size(time, 1)
-   dates(i, :) = hoursToDate(time(i), 1, 1979);
+   dates(i, :) = hoursToDate(time(i), 1, 1, 1979);
 end
 year = 1;
 for i = 1:3:15

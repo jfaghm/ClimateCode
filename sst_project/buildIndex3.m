@@ -113,8 +113,7 @@ comboIndex = min(sstLonRegion(sstJ), pressLonRegion(pressJ)'); %.36
 comboIndex = sstLonRegion(sstJ) - pressLonRegion(pressMinI)'; %-2.78 correlation
 
 comboIndex = sstLonRegion(sstJ) - pressLatRegion(pressI)' .* pressMinValues; %-3.22 correlation
-factor = comboIndex - mean(comboIndex);
-comboIndex = comboIndex;
+
 
 
 
