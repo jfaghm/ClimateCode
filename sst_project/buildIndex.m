@@ -9,7 +9,13 @@
 %Output:
 % index: a 1-d array with the longitude of the box with the highest
 % anomaly
-function index = buildIndex(sst_a,box_north,box_south,box_west,box_east,lat,lon,box_row,box_col)
+function index = buildIndex(sst_a,box_north,box_south,box_west,box_east,lat,lon,box_row,box_col, func)
+
+%Let the user decide if they want the maximum or minimum valued box.  If
+%not specified by the user, then use max by default
+if nargin == 9
+    func = @max;
+end
 
 if ismember(box_north, lat)
    [~, northRow] = ismember(box_north, lat);
@@ -35,7 +41,7 @@ mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/
 
 for t = 1:size(mean_box_sst_pacific,3)
    current = mean_box_sst_pacific(:,:,t);
-   [values(t) loc(t)] = maxcurrent(:));
+   [values(t) loc(t)] = func(current(:));
    [I(t),J(t)] = ind2sub(size(current),loc(t));
 end
 lon_region = box_west:box_east;
