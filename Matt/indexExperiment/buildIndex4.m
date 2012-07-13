@@ -1,14 +1,14 @@
 
-function [index, cc, ccIndex, nYears, pYears] = buildIndex4(indexNum)
+function [index, cc, ccIndex, nYears, pYears] = buildIndex4(indexNum, startMonth, endMonth)
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/sstAnomalies.mat;
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat;
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat;
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat;
 
 year = 1;
 for i = 1:12:(2010-1979+1)*12
-   sstMean(:, :, year) = nanmean(sst(:, :, i+3 - 1:i+10 - 1), 3); 
-   pMean(:, :,year) = nanmean(pressure(:, :, i+3-1:i+10-1), 3);
-   olrMean(:, :, year) = nanmean(olr(:, :, i+3-1:i+10-1), 3);
+   sstMean(:, :, year) = nanmean(sst(:, :, i+startMonth - 1:i+endMonth - 1), 3); 
+   pMean(:, :,year) = nanmean(pressure(:, :, i+startMonth-1:i+endMonth-1), 3);
+   olrMean(:, :, year) = nanmean(olr(:, :, i+startMonth-1:i+endMonth-1), 3);
    year = year+1;
 end
 
@@ -47,85 +47,73 @@ midpoint = box_west + ((box_east - box_west) / 2);
 switch indexNum
     case 1
         index = sstLonRegion(sstJ.max); %-2.5984 correlation
-    case 2
+    case 2 
+        index = olrLonRegion(olrJ.min);
+    case 3
+        index = pressureLonRegion(pressureJ.min);
+    case 4
         indexMatrix = [sstLonRegion(sstJ.max), olrLonRegion(olrJ.min), pressureLonRegion(pressureJ.max)];
         index = zeros(length(sstJ.max), 1);
         for i = 1:length(sstJ.max)
             [~, ind] = max(abs(indexMatrix(i, :) - midpoint)); %correlation 1.5938
             index(i) = indexMatrix(ind);
         end
-    case 3
+    case 5
         indexMatrix = [sstLonRegion(sstJ.max), olrLonRegion(olrJ.min), pressureLonRegion(pressureJ.max)];
         index = zeros(length(sstJ.max), 1);
         for i = 1:length(sstJ.max)
             [~, ind] = min(abs(indexMatrix(i, :) - midpoint)); %correlation -1.0646
             index(i) = indexMatrix(ind);
         end
-    case 4
+    case 6
         indexMatrix = [sstLonRegion(sstJ.max), olrLonRegion(olrJ.min), pressureLonRegion(pressureJ.max)];
         index = mean(indexMatrix, 2); %correlation -2.439
-    case 5
-        index = sstLonRegion(sstJ.max) + olrLonRegion(olrJ.min) + pressureLatRegion(pressureI.max);%correlation -0.935
-    case 6
-        index = sqrt(sstLonRegion(sstJ.max) + olrLonRegion(olrJ.min) + pressureLatRegion(pressureI.max)); %correlation -.957
     case 7
+        index = sstLonRegion(sstJ.max) + olrLonRegion(olrJ.min) + pressureLatRegion(pressureI.max);%correlation -0.935
+    case 8
+        index = sqrt(sstLonRegion(sstJ.max) + olrLonRegion(olrJ.min) + pressureLatRegion(pressureI.max)); %correlation -.957
+    case 9
         indexMatrix = [sstLonRegion(sstJ.max), olrLonRegion(olrJ.min), pressureLonRegion(pressureJ.max)];
         index = std(indexMatrix, 0, 2);  %correlation .9616
-    case 8
+    case 10
         indexMatrix = [sstLonRegion(sstJ.max), olrLonRegion(olrJ.min), pressureLonRegion(pressureJ.max)];
         index = range(indexMatrix, 2); %correlation 1.04424
-    case 9
-        index = sstLonRegion(sstJ.max) - pressureLonRegion(pressureJ.max); %correlation .0476
-    case 10
-        index = sstLonRegion(sstJ.max) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -3.01
     case 11
-        index = pressureLatRegion(pressureI.max) .* pressureValues.min'; % correlation -2.620
+        index = sstLonRegion(sstJ.max) - pressureLonRegion(pressureJ.max); %correlation .0476
     case 12
-        index = sstLonRegion(sstJ.max) + pressureLatRegion(pressureI.max) .* pressureValues.min' .* olrLonRegion(olrJ.max); %correlation -2.4309
+        index = sstLonRegion(sstJ.max) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -3.01
     case 13
-        index = pressureLatRegion(pressureI.max) .* (pressureValues.min'./ norm(pressureValues.min));%correlation -2.6195
+        index = pressureLatRegion(pressureI.max) .* pressureValues.min'; % correlation -2.620
     case 14
+        index = sstLonRegion(sstJ.max) + pressureLatRegion(pressureI.max) .* pressureValues.min' .* olrLonRegion(olrJ.max); %correlation -2.4309
+    case 15
+        index = pressureLatRegion(pressureI.max) .* (pressureValues.min'./ norm(pressureValues.min));%correlation -2.6195
+    case 16
         %weightIndex function is defined below.
         index = weightIndex(sstLonRegion(sstJ.max), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.22
-    case 15
-        index = max(sstLonRegion(sstJ.max), olrLonRegion(olrJ.max)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -2.6494
-    case 16
-        index = min(sstLonRegion(sstJ.max), olrLonRegion(olrJ.max)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -2.0078
     case 17
-        index = (sstLonRegion(sstJ.max) + olrLonRegion(olrJ.max) ./ 2) + pressureLatRegion(pressureI.max) .* pressureValues.min';% correlation -2.6691
+        index = max(sstLonRegion(sstJ.max), olrLonRegion(olrJ.max)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -2.6494
     case 18
-        index = sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min); %correlation -3.0654
+        index = min(sstLonRegion(sstJ.max), olrLonRegion(olrJ.max)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -2.0078
     case 19
-        index = (sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min)) + pressureLatRegion(pressureI.max) .* pressureValues.min';
+        index = (sstLonRegion(sstJ.max) + olrLonRegion(olrJ.max) ./ 2) + pressureLatRegion(pressureI.max) .* pressureValues.min';% correlation -2.6691
     case 20
-        index = weightIndex(sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.5534
+        index = sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min); %correlation -3.0654
     case 21
-        index = weightIndex(.5*(sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min)), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.6935
+        index = (sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -3.2874
     case 22
-        index = pressureLatRegion(pressureI.max) - pressureLatRegion(pressureI.min); %correlation 2.5159
+        index = weightIndex(sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.5534
     case 23
-        index = weightIndex(.5*(sstLonRegion(sstJ.max) - .8*sstLonRegion(sstJ.min)), pressureLatRegion(pressureI.max), pressureValues.min);
+        index = weightIndex(.5*(sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min)), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.6935
     case 24
-        index = pressureLatRegion(pressureI.max); %correlation 2.7049
+        index = pressureLatRegion(pressureI.max) - pressureLatRegion(pressureI.min); %correlation 2.5159
     case 25
-        index = olrLatRegion(olrI.max);
+        index = weightIndex(.5*(sstLonRegion(sstJ.max) - .8*sstLonRegion(sstJ.min)), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.6776
+
 end
 
-load /project/expeditions/haasken/data/stormData/atlanticStorms/HurDat_1851_2010.mat
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/condensedHurDat.mat;
-year = 1979:2010;
-aso_tcs = zeros(size(1979:2010, 2), 1);
-aso_major_hurricanes = zeros(size(1979:2010, 2), 1);
-aso_ace = zeros(size(1979:2010, 2), 1);
-aso_pdi = zeros(size(1979:2010, 2), 1);
-aso_ntc = zeros(size(1979:2010, 2), 1);
-for i = 1:(2010-1979+1)
-    aso_tcs(i) = length(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10 ,10));
-    aso_major_hurricanes(i) = length(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,10)>=4&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10 ,10));
-    aso_ace(i) = sum(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10,12))/10^5;
-    aso_pdi(i)=sum(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10,11))/10^7;
-    aso_ntc(i) = computeNTC(hurDat, [1950 2000 ], [ year(i) year(i) ], 'countDuplicates', true, 'months', 8:10); 
-end
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+
 sstIndex = sstLonRegion(sstJ.max);
 ccIndex(1) = corr(sstIndex, aso_tcs);
 ccIndex(2) = corr(sstIndex, aso_major_hurricanes);
@@ -193,10 +181,10 @@ for t=1:size(annual_pacific,3)
    ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
 end
 
-mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
+mean_box_data_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row *box_col);
 
-for t = 1:size(mean_box_sst_pacific,3)
-   current = mean_box_sst_pacific(:,:,t);
+for t = 1:size(mean_box_data_pacific,3)
+   current = mean_box_data_pacific(:,:,t);
    [minValues(t) minLoc(t)] = min(current(:));
    [minI(t),minJ(t)] = ind2sub(size(current),minLoc(t));
    [maxValues(t), maxLoc(t)] = max(current(:));
