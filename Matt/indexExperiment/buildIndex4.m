@@ -25,11 +25,11 @@ sstLatRegion = sstLat(sstLat >=  box_south & sstLat <= box_north);
 
 
 box_north = olrLat(minIndex(olrLat, 35));
-box_south = olrLat(minIndex(olrLat, -5));
+box_south = olrLat(minIndex(olrLat, -35));
 box_west = olrLon(minIndex(olrLon, 140));
 box_east = olrLon(minIndex(olrLon, 270));
 
-[olrI, olrJ, olrValues] = buildIndexGeneric(olrMean, box_north, box_south, box_west, box_east, olrLat, olrLon, box_row, box_col, false);
+[olrI, olrJ, olrValues] = buildIndexGeneric(olrMean, box_north, box_south, box_west, box_east, olrLat, olrLon, 5, 10, false);
 olrLonRegion = olrLon(olrLon >= box_west & olrLon <= box_east);
 olrLatRegion = olrLat(olrLat >= box_south & olrLat <= box_north);
 
@@ -48,9 +48,11 @@ switch indexNum
     case 1
         index = sstLonRegion(sstJ.max); %-2.5984 correlation
     case 2 
-        index = olrLonRegion(olrJ.min);
+        %index = olrLonRegion(olrJ.min);
+        index = olrLatRegion(olrI.max);
     case 3
-        index = pressureLonRegion(pressureJ.min);
+        %best if you average data Jan-Jul
+        index = pressureLatRegion(pressureI.min);
     case 4
         indexMatrix = [sstLonRegion(sstJ.max), olrLonRegion(olrJ.min), pressureLonRegion(pressureJ.max)];
         index = zeros(length(sstJ.max), 1);
