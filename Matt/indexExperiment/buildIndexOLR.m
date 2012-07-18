@@ -101,7 +101,7 @@ index = lat_region(I);
 
 load ../matFiles/condensedHurDat.mat;
 year = 1979:2010;
-figure%('visible','off')
+figure('visible','off')
  for i =1:length(year)
      clmo('surface')
      clmo('Line')
@@ -149,7 +149,7 @@ figure%('visible','off')
      all_storms = length(condensedHurDat(condensedHurDat(:, 1) == year(i)&condensedHurDat(:,10) >= 0));
      title([num2str(year(i)) ': ' num2str(all_storms) ' JJASO TCs - ' num2str(num_hurricanes) ' hurricanes - ' num2str(num_major_hurricanes) ' major hurricanes'])
      %print('-dpdf', '-r350',strcat('/project/expeditions/lem/ClimateCode/Matt/indexExperiment/max_sst_location_10_by_40_location_minus_30_w_hurricanes',num2str(i)))
-     %print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/max_sst_location_10_by_40_location_minus_30_w_hurricanes' num2str(i)]);
+     print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/olr/max_olr_location_10_by_40_location_minus_30_w_hurricanes' num2str(i)]);
  end
 
 end
