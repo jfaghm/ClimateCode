@@ -57,6 +57,7 @@ for i=1:11
         end
     end
 end
+index = buildIndex(season{3, 10},box_north,box_south,box_west,box_east,lat,lon,box_row,box_col);
 
 year = 1979:2010;
 %these are all quantites we want to correlate against and have nothing to

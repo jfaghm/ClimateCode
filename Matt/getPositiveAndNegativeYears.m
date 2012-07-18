@@ -1,4 +1,4 @@
-function [ negYears, posYears, normalizedHurr ] = getPositiveAndNegativeYears(hurricanes)
+function [ negYears, posYears, normalizedHurr, hurrFrequency ] = getPositiveAndNegativeYears(hurricanes)
 %This function is used to find the positive and negative years with respect
 %to normalized hurricane frequency.
 %   This function normalizes the hurricane frequency from the
