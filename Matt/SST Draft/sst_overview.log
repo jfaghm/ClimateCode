@@ -114,4 +114,31 @@ Package `subfloat', Version 2.14 of 2003/08/21.
 \c@subfloattablemax=\count98
 ) (./sst_overview.aux
 
-./sst_overview.aux:105: LaTeX Er
+./sst_overview.aux:105: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105 <
+       <<<<<< HEAD
+? 
+./sst_overview.aux:105: Emergency stop.
+ ...                                              
+                                                  
+l.105 <
+       <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 1961 strings out of 493848
+ 32224 string characters out of 3149207
+ 104747 words of memory out of 3000000
+ 5279 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 44i,0n,42p,333b,44s stack positions out of 5000i,500n,10000p,200000b,50000s
+./sst_overview.aux:105:  ==> Fatal error occurred, no output PDF file produced!
+
