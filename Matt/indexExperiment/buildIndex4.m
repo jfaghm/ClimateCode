@@ -111,7 +111,14 @@ switch indexNum
         index = pressureLatRegion(pressureI.max) - pressureLatRegion(pressureI.min); %correlation 2.5159
     case 25
         index = weightIndex(.5*(sstLonRegion(sstJ.max) - .8*sstLonRegion(sstJ.min)), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.6776
-
+    case 26
+        index = sstValues.max';
+    case 27
+        index = sstValues.min';
+    case 28
+        index = olrValues.max';
+    case 29
+        index = olrValues.min';
 end
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;

@@ -1,4 +1,4 @@
-function [ negYears, posYears] = posNegNino3_4Years( data, startMonth, endMonth )
+function [ negYears, posYears, ENSO34] = posNegNino3_4Years( data, startMonth, endMonth, sigma )
 %This function takes in ENSO data, and normalized the data for NINO 3.4.
 %It returns a set of positive and negative years that are at least one
 %standard deviation away from the mean.
@@ -20,8 +20,8 @@ end
 stdDev = std(ENSO34);
 normalizedENSO = (ENSO34 - mean(ENSO34)) ./ stdDev;
 
-posYears = find(normalizedENSO >= 1) + baseYear - 1;
-negYears = find(normalizedENSO <= -1) + baseYear - 1;
+negYears = find(normalizedENSO >= sigma) + baseYear - 1;
+posYears = find(normalizedENSO <= -sigma) + baseYear - 1;
 
 end
 

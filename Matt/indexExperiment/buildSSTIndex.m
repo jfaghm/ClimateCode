@@ -71,15 +71,18 @@ end
 
 
 mean_box_sst_pacific = ss(box_row:end-box_row+1,box_col:end-box_col+1,:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
+mean_box_sst_pacific2 = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
 
 
 
 for t = 1:size(mean_box_sst_pacific,3)
    current = mean_box_sst_pacific(:,:,t);
+   current2 = mean_box_sst_pacific2(:, :, t);
    [values(t) loc(t)] = max(current(:));
    [I(t),J(t)] = ind2sub(size(current),loc(t));
-   [minValues(t), minLoc(t)] = min(current(:));
-   [minI(t), minJ(t)] = ind2sub(size(current), minLoc(t));
+   
+   [values2(t) loc2(t)] = max(current2(:));
+   [I2(t),J2(t)] = ind2sub(size(current2),loc2(t));
 end
 I = I+box_row-1;
 
@@ -88,7 +91,7 @@ lat_region = lat(lat >= box_south & lat <= box_north);
 index = lon_region(J);
 load ../matFiles/condensedHurDat.mat;
 year = 1979:2010;
-figure('visible','off')
+figure%('visible','off')
  for i =1:length(year)
      clmo('surface')
      clmo('Line')
@@ -97,14 +100,30 @@ figure('visible','off')
      setm(gca,'Origin',[0 180])
      pcolorm(double(lat),double(lon),double(sst_a(:,:,i)))
      geoshow('landareas.shp', 'FaceColor', [0.25 0.20 0.15])
-     current_lon = lon_region(J(i));
-     current_lat = lat_region(I(i));
+     
      grid_size = 2;
+     %%%%%%%%%%%%%%%%%%%%%%% plot old box
+     current_lon = lon_region(J2(i));
+     current_lat = lat_region(I2(i));
+     box_lat1 = current_lat - (grid_size*round(box_row/2));
+     box_lat2 = current_lat + (grid_size*round(box_row/2));
+     box_lon1 = current_lon - (grid_size*round(box_col/2));
+     box_lon2 = current_lon + (grid_size*round(box_col/2));
+     [lat1,lon1] = track2('rh',box_lat1,box_lon1,box_lat2,box_lon1);
+     [lat2,lon2] = track2('rh',box_lat2,box_lon1,box_lat2,box_lon2);
+     [lat3,lon3] = track2('rh',box_lat2,box_lon2,box_lat1,box_lon2);
+     [lat4,lon4] = track2('rh',box_lat1,box_lon1,box_lat1,box_lon2);
+     plotm(double(lat1),double(lon1),'r-')
+     plotm(double(lat2),double(lon2),'r-')
+     plotm(double(lat3),double(lon3),'r-')
+     plotm(double(lat4),double(lon4),'r-')
      %%%%%%%%%%%%%%%%%%%%%%% plot box
      %box_lat1 = current_lat - (grid_size*round(box_row/2));
      %box_lat2 = current_lat + (grid_size*round(box_row/2));
      %box_lon1 = current_lon - (grid_size*round(box_col/2));
      %box_lon2 = current_lon + (grid_size*round(box_col/2));
+     current_lon = lon_region(J(i));
+     current_lat = lat_region(I(i));
      box_lat1 = current_lat;
      box_lat2 = current_lat - grid_size * box_row - grid_size;
      box_lon1 = current_lon;

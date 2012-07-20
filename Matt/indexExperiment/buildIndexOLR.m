@@ -1,4 +1,4 @@
-function [index, c] = buildIndexOLR(startMonth, endMonth)
+function [index, c] = buildIndexOLR(startMonth, endMonth, plotBox)
 
     olr = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'olr');
     time = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'time');
@@ -43,7 +43,8 @@ function [index, c] = buildIndexOLR(startMonth, endMonth)
     box_row =5;
     box_col = 10;
 
-    index = buildIndexHelper(annualOLR, box_north, box_south, box_west, box_east, lat, lon, box_row, box_col);
+    index = buildIndexHelper(annualOLR, box_north, box_south, box_west,...
+        box_east, lat, lon, box_row, box_col, plotBox);
     
     load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
         
@@ -55,7 +56,8 @@ function [index, c] = buildIndexOLR(startMonth, endMonth)
 end
 
 
-function index = buildIndexHelper(sst_a,box_north,box_south,box_west,box_east,lat,lon,box_row,box_col)
+function index = buildIndexHelper(sst_a,box_north,box_south,box_west,...
+    box_east,lat,lon,box_row,box_col, plotBox)
 
 if ismember(box_north, lat)
    [~, northRow] = ismember(box_north, lat);
@@ -70,22 +72,14 @@ else
     error('Bad lat input!');
 end
 
-if northRow >= southRow || westCol >= eastCol
-    eastCol
-    westCol
-    northRow
-    southRow
-    error('latitude or longitude error');
-end
-
 annual_pacific = double(sst_a(northRow:southRow,westCol:eastCol,:));
 
 for t=1:size(annual_pacific,3)
    ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
 end
 
-%mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
-mean_box_sst_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row * box_col);
+mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
+%mean_box_sst_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row * box_col);
 for t = 1:size(mean_box_sst_pacific,3)
    current = mean_box_sst_pacific(:,:,t);
    [values(t) loc(t)] = max(current(:));
@@ -99,10 +93,12 @@ lon_region = lon(lon >= box_west & lon <= box_east);
 lat_region = lat(lat >= box_south & lat <= box_north);
 index = lat_region(I);
 
+if plotBox == true
 load ../matFiles/condensedHurDat.mat;
 year = 1979:2010;
 figure('visible','off')
  for i =1:length(year)
+     fig(figure(1), 'units', 'inches', 'width', 8, 'height', 8)
      clmo('surface')
      clmo('Line')
      worldmap([-20 20],[140 -90])
@@ -140,10 +136,8 @@ figure('visible','off')
      plotm(double(lat3), double(lon3), 'k--');
      plotm(double(lat4), double(lon4), 'k--');
      
-     caxis([-5 5])
+     %caxis([-5 5])
      colorbar('EastOutside');
-     current_pdi = sum(condensedHurDat(condensedHurDat(:,1)==year(i),11))/10^7;
-     current_ace = sum(condensedHurDat(condensedHurDat(:,1)==year(i),12))/10^5;
      num_hurricanes = length(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,10)>=1&condensedHurDat(:,10)<=3 ,10));
      num_major_hurricanes = length(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,10)>=4 ,10));
      all_storms = length(condensedHurDat(condensedHurDat(:, 1) == year(i)&condensedHurDat(:,10) >= 0));
@@ -151,6 +145,6 @@ figure('visible','off')
      %print('-dpdf', '-r350',strcat('/project/expeditions/lem/ClimateCode/Matt/indexExperiment/max_sst_location_10_by_40_location_minus_30_w_hurricanes',num2str(i)))
      print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/olr/max_olr_location_10_by_40_location_minus_30_w_hurricanes' num2str(i)]);
  end
-
+end
 end
 

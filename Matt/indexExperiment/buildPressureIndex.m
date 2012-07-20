@@ -1,4 +1,5 @@
-function [index, negYears, posYears, cc] = buildPressureIndex(indexNum, startMonth, endMonth)
+function [index, negYears, posYears, cc] = ...
+    buildPressureIndex(indexNum, compositeNum, startMonth, endMonth)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
 addpath('../');
@@ -10,16 +11,23 @@ dates = zeros(length(time), 4);
 for i = 1:length(time)
     dates(i, :) = hoursToDate(time(i),1, 1, 1979);
 end
-
-for i = 1:12
-    current = pressure(:, :, dates(:, 3) == i);
-    pressure(:, :, dates(:, 3) == i) = (current - repmat(nanmean(current, 3), [1, 1, size(current, 3)]))...
-     ./ repmat(nanstd(current, 0, 3), [1, 1, size(current, 3)]);
+switch compositeNum
+    case 1
+        for i = 1:12
+            current = pressure(:, :, dates(:, 3) == i);
+            pressure(:, :, dates(:, 3) == i) = (current - repmat(nanmean(current, 3), [1, 1, size(current, 3)]))...
+             ./ repmat(nanstd(current, 0, 3), [1, 1, size(current, 3)]);
+        end
+    case 2
+        pressure = pressure - repmat(nanmean(pressure, 3), [1, 1, size(pressure, 3)]);
+    case 3
+        pressure = (pressure - repmat(nanmean(pressure, 3), [1, 1, size(pressure, 3)]))...
+            ./ repmat(std(pressure, 0, 3), [1, 1, size(pressure, 3)]);
 end
-
 
 pLat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
 pLon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
+
 year = 1;
 for i = 1:12:size(pressure, 3)
    pMean(:, :,year) = nanmean(pressure(:, :, i+startMonth-1:i+endMonth-1), 3);
@@ -102,6 +110,8 @@ switch indexNum
         index = lat_region(minI); %1.4318 correlation
     case 5
         index = lat_region(minI) - lat_region(I); %.9349 correlation
+    case 6
+        
 end
 
 end

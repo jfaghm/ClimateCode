@@ -1,91 +1,39 @@
-function [ pMeanComp, nMeanComp, diff ] = getComposites( posYears, negYears, data, time, dataType, pMinN, startMonth, endMonth)
-%data that is specified by the data input argument.
-%   The positive and negative years must be given as a one dimensional
-%   matrix.  The times must also be passed in as a one dimensional matrix.
-%   This function assumes that the time vectors are in the form "hours
-%   since 1979-01-01 00:00:00"
+function [pMean, nMean, diff] = ...
+    getComposites(data, pYears, nYears, dates, startMonth, endMonth)
+%This function calculates composites, where we average startMonth to
+%endMonth for each year, and then average all of the years together for
+%both positve and negative.  We then take the difference of the two sets of
+%years.  Posivite years are years that correspond to high hurricane
+%activity.
 
-
-if size(data, 1) == 512
+if size(data, 1) > size(data, 2)
     data = permute(data, [2, 1, 3]);
 end
-months = endMonth - startMonth + 1;
-if strcmp(dataType, 'matrix') == 1
-    posComposites = zeros(size(data, 1), size(data, 2), size(posYears, 1) * months);
-    negComposites = zeros(size(data, 1), size(data, 2), size(negYears, 1) * months);
-else
-    posComposites = zeros(256, 512, size(posYears, 1) * months);
-    negComposites = zeros(256, 512, size(posYears, 1) * months);
-end
-%The times are in hours from January 1, 1979, so we call the hoursToDate
-%function in order to change them into a hour/day/month/year form.
-dates = zeros(size(time, 1), 4);
 
-for i = 1:size(time, 1)
-   dates(i, :) = hoursToDate(time(i), 1, 1, 1979);
+posComposites = zeros(size(data, 1), size(data, 2), size(pYears, 1));
+negComposites = zeros(size(data, 1), size(data, 2), size(nYears, 1));
+
+count = 1;
+%composite the positive years
+for i = 1:length(pYears)
+    startIndex = find(dates(:, 3) == startMonth&dates(:, 4) == pYears(i));
+    endIndex = find(dates(:, 3) == endMonth&dates(:, 4) == pYears(i));
+    posComposites(:, :, count) = nanmean(data(:, :, startIndex:endIndex), 3);
+    count = count+1;
 end
-%}
-%{
-dates(:, 1) = 0;
-dates(:, 2) = 1;
-dates(:, 3) = floor(mod(time, 10000) / 100);
-dates(:, 4) = floor(time / 10000);
-%}
-if strcmp(dataType, 'cell') == 1
-    year = 1; month = startMonth;
-    for i = 1:size(posYears, 1) * (endMonth - startMonth +1)
-        [~, posIndex] = max(dates(:, 4) == posYears(year));
-        posComposites(:, :, i) = data{posIndex + month - 1, 1};
-        month = month+1;
-        if month == endMonth + 1
-           month = startMonth;
-           year = year+1;
-        end
-    end
-    year = 1; month = startMonth;
-    for i = 1:size(negYears, 1) * (endMonth - startMonth +1)
-        [~, negIndex] = max(dates(:, 4) == negYears(year));
-        negComposites(:, :, i) = data{negIndex + month - 1, 1};
-        month = month+1;
-        if month == endMonth + 1
-           month = startMonth;
-           year = year+1;
-        end
-    end
-elseif strcmp(dataType, 'matrix') == 1
-    year = 1; month = startMonth;
-    for i = 1:size(posYears, 1) * (endMonth - startMonth +1)
-        [~, posIndex] = max(dates(:, 4) == posYears(year));
-        posComposites(:, :, i) = data(:, :, posIndex + month - 1);
-        month = month+1;
-        if month == endMonth + 1
-           month = startMonth;
-           year = year+1;
-        end
-    end
-    year = 1; month = startMonth;
-    for i = 1:size(negYears, 1) * (endMonth - startMonth +1)
-        [~, negIndex] = max(dates(:, 4) == negYears(year));
-        negComposites(:, :, i) = data(:, :, negIndex + month - 1);
-        month = month+1;
-        if month == endMonth + 1
-           month = startMonth;
-           year = year+1;
-        end
-    end
-else
-    error('dataType must either be cell or matrix');
+count = 1;
+%composite the negative years
+for i = 1:length(nYears)
+    startIndex = find(dates(:, 3) == startMonth&dates(:, 4) == nYears(i));
+    endIndex = find(dates(:, 3) == endMonth&dates(:, 4) == nYears(i));
+    negComposites(:,:,count) = nanmean(data(:,:,startIndex:endIndex), 3);
+    count = count+1;
 end
 
+pMean = nanmean(posComposites, 3);
+nMean = nanmean(negComposites, 3);
+diff = pMean - nMean;
 
-pMeanComp = mean(posComposites, 3);
-nMeanComp = mean(negComposites, 3);
-
-if pMinN == true
-    diff = pMeanComp - nMeanComp;
-else
-    diff = nMeanComp - pMeanComp;
-end
 
 end
 
