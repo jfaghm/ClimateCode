@@ -4,7 +4,7 @@ function [cc, negYears, posYears] = buildSSTIndex()
 addpath('/project/expeditions/lem/ClimateCode/sst_project/');
 addpath('/project/expeditions/lem/ClimateCode/Matt/');
 
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/sstAnomalies.mat;
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/flippedSSTAnomalies.mat;
 
 
 
@@ -15,8 +15,8 @@ for i = 1:12:size(sst, 3)
     count = count+1;
 end
 
-box_north = sstLat(minIndex(sstLat, 35));
-box_south = sstLat(minIndex(sstLat, -5));
+box_north = sstLat(minIndex(sstLat, 36));
+box_south = sstLat(minIndex(sstLat, -6));
 box_west = sstLon(minIndex(sstLon, 140));
 box_east = sstLon(minIndex(sstLon, 270));
 
@@ -62,29 +62,28 @@ else
     error('Bad lat input!');
 end
 
-annual_pacific = double(sst_a(southRow:northRow,westCol:eastCol,:));
+annual_pacific = double(sst_a(northRow:southRow,westCol:eastCol,:));
 
 for t=1:size(annual_pacific,3)
    ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
-   ss2(:, :, t) = slowSubSum(annual_pacific(:, :, t), box_row, box_col)./ (box_row*box_col);
+   %ss2(:, :, t) = slowSubSum(annual_pacific(:, :, t), box_row, box_col)./ (box_row*box_col);
 end
 
 
 mean_box_sst_pacific = ss(box_row:end-box_row+1,box_col:end-box_col+1,:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
-mean_box_sst_pacific2 = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
+%mean_box_sst_pacific2 = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
 
 
 
 for t = 1:size(mean_box_sst_pacific,3)
    current = mean_box_sst_pacific(:,:,t);
-   current2 = mean_box_sst_pacific2(:, :, t);
+   %current2 = mean_box_sst_pacific2(:, :, t);
    [values(t) loc(t)] = max(current(:));
    [I(t),J(t)] = ind2sub(size(current),loc(t));
    
-   [values2(t) loc2(t)] = max(current2(:));
-   [I2(t),J2(t)] = ind2sub(size(current2),loc2(t));
+   %[values2(t) loc2(t)] = max(current2(:));
+   %[I2(t),J2(t)] = ind2sub(size(current2),loc2(t));
 end
-I = I+box_row-1;
 
 lon_region = lon(lon >= box_west & lon <= box_east);
 lat_region = lat(lat >= box_south & lat <= box_north);
@@ -103,6 +102,7 @@ figure%('visible','off')
      
      grid_size = 2;
      %%%%%%%%%%%%%%%%%%%%%%% plot old box
+     %{
      current_lon = lon_region(J2(i));
      current_lat = lat_region(I2(i));
      box_lat1 = current_lat - (grid_size*round(box_row/2));
@@ -117,6 +117,7 @@ figure%('visible','off')
      plotm(double(lat2),double(lon2),'r-')
      plotm(double(lat3),double(lon3),'r-')
      plotm(double(lat4),double(lon4),'r-')
+     %}
      %%%%%%%%%%%%%%%%%%%%%%% plot box
      %box_lat1 = current_lat - (grid_size*round(box_row/2));
      %box_lat2 = current_lat + (grid_size*round(box_row/2));
@@ -125,9 +126,9 @@ figure%('visible','off')
      current_lon = lon_region(J(i));
      current_lat = lat_region(I(i));
      box_lat1 = current_lat;
-     box_lat2 = current_lat - grid_size * box_row - grid_size;
+     box_lat2 = current_lat - (box_row-1) * grid_size;
      box_lon1 = current_lon;
-     box_lon2 = current_lon + grid_size * box_col - grid_size; 
+     box_lon2 = current_lon + (box_col-1) * grid_size; 
      [lat1,lon1] = track2('rh',box_lat1,box_lon1,box_lat2,box_lon1);
      [lat2,lon2] = track2('rh',box_lat2,box_lon1,box_lat2,box_lon2);
      [lat3,lon3] = track2('rh',box_lat2,box_lon2,box_lat1,box_lon2);
@@ -155,7 +156,7 @@ figure%('visible','off')
      all_storms = length(condensedHurDat(condensedHurDat(:, 1) == year(i)&condensedHurDat(:,10) >= 0));
      title([num2str(year(i)) ': ' num2str(all_storms) ' JJASO TCs - ' num2str(num_hurricanes) ' hurricanes - ' num2str(num_major_hurricanes) ' major hurricanes'])
      %print('-dpdf', '-r350',strcat('/project/expeditions/lem/ClimateCode/Matt/indexExperiment/max_sst_location_10_by_40_location_minus_30_w_hurricanes',num2str(i)))
-     print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/sst/max_sst_location_10_by_40_location_minus_30_w_hurricanes' num2str(i)]);
+     %print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/sst/max_sst_location_10_by_40_location_minus_30_w_hurricanes' num2str(i)]);
  end
 
 

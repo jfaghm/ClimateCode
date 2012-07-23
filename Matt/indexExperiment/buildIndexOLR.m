@@ -108,16 +108,16 @@ figure('visible','off')
      geoshow('landareas.shp', 'FaceColor', [0.25 0.20 0.15])
      current_lon = lon_region(J(i));
      current_lat = lat_region(I(i));
-     grid_size = 2;
+     grid_size = 2.5;
      %%%%%%%%%%%%%%%%%%%%%%% plot box
      %box_lat1 = current_lat - (grid_size*round(box_row/2));
      %box_lat2 = current_lat + (grid_size*round(box_row/2));
      %box_lon1 = current_lon - (grid_size*round(box_col/2));
      %box_lon2 = current_lon + (grid_size*round(box_col/2));
      box_lat1 = current_lat;
-     box_lat2 = current_lat - grid_size * box_row - grid_size;
+     box_lat2 = current_lat - grid_size * box_row;
      box_lon1 = current_lon;
-     box_lon2 = current_lon + grid_size * box_col - grid_size; 
+     box_lon2 = current_lon + grid_size * box_col; 
      [lat1,lon1] = track2('rh',box_lat1,box_lon1,box_lat2,box_lon1);
      [lat2,lon2] = track2('rh',box_lat2,box_lon1,box_lat2,box_lon2);
      [lat3,lon3] = track2('rh',box_lat2,box_lon2,box_lat1,box_lon2);
