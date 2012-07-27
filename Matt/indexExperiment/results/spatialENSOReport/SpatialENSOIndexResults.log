@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  27 JUL 2012 11:38
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  27 JUL 2012 12:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -296,23 +296,41 @@ Overfull \hbox (48.78021pt too wide) in paragraph at lines 79--80
 [] 
  []
 
-[14 <./images/compareWindShearComposites.pdf>] (./SpatialENSOIndexResults.aux) 
-) 
+[14 <./images/compareWindShearComposites.pdf>]
+<images/comparePIComposites.pdf, id=249, 608.5333pt x 565.9875pt>
+File: images/comparePIComposites.pdf Graphic file (type pdf)
+
+<use images/comparePIComposites.pdf>
+Overfull \hbox (44.45895pt too wide) in paragraph at lines 83--84
+[] 
+ []
+
+[15 <./images/comparePIComposites.pdf>]
+<images/compareRHComposites.pdf, id=272, 614.295pt x 567.27681pt>
+File: images/compareRHComposites.pdf Graphic file (type pdf)
+
+<use images/compareRHComposites.pdf>
+Overfull \hbox (48.78021pt too wide) in paragraph at lines 87--88
+[] 
+ []
+
+[16 <./images/compareRHComposites.pdf>] (./SpatialENSOIndexResults.aux) ) 
 Here is how much of TeX's memory you used:
- 1563 strings out of 493848
- 23703 string characters out of 3149207
+ 1573 strings out of 493848
+ 24027 string characters out of 3149207
  73399 words of memory out of 3000000
- 4852 multiletter control sequences out of 15000+200000
+ 4860 multiletter control sequences out of 15000+200000
  7589 words of font info for 27 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  25i,10n,43p,616b,190s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on SpatialENSOIndexResults.pdf (14 pages, 430437 bytes).
+</usr/
+local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/l
+ocal/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on SpatialENSOIndexResults.pdf (16 pages, 641154 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
+ 309 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
