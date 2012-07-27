@@ -1,6 +1,20 @@
 function [coefficients] = randomCrossValCorrelations(indices, k, trials, label)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%This function randomly changes the order of the target values that we are
+%trying to predict in the cross validation code, and repeats the process
+%"trials" times.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Input: nxm matrix of indices, where n = number of years and m = number of
+%       indices
+%       
+%       k = number of folds performed in the cross validation code
+%
+%       trials = how many times the cross valdation code is performed
+%      
+%       label is used for the plot that is made at the end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Output: a vector of correlation coefficients, 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 tic
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
 coefficients = zeros(trials, 5);
@@ -16,6 +30,7 @@ for i = 1:trials
     coefficients(i, :) = cc';
 end
 
+%plot results
 [yVals, actuals] = crossValidate(indices, aso_ace, k);
 subplot(4, 1, 1);
 hist(coefficients(:, 1));

@@ -18,13 +18,13 @@ while true
 			if days >= 30
 				currentMonth = currentMonth + 1;
 				days = days - 30;
-			else break; %id days is less than 30 then break out of loop
+            else
+                break; %if days is less than 30 then break out of loop
 			end
 		case{1, 3, 5, 7, 8, 10, 12}
 			if days >= 31 && currentMonth ~= 12
 				currentMonth = currentMonth + 1;
 				days = days - 31;
-			
 			elseif days >= 31 && currentMonth == 12
 				currentMonth = 1;
 				currentYear = currentYear + 1;
@@ -39,7 +39,8 @@ while true
                 elseif days >= 29 && mod(currentYear, 4) == 0 || mod(currentYear, 100) == 0 %leap year.
 				currentMonth = currentMonth + 1;		
 				days = days - 29;
-                else break; %if days is less than 28 then break out of loop
+            else
+                break; %if days is less than 28 then break out of loop
             end
     end
 end
