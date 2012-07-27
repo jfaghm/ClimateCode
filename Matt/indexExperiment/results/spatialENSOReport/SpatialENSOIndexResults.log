@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  26 JUL 2012 13:06
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  27 JUL 2012 11:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -212,74 +212,107 @@ File: images/varyingMonthsForMDRAveragesGeopotential500-1000mbar.pdf Graphic fi
 le (type pdf)
 
 <use images/varyingMonthsForMDRAveragesGeopotential500-1000mbar.pdf>
-<images/varyingMonthsForMDRAveragesSST.pdf, id=52, 614.295pt x 794.97pt>
-File: images/varyingMonthsForMDRAveragesSST.pdf Graphic file (type pdf)
-
-<use images/varyingMonthsForMDRAveragesSST.pdf>
-Overfull \hbox (11.9241pt too wide) in paragraph at lines 42--43
+<images/varyingMonthsForMDRAveragesGeopotential500mbar.pdf, id=52, 614.295pt x 
+794.97pt>
+File: images/varyingMonthsForMDRAveragesGeopotential500mbar.pdf Graphic file (t
+ype pdf)
+ <use images/varyingMonthsForMDRAveragesGeopotential500mbar.pdf>
+Overfull \hbox (18.06366pt too wide) in paragraph at lines 42--43
 [] 
  []
 
 [5 <./images/varyingMonthsForMDRAveragesGeopotential500-1000mbar.pdf>]
-<images/varyingMonthsForMDRAveragesSurfacePressure.pdf, id=62, 614.295pt x 794.
+<images/varyingMonthsForMDRAveragesSST.pdf, id=62, 614.295pt x 794.97pt>
+File: images/varyingMonthsForMDRAveragesSST.pdf Graphic file (type pdf)
+
+<use images/varyingMonthsForMDRAveragesSST.pdf>
+Overfull \hbox (11.9241pt too wide) in paragraph at lines 45--46
+[] 
+ []
+
+[6 <./images/varyingMonthsForMDRAveragesGeopotential500mbar.pdf>]
+<images/varyingMonthsForMDRAveragesSurfacePressure.pdf, id=70, 614.295pt x 794.
 97pt>
 File: images/varyingMonthsForMDRAveragesSurfacePressure.pdf Graphic file (type 
 pdf)
  <use images/varyingMonthsForMDRAveragesSurfacePressure.pdf>
-Overfull \hbox (18.06366pt too wide) in paragraph at lines 45--46
-[] 
- []
-
-[6 <./images/varyingMonthsForMDRAveragesSST.pdf>]
-<images/varyingMonthsForMDRAveragesWindShear.pdf, id=69, 614.295pt x 794.97pt>
-File: images/varyingMonthsForMDRAveragesWindShear.pdf Graphic file (type pdf)
-
-<use images/varyingMonthsForMDRAveragesWindShear.pdf>
 Overfull \hbox (18.06366pt too wide) in paragraph at lines 48--49
 [] 
  []
 
-[7 <./images/varyingMonthsForMDRAveragesSurfacePressure.pdf>] [8 <./images/vary
+[7 <./images/varyingMonthsForMDRAveragesSST.pdf>]
+<images/varyingMonthsForMDRAveragesWindShear.pdf, id=78, 614.295pt x 794.97pt>
+File: images/varyingMonthsForMDRAveragesWindShear.pdf Graphic file (type pdf)
+
+<use images/varyingMonthsForMDRAveragesWindShear.pdf>
+Overfull \hbox (18.06366pt too wide) in paragraph at lines 51--52
+[] 
+ []
+
+[8 <./images/varyingMonthsForMDRAveragesSurfacePressure.pdf>] [9 <./images/vary
 ingMonthsForMDRAveragesWindShear.pdf>]
-<images/varyingStdDevForCompositesGeopotential500-1000mbar.pdf, id=85, 528.5988
+<images/varyingStdDevForCompositesGeopotential500-1000mbar.pdf, id=93, 528.5988
 pt x 422.87906pt>
 File: images/varyingStdDevForCompositesGeopotential500-1000mbar.pdf Graphic fil
 e (type pdf)
 
-<use images/varyingStdDevForCompositesGeopotential500-1000mbar.pdf> [9 <./image
-s/varyingStdDevForCompositesGeopotential500-1000mbar.pdf>]
-<images/varyingStdDevForCompositesSST.pdf, id=108, 523.44177pt x 429.32545pt>
+<use images/varyingStdDevForCompositesGeopotential500-1000mbar.pdf> [10 <./imag
+es/varyingStdDevForCompositesGeopotential500-1000mbar.pdf>]
+<images/varyingStdDevForCompositesGeopotential500mbar.pdf, id=116, 524.73102pt 
+x 424.1684pt>
+File: images/varyingStdDevForCompositesGeopotential500mbar.pdf Graphic file (ty
+pe pdf)
+ <use images/varyingStdDevForCompositesGeopotential500mbar.pdf>
+<images/varyingStdDevForCompositesSST.pdf, id=117, 523.44177pt x 429.32545pt>
 File: images/varyingStdDevForCompositesSST.pdf Graphic file (type pdf)
 
 <use images/varyingStdDevForCompositesSST.pdf>
-<images/varyingStdDevForCompositesCentralPressure.pdf, id=109, 523.44177pt x 42
+<images/varyingStdDevForCompositesCentralPressure.pdf, id=118, 523.44177pt x 42
 6.74681pt>
 File: images/varyingStdDevForCompositesCentralPressure.pdf Graphic file (type p
 df)
- <use images/varyingStdDevForCompositesCentralPressure.pdf>
-<images/varyingStdDevForCompositesWindShear.pdf, id=110, 522.15248pt x 429.3254
+ <use images/varyingStdDevForCompositesCentralPressure.pdf> [11 <./images/varyi
+ngStdDevForCompositesGeopotential500mbar.pdf> <./images/varyingStdDevForComposi
+tesSST.pdf>]
+<images/varyingStdDevForCompositesWindShear.pdf, id=160, 522.15248pt x 429.3254
 5pt>
 File: images/varyingStdDevForCompositesWindShear.pdf Graphic file (type pdf)
- <use images/varyingStdDevForCompositesWindShear.pdf> [10 <./images/varyingStdD
-evForCompositesSST.pdf> <./images/varyingStdDevForCompositesCentralPressure.pdf
->] [11 <./images/varyingStdDevForCompositesWindShear.pdf>]
-(./SpatialENSOIndexResults.aux) ) 
+ <use images/varyingStdDevForCompositesWindShear.pdf>
+<images/compareSSTComposites.pdf, id=161, 604.66545pt x 576.30174pt>
+File: images/compareSSTComposites.pdf Graphic file (type pdf)
+
+<use images/compareSSTComposites.pdf>
+Overfull \hbox (41.55807pt too wide) in paragraph at lines 75--76
+[] 
+ []
+
+[12 <./images/varyingStdDevForCompositesCentralPressure.pdf> <./images/varyingS
+tdDevForCompositesWindShear.pdf>] [13 <./images/compareSSTComposites.pdf>]
+<images/compareWindShearComposites.pdf, id=226, 614.295pt x 573.72313pt>
+File: images/compareWindShearComposites.pdf Graphic file (type pdf)
+
+<use images/compareWindShearComposites.pdf>
+Overfull \hbox (48.78021pt too wide) in paragraph at lines 79--80
+[] 
+ []
+
+[14 <./images/compareWindShearComposites.pdf>] (./SpatialENSOIndexResults.aux) 
+) 
 Here is how much of TeX's memory you used:
- 1543 strings out of 493848
- 22750 string characters out of 3149207
+ 1563 strings out of 493848
+ 23703 string characters out of 3149207
  73399 words of memory out of 3000000
- 4836 multiletter control sequences out of 15000+200000
+ 4852 multiletter control sequences out of 15000+200000
  7589 words of font info for 27 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  25i,10n,43p,616b,190s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2009/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb>
-Output written on SpatialENSOIndexResults.pdf (11 pages, 190028 bytes).
+</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on SpatialENSOIndexResults.pdf (14 pages, 430437 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
+ 263 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
