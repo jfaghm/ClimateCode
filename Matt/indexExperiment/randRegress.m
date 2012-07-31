@@ -2,7 +2,7 @@ function [correlations] = randRegress(index, trials, label)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
-correlations = zeros(length(trials), 4);
+correlations = zeros(trials, 4);
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
 for i = 1:trials
     r = aso_tcs(randperm(32));
@@ -39,7 +39,7 @@ for i = 1:trials
     correlations(i, 4) = corr(predictions, r);
     %}
     
-    %{
+    
     [predictions, actuals] = crossVal(index, rand(32, 1));
     correlations(i, 1) = corr(predictions, actuals);
     
