@@ -14,7 +14,9 @@ for i = 1:trials
 end
 
 hist(correlations)
-
+[~,prediction] = multipleRegress([sstIndex, olrIndex], aso_tcs);
+c = corr(prediction, aso_tcs);
+title(['Original Correlation = ' num2str(c)]);
 
 
 end
