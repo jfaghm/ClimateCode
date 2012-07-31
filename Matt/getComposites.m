@@ -4,7 +4,8 @@ function [pMean, nMean, diff] = ...
 %endMonth for each year, and then average all of the years together for
 %both positve and negative.  We then take the difference of the two sets of
 %years.  Posivite years are years that correspond to high hurricane
-%activity.
+%activity, not necessarily years with high index values (in the event that
+%and index negatively correlates with hurricane activity.
 
 if size(data, 1) > size(data, 2)
     data = permute(data, [2, 1, 3]);

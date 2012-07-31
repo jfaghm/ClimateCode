@@ -12,11 +12,11 @@ actual = [];
 for i = 1:k
     mask = training(c, i);
     trainingSet = indices(mask, :);
-    beta = multiVariateRegress(trainingSet, target(mask));
-    predictors = indices(~mask, :);
-    Y = bsxfun(@times, predictors, beta(2:end)');
-    Y = sum(Y, 2);
-    Y = bsxfun(@plus, Y, beta(1));
+        
+    beta = multipleRegress(trainingSet, target(mask));
+    
+    Y = indices(~mask) * beta(2:end) + beta(1);
+    
     YVals = [YVals; Y]; %#ok<AGROW>
     actual = [actual; target(~mask)]; %#ok<AGROW>
 end

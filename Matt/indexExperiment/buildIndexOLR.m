@@ -1,4 +1,4 @@
-function [index, c] = buildIndexOLR(startMonth, endMonth, plotBox)
+function [index, cc1, cc2] = buildIndexOLR(startMonth, endMonth, plotBox)
 
     olr = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'olr');
     time = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'time');
@@ -16,18 +16,21 @@ function [index, c] = buildIndexOLR(startMonth, endMonth, plotBox)
         dates(i, :) = hoursToDate(time(i), 1,  1, 1);
     end
     
+    %get data between 1979-2010 only
     olr = olr(:, :, dates(:, 4) >= 1979);
     dates = dates(dates(:, 4) >= 1979, :);
     lastYear = find(dates(:, 4) == 2010);
     olr = olr(:, :, 1:lastYear(end));
     dates = dates(1:lastYear(end), :);
     
+    %compute anomalies
     for i = 1:12
         currentMonth = olr(:, :, dates(:, 3) == i);
-        olr(:, :, dates(:, 3) == i) = (currentMonth - repmat(nanmean(currentMonth, 3), [1, 1, size(currentMonth, 3)]))...
-            ./ repmat(nanstd(currentMonth, 0, 3), [1, 1, size(currentMonth, 3)]);
+        olr(:, :, dates(:, 3) == i) = currentMonth -...
+            repmat(nanmean(currentMonth, 3), [1, 1, size(currentMonth, 3)]);
     end
     
+    %average startMonth - endMonth
     startYear = find(dates(:, 4) == 1979);
     count = 1;
     annualOLR = zeros(size(olr, 1), size(olr, 2), size(olr, 3)/12);
@@ -42,19 +45,27 @@ function [index, c] = buildIndexOLR(startMonth, endMonth, plotBox)
     box_east = 270;
     box_row =5;
     box_col = 10;
-
-    index = buildIndexHelper(annualOLR, box_north, box_south, box_west,...
-        box_east, lat, lon, box_row, box_col, plotBox);
     
-    load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+    midPoint = round(size(annualOLR, 3)/2);
+    %build the index
+    index = buildIndexHelper(annualOLR(:, :, 1:end), box_north, box_south, box_west,...
+        box_east, lat, lon, box_row, box_col, plotBox);
+    index2 = buildIndexHelper(annualOLR(:, :, midPoint+1:end), box_north, box_south,...
+        box_west, box_east, lat, lon, box_row, box_col, plotBox);
         
-    c(1) = corr(index, aso_tcs);
-    c(2) = corr(index, aso_major_hurricanes);
-    c(3) = corr(index, aso_ntc);
-    c(4) = corr(index, aso_pdi);
-    c(5) = corr(index, aso_ace);
+    %correlate
+    cc1 = correlateAgainstHurr(index, 1, length(index));
+    cc2 = correlateAgainstHurr(index2, midPoint+1, size(annualOLR, 3));
 end
 
+function cc = correlateAgainstHurr(index, lower, upper)
+    load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+    cc(1) = corr(index, aso_tcs(lower:upper));
+    cc(2) = corr(index, aso_major_hurricanes(lower:upper));
+    cc(3) = corr(index, aso_ntc(lower:upper));
+    cc(4) = corr(index, aso_pdi(lower:upper));
+    cc(5) = corr(index, aso_ace(lower:upper));
+end
 
 function index = buildIndexHelper(sst_a,box_north,box_south,box_west,...
     box_east,lat,lon,box_row,box_col, plotBox)
@@ -78,8 +89,8 @@ for t=1:size(annual_pacific,3)
    ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
 end
 
-mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
-%mean_box_sst_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row * box_col);
+%mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
+mean_box_sst_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row * box_col);
 for t = 1:size(mean_box_sst_pacific,3)
    current = mean_box_sst_pacific(:,:,t);
    [values(t) loc(t)] = max(current(:));
@@ -92,6 +103,9 @@ end
 lon_region = lon(lon >= box_west & lon <= box_east);
 lat_region = lat(lat >= box_south & lat <= box_north);
 index = lat_region(I);
+index = lon_region(J);
+index = lon_region(minJ);
+index = lat_region(minI);
 
 if plotBox == true
 load ../matFiles/condensedHurDat.mat;
