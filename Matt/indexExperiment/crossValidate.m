@@ -15,17 +15,12 @@ for i = 1:k
         
     beta = multipleRegress(trainingSet, target(mask));
     
-    Y = indices(~mask) * beta(2:end) + beta(1);
+    Y = indices(~mask, :) * beta(2:end) + beta(1);
     
     YVals = [YVals; Y]; %#ok<AGROW>
     actual = [actual; target(~mask)]; %#ok<AGROW>
-
-    plot(1:numelements(YVals ~= 0), YVals(YVals ~= 0), ...
-        1:numelements(actual ~= 0), actual(actual ~= 0));
-    legend('Predictions', 'Actuals');
-    pause
+    
 end
-corr(YVals, actual)
 end
 
 

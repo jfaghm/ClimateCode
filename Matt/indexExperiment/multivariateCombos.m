@@ -1,4 +1,4 @@
-function [regressCoef3, regressCoef2, regressCoef1] = multivariateCombos()
+function [regressCoef, crossValCoef] = multivariateCombos()
 %UNTITLED6 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -6,7 +6,7 @@ variables = {'sstMaxLat', 'sstMaxLon', 'sstMaxVal', 'olrMinVal', ...
     'olrMinLon', 'pressMinVal', 'pressMinLon', 'pressMaxVal', 'pressMaxLon'};
 
 varNums = 1:9;
-
+%{
 for i = 1:9
     if i <= 5
         eval([variables{i} ' = buildIndexMV(' num2str(i) ', 3, 10);']);
@@ -15,39 +15,68 @@ for i = 1:9
     end
     i
 end
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+%}
+load indexVars.mat
 
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+addpath('/project/expeditions/lem/ClimateCode/Matt/');
 %regress with one variable
 regressCoef1 = zeros(9, 2);
+crossValCoef1 = zeros(9, 2);
 for i = 1:9
     eval(['[~,prediction] = multipleRegress(', variables{i}...
         ', aso_tcs);']);
+    eval(['[yVals, actual] = crossValidate(', variables{i} ', aso_tcs, 32);']);
     num = i;
     regressCoef1(i, 1) = num;
     regressCoef1(i, 2) = corr(prediction, aso_tcs);
+    crossValCoef1(i, 1) = i;
+    crossValCoef1(i, 2) = corr(yVals, actual);
 end
 
 %regress with two variables
 combos = npermutek(varNums, 2);
 regressCoef2 = zeros(size(combos, 1), 2);
+crossValCoef2 = zeros(size(combos, 1), 2);
 for i = 1:size(combos, 1)
+    if length(combos(i, :)) ~= length(unique(combos(i, :)))
+        continue
+    end
     eval(['[~,prediction] = multipleRegress([', variables{combos(i, 1)} ', '...
         variables{combos(i, 2)} '], aso_tcs);']);
+    eval(['[yVals, actual] = crossValidate([', variables{combos(i, 1)} ', ' ...
+        variables{combos(i, 2)} '], aso_tcs, 32);']);
     num = str2double([num2str(combos(i, 1)), num2str(combos(i, 2))]);
     regressCoef2(i, 1) = num;
     regressCoef2(i, 2) = corr(prediction, aso_tcs);
+    crossValCoef2(i, 1) = num;
+    crossValCoef2(i, 2) = corr(yVals, actual);
 end
 
 %regress with three variables
 combos = npermutek(varNums, 3);
 regressCoef3 = zeros(size(combos, 1), 2);
-for i = 1:size(combos, 1)0  M
+crossValCoef3 = zeros(size(combos, 1), 2);
+for i = 1:size(combos, 1)
+    if length(combos(i, :)) ~= length(unique(combos(i, :)))
+        continue
+    end
     eval(['[~,prediction] = multipleRegress([', variables{combos(i, 1)} ', '...
         variables{combos(i, 2)} ', ' variables{combos(i, 3)} '], aso_tcs);']);
+    eval(['[yVals, actual] = crossValidate([' variables{combos(i, 1)} ', '...
+        variables{combos(i, 2)} ', ' variables{combos(i, 3)} '], aso_tcs, 32);']);
     num = str2double([num2str(combos(i, 1)), num2str(combos(i, 2)), num2str(combos(i, 3))]);
     regressCoef3(i, 1) = num;
     regressCoef3(i, 2) = corr(prediction, aso_tcs);
+    crossValCoef3(i, 1) = num;
+    crossValCoef3(i, 2) = corr(yVals, actual);
 end
+
+regressCoef = struct('Vars3', regressCoef3, 'Vars2', regressCoef2, ...
+    'Var1', regressCoef1);
+crossValCoef = struct('Vars3', crossValCoef3, 'Vars2', crossValCoef2, ...
+    'Var1', crossValCoef1);
+
 
 end
 
@@ -99,8 +128,6 @@ pressureLatRegion = pressureLat(pressureLat >= box_south & pressureLat <= box_no
 
 [pressureI, pressureJ, pressureValues] = buildIndexGeneric(pMean, box_north, box_south, box_west, box_east, pressureLat, pressureLon, box_row, box_col, false);
 
-midpoint = box_west + ((box_east - box_west) / 2);
-
 switch indexNum
     case 1
         index = sstLatRegion(sstI.max);
@@ -145,23 +172,6 @@ normalizedIndex = (index - mean(index)) ./ std(index);
 nYears = find(normalizedIndex <= -1) + 1979 - 1;
 pYears = find(normalizedIndex >= 1) + 1979 - 1;
 end
-
-function index = weightIndex(sstLoc, pressureLoc, pressureVals)
-normalizedSST = (sstLoc - mean(sstLoc)) ./ std(sstLoc);
-normalizedPressure = (pressureLoc - mean(pressureLoc)) ./ std(pressureLoc);
-index = zeros(size(sstLoc));
-for i = 1:length(sstLoc)
-    if normalizedPressure(i) > normalizedSST(i)
-        index(i) = sstLoc(i) + pressureLoc(i) * pressureVals(i) / 2;
-    else
-        index(i) = sstLoc(i) + pressureLoc(i) * pressureVals(i) * 2;
-    end
-        
-end
-
-
-end
-
 
 function [I, J, values] = buildIndexGeneric(data,box_north,box_south,box_west,box_east,lat,lon,box_row,box_col, upsideDown)
 
