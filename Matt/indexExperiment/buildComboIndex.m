@@ -1,96 +1,112 @@
-function[sstYears, pressYears, comboYears, ccIndex, ccPressure, ccCombo ] = buildComboIndex(data)
-%UNTITLED5 Summary of this function goes here
+function [index, indexMat, cc] = buildComboIndex(startMonth, endMonth)
+%UNTITLED4 Summary of this function goes here
 %   Detailed explanation goes here
+tic
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/flippedSSTAnomalies.mat
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat
 
-pMean = zeros(size(data, 1), size(data, 2), size(data, 3)/12);
-
-meanPressure = nanmean(data, 3);
-meanPressure = repmat(meanPressure, [1, 1, size(data, 3)]);
-stdPress = std(data, 0, 3);
-stdPress = repmat(stdPress, [1, 1, size(data, 3)]);
-data = (data - meanPressure) ./ stdPress;
-
-load ../matFiles/sstAnomalies.mat;
-
-addpath('../../sst_project/');
-
-year = 1;
-for i = 1:12:(2010-1979+1)*12
-   sstMean(:, :, year) = nanmean(sst(:, :, i+3 - 1:i+10 - 1), 3); 
-   pMean(:, :,year) = nanmean(data(:, :, i+3-1:i+10-1), 3);
-   year = year+1;
+annualOLR = zeros(size(olr, 1), size(olr, 2), size(olr, 3)/12);
+annualSST = zeros(size(sst, 1), size(sst, 2), size(sst, 3)/12);
+annualPressure = zeros(size(pressure, 1), size(pressure, 2), size(pressure, 3)/12);
+count = 1;
+for i = 1:12:size(olr, 3)
+    annualOLR(:, :, count) = nanmean(olr(:, :, i+startMonth-1:i+endMonth-1), 3);
+    annualSST(:, :, count) = nanmean(sst(:, :, i+startMonth-1:i+endMonth-1), 3);
+    annualPressure(:, :, count) = nanmean(pressure(:, :, i+startMonth-1:i+endMonth-1), 3);
+    count = count+1;
 end
 
-
-pLat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
-pLon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
-pLat = sort(pLat);
-
-
-box_north = pLat(pLat > 51.7 & pLat < 52.7);
-box_south = pLat(pLat > -6.5 & pLat < -5.3);
-box_west = pLon(pLon > 139.3 & pLon < 140.5);
-box_east = pLon(pLon > 269.4 & pLon < 270.5);
+box_north = 35;
+box_south = -5;
+box_west = 140;
+box_east = 270;
 
 box_row = 5;
-box_col = 10;
+box_col = 18;
 
-pressureSS = struct('north', box_north, 'south', box_south, 'east', box_east, 'west', box_west);
-sstSS = struct('north', 52, 'south', -6,'east', 270, 'west', 140);
-box = struct('row', 5, 'col', 18);
+sstMaxVal = buildIndexGeneric(annualSST, box_north, box_south, box_west, box_east, ...
+    sstLat, sstLon, box_row, box_col, 'maxVal');
 
+olrMinVal = buildIndexGeneric(annualOLR, box_north, box_south, box_west, box_east, ...
+    olrLat, olrLon, box_row, box_col, 'minVal');
 
-sstGrid = struct('lat', -88:2:88, 'lon', 0:2:358);
-pressureGrid = struct('lat', pLat, 'lon', pLon);
+pressureMinVal = buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
+    box_east, pressureLat, pressureLon, box_row, box_col, 'minVal');
 
-[index, pressureIndex, comboIndex] = buildIndex3(sstMean, pMean, sstSS, pressureSS, box, sstGrid, pressureGrid);
+sstBoxOLRVal = sstBoxOtherVal(olr, olrLat, olrLon);
 
-baseYear = 1979;
-stdDev = std(index);
-normalizedIndex = (index - mean(index)) ./ stdDev;
+sstBoxPressureVal = sstBoxOtherVal(pressure, pressureLat, pressureLon);
 
-sstYears = struct('positive', find(normalizedIndex >= 1) + baseYear - 1, 'negative', find(normalizedIndex <= -1) + baseYear - 1);
+indexMat = [norm(sstMaxVal), norm(olrMinVal), norm(pressureMinVal), ...
+    norm(sstBoxOLRVal), norm(sstBoxPressureVal)];
 
-normalizedIndex = (pressureIndex - mean(pressureIndex)) ./ std(pressureIndex);
-pressYears = struct('positive', find(normalizedIndex >= 1)' + baseYear - 1, 'negative', find(normalizedIndex <= -1)' + baseYear - 1);
+index = sum(indexMat, 2);
 
-normalizedIndex = (comboIndex - mean(comboIndex)) ./ std(comboIndex);
-comboYears = struct('positive', find(normalizedIndex >= 1) + baseYear - 1, 'negative', find(normalizedIndex <= -1) + baseYear - 1);
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+cc(1) = corr(index, aso_tcs);
+cc(2) = corr(index, aso_major_hurricanes);
+cc(3) = corr(index, aso_ntc);
+cc(4) = corr(index, aso_pdi);
+cc(5) = corr(index, aso_ace);
+toc
+end
 
-load /project/expeditions/haasken/data/stormData/atlanticStorms/HurDat_1851_2010.mat
-load ../matFiles/condensedHurDat.mat;
-year = 1979:2010;
-aso_tcs = zeros(size(1979:2010, 2), 1);
-aso_major_hurricanes = zeros(size(1979:2010, 2), 1);
-aso_ace = zeros(size(1979:2010, 2), 1);
-aso_pdi = zeros(size(1979:2010, 2), 1);
-aso_ntc = zeros(size(1979:2010, 2), 1);
-for i = 1:(2010-1979+1)
-    aso_tcs(i) = length(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10 ,10));
-    aso_major_hurricanes(i) = length(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,10)>=4&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10 ,10));
-    aso_ace(i) = sum(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10,12))/10^5;
-    aso_pdi(i)=sum(condensedHurDat(condensedHurDat(:,1)==year(i)&condensedHurDat(:,2)>=8&condensedHurDat(:,2)<=10,11))/10^7;
-    aso_ntc(i) = computeNTC(hurDat, [1950 2000 ], [ year(i) year(i) ], 'countDuplicates', true, 'months', 8:10); 
+function aNorm = norm(A)
+    aNorm = (A - mean(A)) ./ std(A);
+end
+
+%%%%Build Index
+function val = buildIndexGeneric(data,box_north,box_south,...
+    box_west,box_east,lat,lon,box_row,box_col, valReturned)
+
+addpath('/project/expeditions/lem/ClimateCode/sst_project/');
+
+northRow = closestIndex(lat, box_north);
+southRow = closestIndex(lat, box_south);
+eastCol = closestIndex(lon, box_east);
+westCol = closestIndex(lon, box_west);
+
+annual_pacific = double(data(northRow:southRow, westCol:eastCol, :));
+
+for t=1:size(annual_pacific,3)
+   ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
+end
+
+mean_box_data_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row *box_col);
+
+for t = 1:size(mean_box_data_pacific,3)
+   current = mean_box_data_pacific(:,:,t);
+   [minValues(t) minLoc(t)] = min(current(:));
+   [minI(t),minJ(t)] = ind2sub(size(current),minLoc(t));
+   [maxValues(t), maxLoc(t)] = max(current(:));
+   [maxI(t), maxJ(t)] = ind2sub(size(current), maxLoc(t));
+end
+
+lat_region = lat(lat >= box_south & lat <= box_north);
+lon_region = lon(lon >= box_west & lon <= box_east);
+
+switch valReturned
+    case 'minVal'
+        val = minValues';
+    case 'maxVal', 
+        val = maxValues';
+    case 'minLat'
+        val = lat_region(minI);
+    case 'maxLat'
+        val = lat_region(maxI);
+    case 'minLon'
+        val = lon_region(minJ);
+    case 'maxLon'
+        val = lon_region(maxJ);
+    otherwise
+        error('valReturned type not recognized');
+end
+
 end
 
 
 
-ccIndex(1) = corr(index', aso_tcs);
-ccIndex(2) = corr(index', aso_major_hurricanes);
-ccIndex(3) = corr(index', aso_ace);
-ccIndex(4) = corr(index', aso_pdi);
-ccIndex(5) = corr(index', aso_ntc);
-
-ccPressure(1) = corr(pressureIndex, aso_tcs);
-ccPressure(2) = corr(pressureIndex, aso_major_hurricanes);
-ccPressure(3) = corr(pressureIndex, aso_ace);
-ccPressure(4) = corr(pressureIndex, aso_pdi);
-ccPressure(5) = corr(pressureIndex, aso_ntc);
-
-ccCombo(1) = corr(comboIndex', aso_tcs);
-ccCombo(2) = corr(comboIndex', aso_major_hurricanes);
-ccCombo(3) = corr(comboIndex', aso_ace);
-ccCombo(4) = corr(comboIndex', aso_pdi);
-ccCombo(5) = corr(comboIndex', aso_ntc);
+function index = closestIndex(A, x)
+    [~,index] = min(abs(A-x));
 end
-

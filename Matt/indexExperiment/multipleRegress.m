@@ -1,11 +1,10 @@
-function [beta, prediction] = multipleRegress(indices, target)
+function prediction = multipleRegress(indices, target)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
 
-x = [ones(size(indices, 1), 1), indices];
 
-beta = regress(target, x);
-prediction = x * beta;
+model = LinearModel.fit(indices, target);
+prediction = feval(model, indices);
 
 end
 

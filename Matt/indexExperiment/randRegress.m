@@ -2,44 +2,41 @@ function [correlations] = randRegress(index, trials, label)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
-correlations = zeros(trials, 4);
+if matlabpool('size') == 0
+    matlabpool open
+end
+tic
+correlations = zeros(trials, 1);
+correlations4 = zeros(trials, 1);
+correlations2 = zeros(trials, 1);
+correlations3 = zeros(trials, 1);
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
-for i = 1:trials
-    %{
-    r = aso_tcs(randperm(32));
-    [predictions, actuals] = crossVal(index, r);
-    correlations(i, 1) = corr(predictions, actuals);
+func1 = @crossVal;
+func2 = @rmse;
+parfor i = 1:trials
+    %load the data inside the parfor so that workers have access to aso
+    %variables
+    s = load('/project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat');
+    aso_tcs_par = s.aso_tcs;
+    aso_pdi_par = s.aso_pdi;
+    aso_ntc_par = s.aso_ntc;
+    aso_ace_par = s.aso_ace;
+    r = aso_tcs_par(randperm(32));
+    [predictions, actuals] = func1(index, r);
+    correlations(i) = func2(predictions, actuals);
     
-    r = aso_pdi(randperm(32));
-    [predictions, actuals] = crossVal(index, r);
-    correlations(i, 2) = corr(predictions, actuals);
+    r = aso_pdi_par(randperm(32));
+    [predictions, actuals] = func1(index, r);
+    correlations2(i) = func2(predictions, actuals);
     
-    r = aso_ntc(randperm(32));
-    [predictions, actuals] = crossVal(index, r);
-    correlations(i, 3) = corr(predictions, actuals);
+    r = aso_ntc_par(randperm(32));
+    [predictions, actuals] = func1(index, r);
+    correlations3(i) = func2(predictions, actuals);
     
-    r = aso_ace(randperm(32));
-    [predictions, actuals] = crossVal(index, r);
-    correlations(i, 4) = corr(predictions, actuals);
-    %}
-    
-    r = aso_tcs(randperm(32));
-    predictions = regressHelper(index, r);
-    correlations(i, 1) = corr(predictions, r);
-    
-    r = aso_pdi(randperm(32));
-    predictions = regressHelper(index, r);
-    correlations(i, 2) = corr(predictions, r);
-    
-    r = aso_ntc(randperm(32));
-    predictions = regressHelper(index, r);
-    correlations(i, 3) = corr(predictions, r);
-    
-    r  =aso_ace(randperm(32));
-    predictions = regressHelper(index, r);
-    correlations(i, 4) = corr(predictions, r);
-    %}
-    
+    r = aso_ace_par(randperm(32));
+    [predictions, actuals] = func1(index, r);
+    correlations4(i) = func2(predictions, actuals);
+    %}        
     %{
     [predictions, actuals] = crossVal(index, rand(32, 1));
     correlations(i, 1) = corr(predictions, actuals);
@@ -54,38 +51,45 @@ for i = 1:trials
     correlations(i, 4) = corr(predictions, actuals);
     %}
 end
+correlations = [correlations, correlations2, correlations3, correlations4];
+if nargin == 3
+testType = 'RMSE';
+lessOrMore = 'smaller';
+funcType = 'Cross Validation RMSE';
+func3 = @le;
 %%%%%%%%%%%%%%%%%%%%Plot data
-func = @regressHelper;
 subplot(4, 1, 1);
-[pred, actual] = func(index, aso_tcs);
-c = corr(pred, actual);
-hist(correlations(:, 1));
-n = numelements(find(correlations(:, 1) >= c));
-title([label ' Randomized Correlations TCs - Original Corr = ' num2str(c) ' ' num2str(n) ' random corr were greater']);
+[pred, actual] = func1(index, aso_tcs);
+c = func2(pred, actual);
+hist(correlations(:, 1), 50);
+n = numelements(find(func3(correlations(:, 1), c)));
+title([label ' Randomized ' funcType ' TCs - Original ' testType ' = ' num2str(c) ' ' num2str(n) ' random ' testType 's were ' lessOrMore]);
 
 subplot(4, 1, 2)
-[pred, actual] = func(index, aso_pdi);
-c = corr(pred, actual);
-hist(correlations(:, 2));
-n = numelements(find(correlations(:, 2) >= c));
-title([label ' Randomized Correlations PDI - Original Corr = ' num2str(c) ' ' num2str(n) ' random corr were greater']);
+[pred, actual] = func1(index, aso_pdi);
+c = func2(pred, actual);
+hist(correlations(:, 2), 50);
+n = numelements(find(func3(correlations(:, 2), c)));
+title([label ' Randomized ' funcType ' PDI - Original ' testType ' = ' num2str(c) ' ' num2str(n) ' random ' testType 's were ' lessOrMore]);
 
 subplot(4, 1, 3)
-[pred, actual] = func(index, aso_ntc);
-c = corr(pred, actual);
-hist(correlations(:, 3));
-n = numelements(find(correlations(:, 3) >= c));
-title([label ' Randomized Correlations NTC - Original Corr = ' num2str(c) ' ' num2str(n) ' random corr were greater']);
+[pred, actual] = func1(index, aso_ntc);
+c = func2(pred, actual);
+hist(correlations(:, 3), 50);
+n = numelements(find(func3(correlations(:, 3), c)));
+title([label ' Randomized ' funcType ' NTC - Original ' testType ' = ' num2str(c) ' ' num2str(n) ' random ' testType 's were ' lessOrMore]);
 
 
 subplot(4, 1, 4);
-[pred, actual] = func(index, aso_ace);
-c = corr(pred, actual);
-hist(correlations(:, 4));
-n = numelements(find(correlations(:, 4) >= c));
-title([label ' Randomized Correlations ACE - Original Corr = ' num2str(c) ' ' num2str(n) ' random corr were greater']);
+[pred, actual] = func1(index, aso_ace);
+c = func2(pred, actual);
+hist(correlations(:, 4), 50);
+n = numelements(find(func3(correlations(:, 4), c)));
+title([label ' Randomized ' funcType ' ACE - Original ' testType ' = ' num2str(c) ' ' num2str(n) ' random ' testType 's were ' lessOrMore]);
 
 %%%%%%%%%%%%%%%%%%%%%%
+end
+toc
 end
 
 function [pred, target] = regressHelper(index, target)
@@ -121,4 +125,18 @@ function [predictions, actuals] = crossVal(index, target)
     
 end
 %}
+
+function r=rmse(data,estimate)
+% Function to calculate root mean square error from a data vector or matrix 
+% and the corresponding estimates.
+% Usage: r=rmse(data,estimate)
+% Note: data and estimates have to be of same size
+% Example: r=rmse(randn(100,100),randn(100,100));
+% Taken from Matlab File Exchange
+% delete records with NaNs in both datasets first
+I = ~isnan(data) & ~isnan(estimate); 
+data = data(I); estimate = estimate(I);
+
+r=sqrt(sum((data(:)-estimate(:)).^2)/numel(data));
+end
 

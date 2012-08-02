@@ -1,11 +1,13 @@
 
-function [index, cc, ccIndex, nYears, pYears] = buildIndex4(indexNum, startMonth, endMonth)
+%function [index, cc, ccIndex, nYears, pYears] = buildIndex4(indexNum, startMonth, endMonth)
+function [index, indexMat, cc] = buildIndex4(indexNum, startMonth, endMonth)
+
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/sstAnomalies.mat;
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat;
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat;
 
 year = 1;
-for i = 1:12:(2010-1979+1)*12
+for i = 1:12:size(olr, 3)
    sstMean(:, :, year) = nanmean(sst(:, :, i+startMonth - 1:i+endMonth - 1), 3); 
    pMean(:, :,year) = nanmean(pressure(:, :, i+startMonth-1:i+endMonth-1), 3);
    olrMean(:, :, year) = nanmean(olr(:, :, i+startMonth-1:i+endMonth-1), 3);
@@ -25,7 +27,7 @@ sstLatRegion = sstLat(sstLat >=  box_south & sstLat <= box_north);
 
 
 box_north = olrLat(minIndex(olrLat, 35));
-box_south = olrLat(minIndex(olrLat, -35));
+box_south = olrLat(minIndex(olrLat, -5));
 box_west = olrLon(minIndex(olrLon, 140));
 box_east = olrLon(minIndex(olrLon, 270));
 
@@ -43,6 +45,13 @@ pressureLatRegion = pressureLat(pressureLat >= box_south & pressureLat <= box_no
 [pressureI, pressureJ, pressureValues] = buildIndexGeneric(pMean, box_north, box_south, box_west, box_east, pressureLat, pressureLon, box_row, box_col, false);
 
 midpoint = box_west + ((box_east - box_west) / 2);
+
+sstMaxVals = sstValues.max;
+sstLon = sstLonRegion(sstJ.max);
+sstBoxPress = sstBoxOtherVal(pressure, pressureLat, pressureLon);
+sstBoxOLR = sstBoxOtherVal(olr, olrLat, olrLon);
+olrMinVals = olrValues.min;
+pressMinVals = pressureValues.min;
 
 switch indexNum
     case 1
@@ -83,43 +92,55 @@ switch indexNum
     case 11
         index = sstLonRegion(sstJ.max) - pressureLonRegion(pressureJ.max); %correlation .0476
     case 12
-        index = sstLonRegion(sstJ.max) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -3.01
-    case 13
-        index = pressureLatRegion(pressureI.max) .* pressureValues.min'; % correlation -2.620
-    case 14
         index = sstLonRegion(sstJ.max) + pressureLatRegion(pressureI.max) .* pressureValues.min' .* olrLonRegion(olrJ.max); %correlation -2.4309
-    case 15
-        index = pressureLatRegion(pressureI.max) .* (pressureValues.min'./ norm(pressureValues.min));%correlation -2.6195
-    case 16
+    case 13
         %weightIndex function is defined below.
         index = weightIndex(sstLonRegion(sstJ.max), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.22
-    case 17
-        index = max(sstLonRegion(sstJ.max), olrLonRegion(olrJ.max)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -2.6494
-    case 18
-        index = min(sstLonRegion(sstJ.max), olrLonRegion(olrJ.max)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -2.0078
-    case 19
-        index = (sstLonRegion(sstJ.max) + olrLonRegion(olrJ.max) ./ 2) + pressureLatRegion(pressureI.max) .* pressureValues.min';% correlation -2.6691
-    case 20
+    case 14
         index = sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min); %correlation -3.0654
-    case 21
-        index = (sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min)) + pressureLatRegion(pressureI.max) .* pressureValues.min'; %correlation -3.2874
-    case 22
+    case 15
         index = weightIndex(sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.5534
-    case 23
+    case 16
         index = weightIndex(.5*(sstLonRegion(sstJ.max) - sstLonRegion(sstJ.min)), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.6935
-    case 24
-        index = pressureLatRegion(pressureI.max) - pressureLatRegion(pressureI.min); %correlation 2.5159
-    case 25
+    case 17
         index = weightIndex(.5*(sstLonRegion(sstJ.max) - .8*sstLonRegion(sstJ.min)), pressureLatRegion(pressureI.max), pressureValues.min); %correlation -3.6776
+    case 18
+        index = sstValues.max;
+    case 19
+        index = sstValues.min;
+    case 20
+        index = olrValues.max;
+    case 21
+        index = olrValues.min;
+    case 22
+        index = sstBoxOtherVal(olr, olrLat, olrLon);
+    case 23
+        index = sstBoxOtherVal(pressure, pressureLat, pressureLon);
+    case 24
+        indexMat = [sstLonRegion(sstJ.max), pressureLonRegion(pressureJ.min)...
+            , olrLonRegion(olrJ.min)];
+        [~, i] = max(abs(indexMat - nanmean(indexMat(:))), [], 2);
+        rows = (1:32)';
+        index = indexMat(sub2ind([32, 3], rows, i));
+    case 25
+        indexMat = [norm(sstMaxVals), norm(sstLon), norm(sstBoxPress), ...
+            norm(sstBoxOLR), norm(olrMinVals), norm(pressMinVals)];
+        index = sum(indexMat,  2);
     case 26
-        index = sstValues.max';
-    case 27
-        index = sstValues.min';
-    case 28
-        index = olrValues.max';
-    case 29
-        index = olrValues.min';
+        indexMat = [norm(sstMaxVals), norm(olrMinVals), ...
+            norm(pressMinVals), norm(sstBoxOLR), norm(sstBoxPress)];
+        index = sum(indexMat,  2);
 end
+
+
+%{
+sstMaxVals = sstValues.max;
+sstLon = sstLonRegion(sstJ.max);
+sstBoxPress = findBoxUseOtherVal(pressure, pressureLat, pressureLon);
+sstBoxOLR = findBoxUseOtherVal(olr, olrLat, olrLon);
+olrMinVals = olrValues.min;
+pressMinVals = pressureValues.min;
+%}
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
 
@@ -143,6 +164,10 @@ ylabel('aso_ntc');
 normalizedIndex = (index - mean(index)) ./ std(index);
 nYears = find(normalizedIndex <= -1) + 1979 - 1;
 pYears = find(normalizedIndex >= 1) + 1979 - 1;
+end
+
+function ANorm = norm(A)
+    ANorm = (A - mean(A)) ./ std(A);
 end
 
 function index = weightIndex(sstLoc, pressureLoc, pressureVals)
@@ -201,7 +226,7 @@ for t = 1:size(mean_box_data_pacific,3)
 end
 I = struct('min', minI, 'max', maxI);
 J = struct('min', minJ, 'max', maxJ);
-values = struct('min', minValues, 'max', maxValues);
+values = struct('min', minValues', 'max', maxValues');
 
 
 

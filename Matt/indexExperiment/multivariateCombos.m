@@ -1,30 +1,28 @@
 function [regressCoef, crossValCoef] = multivariateCombos()
 %UNTITLED6 Summary of this function goes here
 %   Detailed explanation goes here
-
+tic
 variables = {'sstMaxLat', 'sstMaxLon', 'sstMaxVal', 'olrMinVal', ...
-    'olrMinLon', 'pressMinVal', 'pressMinLon', 'pressMaxVal', 'pressMaxLon'};
+    'olrMinLon', 'pressMinVal', 'pressMinLon', 'pressMaxVal', 'pressMaxLon', ...
+    'sstBoxOLRVal', 'sstBoxPressureVal'};
 
-varNums = 1:9;
-%{
-for i = 1:9
-    if i <= 5
-        eval([variables{i} ' = buildIndexMV(' num2str(i) ', 3, 10);']);
-    else
+varNums = 1:11;
+if ~exist('indexVars.mat', 'file')
+    for i = 1:11
         eval([variables{i} ' = buildIndexMV(' num2str(i) ', 3, 10);']);
     end
-    i
+    save('indexVars.mat', variables{:});
+else
+    load indexVars.mat;
 end
-%}
-load indexVars.mat
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
 addpath('/project/expeditions/lem/ClimateCode/Matt/');
 %regress with one variable
-regressCoef1 = zeros(9, 2);
-crossValCoef1 = zeros(9, 2);
-for i = 1:9
-    eval(['[~,prediction] = multipleRegress(', variables{i}...
+regressCoef1 = zeros(11, 2);
+crossValCoef1 = zeros(11, 2);
+for i = 1:11
+    eval(['prediction = multipleRegress(', variables{i}...
         ', aso_tcs);']);
     eval(['[yVals, actual] = crossValidate(', variables{i} ', aso_tcs, 32);']);
     num = i;
@@ -35,14 +33,14 @@ for i = 1:9
 end
 
 %regress with two variables
-combos = npermutek(varNums, 2);
+combos = combinator(length(variables), 2, 'p');
 regressCoef2 = zeros(size(combos, 1), 2);
 crossValCoef2 = zeros(size(combos, 1), 2);
 for i = 1:size(combos, 1)
     if length(combos(i, :)) ~= length(unique(combos(i, :)))
         continue
     end
-    eval(['[~,prediction] = multipleRegress([', variables{combos(i, 1)} ', '...
+    eval(['prediction = multipleRegress([', variables{combos(i, 1)} ', '...
         variables{combos(i, 2)} '], aso_tcs);']);
     eval(['[yVals, actual] = crossValidate([', variables{combos(i, 1)} ', ' ...
         variables{combos(i, 2)} '], aso_tcs, 32);']);
@@ -54,14 +52,14 @@ for i = 1:size(combos, 1)
 end
 
 %regress with three variables
-combos = npermutek(varNums, 3);
+combos = combinator(length(variables), 3, 'p');
 regressCoef3 = zeros(size(combos, 1), 2);
 crossValCoef3 = zeros(size(combos, 1), 2);
 for i = 1:size(combos, 1)
     if length(combos(i, :)) ~= length(unique(combos(i, :)))
         continue
     end
-    eval(['[~,prediction] = multipleRegress([', variables{combos(i, 1)} ', '...
+    eval(['prediction = multipleRegress([', variables{combos(i, 1)} ', '...
         variables{combos(i, 2)} ', ' variables{combos(i, 3)} '], aso_tcs);']);
     eval(['[yVals, actual] = crossValidate([' variables{combos(i, 1)} ', '...
         variables{combos(i, 2)} ', ' variables{combos(i, 3)} '], aso_tcs, 32);']);
@@ -72,18 +70,37 @@ for i = 1:size(combos, 1)
     crossValCoef3(i, 2) = corr(yVals, actual);
 end
 
-regressCoef = struct('Vars3', regressCoef3, 'Vars2', regressCoef2, ...
-    'Var1', regressCoef1);
-crossValCoef = struct('Vars3', crossValCoef3, 'Vars2', crossValCoef2, ...
-    'Var1', crossValCoef1);
-
-
+combos = combinator(length(variables), 4, 'p');
+regressCoef4 = zeros(size(combos, 1), 2);
+crossValCoef4 = zeros(size(combos, 1), 2);
+for i = 1:size(combos, 1)
+    if length(combos(i, :)) ~= length(unique(combos(i, :)))
+        continue
+    end
+    eval(['prediction = multipleRegress([', variables{combos(i, 1)} ', '...
+        variables{combos(i, 2)} ', ' variables{combos(i, 3)} ', ' ...
+        variables{combos(i, 4)} '], aso_tcs);']);
+    eval(['[yVals, actual] = crossValidate([' variables{combos(i, 1)} ', '...
+        variables{combos(i, 2)} ', ' variables{combos(i, 3)} ', '...
+        variables{combos(i, 4)} '], aso_tcs, 32);']);
+    num = str2double([num2str(combos(i, 1)), num2str(combos(i, 2)), ...
+        num2str(combos(i, 3)), num2str(combos(i, 4))]);
+    regressCoef2(i, 1) = num;
+    regressCoef2(i, 2) = corr(prediction, aso_tcs);
+    crossValCoef4(i, 1) = num;
+    crossValCoef4(i, 2) = corr(yVals, actual);
+    i
 end
 
 
 
+regressCoef = struct('Vars4', regressCoef4, 'Vars3', regressCoef3, 'Vars2',...
+    regressCoef2, 'Var1', regressCoef1);
+crossValCoef = struct('Vars4', crossValCoef4, 'Vars3', crossValCoef3,...
+    'Vars2', crossValCoef2, 'Var1', crossValCoef1);
 
-
+toc
+end
 
 function [index, cc, ccIndex, nYears, pYears] = buildIndexMV(indexNum, startMonth, endMonth)
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/sstAnomalies.mat;
@@ -147,6 +164,10 @@ switch indexNum
         index = pressureValues.max';
     case 9
         index = pressureLonRegion(pressureJ.max);
+    case 10
+        index = sstBoxOtherVal(olr, olrLat, olrLon);
+    case 11
+        index = sstBoxOtherVal(pressure, pressureLat, pressureLon);
 end
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;

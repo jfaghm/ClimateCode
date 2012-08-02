@@ -9,21 +9,15 @@ c = cvpartition(length(target), 'kfold', k);
 
 YVals = [];
 actual = [];
-for i = 1:k
+parfor i = 1:k
     mask = training(c, i);
-    trainingSet = indices(mask, :);
+    mdl = LinearModel.fit(indices(mask, :), target(mask)); %#ok<PFBNS>
+    Y = feval(mdl, indices(~mask, :));
         
-    beta = multipleRegress(trainingSet, target(mask));
-    
-    Y = indices(~mask, :) * beta(2:end) + beta(1);
-    
-    YVals = [YVals; Y]; %#ok<AGROW>
-    actual = [actual; target(~mask)]; %#ok<AGROW>
+    YVals = [YVals; Y];
+    actual = [actual; target(~mask)]; 
     
 end
+
+
 end
-
-
-
-
-

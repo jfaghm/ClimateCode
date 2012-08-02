@@ -1,4 +1,5 @@
-function [index, cc1, cc2] = buildIndexOLR(startMonth, endMonth, plotBox)
+function [ccminLat, ccminLon, ccmaxLat, ccmaxLon]...
+    = buildIndexOLR(startMonth, endMonth, plotBox)
 
     olr = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'olr');
     time = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'time');
@@ -39,23 +40,22 @@ function [index, cc1, cc2] = buildIndexOLR(startMonth, endMonth, plotBox)
         count = count+1;
     end
     box_north = 35;
-    box_south = -35;
+    box_south = -5;
     
     box_west = 140;
     box_east = 270;
     box_row =5;
     box_col = 10;
     
-    midPoint = round(size(annualOLR, 3)/2);
     %build the index
     index = buildIndexHelper(annualOLR(:, :, 1:end), box_north, box_south, box_west,...
         box_east, lat, lon, box_row, box_col, plotBox);
-    index2 = buildIndexHelper(annualOLR(:, :, midPoint+1:end), box_north, box_south,...
-        box_west, box_east, lat, lon, box_row, box_col, plotBox);
         
     %correlate
-    cc1 = correlateAgainstHurr(index, 1, length(index));
-    cc2 = correlateAgainstHurr(index2, midPoint+1, size(annualOLR, 3));
+    ccminLat = correlateAgainstHurr(index.minLat, 1, length(index.minLat));
+    ccminLon = correlateAgainstHurr(index.minLon, 1, length(index.minLon));
+    ccmaxLon = correlateAgainstHurr(index.maxLon, 1, length(index.maxLon));
+    ccmaxLat = correlateAgainstHurr(index.maxLat, 1, length(index.maxLat));
 end
 
 function cc = correlateAgainstHurr(index, lower, upper)
@@ -102,10 +102,8 @@ end
 
 lon_region = lon(lon >= box_west & lon <= box_east);
 lat_region = lat(lat >= box_south & lat <= box_north);
-index = lat_region(I);
-index = lon_region(J);
-index = lon_region(minJ);
-index = lat_region(minI);
+index = struct('maxLat', lat_region(I), 'maxLon', lon_region(J), ...
+    'minLon', lon_region(minJ), 'minLat', lat_region(minI));
 
 if plotBox == true
 load ../matFiles/condensedHurDat.mat;
