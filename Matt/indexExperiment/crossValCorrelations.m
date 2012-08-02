@@ -23,8 +23,6 @@ cc(3, 1) = corr(yVals, actuals);
 cc(4, 1) = corr(yVals, actuals);
 [yVals, actuals] = crossValidate(indices, aso_tcs, k);
 cc(5, 1) = corr(yVals, actuals);
-[yVals, actuals] = crossValidate(indices, aso_tropical_cyclones', k);
-cc(6, 1) = corr(yVals, actuals);
 %{
 plot(x, yVals, x, actuals);
 legend('Predictions', 'Actuals');

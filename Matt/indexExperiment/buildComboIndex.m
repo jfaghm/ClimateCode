@@ -1,7 +1,7 @@
-function [index, indexMat, cc] = buildComboIndex(startMonth, endMonth)
+function [index, indexMat, cc] = buildComboIndex(startMonth, endMonth, ...
+    box_row, box_col)
 %UNTITLED4 Summary of this function goes here
 %   Detailed explanation goes here
-tic
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/flippedSSTAnomalies.mat
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat
@@ -17,13 +17,15 @@ for i = 1:12:size(olr, 3)
     count = count+1;
 end
 
-box_north = 35;
-box_south = -5;
+box_north = 36;
+box_south = -6;
 box_west = 140;
 box_east = 270;
 
-box_row = 5;
-box_col = 18;
+if nargin == 2
+    box_row = 5;
+    box_col = 18;
+end
 
 sstMaxVal = buildIndexGeneric(annualSST, box_north, box_south, box_west, box_east, ...
     sstLat, sstLon, box_row, box_col, 'maxVal');
@@ -49,7 +51,6 @@ cc(2) = corr(index, aso_major_hurricanes);
 cc(3) = corr(index, aso_ntc);
 cc(4) = corr(index, aso_pdi);
 cc(5) = corr(index, aso_ace);
-toc
 end
 
 function aNorm = norm(A)
