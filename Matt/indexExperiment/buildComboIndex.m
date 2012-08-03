@@ -1,5 +1,5 @@
 function [index, indexMat, cc] = buildComboIndex(startMonth, endMonth, ...
-    box_row, box_col)
+    box_row, box_col, box_south, box_north)
 %UNTITLED4 Summary of this function goes here
 %   Detailed explanation goes here
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/flippedSSTAnomalies.mat
@@ -16,9 +16,11 @@ for i = 1:12:size(olr, 3)
     annualPressure(:, :, count) = nanmean(pressure(:, :, i+startMonth-1:i+endMonth-1), 3);
     count = count+1;
 end
+if nargin <= 4
+    box_north = 36;
+    box_south = -6;
+end
 
-box_north = 36;
-box_south = -6;
 box_west = 140;
 box_east = 270;
 
