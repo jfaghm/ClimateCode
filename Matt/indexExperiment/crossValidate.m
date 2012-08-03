@@ -18,6 +18,15 @@ parfor i = 1:k
     actual = [actual; target(~mask)]; 
     
 end
+indexType = 'Spatial ENSO';
+varType = 'TCs';
+
+c = corr(YVals, actual);
+plot(1979:2010, YVals, 1979:2010, actual);
+legend('Prediction', 'Actual');
+title(['Cross Validation Results for ' indexType ' vs ' varType ' - Correlation = ' num2str(c)]);
+ylabel(varType);
+xlabel('Year');
 
 
 end
