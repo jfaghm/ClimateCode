@@ -18,7 +18,7 @@ parfor i = 1:k
     actual = [actual; target(~mask)]; 
     
 end
-indexType = 'Spatial ENSO';
+indexType = 'Nino 3.4';
 varType = 'TCs';
 
 c = corr(YVals, actual);
