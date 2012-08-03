@@ -1,4 +1,4 @@
-function [YVals, actual] = crossValidate(indices, target, k)
+function [YVals, actual] = crossValidate(indices, target, k, varType)
 %Performs cross validation using the multivariate linear regression
 %function.
 %   Indices should be a matrix where each column is one of the indices that
@@ -18,8 +18,8 @@ parfor i = 1:k
     actual = [actual; target(~mask)]; 
     
 end
-indexType = 'Nino 3.4';
-varType = 'TCs';
+indexType = 'Combination Index';
+%varType = 'TCs';
 
 c = corr(YVals, actual);
 plot(1979:2010, YVals, 1979:2010, actual);
