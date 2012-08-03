@@ -5,7 +5,7 @@ function [index, indexMat, cc] = buildIndex4(indexNum, startMonth, endMonth)
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/sstAnomalies.mat;
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat;
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat;
-
+indexMat = [];
 year = 1;
 for i = 1:12:size(olr, 3)
    sstMean(:, :, year) = nanmean(sst(:, :, i+startMonth - 1:i+endMonth - 1), 3); 

@@ -26,9 +26,10 @@ box_east = 270;
 
 if nargin == 2
     box_row = 5;
-    box_col = 18;
+    box_col = 10;
 end
-
+%%%%%%%%%%%%% Version 1 of the combo index%%%%%%%%%%%%%%%%%
+%{
 sstMaxVal = buildIndexGeneric(annualSST, box_north, box_south, box_west, box_east, ...
     sstLat, sstLon, box_row, box_col, 'maxVal');
 
@@ -44,6 +45,21 @@ sstBoxPressureVal = sstBoxOtherVal(pressure, pressureLat, pressureLon);
 
 indexMat = [norm(sstMaxVal), norm(olrMinVal), norm(pressureMinVal), ...
     norm(sstBoxOLRVal), norm(sstBoxPressureVal)];
+%}
+%%%%%%%%%%%%%%%%% Version 2 of the combo index%%%%%%%%%%%%%%
+
+sstBoxPress = norm(sstBoxOtherVal(pressure, pressureLat, pressureLon));
+sstBoxOLR = norm(sstBoxOtherVal(olr, olrLat, olrLon));
+pressureMinLon = norm(buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
+    box_east, pressureLat, pressureLon, box_row, box_col, 'minLon'));
+sstMaxLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
+    box_east, sstLat, sstLon, box_row, box_col, 'maxLon');
+sstMinLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
+    box_east, sstLat, sstLon, box_row, box_col, 'minLon');
+sstDif = norm(sstMinLon - sstMaxLon);
+
+indexMat = [sstBoxPress, sstBoxOLR, pressureMinLon, sstDif];
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 index = sum(indexMat, 2);
 
@@ -77,6 +93,7 @@ for t=1:size(annual_pacific,3)
 end
 
 mean_box_data_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row *box_col);
+
 
 for t = 1:size(mean_box_data_pacific,3)
    current = mean_box_data_pacific(:,:,t);
