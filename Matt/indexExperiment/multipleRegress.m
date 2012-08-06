@@ -3,8 +3,8 @@ function prediction = multipleRegress(indices, target)
 %   Detailed explanation goes here
 
 
-model = LinearModel.fit(indices, target);
-prediction = feval(model, indices);
+model = LinearModel.stepwise(indices, target);
+prediction = predict(model, indices);
 
 end
 

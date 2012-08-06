@@ -6,6 +6,8 @@ load /project/expeditions/lem/ClimateCode/Matt/matFiles/flippedSSTAnomalies.mat
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat
 
+addpath('/project/expeditions/lem/ClimateCode/sst_project/');
+
 annualOLR = zeros(size(olr, 1), size(olr, 2), size(olr, 3)/12);
 annualSST = zeros(size(sst, 1), size(sst, 2), size(sst, 3)/12);
 annualPressure = zeros(size(pressure, 1), size(pressure, 2), size(pressure, 3)/12);
