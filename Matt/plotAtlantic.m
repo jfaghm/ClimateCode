@@ -2,9 +2,9 @@ function [ ] = plotAtlantic()
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
-%plotMDRDiffOnly('CentralPressureComposite.mat', [-3 3.5], true, 'Central Pressure');
-%plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
-%plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
+plotMDRDiffOnly('CentralPressureComposite.mat', [-3 3.5], true, 'Central Pressure');
+plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
+plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
 plotMDRDiffOnly('windShearComposite.mat', [-10 10], false, 'Wind Shear');
 end
 

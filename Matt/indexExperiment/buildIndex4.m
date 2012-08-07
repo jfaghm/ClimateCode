@@ -187,7 +187,8 @@ end
 end
 
 
-function [I, J, values] = buildIndexGeneric(data,box_north,box_south,box_west,box_east,lat,lon,box_row,box_col, upsideDown)
+function [I, J, values] = buildIndexGeneric(data,box_north,box_south,...
+    box_west,box_east,lat,lon,box_row,box_col, upsideDown)
 
 addpath('/project/expeditions/lem/ClimateCode/sst_project/');
 
