@@ -1,8 +1,24 @@
 function [] = createComposites(indexType, fileDest, pYears, nYears )
 %This function is used to compute all of the composites for a certain index
-%   
-
-%%%%%%%%%Load the data necessary to create the composites
+%
+%------------------------Input--------------------------------------------
+%
+%--->indexType - the name of the index for which we are creating composites
+%for, this should be a string.
+%--->fileDest - a path to the directory where the mat files should be
+%saved.  This should also be a string
+%--->pYears - a vector containing the positive years.  Positive years
+%should correspond to years of high hurricane activity, not neccessarily
+%years where the index value is high (in the event that an index negatively
+%correlates with hurricane activity)
+%--->nYears - a vector containing the negative yeras (save convention used
+%for positive yeras)
+%
+%---------------------Output----------------------------------------------
+%
+%--->nothing, all matFiles are simply saved in the destination that is
+%supplied as one of the input parameters.
+%
 
 load matFiles/compositeVariables.mat
 

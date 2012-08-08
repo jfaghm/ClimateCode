@@ -1,9 +1,30 @@
 function [  negYears, posYears, index ] = ...
     getPosNegYearsIndex(startMonth, endMonth, sigma)
-%This function calcaulates the index
-%for each year.  The indices are then normalized, and a set of positive and
-%negative years are returned that are at least one standard deviation away
-%from the average of the indices.
+%-----------------------Method------------------------------------------
+%
+%This function calculates the index for each year.  The indices are then
+%normalized, and a set of positive and negative yeras are returned that are
+%at least sigma standard deviations away from the mean of the indices.
+%Positive years are those that are associated with high hurricane activity,
+%so in this case they are associated with low index values, because the
+%spatial ENSO index negatively correlates with hurricane activity.
+%
+%-----------------------Input-------------------------------------------
+%
+%--->startMonth - the lower end of the range of months for which we average
+%the SST anomaly data when computing the index.
+%--->endMonth - the upper bound of the range of months for which we average
+%the SST anomaly data when computing the index.
+%--->sigma - the standard deviation threshold for which we choose the
+%positive and negative years.
+%
+%-----------------------Output---------------------------------------------
+%
+%--->negYears - a vector containing all years that are associated with low
+%hurricane activity
+%--->posYears - a vector containing all years that are associated with high
+%hurricane activity
+%--->index - returns the actual index
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/sstAnomalies.mat;
 
@@ -14,18 +35,15 @@ for i = 1:12:(2010-1979+1)*12
    year = year+1;
 end
 
-box_north = 52; %previosly was 36, but 52 gives better results
+box_north = 36; 
 box_south = -6;
 box_west = 140;
 box_east = 270;
 
 %box size
 box_row = 5;
-box_col = 18; %previously was 10, but 18 gives better results
+box_col = 10; 
 
-
-
-%these are the lats and lons of the data, they never change
 lat=-88:2:88;
 lon=0:2:358;
 

@@ -2,11 +2,21 @@ function [averageElNino, averageNeutral, averageLaNina] =...
     ENSOStats(hurCategory)
 %This function is used to calculate the average number of hurricanes that
 %occured in El Nino years, Neutral years, and La Nina years.
-%   Input: the smallest category hurricane that should be included in the
-%   calculation, 0 = tropical cyclone, and 1-5 corresponds to hurricane
-%   categories.  See condensedHurDat.mat documentation for other
-%   categories.
-%   Output: Average number of hurricanes that occured in each phase of ENSO
+%
+%------------------------Input-------------------------------------------
+%
+%--->hurCategory - the smallest category hurricane that should be included
+%in the calculation, 0 = tropical cyclones, and 1-5 correspond to hurricane
+%categories.  See condensedHurDat.mat labels matrix for other categories.
+%
+%-----------------------Output--------------------------------------------
+%
+%--->AverageElNino - average number of hurricanes that occured during El
+%Nino phases
+%--->AverageNeutral - average number of hurricanes that occured during
+%Neutral phases
+%--->AveargeLaNina - average number of hurricanes that occured during La
+%Nina phases.
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/condensedHurDat.mat;
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/ENSOType.mat
