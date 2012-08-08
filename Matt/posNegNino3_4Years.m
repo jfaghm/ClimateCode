@@ -1,7 +1,27 @@
 function [ negYears, posYears, ENSO34] = posNegNino3_4Years( data, startMonth, endMonth, sigma )
-%This function takes in ENSO data, and normalized the data for NINO 3.4.
-%It returns a set of positive and negative years that are at least one
-%standard deviation away from the mean.
+%--------------------------Method----------------------------------------
+%
+%This function normalizes the Nino 3.4 data, and then returns the positive
+%years (those that are sigma standard deviations above from the mean), and 
+%the negative years (sigma standard deviations below the mean), 
+%
+%-------------------------Input-------------------------------------------
+%
+%--->hurricanes - monthly_nino_data.mat data set (can be found in the
+%matFiles directory
+%--->startMonth - the lower bound for which we average the months for each
+%year
+%--->endMonth - the upper bound for which we average the months for each
+%year
+%--->sigma - the threshold for which we choose the positive and negative
+%years.
+%
+%-------------------------Output------------------------------------------
+%
+%--->negYears - vector containing all negative years (years associated with
+%low hurricane activity)
+%--->posYears - vector containing all positive years (years associated with
+%high hurricane activity)
 
 if data(1) < 1979
     data = data(data(:, 1) >= 1979, :);

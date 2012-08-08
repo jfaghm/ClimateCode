@@ -1,38 +1,29 @@
-function [ regressionMatrix, corrMatrix  ] = pointRegression( data )
+function [ regressionMatrix, corrMatrix  ] = pointRegression( data, index )
 %This function is used to calculate the linear regression coefficients for
 %each point spatially in the data set that is provided.  
-%   This function takes in a three dimensional matrix (latxlonxtime).  and
-%   outputs another three dimensional matrix, where the first and second
-%   dimensions are latitude and longitude respectively, and the third
-%   dimension is of size 2, one for the intercept, and one for the slope.
+%
+%----------------------------Input---------------------------------------
+%
+%--->data - the data for which we perform the regrssion on, this should be
+%a three dimensional matrix (latitude x longitude x time)
+%--->index - an index that contains the same amount of years as the data
+%matrix.
+%
+%----------------------------Output--------------------------------------
+%
+%--->regressionMatrix - a three dimensional matrix that contains the
+%regression coefficints and p-values.  the first two dimensions should be
+%the same size as data.  The first index into the third dimension
+%(regressionMatrix(:, :, 1)) contains all of the intercepts of the
+%regression function, the second index contains all of the slopes of the
+%regression function, and the third index contains all of the p-values.
+%--->corrMatrix - a two dimensional matrix that is the same size as the
+%first two dimensions of the data matrix.  Each index in this matrix
+%contains the temporal correlation between "index" and "data"
+
+
 if size(data, 1) == 512
     data = permute(data, [2 1 3]);
-end
-%%%%%%%%%%%%%%%%%%%%%%CALCULATE INDEX%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-sst = ncread('/project/expeditions/jfagh/data/ersstv3/ersstv3_1948_2010_mon_anomalies.nc', 'sst');
-sst = squeeze(sst);
-sst = permute(sst, [2 1 3]);
-sst = sst(:, :, (31*12)+1:end); %get 1979 - present
-box_north = 52; 
-box_south = -6;
-box_west = 140;
-box_east = 270;
-box_row =5;
-box_col = 18; 
-lat=-88:2:88;
-lon=0:2:358;
-addpath('../sst_project/')
-index = zeros(size(data, 3) / 12, 1);
-month = 1;
-year = 1;
-annualSST = zeros(size(sst, 1), size(sst, 2), size(sst, 3)/12);
-for i = 1:12:size(data, 3)
-    annualSST(:, :, year) = nanmean(sst(:, :, i+7:i+9), 3);
-    year = year+1;
-end
-for i = 1:12:size(data, 3)
-     index(month) = buildIndex(annualSST(:, :, month), box_north, box_south, box_west, box_east, lat, lon, box_row, box_col);
-     month = month+1;
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%EXTRACT YEARLY DATA%%%%%%%%%%%%%%%%%%%
 yearlyData = zeros(size(data, 1), size(data, 2), size(data, 3)/12, 1);

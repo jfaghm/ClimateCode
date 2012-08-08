@@ -1,15 +1,27 @@
-function [ dates ] = hoursToDate( hours, baseDay, baseMonth, baseYear )
-%This function takes in an array of hours, the base month and the base year.
-%Each entry is the number of hours from the date that is provided
-%hour 0.  Each hour entry is converted to a date.  The date matrix has four columns.
-%The first column is for hours, second is for day, third is for month, and the last column
-%is for the year.
+function [ date ] = hoursToDate( hours, baseDay, baseMonth, baseYear )
+%This function takes in  hours from a certain date in time, and
+%then converts it to a date.  Many of the netCDF files document their time
+%in the hours since xx/xx/xxxx form
+%
+%----------------------------Input----------------------------------------
+%
+%--->hours - a scaler value that represents the number of hours from a
+%certain base date
+%--->baseDay - the day of the base date that the hours are from
+%--->baseMonth - the month of the base date
+%--->baseYear - the year of the base date
+%
+%-----------------------------Output--------------------------------------
+%
+%--->date - the date that is equivalent to the number of hours from the
+%base date.  This is a matrix with one row and 4 columns.  the first column
+%corresponds to hours, the second corresponds to day, then month, and then
+%year.
 
-dates = zeros(1, 4);
+date = zeros(1, 4);
 days = floor(hours / 24) + baseDay - 1; %gets total number of days
 currentHours = mod(hours, 24);  %gets remaining hours
-dates(1, 1) = currentHours;  %sets the hours field of the dates matrix
-%set the base date
+date(1, 1) = currentHours;  %sets the hours field of the dates matrix
 currentMonth = baseMonth;
 currentYear = baseYear;	
 while true  
@@ -45,12 +57,9 @@ while true
     end
 end
 
-	dates(1, 2) = days+1;
-	dates(1, 3) = currentMonth;
-	dates(1, 4) = currentYear;
-	
-	
-
+	date(1, 2) = days+1;
+	date(1, 3) = currentMonth;
+	date(1, 4) = currentYear;
 end
 
 

@@ -1,7 +1,16 @@
 function [  ] = makeBarGraphs(indexType )
 %This function is used to create bar graphs for average difference of each
 %of the composites for the atlantic region
-%   
+% 
+%-------------------------Input-----------------------------------------
+%
+%--->indexType - a string that specifies which index we should be using to
+%make the bar graph for.
+%
+%-------------------------Output-----------------------------------------
+%
+%--->none, the bar graphs get printed inside the function to the directory
+%specified inside the call to print
 
 switch indexType
     case 'ENSO'

@@ -1,6 +1,15 @@
 function [ ] = plotAtlantic()
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+%This function loads the difference in positive and negative composites,
+%and then plots the data inside the main development region
+%
+%----------------------------Input----------------------------------------
+%--->none, the data is loaded from the composites directory where the .mat
+%files are saved
+%
+%----------------------------Ouput----------------------------------------
+%--->nothing gets returned from this function, howver, the images of the
+%main development regions are printed to the directory specified in the
+%call to print.
 
 plotMDRDiffOnly('CentralPressureComposite.mat', [-3 3.5], true, 'Central Pressure');
 plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
@@ -61,129 +70,4 @@ colorbar
 
 end
 
-function [] = plotMDRAll(var, scale1, landMask, scale, varName)
 
-eval(['load composites/comboIndex/' var]);
-eval(['load composites/ENSO_3.4/' var]);
-eval(['load composites/hurricaneFrequency/' var]);
-
-lat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
-lon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
-lon(lon > 180) = lon(lon > 180) - 360;
-fig(figure(1), 'units', 'inches', 'width', 10, 'height', 11)
-subplot(3, 3, 1)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, pMeanENSO)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Positive Years ENSO' var])
-colorbar
-
-landMask = true;
-subplot(3, 3, 2)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, nMeanENSO)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Negative Years ENSO' var])
-colorbar
-
-landMask = true;
-subplot(3, 3, 3)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, diffENSO)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Difference ENSO' var])
-colorbar
-
-
-
-subplot(3, 3, 4)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, pMeanComboIndex)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Positive Years Combo Index' var])
-colorbar
-
-subplot(3, 3, 5)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, nMeanComboIndex)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Negative Years Combo Index' var])
-colorbar
- 
-landMask = true;
-subplot(3, 3, 6)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, diffComboIndex)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Difference Combo Index' var])
-colorbar
-
-landMask = true;
-subplot(3, 3, 7)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, pMeanHurr)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Positve Years Hurr' var])
-colorbar
-
-landMask = true;
-subplot(3, 3, 8)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, nMeanHurr)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Negative Years Hurr' var])
-colorbar
-
-landMask = true;
-subplot(3, 3, 9)
-worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, diffHurr)
-if scale == true
-    caxis(scale1)
-end
-if landMask == true
-    geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
-end
-title(['Difference Hurr' var])
-colorbar
-end
