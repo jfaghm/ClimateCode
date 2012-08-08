@@ -6,13 +6,13 @@ function [YVals, actual] = crossValidate(indices, target, k, varType, indexType)
 %   we are trying to correlate against
 
 c = cvpartition(length(target), 'kfold', k);
-
+addpath('../') %for fig.m
 YVals = [];
 actual = [];
 parfor i = 1:k
     mask = training(c, i);
     
-    mdl = LinearModel.stepwise(indices(mask, :), target(mask)); %#ok<PFBNS>
+    mdl = LinearModel.fit(indices(mask, :), target(mask)); %#ok<PFBNS>
     Y = predict(mdl, indices(~mask, :));
     YVals = [YVals; Y];
     actual = [actual; target(~mask)]; 
@@ -25,7 +25,9 @@ end
 
 
 function[] = plotCrossVal(yVals, actuals, t, indexType)
+    fig(figure(1), 'units', 'inches', 'width', 9.5, 'height', 8)
     years = 1979:2010;
+    %bar(years, [yVals, actuals]);
     plot(years, yVals, years, actuals);
     legend('Predictions', 'Actual');
     c = corr(yVals, actuals);
@@ -33,6 +35,6 @@ function[] = plotCrossVal(yVals, actuals, t, indexType)
     ylabel(t);
     xlabel('Year');
     print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/', ...
-        'indexExperiment/results/stepwiseCrossVal/' indexType t ...
+        'indexExperiment/results/comboIndex/crossValidationPlots/' indexType t ...
         'crossValidationCorrelations.pdf']);
 end
