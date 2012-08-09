@@ -1,7 +1,27 @@
 function [index, indexMat, cc] = buildComboIndex(startMonth, endMonth, ...
     box_row, box_col, box_south, box_north)
-%UNTITLED4 Summary of this function goes here
-%   Detailed explanation goes here
+%This function computes some number of indices seperately, normalizes each
+%index, and then adds them all together.  
+%
+%---------------------------Input-----------------------------------------
+%
+%--->startMonth - the lower bound for the month range for which we average
+%the data over for each year.
+%--->endMonth - the upper bound for the month range for which we average
+%the data over for each year.
+%--->box_row - the number of rows used in the subset box where we spatially
+%average the anomaly data.
+%--->box_col - the number of columns in the subset box
+%--->box_south/box_north - the lower and upper bounds of the search space
+%
+%--------------------------Output-----------------------------------------
+%
+%--->index = the sum of the normalized indices as described above.
+%--->indexMat = a matrix that contains each index seperatly, each index is
+%a column within this matrix
+%--->cc = a vector containing 5 correlation coefficients of the index and
+%various hurricane statistics.
+
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/flippedSSTAnomalies.mat
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat
@@ -30,25 +50,6 @@ if nargin == 2
     box_row = 5;
     box_col = 10;
 end
-%%%%%%%%%%%%% Version 1 of the combo index%%%%%%%%%%%%%%%%%
-%{
-sstMaxVal = buildIndexGeneric(annualSST, box_north, box_south, box_west, box_east, ...
-    sstLat, sstLon, box_row, box_col, 'maxVal');
-
-olrMinVal = buildIndexGeneric(annualOLR, box_north, box_south, box_west, box_east, ...
-    olrLat, olrLon, box_row, box_col, 'minVal');
-
-pressureMinVal = buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
-    box_east, pressureLat, pressureLon, box_row, box_col, 'minVal');
-
-sstBoxOLRVal = sstBoxOtherVal(olr, olrLat, olrLon);
-
-sstBoxPressureVal = sstBoxOtherVal(pressure, pressureLat, pressureLon);
-
-indexMat = [norm(sstMaxVal), norm(olrMinVal), norm(pressureMinVal), ...
-    norm(sstBoxOLRVal), norm(sstBoxPressureVal)];
-%}
-%%%%%%%%%%%%%%%%% Version 2 of the combo index%%%%%%%%%%%%%%
 
 sstBoxPress = norm(sstBoxOtherVal(pressure, pressureLat, pressureLon));
 sstBoxOLR = norm(sstBoxOtherVal(olr, olrLat, olrLon));
@@ -61,7 +62,6 @@ sstMinLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
 sstDif = norm(sstMinLon - sstMaxLon);
 
 indexMat = [sstBoxPress, sstBoxOLR, pressureMinLon, sstDif];
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 index = sum(indexMat, 2);
 

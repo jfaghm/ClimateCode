@@ -1,4 +1,4 @@
-function [YVals, actual] = crossValidate(indices, target, k, varType, indexType)
+function [YVals, actual, cc] = crossValidate(indices, target, k, varType, indexType)
 %Performs cross validation using the multivariate linear regression
 %function.
 %   Indices should be a matrix where each column is one of the indices that
@@ -9,6 +9,11 @@ c = cvpartition(length(target), 'kfold', k);
 addpath('../') %for fig.m
 YVals = [];
 actual = [];
+if any(isnan(indices))
+    disp(['i < j, returning', num2str(indices')])
+    cc = 0;
+    return
+end
 parfor i = 1:k
     mask = training(c, i);
     
@@ -20,7 +25,7 @@ end
 if nargin > 3
     plotCrossVal(YVals, actual, varType, indexType);
 end
-
+cc = corr(YVals, actual)
 end
 
 

@@ -1,5 +1,23 @@
 function [ccminLat, ccminLon, ccmaxLat, ccmaxLon]...
     = buildIndexOLR(startMonth, endMonth, plotBox)
+%This function computes the outgoing longwave radiation index.  For this
+%index, we look for the box that has the lowest OLR value, and then return
+%its location.
+%
+%--------------------------Input------------------------------------------
+%
+%--->startMonth - the lower bound of the month range for which we average
+%OLR anomaly data.
+%--->endMonth - the upper bound of the month range for which we average OLR
+%anomal data.
+%--->plotBox - a boolean value that determines whether or not we plot the
+%box with the lowest OLR on the whole OLR map.  This is fairly time
+%consuming, so use with caution
+%
+%--------------------------Output---------------------------------------
+%
+%--->cc - a vector containing the correlation coefficients between the
+%index and 5 hurricane statistics.
 
     olr = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'olr');
     time = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'time');
@@ -89,7 +107,6 @@ for t=1:size(annual_pacific,3)
    ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
 end
 
-%mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
 mean_box_sst_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row * box_col);
 for t = 1:size(mean_box_sst_pacific,3)
    current = mean_box_sst_pacific(:,:,t);
