@@ -10,7 +10,6 @@ addpath('../') %for fig.m
 YVals = [];
 actual = [];
 if any(isnan(indices))
-    disp(['i < j, returning', num2str(indices')])
     cc = 0;
     return
 end

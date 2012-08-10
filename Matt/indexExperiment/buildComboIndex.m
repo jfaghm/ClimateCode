@@ -51,8 +51,8 @@ if nargin == 2
     box_col = 10;
 end
 
-sstBoxPress = norm(sstBoxOtherVal(pressure, pressureLat, pressureLon));
-sstBoxOLR = norm(sstBoxOtherVal(olr, olrLat, olrLon));
+sstBoxPress = norm(sstBoxOtherVal(pressure, pressureLat, pressureLon, startMonth, endMonth));
+sstBoxOLR = norm(sstBoxOtherVal(olr, olrLat, olrLon, startMonth, endMonth));
 pressureMinLon = norm(buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
     box_east, pressureLat, pressureLon, box_row, box_col, 'minLon'));
 sstMaxLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...

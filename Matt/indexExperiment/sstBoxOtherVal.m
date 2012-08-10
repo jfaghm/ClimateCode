@@ -1,4 +1,4 @@
-function [index, cc] = sstBoxOtherVal(otherData, otherLat, otherLon)
+function [index, cc] = sstBoxOtherVal(otherData, otherLat, otherLon, startMonth, endMonth)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -12,8 +12,8 @@ count = 1;
 sstMean = zeros(size(sst, 1), size(sst, 2), size(sst, 3)/12);
 otherMean = zeros(size(otherData, 1), size(otherData, 2), size(otherData, 3)/12);
 for i = 1:12:size(otherData, 3)
-    sstMean(:, :, count) = nanmean(sst(:, :, i+2:i+9), 3);
-    otherMean(:, :, count) = nanmean(otherData(:, :, i+2:i+9), 3);
+    sstMean(:, :, count) = nanmean(sst(:, :, i+startMonth-1:i+endMonth-1), 3);
+    otherMean(:, :, count) = nanmean(otherData(:, :, i+startMonth-1:i+endMonth-1), 3);
     count = count+1;
 end
 
