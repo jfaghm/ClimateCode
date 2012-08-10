@@ -7,14 +7,15 @@ function [ ] = plotAtlantic()
 %files are saved
 %
 %----------------------------Ouput----------------------------------------
-%--->nothing gets returned from this function, howver, the images of the
+%--->nothing gets returned from this function, however, the images of the
 %main development regions are printed to the directory specified in the
 %call to print.
 
 plotMDRDiffOnly('CentralPressureComposite.mat', [-3 3.5], true, 'Central Pressure');
 plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
 plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
-plotMDRDiffOnly('windShearComposite.mat', [-10 10], false, 'Wind Shear');
+plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear');
+plotMDRDiffOnly('relativeHumidityComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)');
 end
 
 function [] = plotMDRDiffOnly(var, scaleDims, landMask, varName)

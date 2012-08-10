@@ -25,7 +25,7 @@ end
 if nargin > 3
     plotCrossVal(YVals, actual, varType, indexType);
 end
-cc = corr(YVals, actual)
+cc = corr(YVals, actual);
 end
 
 
