@@ -16,7 +16,7 @@
 			<key>filename</key>
 			<string>sst_index_draft.tex</string>
 			<key>lastUsed</key>
-			<date>2012-06-18T23:00:00Z</date>
+			<date>2012-08-10T21:34:39Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -60,14 +60,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>523</integer>
 				<key>line</key>
-				<integer>68</integer>
+				<integer>73</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>60</integer>
+			<integer>38</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
