@@ -1,4 +1,4 @@
-function [YVals, actual, cc] = crossValidate(indices, target, k, varType, indexType)
+function [YVals, actual, cc] = crossValidate(indices, target, k, varType, indexType, years)
 %Performs cross validation using the multivariate linear regression
 %function.
 %   Indices should be a matrix where each column is one of the indices that
@@ -22,23 +22,22 @@ parfor i = 1:k
     actual = [actual; target(~mask)]; 
 end
 if nargin > 3
-    plotCrossVal(YVals, actual, varType, indexType);
+    plotCrossVal(YVals, actual, varType, indexType, years);
 end
 cc = corr(YVals, actual);
 end
 
 
-function[] = plotCrossVal(yVals, actuals, t, indexType)
+function[] = plotCrossVal(yVals, actuals, t, indexType, years)
     fig(figure(1), 'units', 'inches', 'width', 9.5, 'height', 8)
-    years = 1948:2010;
     %bar(years, [yVals, actuals]);
     plot(years, yVals, years, actuals);
     legend('Predictions', 'Actual');
     c = corr(yVals, actuals);
-    title(['Cross Validation ' indexType ' correlation = ' num2str(c) ' (' t ')']);
+    title(strcat('Cross Validation ', indexType, ' correlation = ', num2str(c), ' (', t, ')'));
     ylabel(t);
     xlabel('Year');
-    print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/', ...
-        'indexExperiment/results/1948-2010_plots/' indexType t ...
+    print(gcf, '-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/', ...
+        'indexExperiment/results/NINOCrossValidationResults/' indexType t ...
         'crossValidationCorrelations.pdf']);
 end
