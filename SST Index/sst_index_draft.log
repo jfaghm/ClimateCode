@@ -1,22 +1,24 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  18 JUN 2012 23:30
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  10 AUG 2012 16:56
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **sst_index_draft.tex
 (./sst_index_draft.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, german-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, ar
-abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
-h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
-greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, ku
-rmanji, latin, latvian, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, po
-lish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, span
-ish, swedish, turkish, ukenglish, ukrainian, uppersorbian, welsh, loaded.
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/article.cls
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, spani
+sh, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -31,19 +33,19 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -193,7 +195,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -224,7 +226,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -248,18 +250,18 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2009/texmf-dist/tex/latex/subfig/subfig.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
 \captionmargin=\dimen103
 \captionmargin@=\dimen104
 \captionwidth=\dimen105
@@ -283,8 +285,8 @@ Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
 \sf@top=\skip46
 \sf@bottom=\skip47
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/ltxmisc/boxedminipage.sty)
-(/usr/local/texlive/2009/texmf-dist/tex/latex/listings/listings.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/boxedminipage/boxedminipage.sty)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count95
 \lst@gtempboxa=\box26
 \lst@token=\toks17
@@ -298,21 +300,21 @@ Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
 \lst@lineno=\count100
 \lst@maxwidth=\dimen113
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/listings/lstmisc.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count101
 \lst@skipnumbers=\count102
 \lst@framebox=\box27
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/listings/listings.cfg
+(/usr/local/texlive/2010/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/minitoc.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/minitoc.sty
 Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/mtcmess.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/mtcmess.sty
 Package: mtcmess 2006/03/14
 )
 Package minitoc Info: I0001
@@ -358,32 +360,39 @@ Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/english.mld
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/english.mld
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 ))
-(/usr/local/texlive/2009/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+(/usr/local/texlive/2010/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/04/25 v0.06b Graphics/color for pdfTeX
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count107
 ))
 \Gin@req@height=\dimen114
@@ -420,7 +429,7 @@ Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
 
-(/usr/local/texlive/2009/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen116
@@ -432,74 +441,138 @@ Package minitoc(hints) Info: I0049
 \MPscratchDim=\dimen117
 \MPnumerator=\count119
 \everyMPtoPDFconversion=\toks20
+) (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
 )
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 67.
- [1
 
-{/usr/local/texlive/2009/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<figures/nino_cartoon.pdf, id=10, 602.95613pt x 488.23453pt>
+<figures/nino_cartoon.pdf, id=1, 602.95613pt x 488.23453pt>
 File: figures/nino_cartoon.pdf Graphic file (type pdf)
 
 <use figures/nino_cartoon.pdf>
-<figures/nino_nina_avg_diff.pdf, id=11, 507.57709pt x 573.60875pt>
+Package pdftex.def Info: figures/nino_cartoon.pdf used on input line 81.
+(pdftex.def)             Requested size: 223.12708pt x 180.67499pt.
+
+<figures/nino_nina_avg_diff.pdf, id=2, 507.57709pt x 573.60875pt>
 File: figures/nino_nina_avg_diff.pdf Graphic file (type pdf)
 
 <use figures/nino_nina_avg_diff.pdf>
+Package pdftex.def Info: figures/nino_nina_avg_diff.pdf used on input line 89.
+(pdftex.def)             Requested size: 191.85121pt x 216.81pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 89.
+(Font)              <7> on input line 90.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 89.
- [2 <./figures/nino_cartoon.pdf>] [3 <./figures/nino_nina_avg_diff.pdf>]
+(Font)              <5> on input line 90.
+ [1
+
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./f
+igures/nino_cartoon.pdf>] [3 <./figures/nino_nina_avg_diff.pdf>]
 
 LaTeX Warning: Reference `table:april_lead' on page 4 undefined on input line 1
-00.
+01.
 
 
-LaTeX Warning: Reference `table:oct_lead' on page 4 undefined on input line 100
+LaTeX Warning: Reference `table:oct_lead' on page 4 undefined on input line 101
 .
 
 
-Overfull \hbox (0.3892pt too wide) in paragraph at lines 100--118
+Overfull \hbox (0.3892pt too wide) in paragraph at lines 101--119
 []\OT1/cmr/m/n/10 Tables [] through [] show the lin-ear cor-re-la-tion co-ef-fi
 -cients be-tween August-
  []
 
 [4] [5]
-<figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf, id=273, 432.08052pt
+<figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf, id=275, 432.08052pt
  x 348.24403pt>
 File: figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf Graphic file (t
 ype pdf)
 
 <use figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf>
-<figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf, id=274
+Package pdftex.def Info: figures/sensitivityResults/boxSize/ACE_Index_Box_Size.
+pdf used on input line 162.
+(pdftex.def)             Requested size: 207.0021pt x 166.83641pt.
+
+<figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf, id=276
 , 436.5948pt x 340.50522pt>
 File: figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf Gr
 aphic file (type pdf)
 
 <use figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 160--171
+Package pdftex.def Info: figures/sensitivityResults/boxSize/Major_Hurricanes_In
+dex_Box_Size.pdf used on input line 168.
+(pdftex.def)             Requested size: 207.0021pt x 161.4455pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 161--172
 [][]   [] 
  []
 
 
-<figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf, id=275, 430.79074pt
+<figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf, id=277, 430.79074pt
  x 342.43997pt>
 File: figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf Graphic file (t
 ype pdf)
 
 <use figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf>
-<figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf, id=276, 426.92139pt
+Package pdftex.def Info: figures/sensitivityResults/boxSize/NTC_Index_Box_Size.
+pdf used on input line 175.
+(pdftex.def)             Requested size: 207.0021pt x 164.54697pt.
+
+<figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf, id=278, 426.92139pt
  x 345.66438pt>
 File: figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf Graphic file (t
 ype pdf)
 
 <use figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 173--184
+Package pdftex.def Info: figures/sensitivityResults/boxSize/TCS_Index_Box_Size.
+pdf used on input line 181.
+(pdftex.def)             Requested size: 207.0021pt x 167.60481pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 174--185
 [][]   [] 
  []
 
@@ -508,39 +581,55 @@ sitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf> <./figures/sensiti
 vityResults/boxSize/NTC_Index_Box_Size.pdf> <./figures/sensitivityResults/boxSi
 ze/TCS_Index_Box_Size.pdf>]
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_range
-.pdf, id=332, 464.13559pt x 398.81277pt>
+.pdf, id=335, 464.13559pt x 398.81277pt>
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_
 range.pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_r
 ange.pdf>
+Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
+h_ranges_ace_month_range.pdf used on input line 191.
+(pdftex.def)             Requested size: 207.0021pt x 177.8697pt.
+
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_hurr_month_rang
-e.pdf, id=333, 481.32579pt x 393.65569pt>
+e.pdf, id=336, 481.32579pt x 393.65569pt>
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_hurr_month
 _range.pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/monthRanges/index_corr_month_ranges_hurr_month_
 range.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 189--200
+Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
+h_ranges_hurr_month_range.pdf used on input line 197.
+(pdftex.def)             Requested size: 207.0021pt x 169.29868pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 190--201
 [][]   [] 
  []
 
 
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month_range
-.pdf, id=334, 484.76382pt x 401.39128pt>
+.pdf, id=337, 484.76382pt x 401.39128pt>
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month_
 range.pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month_r
 ange.pdf>
+Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
+h_ranges_ntc_month_range.pdf used on input line 205.
+(pdftex.def)             Requested size: 207.0021pt x 171.40056pt.
+
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_tcs_month_range
-.pdf, id=335, 470.15215pt x 398.81277pt>
+.pdf, id=338, 470.15215pt x 398.81277pt>
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_tcs_month_
 range.pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/monthRanges/index_corr_month_ranges_tcs_month_r
 ange.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 203--214
+Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
+h_ranges_tcs_month_range.pdf used on input line 211.
+(pdftex.def)             Requested size: 207.0021pt x 175.59377pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 204--215
 [][]   [] 
  []
 
@@ -549,37 +638,53 @@ range.pdf> <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_hu
 rr_month_range.pdf> <./figures/sensitivityResults/monthRanges/index_corr_month_
 ranges_ntc_month_range.pdf> <./figures/sensitivityResults/monthRanges/index_cor
 r_month_ranges_tcs_month_range.pdf>]
-<figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf, id=408, 40
+<figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf, id=411, 40
 4.35007pt x 336.63588pt>
 File: figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf Graphi
 c file (type pdf)
 
 <use figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf>
+Package pdftex.def Info: figures/sensitivityResults/northSouthHem/ACE_Index_Nor
+th_South.pdf used on input line 221.
+(pdftex.def)             Requested size: 207.0021pt x 172.33438pt.
+
 <figures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_South.pd
-f, id=409, 395.96642pt x 326.96243pt>
+f, id=412, 395.96642pt x 326.96243pt>
 File: figures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_Sou
 th.pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_Sout
 h.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 219--230
+Package pdftex.def Info: figures/sensitivityResults/northSouthHem/Major_Hurrica
+nes_Index_North_South.pdf used on input line 227.
+(pdftex.def)             Requested size: 207.0021pt x 170.92944pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 220--231
 [][]   [] 
  []
 
 
-<figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf, id=410, 39
+<figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf, id=413, 39
 6.61122pt x 330.83186pt>
 File: figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf Graphi
 c file (type pdf)
 
 <use figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf>
-<figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf, id=411, 39
+Package pdftex.def Info: figures/sensitivityResults/northSouthHem/NTC_Index_Nor
+th_South.pdf used on input line 235.
+(pdftex.def)             Requested size: 207.0021pt x 172.66962pt.
+
+<figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf, id=414, 39
 9.8358pt x 330.83186pt>
 File: figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf Graphi
 c file (type pdf)
 
 <use figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 233--244
+Package pdftex.def Info: figures/sensitivityResults/northSouthHem/TCS_Index_Nor
+th_South.pdf used on input line 241.
+(pdftex.def)             Requested size: 207.0021pt x 171.27634pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 234--245
 [][]   [] 
  []
 
@@ -587,33 +692,49 @@ Overfull \hbox (73.44864pt too wide) in paragraph at lines 233--244
 gures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_South.pdf> 
 <./figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf> <./figur
 es/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf>]
-<figures/sensitivityResults/northHem/ACE_Index_North.pdf, id=507, 415.95819pt x
+<figures/sensitivityResults/northHem/ACE_Index_North.pdf, id=511, 415.95819pt x
  337.92569pt>
 File: figures/sensitivityResults/northHem/ACE_Index_North.pdf Graphic file (typ
 e pdf)
  <use figures/sensitivityResults/northHem/ACE_Index_North.pdf>
-<figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf, id=508, 
+Package pdftex.def Info: figures/sensitivityResults/northHem/ACE_Index_North.pd
+f used on input line 252.
+(pdftex.def)             Requested size: 207.0021pt x 168.16835pt.
+
+<figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf, id=512, 
 419.18263pt x 333.41142pt>
 File: figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf Grap
 hic file (type pdf)
 
 <use figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 250--261
+Package pdftex.def Info: figures/sensitivityResults/northHem/Major_Hurricanes_I
+ndex_North.pdf used on input line 258.
+(pdftex.def)             Requested size: 207.0021pt x 164.64996pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 251--262
 [][]   [] 
  []
 
 
-<figures/sensitivityResults/northHem/NTC_Index_North.pdf, id=509, 418.53775pt x
+<figures/sensitivityResults/northHem/NTC_Index_North.pdf, id=513, 418.53775pt x
  337.28076pt>
 File: figures/sensitivityResults/northHem/NTC_Index_North.pdf Graphic file (typ
 e pdf)
  <use figures/sensitivityResults/northHem/NTC_Index_North.pdf>
-<figures/sensitivityResults/northHem/TCS_Index_North.pdf, id=510, 411.44386pt x
+Package pdftex.def Info: figures/sensitivityResults/northHem/NTC_Index_North.pd
+f used on input line 266.
+(pdftex.def)             Requested size: 207.0021pt x 166.81296pt.
+
+<figures/sensitivityResults/northHem/TCS_Index_North.pdf, id=514, 411.44386pt x
  339.21552pt>
 File: figures/sensitivityResults/northHem/TCS_Index_North.pdf Graphic file (typ
 e pdf)
  <use figures/sensitivityResults/northHem/TCS_Index_North.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 264--275
+Package pdftex.def Info: figures/sensitivityResults/northHem/TCS_Index_North.pd
+f used on input line 272.
+(pdftex.def)             Requested size: 207.0021pt x 170.66324pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 265--276
 [][]   [] 
  []
 
@@ -621,86 +742,125 @@ Overfull \hbox (73.44864pt too wide) in paragraph at lines 264--275
 tivityResults/northHem/Major_Hurricanes_Index_North.pdf> <./figures/sensitivity
 Results/northHem/NTC_Index_North.pdf> <./figures/sensitivityResults/northHem/TC
 S_Index_North.pdf>]
-<figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf, id=566, 426.2
+<figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf, id=570, 426.2
 7649pt x 336.63597pt>
 File: figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf Graphic f
 ile (type pdf)
 
 <use figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf>
+Package pdftex.def Info: figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_M
+onths.pdf used on input line 282.
+(pdftex.def)             Requested size: 207.0021pt x 163.47371pt.
+
 <figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf, 
-id=567, 425.63156pt x 335.34605pt>
+id=571, 425.63156pt x 335.34605pt>
 File: figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.
 pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.p
 df>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 280--291
+Package pdftex.def Info: figures/sensitivityResults/hurrMonths/Major_Hurricanes
+_Index_Hurr_Months.pdf used on input line 288.
+(pdftex.def)             Requested size: 207.0021pt x 163.09293pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 281--292
 [][]   [] 
  []
 
 File: figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf Graphic f
 ile (type pdf)
 <use figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf>
+Package pdftex.def Info: figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_M
+onths.pdf used on input line 295.
+(pdftex.def)             Requested size: 207.0021pt x 163.47371pt.
 File: figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.
 pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.p
 df>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 293--304
+Package pdftex.def Info: figures/sensitivityResults/hurrMonths/Major_Hurricanes
+_Index_Hurr_Months.pdf used on input line 301.
+(pdftex.def)             Requested size: 207.0021pt x 163.09293pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 294--305
 [][]   [] 
  []
 
 [10 <./figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf> <./figu
 res/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf>]
-<figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf, id=60
-9, 342.94463pt x 654.94687pt>
+<figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf, id=61
+4, 342.94463pt x 654.94687pt>
 File: figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf G
 raphic file (type pdf)
 
 <use figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf>
-<figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf, id=610,
+Package pdftex.def Info: figures/sensitivityResults/compositeMaps/centralPressu
+reAtlanticMap.pdf used on input line 311.
+(pdftex.def)             Requested size: 189.75105pt x 362.38052pt.
+
+<figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf, id=615,
  333.91974pt x 653.65764pt>
 File: figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf Gra
 phic file (type pdf)
 
 <use figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf>
-Overfull \hbox (38.94653pt too wide) in paragraph at lines 309--320
+Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffPIAtlanti
+cComposites.pdf used on input line 317.
+(pdftex.def)             Requested size: 189.75105pt x 371.45169pt.
+
+Overfull \hbox (38.94653pt too wide) in paragraph at lines 310--321
 [][]   [] 
  []
 
 [11 <./figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf>
  <./figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf>]
 <figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.pdf, id=6
-44, 371.3085pt x 663.97174pt>
+49, 371.3085pt x 663.97174pt>
 File: figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.pdf 
 Graphic file (type pdf)
 
 <use figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.pdf>
-<figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf, id=645
+Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffRHComposi
+tesAtlanticMap.pdf used on input line 326.
+(pdftex.def)             Requested size: 207.0021pt x 370.17021pt.
+
+<figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf, id=650
 , 261.72089pt x 537.62373pt>
 File: figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf Gr
 aphic file (type pdf)
 
 <use figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 324--335
+Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffSSTCompos
+itesAugToOct.pdf used on input line 332.
+(pdftex.def)             Requested size: 207.0021pt x 425.2185pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 325--336
 [][]   [] 
  []
 
 
 <figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites.pdf, 
-id=646, 350.68013pt x 653.65764pt>
+id=651, 350.68013pt x 653.65764pt>
 File: figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites.
 pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites.p
 df>
-<figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf, id=647, 349.39
+Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffWindShear
+AtlanticComposites.pdf used on input line 341.
+(pdftex.def)             Requested size: 207.0021pt x 385.84416pt.
+
+<figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf, id=652, 349.39
 093pt x 662.68243pt>
 File: figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf Graphic fi
 le (type pdf)
 
 <use figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 339--350
+Package pdftex.def Info: figures/sensitivityResults/compositeMaps/satDefAtlanti
+cMap.pdf used on input line 347.
+(pdftex.def)             Requested size: 207.0021pt x 392.62744pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 340--351
 [][]   [] 
  []
 
@@ -708,39 +868,54 @@ Overfull \hbox (73.44864pt too wide) in paragraph at lines 339--350
 > <./figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf>]
 [13 <./figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites
 .pdf> <./figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf>]
-<figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf, id=789, 414.0234
+<figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf, id=795, 414.0234
 4pt x 323.7379pt>
 File: figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf Graphic file
  (type pdf)
 
 <use figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf>
+Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/RHBarGra
+ph.pdf used on input line 357.
+(pdftex.def)             Requested size: 207.0021pt x 161.8636pt.
+
 <figures/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf, id
-=790, 409.5092pt x 325.02768pt>
+=796, 409.5092pt x 325.02768pt>
 File: figures/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pd
 f Graphic file (type pdf)
 
 <use figures/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf
 >
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 355--366
+Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/avgDiffW
+indShearBarGraph.pdf used on input line 363.
+(pdftex.def)             Requested size: 207.0021pt x 164.29886pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 356--367
 [][]   [] 
  []
 
 
 <figures/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf, id=
-791, 413.37857pt x 328.89716pt>
+797, 413.37857pt x 328.89716pt>
 File: figures/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf
  Graphic file (type pdf)
 
 <use figures/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf>
+Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/centralP
+ressureBarGraph.pdf used on input line 371.
+(pdftex.def)             Requested size: 207.0021pt x 164.69408pt.
 
 <figures/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf, id
-=792, 408.86433pt x 321.80327pt>
+=798, 408.86433pt x 321.80327pt>
 File: figures/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pd
 f Graphic file (type pdf)
 
 <use figures/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf
 >
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 369--380
+Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/satDefBa
+rGraphSmallerBox.pdf used on input line 377.
+(pdftex.def)             Requested size: 207.0021pt x 162.92429pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 370--381
 [][]   [] 
  []
 
@@ -751,26 +926,34 @@ nsitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf> <./figures/se
 nsitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf> <./figures/sen
 sitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf>]
 <figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesBarGr
-aph.pdf, id=860, 421.76222pt x 329.54208pt>
+aph.pdf, id=866, 421.76222pt x 329.54208pt>
 File: figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticComposites
 BarGraph.pdf Graphic file (type pdf)
 
 <use figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesB
 arGraph.pdf>
-<figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf, id=861, 419.827
+Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/avgDiffP
+IAtlanticCompositesBarGraph.pdf used on input line 385.
+(pdftex.def)             Requested size: 207.0021pt x 161.74353pt.
+
+<figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf, id=867, 419.827
 5pt x 328.89716pt>
 File: figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf Graphic fil
 e (type pdf)
 
 <use figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 383--394
+Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/sstBarGr
+aph.pdf used on input line 391.
+(pdftex.def)             Requested size: 207.0021pt x 162.16974pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 384--395
 [][]   [] 
  []
 
 [15 <./figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticComposite
 sBarGraph.pdf> <./figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf
 >] (./sst_index_draft.bbl
-Underfull \hbox (badness 1708) in paragraph at lines 78--82
+Underfull \hbox (badness 1708) in paragraph at lines 72--76
 []\OT1/cmr/m/n/10 D.M. Smith, R. Eade, N.J. Dun-stone, D. Fere-day, J.M. Mur-ph
 y,
  []
@@ -790,30 +973,28 @@ Package minitoc(hints) Info: I0019
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 5428 strings out of 493848
- 85193 string characters out of 3149207
- 156720 words of memory out of 3000000
- 8443 multiletter control sequences out of 15000+200000
+ 5966 strings out of 493763
+ 94459 string characters out of 3144955
+ 163441 words of memory out of 3000000
+ 8970 multiletter control sequences out of 15000+200000
  8848 words of font info for 31 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
+ 715 hyphenation exceptions out of 8191
  44i,8n,42p,2099b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
-/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on sst_index_draft.pdf (17 pages, 1867207 bytes).
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
+cal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
+/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on sst_index_draft.pdf (17 pages, 1807803 bytes).
 PDF statistics:
- 927 PDF objects out of 1000 (max. 8388607)
+ 935 PDF objects out of 1000 (max. 8388607)
+ 630 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
