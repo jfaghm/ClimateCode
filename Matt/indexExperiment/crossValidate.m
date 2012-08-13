@@ -30,7 +30,7 @@ end
 
 function[] = plotCrossVal(yVals, actuals, t, indexType)
     fig(figure(1), 'units', 'inches', 'width', 9.5, 'height', 8)
-    years = 1979:2010;
+    years = 1948:2010;
     %bar(years, [yVals, actuals]);
     plot(years, yVals, years, actuals);
     legend('Predictions', 'Actual');
@@ -39,6 +39,6 @@ function[] = plotCrossVal(yVals, actuals, t, indexType)
     ylabel(t);
     xlabel('Year');
     print('-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/', ...
-        'indexExperiment/results/comboIndex/crossValidationPlots/' indexType t ...
+        'indexExperiment/results/1948-2010_plots/' indexType t ...
         'crossValidationCorrelations.pdf']);
 end
