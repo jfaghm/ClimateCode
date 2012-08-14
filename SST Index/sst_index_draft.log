@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  14 AUG 2012 15:58
 =======
 <<<<<<< HEAD
@@ -8,27 +9,16 @@ entering extended mode
  \write18 enabled.
 =======
 This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  14 AUG 2012 15:29
+=======
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  14 AUG 2012 16:21
+>>>>>>> Add new section
 entering extended mode
  restricted \write18 enabled.
->>>>>>> New tables
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **sst_index_draft.tex
 (./sst_index_draft.tex
 LaTeX2e <2009/09/24>
-<<<<<<< HEAD
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, german-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, ar
-abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
-h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
-greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, ku
-rmanji, latin, latvian, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, po
-lish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, span
-ish, swedish, turkish, ukenglish, ukrainian, uppersorbian, welsh, loaded.
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/size10.clo
-=======
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
 c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
@@ -42,7 +32,6 @@ sh, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/size10.clo
->>>>>>> New tables
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -57,31 +46,19 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-<<<<<<< HEAD
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/inputenc.sty
-=======
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/inputenc.sty
->>>>>>> New tables
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-<<<<<<< HEAD
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/utf8.def
-=======
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
->>>>>>> New tables
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-<<<<<<< HEAD
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/t1enc.dfu
-=======
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/t1enc.dfu
->>>>>>> New tables
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -231,11 +208,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-<<<<<<< HEAD
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/ot1enc.dfu
-=======
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/ot1enc.dfu
->>>>>>> New tables
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -266,11 +239,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-<<<<<<< HEAD
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/omsenc.dfu
-=======
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/omsenc.dfu
->>>>>>> New tables
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -294,20 +263,6 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-<<<<<<< HEAD
-(/usr/local/texlive/2009/texmf-dist/tex/latex/subfig/subfig.sty
-Package: subfig 2005/06/28 ver: 1.3 subfig package
-
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks16
-)
-(/usr/local/texlive/2009/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2009/10/09 v3.1k Customizing captions (AR)
-
-(/usr/local/texlive/2009/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-=======
 (/usr/local/texlive/2010/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
@@ -320,7 +275,6 @@ Package: caption 2010/01/09 v3.1m Customizing captions (AR)
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
->>>>>>> New tables
 \captionmargin=\dimen103
 \captionmargin@=\dimen104
 \captionwidth=\dimen105
@@ -345,6 +299,7 @@ Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
 \sf@bottom=\skip47
 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 (/usr/local/texlive/2009/texmf-dist/tex/latex/ltxmisc/boxedminipage.sty)
 (/usr/local/texlive/2009/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count95
@@ -352,6 +307,8 @@ Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
 =======
 \lst@
 =======
+=======
+>>>>>>> Add new section
 (/usr/local/texlive/2010/texmf-dist/tex/latex/boxedminipage/boxedminipage.sty)
 (/usr/local/texlive/2010/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count95
@@ -514,6 +471,7 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 
 LaTeX Warning: Label `fig:figure21' multiply defined.
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 LaTeX Warning: Label `fig:figure38' multiply defined.
@@ -533,6 +491,8 @@ LaTeX Warning: Label `fig:figure21' multiply defined.
 LaTeX Warning: Label `fig:figure22' multiply defined.
 >>>>>>> New tables
 
+=======
+>>>>>>> Add new section
 )
 \openout1 = `sst_index_draft.aux'.
 
@@ -685,13 +645,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: figures/nino_nina_avg_diff.pdf Graphic file (type pdf)
 
 <use figures/nino_nina_avg_diff.pdf>
-Package pdftex.def Info: figures/nino_nina_avg_diff.pdf used on input line 85.
+Package pdftex.def Info: figures/nino_nina_avg_diff.pdf used on input line 83.
 (pdftex.def)             Requested size: 191.85121pt x 216.81pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 86.
+(Font)              <7> on input line 84.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 86.
+(Font)              <5> on input line 84.
  [2 <./figures/nino_nina_avg_diff.pdf>]
+<<<<<<< HEAD
 <figures/nino_cartoon.pdf, id=249, 602.95613pt x 488.23453pt>
 File: figures/nino_cartoon.pdf Graphic file (type pdf)
 
@@ -706,10 +667,18 @@ LaTeX Warning: Reference `table:acronyms' on page 4 undefined on input line 122
 
 Overfull \hbox (87.9452pt too wide) in paragraph at lines 125--137
 >>>>>>> New tables
+=======
+Overfull \hbox (82.66742pt too wide) in paragraph at lines 107--119
+>>>>>>> Add new section
 [][] 
  []
 
+[3]
+Overfull \hbox (175.72314pt too wide) in paragraph at lines 155--175
+[][] 
+ []
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 LaTeX Warning: Reference `table:april_lead' on page 4 undefined on input line 1
 41.
@@ -729,15 +698,27 @@ Overfull \hbox (0.3892pt too wide) in paragraph at lines 141--142
 =======
 LaTeX Warning: Reference `table:lin_corr' on page 4 undefined on input line 142
 .
+=======
+>>>>>>> Add new section
 
-[4]
-Overfull \hbox (175.72314pt too wide) in paragraph at lines 174--194
+Overfull \hbox (198.63991pt too wide) in paragraph at lines 182--202
 [][] 
  []
 
+<<<<<<< HEAD
 [5]
 <figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf, id=275, 432.08052pt
 >>>>>>> New tables
+=======
+[4] [5] [6] <figures/nino_cartoon.pdf, id=264, 602.95613pt x 488.23453pt>
+File: figures/nino_cartoon.pdf Graphic file (type pdf)
+
+<use figures/nino_cartoon.pdf>
+Package pdftex.def Info: figures/nino_cartoon.pdf used on input line 311.
+(pdftex.def)             Requested size: 223.12708pt x 180.67499pt.
+
+<figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf, id=265, 432.08052pt
+>>>>>>> Add new section
  x 348.24403pt>
 File: figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf Graphic file (t
 ype pdf)
@@ -747,11 +728,15 @@ ype pdf)
 <figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf, id=271
 =======
 Package pdftex.def Info: figures/sensitivityResults/boxSize/ACE_Index_Box_Size.
-pdf used on input line 262.
+pdf used on input line 322.
 (pdftex.def)             Requested size: 207.0021pt x 166.83641pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf, id=276
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf, id=266
+>>>>>>> Add new section
 , 436.5948pt x 340.50522pt>
 File: figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf Gr
 aphic file (type pdf)
@@ -761,20 +746,28 @@ aphic file (type pdf)
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 206--217
 =======
 Package pdftex.def Info: figures/sensitivityResults/boxSize/Major_Hurricanes_In
-dex_Box_Size.pdf used on input line 268.
+dex_Box_Size.pdf used on input line 328.
 (pdftex.def)             Requested size: 207.0021pt x 161.4455pt.
 
+<<<<<<< HEAD
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 261--272
 >>>>>>> New tables
+=======
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 321--332
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf, id=272, 430.79074pt
 =======
 <figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf, id=277, 430.79074pt
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf, id=267, 430.79074pt
+>>>>>>> Add new section
  x 342.43997pt>
 File: figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf Graphic file (t
 ype pdf)
@@ -784,11 +777,15 @@ ype pdf)
 <figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf, id=273, 426.92139pt
 =======
 Package pdftex.def Info: figures/sensitivityResults/boxSize/NTC_Index_Box_Size.
-pdf used on input line 275.
+pdf used on input line 335.
 (pdftex.def)             Requested size: 207.0021pt x 164.54697pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf, id=278, 426.92139pt
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf, id=268, 426.92139pt
+>>>>>>> Add new section
  x 345.66438pt>
 File: figures/sensitivityResults/boxSize/TCS_Index_Box_Size.pdf Graphic file (t
 ype pdf)
@@ -805,17 +802,21 @@ sitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf>]
 .pdf, id=303, 464.13559pt x 398.81277pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/boxSize/TCS_Index_Box_Size.
-pdf used on input line 281.
+pdf used on input line 341.
 (pdftex.def)             Requested size: 207.0021pt x 167.60481pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 274--285
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 334--345
 [][]   [] 
  []
 
-[6]
+[7 <./figures/nino_cartoon.pdf>]
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_range
+<<<<<<< HEAD
 .pdf, id=282, 464.13559pt x 398.81277pt>
 >>>>>>> New tables
+=======
+.pdf, id=287, 464.13559pt x 398.81277pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_
 range.pdf Graphic file (type pdf)
 
@@ -826,12 +827,16 @@ ange.pdf>
 e.pdf, id=304, 481.32579pt x 393.65569pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
-h_ranges_ace_month_range.pdf used on input line 291.
+h_ranges_ace_month_range.pdf used on input line 351.
 (pdftex.def)             Requested size: 207.0021pt x 177.8697pt.
 
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_hurr_month_rang
+<<<<<<< HEAD
 e.pdf, id=283, 481.32579pt x 393.65569pt>
 >>>>>>> New tables
+=======
+e.pdf, id=288, 481.32579pt x 393.65569pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_hurr_month
 _range.pdf Graphic file (type pdf)
 
@@ -841,21 +846,29 @@ range.pdf>
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 237--248
 =======
 Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
-h_ranges_hurr_month_range.pdf used on input line 297.
+h_ranges_hurr_month_range.pdf used on input line 357.
 (pdftex.def)             Requested size: 207.0021pt x 169.29868pt.
 
+<<<<<<< HEAD
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 290--301
 >>>>>>> New tables
+=======
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 350--361
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month_range
 <<<<<<< HEAD
+<<<<<<< HEAD
 .pdf, id=305, 484.76382pt x 401.39128pt>
 =======
 .pdf, id=284, 484.76382pt x 401.39128pt>
 >>>>>>> New tables
+=======
+.pdf, id=289, 484.76382pt x 401.39128pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month_
 range.pdf Graphic file (type pdf)
 
@@ -866,12 +879,16 @@ ange.pdf>
 .pdf, id=306, 470.15215pt x 398.81277pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
-h_ranges_ntc_month_range.pdf used on input line 305.
+h_ranges_ntc_month_range.pdf used on input line 365.
 (pdftex.def)             Requested size: 207.0021pt x 171.40056pt.
 
 <figures/sensitivityResults/monthRanges/index_corr_month_ranges_tcs_month_range
+<<<<<<< HEAD
 .pdf, id=285, 470.15215pt x 398.81277pt>
 >>>>>>> New tables
+=======
+.pdf, id=290, 470.15215pt x 398.81277pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/monthRanges/index_corr_month_ranges_tcs_month_
 range.pdf Graphic file (type pdf)
 
@@ -889,17 +906,21 @@ esults/monthRanges/index_corr_month_ranges_hurr_month_range.pdf>]
 <figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf, id=370, 40
 =======
 Package pdftex.def Info: figures/sensitivityResults/monthRanges/index_corr_mont
-h_ranges_tcs_month_range.pdf used on input line 311.
+h_ranges_tcs_month_range.pdf used on input line 371.
 (pdftex.def)             Requested size: 207.0021pt x 175.59377pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 304--315
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 364--375
 [][]   [] 
  []
 
-[7 <./figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf> <./figures/sen
+[8 <./figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf> <./figures/sen
 sitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf>]
+<<<<<<< HEAD
 <figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf, id=316, 40
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf, id=320, 40
+>>>>>>> Add new section
 4.35007pt x 336.63588pt>
 File: figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf Graphi
 c file (type pdf)
@@ -910,12 +931,16 @@ c file (type pdf)
 f, id=371, 395.96642pt x 326.96243pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/northSouthHem/ACE_Index_Nor
-th_South.pdf used on input line 321.
+th_South.pdf used on input line 381.
 (pdftex.def)             Requested size: 207.0021pt x 172.33438pt.
 
 <figures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_South.pd
+<<<<<<< HEAD
 f, id=317, 395.96642pt x 326.96243pt>
 >>>>>>> New tables
+=======
+f, id=321, 395.96642pt x 326.96243pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_Sou
 th.pdf Graphic file (type pdf)
 
@@ -925,20 +950,28 @@ h.pdf>
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 267--278
 =======
 Package pdftex.def Info: figures/sensitivityResults/northSouthHem/Major_Hurrica
-nes_Index_North_South.pdf used on input line 327.
+nes_Index_North_South.pdf used on input line 387.
 (pdftex.def)             Requested size: 207.0021pt x 170.92944pt.
 
+<<<<<<< HEAD
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 320--331
 >>>>>>> New tables
+=======
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 380--391
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf, id=372, 39
 =======
 <figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf, id=318, 39
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf, id=322, 39
+>>>>>>> Add new section
 6.61122pt x 330.83186pt>
 File: figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf Graphi
 c file (type pdf)
@@ -948,11 +981,15 @@ c file (type pdf)
 <figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf, id=373, 39
 =======
 Package pdftex.def Info: figures/sensitivityResults/northSouthHem/NTC_Index_Nor
-th_South.pdf used on input line 335.
+th_South.pdf used on input line 395.
 (pdftex.def)             Requested size: 207.0021pt x 172.66962pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf, id=319, 39
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf, id=323, 39
+>>>>>>> Add new section
 9.8358pt x 330.83186pt>
 File: figures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf Graphi
 c file (type pdf)
@@ -971,17 +1008,21 @@ orth_South.pdf>]
 <figures/sensitivityResults/northHem/ACE_Index_North.pdf, id=458, 415.95819pt x
 =======
 Package pdftex.def Info: figures/sensitivityResults/northSouthHem/TCS_Index_Nor
-th_South.pdf used on input line 341.
+th_South.pdf used on input line 401.
 (pdftex.def)             Requested size: 207.0021pt x 171.27634pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 334--345
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 394--405
 [][]   [] 
  []
 
-[8 <./figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf> <./figures/sen
+[9 <./figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf> <./figures/sen
 sitivityResults/boxSize/TCS_Index_Box_Size.pdf>]
+<<<<<<< HEAD
 <figures/sensitivityResults/northHem/ACE_Index_North.pdf, id=350, 415.95819pt x
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/northHem/ACE_Index_North.pdf, id=354, 415.95819pt x
+>>>>>>> Add new section
  337.92569pt>
 File: figures/sensitivityResults/northHem/ACE_Index_North.pdf Graphic file (typ
 e pdf)
@@ -990,11 +1031,15 @@ e pdf)
 <figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf, id=459, 
 =======
 Package pdftex.def Info: figures/sensitivityResults/northHem/ACE_Index_North.pd
-f used on input line 352.
+f used on input line 412.
 (pdftex.def)             Requested size: 207.0021pt x 168.16835pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf, id=351, 
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf, id=355, 
+>>>>>>> Add new section
 419.18263pt x 333.41142pt>
 File: figures/sensitivityResults/northHem/Major_Hurricanes_Index_North.pdf Grap
 hic file (type pdf)
@@ -1004,20 +1049,28 @@ hic file (type pdf)
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 298--309
 =======
 Package pdftex.def Info: figures/sensitivityResults/northHem/Major_Hurricanes_I
-ndex_North.pdf used on input line 358.
+ndex_North.pdf used on input line 418.
 (pdftex.def)             Requested size: 207.0021pt x 164.64996pt.
 
+<<<<<<< HEAD
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 351--362
 >>>>>>> New tables
+=======
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 411--422
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <figures/sensitivityResults/northHem/NTC_Index_North.pdf, id=460, 418.53775pt x
 =======
 <figures/sensitivityResults/northHem/NTC_Index_North.pdf, id=352, 418.53775pt x
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/northHem/NTC_Index_North.pdf, id=356, 418.53775pt x
+>>>>>>> Add new section
  337.28076pt>
 File: figures/sensitivityResults/northHem/NTC_Index_North.pdf Graphic file (typ
 e pdf)
@@ -1026,11 +1079,15 @@ e pdf)
 <figures/sensitivityResults/northHem/TCS_Index_North.pdf, id=461, 411.44386pt x
 =======
 Package pdftex.def Info: figures/sensitivityResults/northHem/NTC_Index_North.pd
-f used on input line 366.
+f used on input line 426.
 (pdftex.def)             Requested size: 207.0021pt x 166.81296pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/northHem/TCS_Index_North.pdf, id=353, 411.44386pt x
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/northHem/TCS_Index_North.pdf, id=357, 411.44386pt x
+>>>>>>> Add new section
  339.21552pt>
 File: figures/sensitivityResults/northHem/TCS_Index_North.pdf Graphic file (typ
 e pdf)
@@ -1047,18 +1104,25 @@ rthHem/Major_Hurricanes_Index_North.pdf>]
 <figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf, id=537, 426.2
 =======
 Package pdftex.def Info: figures/sensitivityResults/northHem/TCS_Index_North.pd
-f used on input line 372.
+f used on input line 432.
 (pdftex.def)             Requested size: 207.0021pt x 170.66324pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 365--376
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 425--436
 [][]   [] 
  []
 
+<<<<<<< HEAD
 [9 <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month_
 range.pdf> <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_hu
 rr_month_range.pdf>]
 <figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf, id=391, 426.2
 >>>>>>> New tables
+=======
+[10 <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_ace_month
+_range.pdf> <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_h
+urr_month_range.pdf>]
+<figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf, id=395, 426.2
+>>>>>>> Add new section
 7649pt x 336.63597pt>
 File: figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf Graphic f
 ile (type pdf)
@@ -1069,12 +1133,16 @@ ile (type pdf)
 id=538, 425.63156pt x 335.34605pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_M
-onths.pdf used on input line 382.
+onths.pdf used on input line 442.
 (pdftex.def)             Requested size: 207.0021pt x 163.47371pt.
 
 <figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf, 
+<<<<<<< HEAD
 id=392, 425.63156pt x 335.34605pt>
 >>>>>>> New tables
+=======
+id=396, 425.63156pt x 335.34605pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.
 pdf Graphic file (type pdf)
 
@@ -1084,11 +1152,15 @@ df>
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 328--339
 =======
 Package pdftex.def Info: figures/sensitivityResults/hurrMonths/Major_Hurricanes
-_Index_Hurr_Months.pdf used on input line 388.
+_Index_Hurr_Months.pdf used on input line 448.
 (pdftex.def)             Requested size: 207.0021pt x 163.09293pt.
 
+<<<<<<< HEAD
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 381--392
 >>>>>>> New tables
+=======
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 441--452
+>>>>>>> Add new section
 [][]   [] 
  []
 
@@ -1098,7 +1170,7 @@ ile (type pdf)
 <<<<<<< HEAD
 =======
 Package pdftex.def Info: figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_M
-onths.pdf used on input line 395.
+onths.pdf used on input line 455.
 (pdftex.def)             Requested size: 207.0021pt x 163.47371pt.
 >>>>>>> New tables
 File: figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.
@@ -1119,19 +1191,23 @@ _Hurricanes_Index_Hurr_Months.pdf>]
 6, 342.94463pt x 654.94687pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/hurrMonths/Major_Hurricanes
-_Index_Hurr_Months.pdf used on input line 401.
+_Index_Hurr_Months.pdf used on input line 461.
 (pdftex.def)             Requested size: 207.0021pt x 163.09293pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 394--405
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 454--465
 [][]   [] 
  []
 
-[10 <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month
+[11 <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_ntc_month
 _range.pdf> <./figures/sensitivityResults/monthRanges/index_corr_month_ranges_t
 cs_month_range.pdf>]
 <figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf, id=43
+<<<<<<< HEAD
 0, 342.94463pt x 654.94687pt>
 >>>>>>> New tables
+=======
+4, 342.94463pt x 654.94687pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap.pdf G
 raphic file (type pdf)
 
@@ -1140,11 +1216,15 @@ raphic file (type pdf)
 <figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf, id=607,
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeMaps/centralPressu
-reAtlanticMap.pdf used on input line 411.
+reAtlanticMap.pdf used on input line 471.
 (pdftex.def)             Requested size: 189.75105pt x 362.38052pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf, id=431,
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf, id=435,
+>>>>>>> Add new section
  333.91974pt x 653.65764pt>
 File: figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf Gra
 phic file (type pdf)
@@ -1160,19 +1240,23 @@ Overfull \hbox (38.94653pt too wide) in paragraph at lines 357--368
 11, 371.3085pt x 663.97174pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffPIAtlanti
-cComposites.pdf used on input line 417.
+cComposites.pdf used on input line 477.
 (pdftex.def)             Requested size: 189.75105pt x 371.45169pt.
 
-Overfull \hbox (38.94653pt too wide) in paragraph at lines 410--421
+Overfull \hbox (38.94653pt too wide) in paragraph at lines 470--481
 [][]   [] 
  []
 
-[11 <./figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf> <./f
+[12 <./figures/sensitivityResults/northSouthHem/ACE_Index_North_South.pdf> <./f
 igures/sensitivityResults/northSouthHem/Major_Hurricanes_Index_North_South.pdf>
 ]
 <figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.pdf, id=4
+<<<<<<< HEAD
 82, 371.3085pt x 663.97174pt>
 >>>>>>> New tables
+=======
+86, 371.3085pt x 663.97174pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.pdf 
 Graphic file (type pdf)
 
@@ -1181,11 +1265,15 @@ Graphic file (type pdf)
 <figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf, id=612
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffRHComposi
-tesAtlanticMap.pdf used on input line 426.
+tesAtlanticMap.pdf used on input line 486.
 (pdftex.def)             Requested size: 207.0021pt x 370.17021pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf, id=483
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf, id=487
+>>>>>>> Add new section
 , 261.72089pt x 537.62373pt>
 File: figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf Gr
 aphic file (type pdf)
@@ -1195,21 +1283,29 @@ aphic file (type pdf)
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 372--383
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffSSTCompos
-itesAugToOct.pdf used on input line 432.
+itesAugToOct.pdf used on input line 492.
 (pdftex.def)             Requested size: 207.0021pt x 425.2185pt.
 
+<<<<<<< HEAD
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 425--436
 >>>>>>> New tables
+=======
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 485--496
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites.pdf, 
 <<<<<<< HEAD
+<<<<<<< HEAD
 id=613, 350.68013pt x 653.65764pt>
 =======
 id=484, 350.68013pt x 653.65764pt>
 >>>>>>> New tables
+=======
+id=488, 350.68013pt x 653.65764pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites.
 pdf Graphic file (type pdf)
 
@@ -1219,11 +1315,15 @@ df>
 <figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf, id=614, 349.39
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeMaps/diffWindShear
-AtlanticComposites.pdf used on input line 441.
+AtlanticComposites.pdf used on input line 501.
 (pdftex.def)             Requested size: 207.0021pt x 385.84416pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf, id=485, 349.39
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf, id=489, 349.39
+>>>>>>> Add new section
 093pt x 662.68243pt>
 File: figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf Graphic fi
 le (type pdf)
@@ -1243,28 +1343,32 @@ Overfull \hbox (73.44864pt too wide) in paragraph at lines 387--398
 <figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf, id=789, 414.0234
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeMaps/satDefAtlanti
-cMap.pdf used on input line 447.
+cMap.pdf used on input line 507.
 (pdftex.def)             Requested size: 207.0021pt x 392.62744pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 440--451
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 500--511
 [][]   [] 
  []
 
-[12 <./figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf> <./f
+[13 <./figures/sensitivityResults/northSouthHem/NTC_Index_North_South.pdf> <./f
 igures/sensitivityResults/northSouthHem/TCS_Index_North_South.pdf> <./figures/s
 ensitivityResults/northHem/ACE_Index_North.pdf> <./figures/sensitivityResults/n
-orthHem/Major_Hurricanes_Index_North.pdf>] [13 <./figures/sensitivityResults/no
+orthHem/Major_Hurricanes_Index_North.pdf>] [14 <./figures/sensitivityResults/no
 rthHem/NTC_Index_North.pdf> <./figures/sensitivityResults/northHem/TCS_Index_No
 rth.pdf> <./figures/sensitivityResults/hurrMonths/ACE_Index_Hurr_Months.pdf> <.
 /figures/sensitivityResults/hurrMonths/Major_Hurricanes_Index_Hurr_Months.pdf>]
-[14] [15 <./figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap
+[15] [16 <./figures/sensitivityResults/compositeMaps/centralPressureAtlanticMap
 .pdf> <./figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf>
-] [16 <./figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.p
+] [17 <./figures/sensitivityResults/compositeMaps/diffRHCompositesAtlanticMap.p
 df> <./figures/sensitivityResults/compositeMaps/diffSSTCompositesAugToOct.pdf>]
-[17 <./figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites
+[18 <./figures/sensitivityResults/compositeMaps/diffWindShearAtlanticComposites
 .pdf> <./figures/sensitivityResults/compositeMaps/satDefAtlanticMap.pdf>]
+<<<<<<< HEAD
 <figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf, id=807, 414.0234
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf, id=811, 414.0234
+>>>>>>> Add new section
 4pt x 323.7379pt>
 File: figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf Graphic file
  (type pdf)
@@ -1275,12 +1379,16 @@ File: figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf Graphic file
 =790, 409.5092pt x 325.02768pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/RHBarGra
-ph.pdf used on input line 457.
+ph.pdf used on input line 517.
 (pdftex.def)             Requested size: 207.0021pt x 161.8636pt.
 
 <figures/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf, id
+<<<<<<< HEAD
 =808, 409.5092pt x 325.02768pt>
 >>>>>>> New tables
+=======
+=812, 409.5092pt x 325.02768pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pd
 f Graphic file (type pdf)
 
@@ -1290,21 +1398,29 @@ f Graphic file (type pdf)
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 403--414
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/avgDiffW
-indShearBarGraph.pdf used on input line 463.
+indShearBarGraph.pdf used on input line 523.
 (pdftex.def)             Requested size: 207.0021pt x 164.29886pt.
 
+<<<<<<< HEAD
 Overfull \hbox (73.44864pt too wide) in paragraph at lines 456--467
 >>>>>>> New tables
+=======
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 516--527
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <figures/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf, id=
 <<<<<<< HEAD
+<<<<<<< HEAD
 791, 413.37857pt x 328.89716pt>
 =======
 809, 413.37857pt x 328.89716pt>
 >>>>>>> New tables
+=======
+813, 413.37857pt x 328.89716pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf
  Graphic file (type pdf)
 
@@ -1315,12 +1431,16 @@ File: figures/sensitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf
 =792, 408.86433pt x 321.80327pt>
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/centralP
-ressureBarGraph.pdf used on input line 471.
+ressureBarGraph.pdf used on input line 531.
 (pdftex.def)             Requested size: 207.0021pt x 164.69408pt.
 
 <figures/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf, id
+<<<<<<< HEAD
 =810, 408.86433pt x 321.80327pt>
 >>>>>>> New tables
+=======
+=814, 408.86433pt x 321.80327pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pd
 f Graphic file (type pdf)
 
@@ -1334,15 +1454,19 @@ Overfull \hbox (73.44864pt too wide) in paragraph at lines 417--428
 [14
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/satDefBa
-rGraphSmallerBox.pdf used on input line 477.
+rGraphSmallerBox.pdf used on input line 537.
 (pdftex.def)             Requested size: 207.0021pt x 162.92429pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 470--481
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 530--541
 [][]   [] 
  []
 
+<<<<<<< HEAD
 [18
 >>>>>>> New tables
+=======
+[19
+>>>>>>> Add new section
 
  <./figures/sensitivityResults/compositeBarGraphs/RHBarGraph.pdf> <./figures/se
 nsitivityResults/compositeBarGraphs/avgDiffWindShearBarGraph.pdf> <./figures/se
@@ -1350,10 +1474,14 @@ nsitivityResults/compositeBarGraphs/centralPressureBarGraph.pdf> <./figures/sen
 sitivityResults/compositeBarGraphs/satDefBarGraphSmallerBox.pdf>]
 <figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticCompositesBarGr
 <<<<<<< HEAD
+<<<<<<< HEAD
 aph.pdf, id=860, 421.76222pt x 329.54208pt>
 =======
 aph.pdf, id=878, 421.76222pt x 329.54208pt>
 >>>>>>> New tables
+=======
+aph.pdf, id=883, 421.76222pt x 329.54208pt>
+>>>>>>> Add new section
 File: figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticComposites
 BarGraph.pdf Graphic file (type pdf)
 
@@ -1363,11 +1491,15 @@ arGraph.pdf>
 <figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf, id=861, 419.827
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/avgDiffP
-IAtlanticCompositesBarGraph.pdf used on input line 485.
+IAtlanticCompositesBarGraph.pdf used on input line 545.
 (pdftex.def)             Requested size: 207.0021pt x 161.74353pt.
 
+<<<<<<< HEAD
 <figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf, id=879, 419.827
 >>>>>>> New tables
+=======
+<figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf, id=884, 419.827
+>>>>>>> Add new section
 5pt x 328.89716pt>
 File: figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf Graphic fil
 e (type pdf)
@@ -1384,18 +1516,22 @@ sBarGraph.pdf> <./figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf
 <figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf, id=891,
 =======
 Package pdftex.def Info: figures/sensitivityResults/compositeBarGraphs/sstBarGr
-aph.pdf used on input line 491.
+aph.pdf used on input line 551.
 (pdftex.def)             Requested size: 207.0021pt x 162.16974pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 484--495
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 544--555
 [][]   [] 
  []
 
-[19 <./figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticComposite
+[20 <./figures/sensitivityResults/compositeBarGraphs/avgDiffPIAtlanticComposite
 sBarGraph.pdf> <./figures/sensitivityResults/compositeBarGraphs/sstBarGraph.pdf
 >]
+<<<<<<< HEAD
 <figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf, id=911,
 >>>>>>> New tables
+=======
+<figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf, id=915,
+>>>>>>> Add new section
  323.60559pt x 645.94217pt>
 File: figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf Gra
 phic file (type pdf)
@@ -1405,11 +1541,15 @@ phic file (type pdf)
 <figures/comboIndex/composites/compareMDRCompositesPI.pdf, id=892, 317.50679pt 
 =======
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesCent
-ralPressure.pdf used on input line 503.
+ralPressure.pdf used on input line 563.
 (pdftex.def)             Requested size: 189.75105pt x 378.76665pt.
 
+<<<<<<< HEAD
 <figures/comboIndex/composites/compareMDRCompositesPI.pdf, id=912, 317.50679pt 
 >>>>>>> New tables
+=======
+<figures/comboIndex/composites/compareMDRCompositesPI.pdf, id=916, 317.50679pt 
+>>>>>>> Add new section
 x 653.9044pt>
 File: figures/comboIndex/composites/compareMDRCompositesPI.pdf Graphic file (ty
 pe pdf)
@@ -1418,20 +1558,28 @@ pe pdf)
 Overfull \hbox (38.94653pt too wide) in paragraph at lines 449--460
 =======
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesPI.p
-df used on input line 509.
+df used on input line 569.
 (pdftex.def)             Requested size: 189.75105pt x 390.79912pt.
 
+<<<<<<< HEAD
 Overfull \hbox (38.94653pt too wide) in paragraph at lines 502--513
 >>>>>>> New tables
+=======
+Overfull \hbox (38.94653pt too wide) in paragraph at lines 562--573
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf, id=893
 =======
 <figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf, id=913
 >>>>>>> New tables
+=======
+<figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf, id=917
+>>>>>>> Add new section
 , 357.70065pt x 653.30003pt>
 File: figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf Gr
 aphic file (type pdf)
@@ -1441,11 +1589,15 @@ aphic file (type pdf)
 <figures/comboIndex/composites/compareMDRCompositesSST.pdf, id=894, 313.39735pt
 =======
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesRela
-tiveHumidity.pdf used on input line 518.
+tiveHumidity.pdf used on input line 578.
 (pdftex.def)             Requested size: 189.75105pt x 346.56636pt.
 
+<<<<<<< HEAD
 <figures/comboIndex/composites/compareMDRCompositesSST.pdf, id=914, 313.39735pt
 >>>>>>> New tables
+=======
+<figures/comboIndex/composites/compareMDRCompositesSST.pdf, id=918, 313.39735pt
+>>>>>>> Add new section
  x 654.74036pt>
 File: figures/comboIndex/composites/compareMDRCompositesSST.pdf Graphic file (t
 ype pdf)
@@ -1455,20 +1607,28 @@ ype pdf)
 Overfull \hbox (38.94653pt too wide) in paragraph at lines 464--475
 =======
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesSST.
-pdf used on input line 524.
+pdf used on input line 584.
 (pdftex.def)             Requested size: 189.75105pt x 396.42384pt.
 
+<<<<<<< HEAD
 Overfull \hbox (38.94653pt too wide) in paragraph at lines 517--528
 >>>>>>> New tables
+=======
+Overfull \hbox (38.94653pt too wide) in paragraph at lines 577--588
+>>>>>>> Add new section
 [][]   [] 
  []
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <figures/comboIndex/composites/compareMDRCompositesWindShear.pdf, id=895, 318.7
 =======
 <figures/comboIndex/composites/compareMDRCompositesWindShear.pdf, id=915, 318.7
 >>>>>>> New tables
+=======
+<figures/comboIndex/composites/compareMDRCompositesWindShear.pdf, id=919, 318.7
+>>>>>>> Add new section
 4573pt x 662.82855pt>
 File: figures/comboIndex/composites/compareMDRCompositesWindShear.pdf Graphic f
 ile (type pdf)
@@ -1529,14 +1689,19 @@ alidation/monthlySensitivityTestTCS.pdf>] (./sst_index_draft.bbl [21
 =======
 <use figures/comboIndex/composites/compareMDRCompositesWindShear.pdf>
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesWind
-Shear.pdf used on input line 532.
+Shear.pdf used on input line 592.
 (pdftex.def)             Requested size: 189.75105pt x 394.59521pt.
- [20 <./figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf> 
-<./figures/comboIndex/composites/compareMDRCompositesPI.pdf>] [21 <./figures/co
+ [21 <./figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf> 
+<./figures/comboIndex/composites/compareMDRCompositesPI.pdf>] [22 <./figures/co
 mboIndex/composites/compareMDRCompositesRelativeHumidity.pdf> <./figures/comboI
+<<<<<<< HEAD
 ndex/composites/compareMDRCompositesSST.pdf>] [22 <./figures/comboIndex/composi
 tes/compareMDRCompositesWindShear.pdf>] (./sst_index_draft.bbl [23
 >>>>>>> New tables
+=======
+ndex/composites/compareMDRCompositesSST.pdf>] [23 <./figures/comboIndex/composi
+tes/compareMDRCompositesWindShear.pdf>] (./sst_index_draft.bbl [24
+>>>>>>> Add new section
 
 ])
 Package minitoc Info: I0009
@@ -1548,19 +1713,21 @@ Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the sst_index_draft.log file..
 <<<<<<< HEAD
+<<<<<<< HEAD
  [22]
 =======
  [24]
 >>>>>>> New tables
+=======
+ [25]
+>>>>>>> Add new section
 (./sst_index_draft.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
 <<<<<<< HEAD
  5496 strings out of 493848
  88456 string characters out of 3149207
@@ -1589,24 +1756,34 @@ PDF statistics:
  96018 string characters out of 3144955
  167441 words of memory out of 3000000
  8990 multiletter control sequences out of 15000+200000
+=======
+ 6006 strings out of 493763
+ 96100 string characters out of 3144955
+ 180441 words of memory out of 3000000
+ 8995 multiletter control sequences out of 15000+200000
+>>>>>>> Add new section
  8848 words of font info for 31 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  44i,7n,42p,1560b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
-/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on sst_index_draft.pdf (24 pages, 2131303 bytes).
+usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
+texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on sst_index_draft.pdf (25 pages, 2143332 bytes).
 PDF statistics:
- 1037 PDF objects out of 1200 (max. 8388607)
- 700 compressed objects within 7 object streams
+ 1046 PDF objects out of 1200 (max. 8388607)
+ 706 compressed objects within 8 object streams
  0 named destinations out of 1000 (max. 500000)
  186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+<<<<<<< HEAD
 >>>>>>> New tables
 >>>>>>> New tables
+=======
+>>>>>>> Add new section

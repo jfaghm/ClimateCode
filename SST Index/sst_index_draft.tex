@@ -88,25 +88,7 @@ the location of maximum near-tropical Pacific warming anomaly instead of its abs
 
 
 
-\subsection{ENSO Overview}
-The quasi-periodic cycle (2-7 years) of warming and cooling of the near equatorial Pacific Ocean, known as the El-Ni\~no Souther Oscillation (ENSO) is associated with anomalous atmospheric circulation and alterations to the Eastern Pacific thermocline (the subsurface boundary between upper warm waters and deep cool waters). During its warm, El-Ni\~no (EN) phase, the equatorial Pacific Ocean experiences weak easterly winds causing an increase in Eastern Pacific SSTs, that in turn alters the atmospheric zonal (Walker) circulation, generally resulting in prevailing westerlies. ENSO's cold, La Ni\~na (LN) phase, is characterized by the opposite atmospheric conditions -- with cold SST anomalies along the Eastern Pacific and warm ones near the Western Pacific as a result of prevailing easterly winds (see Figure \ref{fig:enso_cartoon}). The mechanisms that control the reversal to the opposite LN phase are not fully understood \cite{kirtman1997,smith2012}. Recent research has suggested that to fully capture ENSO activity, it is no longer sufficient to monitor the warm and cold phases in the Eastern Pacific. Instead, warming patterns in the Central Pacific must be monitored as well \cite{ashok2007}. Warming in the Central Pacific, known as El Ni\~no Modoki, where a warm waters are surrounded by cold ones has been observed with increased frequency since the 1990s. Such changes have been attributed to anthropogenic global warming \cite{yeh2009} as well as natural climate variability \cite{wittenberg2009}.
 
-Enhanced convection as a result of anomalous Pacific Ocean warming is associated with strong westerly upper tropospheric wind over the Caribbean basin and tropical Atlantic, resulting in low TC activity during EN events and high TC activity LN \cite{gray1984a}. Other studies have suggested that ENSO impact Atlantic TC activity via tropospheric warming \cite{tang2004}. 
-
-%In fact, recent research has attributed increased accuracy in predicting seasonal TC activity with reasonable lead times to an increased ability to predict Pacific SSTs \cite{smith2010}.$
-
-%The warming anomalies of sea surface temperatures (SSTs) along the near-equatorial Pacific Ocean have well documented global long-range weather teleconnections from rainfall in southern India to mudslides in the western United States. 
-
-% Hurricanes, or more generally tropical cyclones (TCs), are one of the most devastating natural disasters in terms of both human and material loss. Therefore there is significant scientific and societal interest in understanding how will TC activity (frequency, intensity, and trajectories) evolve especially under global warming conditions. Our understanding our future TC activity under various warming scenarios is limited \cite{knutson2010} mainly due to two major questions: First, how will the large scale conditions over TC development regions evolve if the environment continues to warm; (ii) and if we can predict such conditions what would future TC activity be as a response to such large-scale changes? Subsequently, to understand future Atlantic TC activity, we must first understand how will the large-scale conditions over the Atlantic change and how will Atlantic TCs respond to such changes.
-
-
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[height=2.5in]{figures/nino_cartoon.pdf}
-	\caption{(a), An El Ni\~no event is produced when the easterly winds weaken; sometimes, in the west, westerlies prevail. This condition is categorized by warmer than normal sea surface temperatures (SSTs) in the east of the ocean, and is associated with alterations in the thermocline and in the atmospheric circulation that make the east wetter and the west drier. (b), An El Ni\~no Modoki event is an anomalous condition of a distinctly different kind. The warmest SSTs occur in the central Pacific, flanked by colder waters to the east and west, and are associated with distinct patterns of atmospheric convection. (c), (d), The opposite (La Ni\~na) phases of the El Niño and El Ni\~no Modoki respectively. Image and caption used for illustration purposes only taken from \cite{ashok2009}}
-	\label{fig:enso_cartoon}
-\end{figure}
 
 
 
@@ -118,7 +100,7 @@ An increasing number of studies have suggested changes in the spatial warming pa
 
 For each season, we search for the maximum positive warming anomaly in regions of size comparable to that of warming-based ENSO indices. The PWP is selected by searching the Northern Tropical Pacific ($0-30^\circ$ N). The time series of the longitude of the PWP is then correlated with various quantities that communicate August-October Atlantic TC activity: number of tropical cyclones, number of major hurricanes, potential dissipation index (PDI) \cite{emanuel2005a}, accumulated cyclone energy (ACE) \cite{Bell2000}, and net tropical cyclone energy (NTC) \cite{goldenberg2001}.
 
-In addition to tracking the longitude of the PWP, we also monitored other environmental factors that might influence Atlantic TC activity: the mean pressure value over the PWP, the mean Outgoing Longwave Radiation (OLR) of the PWP to monitor atmospheric deep convection, the longitude of the minimal pressure region to approximate Pacific cyclone activity, and finally the longitudinal distance between PWP and the coldest near equatorial Pacific SST region (Pacific Cold Pool or PCP). Finally, we ran a series of exhaustive experiments to linearly combine the above mentioned quantities into a single index (named Combo Index). Each index is built by computing the z-score for each quantity (i.e. mean OLR, etc.) then we add each normalized quantity to build a single index to use for analysis. Please see table \ref{table:acronyms}
+In addition to tracking the longitude of the PWP, we also monitored other environmental factors that might influence Atlantic TC activity: the mean pressure value over the PWP, the mean Outgoing Longwave Radiation (OLR) of the PWP to monitor atmospheric deep convection, the longitude of the minimal pressure region to approximate Pacific cyclone activity, and finally the longitudinal distance between PWP and the coldest near equatorial Pacific SST region (Pacific Cold Pool or PCP). Finally, we ran a series of exhaustive experiments to linearly combine the above mentioned quantities into a single index (named Combo Index). Each index is built by computing the z-score for each quantity (i.e. mean OLR, etc.) then we add each normalized quantity to build a single index to use for analysis. Please see table \ref{ref:acronyms}
 
 \begin{table}
 \begin{tabular}{cc}
@@ -137,10 +119,8 @@ Combo Index & A linear combination of xxxx \\
 \label{ref:acronyms}
 \end{table}
 
-<<<<<<< HEAD
-=======
 \subsection{Correlating S-ENSO Atlantic TC activity}
-To validate our hypothesis we construct the above-mentioned indices for the March-October season and then correlate the resulting index with various quantities that communicate August-October Atlantic TC activity: number of tropical cyclones, number of major hurricanes, potential dissipation index (PDI) \cite{emanuel2005a}, accumulated cyclone energy (ACE) \cite{Bell2000}, and net tropical cyclone energy (NTC) \cite{goldenberg2001}. For comparison, we also correlate the traditional ENSO indices during the same months (March-October). Table \ref{ref:lin_corr} shows the performance of our various indices compared to traditional indices. Our combo index has a 0.80 correlation with seasonal tropical cyclone counts and major (Category 4-5) hurricanes. This is a significant improvement compared to the NINO1.2 and NINO3.4 indices. Another notable high performer is the longitudinal distance between PWP and PCP (PWP-PCP index) with 0.67 correlation with all tropical cyclone and major hurricane counts. We might favor this index given that it is much simpler than the Combo Index and might provide a more intuitive pathway to Atlantic TC activity
+To validate our hypothesis we construct the above-mentioned indices for the March-October season and then correlate the resulting index with various quantities that communicate August-October Atlantic TC activity: number of tropical cyclones, number of major hurricanes, potential dissipation index (PDI) \cite{emanuel2005a}, accumulated cyclone energy (ACE) \cite{Bell2000}, and net tropical cyclone energy (NTC) \cite{goldenberg2001}. For comparison, we also correlate the traditional ENSO indices during the same months (March-October). Table \ref{ref:lin_corr} shows the performance of our various indices compared to traditional indices. Our combo index has a 0.80 correlation with seasonal tropical cyclone counts and major (Category 4-5) hurricanes. This is a significant improvement compared to the NINO1.2 and NINO3.4 indices. Another notable high performer is the longitudinal distance between PWP and PCP (PWP-PCP index) with 0.67 correlation with all tropical cyclone and major hurricane counts. We might favor this index given that it is much simpler than the Combo Index and might provide a more intuitive pathway to Atlantic TC activity than the Combo Index.
 
 \begin{table}
 \begin{tabular}{cccccc}
@@ -168,7 +148,7 @@ Modoki EMI & -0.062 & -0.21 & -0.088 & -0.11 & -0.12\\
 \end{table}
 
 \subsection{Lead times}
-To test the robustness of our indices, we also increased computed the correlation between our indices and Atlantic TC activity with increasing lead times. Tables \ref{ref:lead_tc} and  \ref{ref:lead_hurr} show the correlations as a function of lead time for ASO TC and major hurricane counts respectively. The Combo Index has limited long range prediction as it doesn't have much skill until July for both hurricanes and TCs. Our SST-based indices (PWP-lon and PWP-PCP) have better long-range predictability. Our improvement over major NINO indices is significant with increased lead time (up to an order of magnitude better in some cases). This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}. However, it is important to note that one static region in the Pacific (Modoki Box C) has good long-range correlations to both TCs and major hurricanes. 
+To test the robustness of our indices, we also increased computed the correlation between our indices and Atlantic TC activity with increasing lead times. Tables \ref{ref:lead_tc} and  \ref{ref:lead_hurr} show the correlations as a function of lead time for ASO TC and major hurricane counts respectively. The Combo Index has limited long range prediction as it doesn't have much skill until July for both hurricanes and TCs. Our SST-based indices (PWP-lon and PWP-PCP) have better long-range predictability. Our improvement over major NINO indices is significant with increased lead time (up to an order of magnitude better in some cases). This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}. However, it is important to note that one static region in the Pacific (Modoki Box C) has good long-range correlations to both TCs and major hurricanes. However, that region alone isn't known to be used to TC or hurricane prediction. Another interesting observation, is the high correlation with both TCs and major hurricanes for the Jan-Dec month range for the Combo Index.
 
 \begin{table}
 \begin{tabular}{ccccccccccccc}
@@ -180,7 +160,7 @@ PWP-Pres &0.068 & 0.10 & 0.042 & 0.075 & 0.19 & 0.3 & 0.38 & 0.48 & 0.52 & 0.52 
 PWP-OLR   & -0.35 & -0.21 & -0.13 & 0.03 & 0.054 & 0.2 & 0.21 & 0.4 & 0.48 & 0.50 & 0.51 & 0.57\\
 MinPres-Lon & -0.21 & -0.17 & -0.068 & -0.0013 & -0.37 & -0.18 & -0.095 & 0.025 & 0.094 & -0.14 & -0.13 & -0.25\\
 PWP-PCP  & \textbf{0.44} & 0.35 & 0.35 & 0.36 & 0.43 & 0.53 & 0.53 & 0.60 & 0.63 & 0.7 & 0.68 & 0.6\\
-maxSSTLon & -0.3 & -0.36 & -0.38 & -0.37 & -0.39 & -0.4 & -0.53 & -0.53 & -0.55 & -0.56 & -0.59 & -0.56\\
+PWP-lon & -0.3 & -0.36 & -0.38 & -0.37 & -0.39 & -0.4 & -0.53 & -0.53 & -0.55 & -0.56 & -0.59 & -0.56\\
 Nino1+2  & 0.053 & -0.0094 & -0.067 & -0.13 & -0.19 & -0.23 & -0.27 & -0.30 & -0.34 & -0.37 & -0.40 & -0.42\\
 Nino 3 & -0.011 & -0.036 & -0.044 & -0.077 & -0.15 & -0.22 & -0.28 & -0.33 & -0.39 & -0.44 & -0.48 & -0.51\\
 Nino 4 & -0.0090 & -0.036 & -0.056 & -0.076 & -0.11 & -0.15 & -0.19 & -0.24 & -0.28 & -0.33 & -0.37 & -0.40\\
@@ -194,9 +174,142 @@ Modoki EMI & -0.14 & -0.16 & -0.16 & -0.16 & -0.16 & -0.16 & -0.17 & -0.19 & -0.
 \caption{Linear correlation scores between various indices computed over decreasing lead times and August-October Atlantic TC season counts. Each column header signifies the end month of the The highest score for each category is highlighted in \textbf{bold}}
 \label{ref:lead_tc}
 \end{table}
->>>>>>> New tables
 
-Tables \ref{table:april_lead} through \ref{table:oct_lead} show the linear correlation coefficients between August-October TC Atlantic TC activity and our ENSO spatial index for Feb-April, April-June, and August-October respectively. In all cases our spatial ENSO index correlates better than traditional warming-based indices. The improvements increase as we increase lead time, with April lead times improving by more than an order of magnitude. This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}.
+
+
+\begin{table}
+\begin{tabular}{ccccccccccccc}
+\hline
+& Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec\\
+\hline
+Combo Index  & -0.12 & 0.020 & 0.074 & 0.19 & 0.29 & 0.40 & 0.45 & 0.57 & 0.58 & \textbf{0.67} & \textbf{0.72} & \textbf{0.76}\\
+PWP-Pres & 0.18 & 0.026 & 0.07 & 0 & 0.23 & 0.29 & 0.32 & 0.3 & 0.37 & 0.39 & 0.48 & 0.56\\
+PWP-OLR & -0.50 & -0.29 & -0.20 & -0.041 & 0.0039 & 0.13 & 0.17 & 0.28 & 0.35 & 0.4 & 0.42 & 0.50\\
+MinPres-Lon & -0.26 & 0.0025 & 0.015 & -0.025 & -0.11 & -0.11 & 0.0023 & 0.12 & 0.075 & 0.053 & 0.025 & -0.04\\
+PWP-PCP & \textbf{0.33} & 0.30 & 0.25 & 0.31 & \textbf{0.46} & \textbf{0.50} & 0.52 & 0.60 & 0.61 & 0.68 & 0.72 & 0.71\\
+PWP-lon  & -0.21 & -0.28 & -0.30 & -0.33 & -0.46 & -0.48 & \textbf{-0.62} & \textbf{-0.62 }& \textbf{-0.64} & -0.64 & -0.70 & -0.67\\
+Nino1+2 & 0.076 & 0.015 & -0.035 & -0.067 & -0.12 & -0.16 & -0.21 & -0.27 & -0.31 & -0.36 & -0.41 & -0.44\\
+Nino 3 & 0.084 & 0.061 & 0.06 & 0.041 & -0.023 & -0.096 & -0.16 & -0.22 & -0.29 & -0.36 & -0.42 & -0.47\\
+Nino 4 & 0.18 & 0.15 & 0.12 & 0.093 & 0.060 & 0.028 & -0.002 & -0.039 & -0.086 & -0.14 & -0.18 & -0.23\\
+Nino 3.4 & 0.10 & 0.082 & 0.067 & 0.04 & -0.0099 & -0.068 & -0.12 & -0.18 & -0.25 & -0.3 & -0.37 & -0.43\\
+Modoki Box A & 0.14 & 0.10 & 0.078 & 0.049 & 0.0057 & -0.03 & -0.071 & -0.12 & -0.15 & -0.19 & -0.23 & -0.26\\
+Modoki Box B & 0.016 & -0.018 & -0.04 & -0.051 & -0.10 & -0.17 & -0.22 & -0.26 & -0.31 & -0.36 & -0.41 & -0.44\\
+Modoki Box C & 0.29 & \textbf{0.34} & \textbf{0.39} & \textbf{0.41} & 0.44 & \textbf{0.5} & 0.51 & 0.55 & 0.55 & 0.54 & 0.54 & 0.54\\
+Modoki EMI & 0.081 & 0.044 & 0.020 & -0.0097 & -0.02 & -0.018 & -0.023 & -0.039 & -0.034 & -0.038 & -0.045 & -0.053\\
+\hline
+\end{tabular}
+\caption{Linear correlation scores between various indices computed over decreasing lead times and August-October Atlantic major hurricane (CAT 4-5) season counts. Each column header signifies the end month of the The highest score for each category is highlighted in \textbf{bold}}
+\label{ref:lead_hurr}
+\end{table}
+
+\subsection{Seasonal TC forecasting}
+To asses our index' ability to forecast seasonal TC activity. We built a linear regression model using a leave k-out cross validation ($k=1,2,4,8$) Tables \ref{ref:l1o_corr} - \ref{ref:l8o_corr} show the results. We can see that our Combo Index is very robust regardless of how many observations are held out during training. However, it is important to note that the Modoki EMI index has an original correlation of -0.062 (no cross-validation) and a LOO cross-validation correlation of -0.56. It seems that straight non-random cross-validation might not fully address the ``Faghmous Paradox''
+
+\begin{table}
+\begin{tabular}{cccccc}
+\hline
+& TC & Major Hurricanes & PDI & NTC & ACE\\
+\hline
+Combo Index & 0.78 & 0.79 & 0.68 & 0.7 & 0.71\\
+PWP-Pres & 0.6 & 0.59 & 0.50 & 0.5 & 0.53\\
+PWP-OLR & 0.47 & 0.51 & 0.35 & 0.41 & 0.38\\
+MinPres-Lon & -0.32 & -0.50 & -0.27 & -0.22 & -0.19\\
+PWP-PCP & 0.62 & 0.61 & 0.50 & 0.59 & 0.51\\
+PWP-lon & 0.6 & 0.4 & 0.31 & 0.47 & 0.37\\
+Nino1+2 & 0.30 & 0.32 & 0.17 & 0.27 & 0.18\\
+Nino 3 & 0.35 & 0.4 & 0.3 & 0.35 & 0.29\\
+Nino 4 & 0.0022 & 0.27 & -0.099 & -0.022 & -0.035\\
+Nino 3.4 & 0.31 & 0.45 & 0.27 & 0.33 & 0.30\\
+Modoki Box A & 0.090 & 0.32 & 0.011 & 0.07 & 0.049\\
+Modoki Box B & 0.30 & 0.30 & 0.14 & 0.24 & 0.15\\
+Modoki Box C & 0.49 & 0.50 & 0.5 & 0.51 & 0.53\\
+Modoki EMI & -0.55 & -0.11 & -0.5 & -0.51 & -0.44\\
+\hline
+\end{tabular}
+\caption{Linear correlation between actual and predicted ASO Atlantic TC activity using \textbf{Leave One Out} cross-validation for each our indices and standard NINO indices.}
+\label{ref:l1o_corr}
+\end{table}
+
+
+\begin{table}
+\begin{tabular}{cccccc}
+\hline
+& TC & Major Hurricanes & PDI & NTC & ACE\\
+\hline
+Combo Index & 0.79 & 0.79 & 0.66 & 0.74 & 0.70\\
+PWP-Pres & 0.57 & 0.59 & 0.48 & 0.50 & 0.5\\
+PWP-OLR & 0.48 & 0.51 & 0.34 & 0.41 & 0.37\\
+MinPres-Lon & -0.37 & -0.55 & -0.35 & -0.30 & -0.3\\
+PWP-PCP & 0.65 & 0.61 & 0.46 & 0.57 & 0.49\\
+PWP-lon & 0.60 & 0.39 & 0.29 & 0.46 & 0.36\\
+Nino1+2 & 0.32 & 0.31 & 0.14 & 0.25 & 0\\
+Nino 3 & 0.35 & 0.4 & 0.25 & 0.32 & 0.27\\
+Nino 4 & -0.025 & 0.23 & -0.23 & -0.13 & -0.15\\
+Nino 3.4 & 0.31 & 0.44 & 0.22 & 0.29 & 0.26\\
+Modoki Box A & 0.077 & 0.29 & -0.090 & -0.018 & -0.043\\
+Modoki Box B & 0.32 & 0.29 & 0.12 & 0.22 & 0.14\\
+Modoki Box C & 0.51 & 0.50 & 0.49 & 0.5 & 0.51\\
+Modoki EMI & -0.50 & -0.15 & -0.52 & -0.5 & -0.48\\
+\hline
+\end{tabular}
+\caption{Linear correlation between actual and predicted ASO Atlantic TC activity using \textbf{Leave Two Out} cross-validation for each our indices and standard NINO indices.}
+\label{ref:l2o_corr}
+\end{table}
+
+\begin{table}
+\begin{tabular}{cccccc}
+\hline
+&TC & Major Hurricanes & PDI & NTC & ACE\\
+\hline
+Combo Index & 0.8 & 0.79 & 0.63 & 0.71 & 0.67\\
+PWP-Pres & 0.55 & 0.59 & 0.44 & 0.47 & 0.47\\
+PWP-OLR & 0.46 & 0.51 & 0.29 & 0.38 & 0.32\\
+MinPres-Lon & -0.37 & -0.40 & -0.40 & -0.33 & -0.34\\
+PWP-PCP & 0.65 & 0.62 & 0.42 & 0.5 & 0.45\\
+PWP-lon & 0.58 & 0.38 & 0.25 & 0.43 & 0.31\\
+Nino1+2 & 0.27 & 0.28 & 0.12 & 0.22 & 0.14\\
+Nino 3 & 0.29 & 0.38 & 0.18 & 0.25 & 0.2\\
+Nino 4 & -0.11 & 0.15 & -0 & -0.26 & -0.29\\
+Nino 3.4 & 0.2 & 0.40 & 0.11 & 0.19 & 0.15\\
+Modoki Box A & -0.0038 & 0.2 & -0.23 & -0.14 & -0.18\\
+Modoki Box B & 0.27 & 0.26 & 0.081 & 0.17 & 0.098\\
+Modoki Box C & 0.48 & 0.48 & 0.44 & 0.46 & 0.46\\
+Modoki EMI & -0.56 & -0.23 & -0.6 & -0.60 & -0.56\\
+\hline
+\end{tabular}
+\caption{Linear correlation between actual and predicted ASO Atlantic TC activity using \textbf{Leave Four Out} cross-validation for each our indices and standard NINO indices.}
+\label{ref:l4o_corr}
+\end{table}
+
+\begin{table}
+\begin{tabular}{cccccc}
+\hline
+& TC & Major Hurricanes & PDI & NTC & ACE\\
+\hline
+Combo Index & 0.77 & 0.78 & 0.65 & 0.72 & 0.67\\
+PWP-Pres & 0.49 & 0.53 & 0.42 & 0.44 & 0.43\\
+PWP-OLR & 0.35 & 0.44 & 0.25 & 0.32 & 0.25\\
+MinPres-Lon & -0.55 & -0.54 & -0.49 & -0.45 & -0.46\\
+PWP-PCP & 0.64 & 0.61 & 0.43 & 0.6 & 0.45\\
+PWP-lon & 0.55 & 0.35 & 0.2 & 0.4 & 0.25\\
+Nino1+2 & 0.12 & 0.15 & 0.0052 & 0.096 & 0.0055\\
+Nino 3 & 0.16 & 0.2 & 0.051 & 0.14 & 0.053\\
+Nino 4 & -0.25 & -0.00059 & -0.52 & -0.42 & -0.45\\
+Nino 3.4 & 0.13 & 0.27 & -0.046 & 0.073 & 0.0024\\
+Modoki Box A & -0.2 & 0.042 & -0.44 & -0.34 & -0.38\\
+Modoki Box B & 0.12 & 0.13 & -0.026 & 0.060 & -0.031\\
+Modoki Box C & 0.45 & 0.47 & 0.47 & 0.47 & 0.48\\
+Modoki EMI & -0.57 & -0.37 & -0.66 & -0.64 & -0.63\\
+\hline
+\end{tabular}
+\caption{Linear correlation between actual and predicted ASO Atlantic TC activity using \textbf{Leave Eight Out} cross-validation for each our indices and standard NINO indices.}
+\label{ref:l4o_corr}
+\end{table}
+
+
+\subsection{Impact on large-scale conditions over the Atlantic}
+To propose possible physical pathways by which our index impact Atlantic TC activity, we compute the composites for factors known to influence Atlantic TC activity: SST, central pressure, 
+%Tables \ref{table:april_lead} through \ref{table:oct_lead} show the linear correlation coefficients between August-October TC Atlantic TC activity and our ENSO spatial index for Feb-April, April-June, and August-October respectively. In all cases our spatial ENSO index correlates better than traditional warming-based indices. The improvements increase as we increase lead time, with April lead times improving by more than an order of magnitude. This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}.
 
 
 
@@ -254,6 +367,28 @@ Tables \ref{table:april_lead} through \ref{table:oct_lead} show the linear corre
 % \caption{Linear correlation coefficients between July-October mean SSTs of traditional warming-based ENSO indices as well as the January-April Spatial ENSO index and August-October Atlantic TC activity. Our Spatial ENSO index significantly outperforms traditional indices.}
 % \label{ref:table_jul_oct}
 % \end{table}
+
+\newpage
+\section{Appendix}
+\subsection{ENSO Overview}
+The quasi-periodic cycle (2-7 years) of warming and cooling of the near equatorial Pacific Ocean, known as the El-Ni\~no Souther Oscillation (ENSO) is associated with anomalous atmospheric circulation and alterations to the Eastern Pacific thermocline (the subsurface boundary between upper warm waters and deep cool waters). During its warm, El-Ni\~no (EN) phase, the equatorial Pacific Ocean experiences weak easterly winds causing an increase in Eastern Pacific SSTs, that in turn alters the atmospheric zonal (Walker) circulation, generally resulting in prevailing westerlies. ENSO's cold, La Ni\~na (LN) phase, is characterized by the opposite atmospheric conditions -- with cold SST anomalies along the Eastern Pacific and warm ones near the Western Pacific as a result of prevailing easterly winds (see Figure \ref{fig:enso_cartoon}). The mechanisms that control the reversal to the opposite LN phase are not fully understood \cite{kirtman1997,smith2012}. Recent research has suggested that to fully capture ENSO activity, it is no longer sufficient to monitor the warm and cold phases in the Eastern Pacific. Instead, warming patterns in the Central Pacific must be monitored as well \cite{ashok2007}. Warming in the Central Pacific, known as El Ni\~no Modoki, where a warm waters are surrounded by cold ones has been observed with increased frequency since the 1990s. Such changes have been attributed to anthropogenic global warming \cite{yeh2009} as well as natural climate variability \cite{wittenberg2009}.
+
+Enhanced convection as a result of anomalous Pacific Ocean warming is associated with strong westerly upper tropospheric wind over the Caribbean basin and tropical Atlantic, resulting in low TC activity during EN events and high TC activity LN \cite{gray1984a}. Other studies have suggested that ENSO impact Atlantic TC activity via tropospheric warming \cite{tang2004}. 
+
+%In fact, recent research has attributed increased accuracy in predicting seasonal TC activity with reasonable lead times to an increased ability to predict Pacific SSTs \cite{smith2010}.$
+
+%The warming anomalies of sea surface temperatures (SSTs) along the near-equatorial Pacific Ocean have well documented global long-range weather teleconnections from rainfall in southern India to mudslides in the western United States. 
+
+% Hurricanes, or more generally tropical cyclones (TCs), are one of the most devastating natural disasters in terms of both human and material loss. Therefore there is significant scientific and societal interest in understanding how will TC activity (frequency, intensity, and trajectories) evolve especially under global warming conditions. Our understanding our future TC activity under various warming scenarios is limited \cite{knutson2010} mainly due to two major questions: First, how will the large scale conditions over TC development regions evolve if the environment continues to warm; (ii) and if we can predict such conditions what would future TC activity be as a response to such large-scale changes? Subsequently, to understand future Atlantic TC activity, we must first understand how will the large-scale conditions over the Atlantic change and how will Atlantic TCs respond to such changes.
+
+
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[height=2.5in]{figures/nino_cartoon.pdf}
+	\caption{(a), An El Ni\~no event is produced when the easterly winds weaken; sometimes, in the west, westerlies prevail. This condition is categorized by warmer than normal sea surface temperatures (SSTs) in the east of the ocean, and is associated with alterations in the thermocline and in the atmospheric circulation that make the east wetter and the west drier. (b), An El Ni\~no Modoki event is an anomalous condition of a distinctly different kind. The warmest SSTs occur in the central Pacific, flanked by colder waters to the east and west, and are associated with distinct patterns of atmospheric convection. (c), (d), The opposite (La Ni\~na) phases of the El Niño and El Ni\~no Modoki respectively. Image and caption used for illustration purposes only taken from \cite{ashok2009}}
+	\label{fig:enso_cartoon}
+\end{figure}
 
 \subsection{Sensitivity Tests}
 To validate our results, we test the sensitivity of our results to the month ranges used to build the index, the size of the ENSO box used, the size of the search space, and the months used as TC season. As it can be seen from the figures below, our results are stable with respect to parameter choice, except for search space where the correlations chance drastically based on which region we search.
