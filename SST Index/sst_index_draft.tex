@@ -45,7 +45,6 @@
 %\pdfoutput=1 % we are running PDFLaTeX
 %\pdftrue
 %\fi
-
 \ifpdf
 \usepackage[pdftex]{graphicx}
 \else
@@ -56,14 +55,14 @@
 
 \date{2012-05-14}
 
-\begin{document}
+
 
 \ifpdf
 \DeclareGraphicsExtensions{.pdf, .jpg, .tif}
 \else
 \DeclareGraphicsExtensions{.eps, .jpg}
 \fi
-
+\begin{document}
 \maketitle
 
 \begin{abstract}
@@ -202,6 +201,7 @@ Tables \ref{table:april_lead} through \ref{table:oct_lead} show the linear corre
 To validate our results, we test the sensitivity of our results to the month ranges used to build the index, the size of the ENSO box used, the size of the search space, and the months used as TC season. As it can be seen from the figures below, our results are stable with respect to parameter choice, except for search space where the correlations chance drastically based on which region we search.
 %\pagebreak
 \subsection{Box Size Sensitivity Results}
+
 \begin{figure}[ht]
 \begin{minipage}[b]{0.6\linewidth}
 \includegraphics[width=\textwidth]{figures/sensitivityResults/boxSize/ACE_Index_Box_Size.pdf}
@@ -215,6 +215,7 @@ To validate our results, we test the sensitivity of our results to the month ran
 \label{fig:figure2}
 \end{minipage}
 \end{figure}
+
 \begin{figure}[ht]
 \begin{minipage}[b]{0.6\linewidth}
 \includegraphics[width=\textwidth]{figures/sensitivityResults/boxSize/NTC_Index_Box_Size.pdf}
@@ -228,6 +229,7 @@ To validate our results, we test the sensitivity of our results to the month ran
 \label{fig:figure4}
 \end{minipage}
 \end{figure}
+
 \pagebreak
 \subsection{Varying Month Ranges}
 
@@ -483,6 +485,51 @@ In this section, we compute four different indices, take the z-score of each, an
 %\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf}
 %\caption{Diff PI Composites}
 \label{fig:figure37}
+\end{minipage}
+\end{figure}
+\clearpage
+\section{Combo Index Cross Validation}
+In this section we compute the combination index in the same fashion as described int he previous section.  These results are for building the index with varying month ranges, and then performing leave one-out cross validation with the combination index and 5 different hurricane statistics 
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf}
+\caption{Corr Combo Index vs. ACE}
+\label{fig:figure38}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf}
+\caption{Corr Combo Index vs. Major Hurr}
+\label{fig:figure38}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf}
+\caption{Corr Combo Index vs. NTC}
+\label{fig:figure39}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf}
+\caption{Corr Combo Index vs. PDI}
+\label{fig:figure40}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.6\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf}
+\caption{Corr Combo Index vs. TCs}
+\label{fig:figure41}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.6\linewidth}
+%\includegraphics[width=\textwidth]{figures/sensitivityResults/boxSize/Major_Hurricanes_Index_Box_Size.pdf}
+%\caption{Corr Index vs. Major Hurricanes}
+%\label{fig:figure2}
 \end{minipage}
 \end{figure}
 
