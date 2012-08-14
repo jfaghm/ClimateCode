@@ -23,8 +23,9 @@ function [cc, ypred, target] = kfoldCrossValidate(indices, target, k)
     if mod(length(target), k) ~= 0
         error('incorrect number of folds provided');
     end
+    
     for i = 1:k:length(target)
-        test = logical(zeros(length(target), 1));
+        test = logical(zeros(length(target), 1)); %set the years to leave out.
         test(i:i+k-1) = 1;
         train = ~test;
         mdl = LinearModel.fit(indices(train), target(train), 'linear');

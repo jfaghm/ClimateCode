@@ -44,7 +44,8 @@ indexMatrix = [aso_tcs, aso_major_hurricanes, aso_pdi, aso_ntc, aso_ace, ...
     maxSSTLon, Nino1_2, Nino3, Nino4, Nino3_4, modokiBoxA, modokiBoxB, ...
     modokiBoxC, modokiEMI];
 
-ccMatrix = zeros(length(vars), length(hurrStats), length(folds)+1);
+%--leave 1, 2, 4, and 8 years out for cross validation
+ccMatrix = zeros(length(vars), length(hurrStats), length(folds)+2);
 for i = 1:length(vars)
     for j = 1:length(hurrStats)
         for k = 1:length(folds)
@@ -54,6 +55,7 @@ for i = 1:length(vars)
     end
 end
 
+%----Correlate raw indices with hurricane stats------------------------
 for i = 1:length(vars)
     for j = 1:length(hurrStats)
         ccMatrix(i, j, length(folds)+1) = corr(eval(vars{i}), eval(hurrStats{j}));
@@ -61,6 +63,7 @@ for i = 1:length(vars)
 end
 
 end
+
 
 
 function [data] = stripData(data)
