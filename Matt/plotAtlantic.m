@@ -11,10 +11,10 @@ function [ ] = plotAtlantic()
 %main development regions are printed to the directory specified in the
 %call to print.
 
-plotMDRDiffOnly('CentralPressureComposite.mat', [-3 3.5], true, 'Central Pressure');
-plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
-plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
-plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear');
+%plotMDRDiffOnly('CentralPressureComposite.mat', [-3 3], true, 'Central Pressure');
+%plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
+%plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
+%plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear');
 plotMDRDiffOnly('relativeHumidityComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)');
 end
 
@@ -24,7 +24,10 @@ if isempty(scaleDims)
 else
     scale = true;
 end
-eval(['load composites/comboIndex/' var]);
+
+indexType = 'SSTDiffIndex';
+
+eval(['load composites/sstDiff/' var]);
 eval(['load composites/ENSO_3.4/' var]);
 eval(['load composites/hurricaneFrequency/' var]);
 
@@ -47,14 +50,14 @@ colorbar
 
 subplot(3, 1, 2)
 worldmap([0 45], [-80, -15])
-pcolorm(lat, lon, diffComboIndex)
+pcolorm(lat, lon, diffSSTDiffIndex)
 if scale == true
     caxis(scaleDims)
 end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference Combo Index ' varName])
+title(['Difference ' indexType ' ' varName])
 colorbar
 
 subplot(3, 1, 3)

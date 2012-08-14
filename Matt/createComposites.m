@@ -19,6 +19,9 @@ function [] = createComposites(indexType, fileDest, pYears, nYears )
 %--->nothing, all matFiles are simply saved in the destination that is
 %supplied as one of the input parameters.
 %
+%--------------Example-------------------------------------------
+%
+%   createComposites('SSTIndex', 'composites/sstIndex', pYears, nYears);
 
 load matFiles/compositeVariables.mat
 
