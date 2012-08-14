@@ -126,7 +126,7 @@ In addition to tracking the longitude of the PWP, we also monitored other enviro
 \begin{table}
 \begin{tabular}{cc}
 \hline
-&Acronym & Quantity\\
+Acronym & Quantity\\
 \hline
 PWP-Lon & The longitude of the warmest SST pool in the northern near equatorial Pacific\\
 PWP-Pres & The mean presure of PWP\\
@@ -440,6 +440,54 @@ To validate our results, we test the sensitivity of our results to the month ran
 \label{fig:figure32}
 \end{minipage}
 \end{figure}
+
+\section{Combination Index Composites}
+In this section, we compute four different indices, take the z-score of each, and then sum all of them up into one index.  The four indices are: the OLR value inside the box of the warmest SST box, the pressure value inside of the warmest SST box, the longitude of the box with the lowest pressure, and the longitudinal distance between the warmest SST box and the coolest SST box.  In this section we should the results where we get the years of the highest index, composite 5 different variables, do the same for the years of low index, and then subtract the composites.
+\newpage
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.55\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf}
+\caption{Diff Pressure Composites}
+\label{fig:figure21}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.55\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/composites/compareMDRCompositesPI.pdf}
+\caption{Diff PI Composites}
+\label{fig:figure22}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.55\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf}
+\caption{Diff Relative Humidity 850 mbar}
+\label{fig:figure21}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.55\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/composites/compareMDRCompositesSST.pdf}
+\caption{Diff SST Composites}
+\label{fig:figure22}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.55\linewidth}
+\includegraphics[width=\textwidth]{figures/comboIndex/composites/compareMDRCompositesWindShear.pdf}
+\caption{Diff Pressure Composites}
+\label{fig:figure21}
+\end{minipage}
+\hspace{0cm}
+\begin{minipage}[b]{0.55\linewidth}
+%\includegraphics[width=\textwidth]{figures/sensitivityResults/compositeMaps/diffPIAtlanticComposites.pdf}
+%\caption{Diff PI Composites}
+\label{fig:figure22}
+\end{minipage}
+\end{figure}
+
 \clearpage
 \bibliographystyle{plain}
 \bibliography{hurricanes_copy}
