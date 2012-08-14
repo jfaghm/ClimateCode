@@ -117,9 +117,7 @@ Enhanced convection as a result of anomalous Pacific Ocean warming is associated
 
 
 \section{Spatial ENSO Index (S-ENSO)}
-An increasing number of studies have suggested changes in the spatial warming patterns of the Pacific Ocean and some have linked those changes U.S. hurricane landfall probabilities \cite{kim2009}. We propose that based on such results, the spatial distribution of Pacific Ocean warming might provide better predictive insights into ENSO-Atlantic TC activity than warming anomalies alone. We propose a distance-based ENSO index that tracks the location of maximum near-tropical Pacific warming anomaly (Pacific Warm Pool or PWP thereafter) instead of its absolute warming.
-
-For each season, we search for the maximum positive warming anomaly in regions of size comparable to that of warming-based ENSO indices. The PWP is selected by searching the Northern Tropical Pacific ($0-30^\circ$ N). The time series of the longitude of the PWP is then correlated with various quantities that communicate August-October Atlantic TC activity: number of tropical cyclones, number of major hurricanes, potential dissipation index (PDI) \cite{emanuel2005a}, accumulated cyclone energy (ACE) \cite{Bell2000}, and net tropical cyclone energy (NTC) \cite{goldenberg2001}.
+An increasing number of studies have suggested changes in the spatial warming patterns of the Pacific Ocean and some have linked those changes U.S. hurricane landfall probabilities \cite{kim2009}. We propose that based on such results, the spatial distribution of Pacific Ocean warming might provide better predictive insights into ENSO-Atlantic TC activity than warming anomalies alone. We propose a distance-based ENSO index that tracks the location of maximum near-tropical Pacific warming anomaly (Pacific Warm Pool or PWP thereafter) instead of its absolute warming. For each season, we search for the maximum positive warming anomaly in regions of size comparable to that of warming-based ENSO indices. The PWP is selected by searching the Northern Tropical Pacific ($0-30^\circ$ N).
 
 In addition to tracking the longitude of the PWP, we also monitored other environmental factors that might influence Atlantic TC activity: the mean pressure value over the PWP, the mean Outgoing Longwave Radiation (OLR) of the PWP to monitor atmospheric deep convection, the longitude of the minimal pressure region to approximate Pacific cyclone activity, and finally the longitudinal distance between PWP and the coldest near equatorial Pacific SST region (Pacific Cold Pool or PCP). Finally, we ran a series of exhaustive experiments to linearly combine the above mentioned quantities into a single index (named Combo Index). Each index is built by computing the z-score for each quantity (i.e. mean OLR, etc.) then we add each normalized quantity to build a single index to use for analysis. Please see table \ref{table:acronyms}
 
@@ -133,15 +131,65 @@ PWP-Pres & The mean presure of PWP\\
 PWP-OLR &  The mean OLR of PWP \\
 MinPres-Lon & The longitude of the region with the lowest mean central pressure\\
 PWP-PCP & The longitudinal distance between PWP and PCP \\
-Combo Index & A linear combination of xxxx \\
+Combo Index & A linear combination of PWP-PCP + MinPres-Lon + PWP-OLR + PWP-Pres  \\
 \hline
 \end{tabular}
 \caption{A List of all quantities computed for this study with their corresponding acronyms.}
 \label{ref:acronyms}
 \end{table}
 
+\subsection{Correlating S-ENSO Atlantic TC activity}
+To validate our hypothesis we construct the above-mentioned indices for the March-October season and then correlate the resulting index with various quantities that communicate August-October Atlantic TC activity: number of tropical cyclones, number of major hurricanes, potential dissipation index (PDI) \cite{emanuel2005a}, accumulated cyclone energy (ACE) \cite{Bell2000}, and net tropical cyclone energy (NTC) \cite{goldenberg2001}. For comparison, we also correlate the traditional ENSO indices during the same months (March-October). Table \ref{table:lin_corr} shows the performance of our various indices compared to traditional indices. Our combo index has a 0.80 correlation with seasonal tropical cyclone counts and major (Category 4-5) hurricanes. This is a significant improvement compared to the NINO1.2 and NINO3.4 indices. Another notable high performer is the longitudinal distance between PWP and PCP (PWP-PCP index) with 0.67 correlation with all tropical cyclone and major hurricane counts. We might favor this index given that it is much simpler than the Combo Index and might provide a more intuitive pathway to Atlantic TC activity
 
-Tables \ref{table:april_lead} through \ref{table:oct_lead} show the linear correlation coefficients between August-October TC Atlantic TC activity and our ENSO spatial index for Feb-April, April-June, and August-October respectively. In all cases our spatial ENSO index correlates better than traditional warming-based indices. The improvements increase as we increase lead time, with April lead times improving by more than an order of magnitude. This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}.
+\begin{table}
+\begin{tabular}{cccccc}
+\hline
+&TCs & Major Hurricanes & NTC & PDI & ACE\\
+\hline
+Combo Index  & \textbf{0.81} & \textbf{0.81} & \textbf{0.77} & \textbf{0.71} & \textbf{0.75}\\
+PWP-Pres & 0.61 & 0.65 & 0.57 & 0.56 & 0.58\\
+PWP-OLR & 0.55 & 0.57 & 0.50 & 0.46 & 0.48\\
+MinPres-Lon & 0.15 & 0.12 & 0.19 & 0.17 & 0.20\\
+PWP-PCP  & 0.67 & 0.66 & 0.64 & 0.6 & 0.58\\
+maxSSTLon & -0.64 & -0.5 & -0.55 & -0.44 & -0.49\\
+Nino1+2 & -0.42 & -0.42 & -0.40 & -0.3 & -0.35\\
+Nino 3 & -0.44 & -0.5 & -0.44 & -0.39 & -0.40\\
+Nino 4 & -0.24 & -0.41 & -0.23 & -0.2 & -0.2\\
+Nino 3.4 & -0.42 & -0.53 & -0.42 & -0.38 & -0.40\\
+Modoki Box A & -0.28 & -0 & -0.26 & -0.24 & -0.3\\
+Modoki Box B & -0.41 & -0.40 & -0.4 & -0 & -0.33\\
+Modoki Box C & 0.55 & 0.57 & 0.57 & 0.57 & 0.59\\
+Modoki EMI & -0.062 & -0.21 & -0.088 & -0.11 & -0.12\\
+\hline
+\end{tabular}
+\caption{Linear correlation scores between various indices computed over the March-October period and August-October Atlantic TC activity. The highest score for each category is highlighted in \textbf{bold}}
+\label{ref:lin_corr}
+\end{table}
+
+\subsection{Lead times}
+To test the robustness of our indices, we also increased computed the correlation between our indices and Atlantic TC activity with increasing lead times. In all cases our spatial ENSO index correlates better than traditional warming-based indices. The improvements increase as we increase lead time, with April lead times improving by more than an order of magnitude. This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}.
+
+\begin{tabular}{ccccccccccccc}
+\hline
+&Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec\\
+\hline
+combo Index & -0.027478 & 0.037669 & 0.11198 & 0.22441 & 0.1535 & 0.39507 & 0.4599 & 0.61844 & 0.70689 & 0.67972 & 0.70255 & 0.67758\\
+sstBoxPressureVal & 0.067747 & 0.10477 & 0.041934 & 0.075038 & 0.19389 & 0.2929 & 0.38005 & 0.47515 & 0.51769 & 0.51741 & 0.54105 & 0.58242\\
+sstBoxOLRVal & -0.35368 & -0.20827 & -0.12597 & 0.02743 & 0.054305 & 0.1537 & 0.21174 & 0.3541 & 0.48214 & 0.50371 & 0.51272 & 0.57056\\
+minPressureLon & -0.21358 & -0.17054 & -0.068184 & -0.0013393 & -0.36533 & -0.17575 & -0.095415 & 0.024928 & 0.094313 & -0.14447 & -0.13223 & -0.24637\\
+sstBoxLonDifference & 0.44228 & 0.34679 & 0.35323 & 0.36139 & 0.42817 & 0.53083 & 0.52653 & 0.60182 & 0.63405 & 0.6758 & 0.67657 & 0.6326\\
+maxSSTLon & -0.2671 & -0.36368 & -0.38391 & -0.37126 & -0.38792 & -0.3678 & -0.53324 & -0.53413 & -0.55394 & -0.56309 & -0.58728 & -0.55955\\
+Nino1+2 & 0.053054 & -0.0093936 & -0.067433 & -0.12523 & -0.18861 & -0.23315 & -0.26677 & -0.29977 & -0.33581 & -0.37023 & -0.39608 & -0.41515\\
+Nino 3 & 0.011198 & -0.036337 & -0.043678 & -0.077178 & -0.15181 & -0.22045 & -0.27985 & -0.33293 & -0.39022 & -0.43631 & -0.47767 & -0.50861\\
+Nino 4 & -0.0089581 & -0.035868 & -0.055759 & -0.076338 & -0.10629 & -0.14883 & -0.19303 & -0.23618 & -0.28082 & -0.32948 & -0.37117 & -0.40306\\
+Nino 3.4 & -0.025812 & -0.061122 & -0.073798 & -0.10603 & -0.16219 & -0.22523 & -0.28546 & -0.34263 & -0.39873 & -0.44887 & -0.49361 & -0.52594\\
+Modoki Box A & -0.03159 & -0.070047 & -0.087307 & -0.10941 & -0.15333 & -0.19414 & -0.23835 & -0.28929 & -0.32424 & -0.36028 & -0.39467 & -0.42015\\
+Modoki Box B & 0.02498 & -0.026101 & -0.062706 & -0.10135 & -0.1612 & -0.21498 & -0.25305 & -0.28371 & -0.3191 & -0.35304 & -0.38062 & -0.40288\\
+Modoki Box C & 0.41927 & 0.47174 & 0.51776 & 0.52281 & 0.54031 & 0.55704 & 0.58513 & 0.59664 & 0.59469 & 0.58474 & 0.57203 & 0.57231\\
+Modoki EMI & -0.14212 & -0.15589 & -0.16064 & -0.15896 & -0.16262 & -0.15941 & -0.17343 & -0.19444 & -0.19815 & -0.20998 & -0.22545 & -0.23713\\
+\hline
+\end{tabular}
+
 
 
 
