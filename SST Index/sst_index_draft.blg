@@ -7,45 +7,45 @@ Repeated entry---line 2571 of file hurricanes_copy.bib
  : @article{tang2004
  :                  ,
 I'm skipping whatever remains of this entry
-You've used 19 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            629 strings with 6801 characters,
-and the built_in function-call counts, 6547 in all, are:
-= -- 640
-> -- 331
+            636 strings with 6888 characters,
+and the built_in function-call counts, 6844 in all, are:
+= -- 672
+> -- 338
 < -- 0
-+ -- 134
-- -- 112
-* -- 531
-:= -- 1132
-add.period$ -- 57
-call.type$ -- 19
-change.case$ -- 112
++ -- 137
+- -- 114
+* -- 553
+:= -- 1181
+add.period$ -- 60
+call.type$ -- 20
+change.case$ -- 116
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 206
-empty$ -- 485
-format.name$ -- 112
-if$ -- 1306
+cite$ -- 20
+duplicate$ -- 217
+empty$ -- 512
+format.name$ -- 114
+if$ -- 1367
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 19
-newline$ -- 98
-num.names$ -- 38
-pop$ -- 74
+int.to.str$ -- 20
+missing$ -- 20
+newline$ -- 103
+num.names$ -- 40
+pop$ -- 76
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 96
 quote$ -- 0
-skip$ -- 141
+skip$ -- 148
 stack$ -- 0
-substring$ -- 477
-swap$ -- 19
+substring$ -- 507
+swap$ -- 20
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 80
 warning$ -- 0
-while$ -- 64
-width$ -- 21
-write$ -- 211
+while$ -- 68
+width$ -- 22
+write$ -- 222
 (There was 1 error message)

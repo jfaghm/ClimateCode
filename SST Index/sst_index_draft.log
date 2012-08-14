@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  14 AUG 2012 17:15
-=======
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  14 AUG 2012 17:16
->>>>>>> clean up
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  14 AUG 2012 18:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,181 +514,196 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 85.
  [2 <./figures/nino_nina_avg_diff.pdf>]
-<figures/nino_cartoon.pdf, id=249, 602.95613pt x 488.23453pt>
-File: figures/nino_cartoon.pdf Graphic file (type pdf)
 
-<use figures/nino_cartoon.pdf>
-Package pdftex.def Info: figures/nino_cartoon.pdf used on input line 109.
-(pdftex.def)             Requested size: 223.12708pt x 180.67499pt.
- [3 <./figures/nino_cartoon.pdf>]
-
-LaTeX Warning: Reference `table:acronyms' on page 4 undefined on input line 126
-.
+LaTeX Warning: Reference `table:acronyms' on page 3 undefined on input line 98.
 
 
-Overfull \hbox (82.66742pt too wide) in paragraph at lines 129--141
-[][] 
+
+Overfull \hbox (42.21051pt too wide) in paragraph at lines 101--114
+[]|  [] 
  []
 
 
-LaTeX Warning: Reference `table:april_lead' on page 4 undefined on input line 1
-45.
+LaTeX Warning: Reference `table:april_lead' on page 3 undefined on input line 1
+19.
 
 
-LaTeX Warning: Reference `table:oct_lead' on page 4 undefined on input line 145
+LaTeX Warning: Reference `table:oct_lead' on page 3 undefined on input line 119
 .
 
 
-Overfull \hbox (0.3892pt too wide) in paragraph at lines 145--146
+Overfull \hbox (0.3892pt too wide) in paragraph at lines 119--120
 []\OT1/cmr/m/n/10 Tables [] through [] show the lin-ear cor-re-la-tion co-ef-fi
 -cients be-tween August-
  []
 
-[4]
-Overfull \hbox (175.72314pt too wide) in paragraph at lines 176--196
-[][] 
+[3]
+Overfull \hbox (78.36072pt too wide) in paragraph at lines 150--171
+[]|  [] 
  []
 
 
-Overfull \hbox (198.63991pt too wide) in paragraph at lines 203--223
-[][] 
+Overfull \hbox (101.27748pt too wide) in paragraph at lines 178--199
+[]|  [] 
  []
 
 
-LaTeX Warning: Reference `ref:l8o_corr' on page 5 undefined on input line 228.
+LaTeX Warning: Reference `ref:l8o_corr' on page 4 undefined on input line 204.
 
-[5] [6] [7] [8] [9]
-<figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf, id=289,
+[4] [5] [6] [7]
+
+Package caption Warning: \label before \caption on input line 364.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:figure37' on page 8 undefined on input line 311.
+
+
+<figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf, id=268,
  323.60559pt x 645.94217pt>
 File: figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf Gra
 phic file (type pdf)
 
 <use figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf>
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesCent
-ralPressure.pdf used on input line 645.
+ralPressure.pdf used on input line 322.
 (pdftex.def)             Requested size: 189.75105pt x 378.76665pt.
 
-<figures/comboIndex/composites/compareMDRCompositesPI.pdf, id=290, 317.50679pt 
+<figures/comboIndex/composites/compareMDRCompositesPI.pdf, id=269, 317.50679pt 
 x 653.9044pt>
 File: figures/comboIndex/composites/compareMDRCompositesPI.pdf Graphic file (ty
 pe pdf)
  <use figures/comboIndex/composites/compareMDRCompositesPI.pdf>
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesPI.p
-df used on input line 651.
+df used on input line 328.
 (pdftex.def)             Requested size: 189.75105pt x 390.79912pt.
 
-Overfull \hbox (38.94653pt too wide) in paragraph at lines 644--655
+Overfull \hbox (47.48244pt too wide) in paragraph at lines 321--332
 [][]   [] 
  []
 
 
-<figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf, id=291
+Overfull \hbox (2.9451pt too wide) in paragraph at lines 338--339
+\OT1/cmr/m/n/10 Our in-dex is par-tic-u-larly bet-ter at re-solv-ing sea-sonal 
+SSTs com-pared to NINO3.4. 
+ []
+
+
+<figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf, id=270
 , 357.70065pt x 653.30003pt>
 File: figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf Gr
 aphic file (type pdf)
 
 <use figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf>
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesRela
-tiveHumidity.pdf used on input line 660.
+tiveHumidity.pdf used on input line 342.
 (pdftex.def)             Requested size: 189.75105pt x 346.56636pt.
 
-<figures/comboIndex/composites/compareMDRCompositesSST.pdf, id=292, 313.39735pt
+<figures/comboIndex/composites/compareMDRCompositesSST.pdf, id=271, 313.39735pt
  x 654.74036pt>
 File: figures/comboIndex/composites/compareMDRCompositesSST.pdf Graphic file (t
 ype pdf)
 
 <use figures/comboIndex/composites/compareMDRCompositesSST.pdf>
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesSST.
-pdf used on input line 666.
+pdf used on input line 348.
 (pdftex.def)             Requested size: 189.75105pt x 396.42384pt.
 
-Overfull \hbox (38.94653pt too wide) in paragraph at lines 659--670
+Overfull \hbox (47.48244pt too wide) in paragraph at lines 341--352
 [][]   [] 
  []
 
 
-<figures/comboIndex/composites/compareMDRCompositesWindShear.pdf, id=293, 318.7
+<figures/comboIndex/composites/compareMDRCompositesWindShear.pdf, id=272, 318.7
 4573pt x 662.82855pt>
 File: figures/comboIndex/composites/compareMDRCompositesWindShear.pdf Graphic f
 ile (type pdf)
 
 <use figures/comboIndex/composites/compareMDRCompositesWindShear.pdf>
 Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesWind
-Shear.pdf used on input line 674.
+Shear.pdf used on input line 356.
 (pdftex.def)             Requested size: 189.75105pt x 394.59521pt.
- [10 <./figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf> 
-<./figures/comboIndex/composites/compareMDRCompositesPI.pdf>] [11 <./figures/co
-mboIndex/composites/compareMDRCompositesRelativeHumidity.pdf> <./figures/comboI
-ndex/composites/compareMDRCompositesSST.pdf>] [12 <./figures/comboIndex/composi
-tes/compareMDRCompositesWindShear.pdf>]
-<figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf, id=379, 472.
+ [8]
+[9 <./figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf> <.
+/figures/comboIndex/composites/compareMDRCompositesPI.pdf>] [10 <./figures/comb
+oIndex/composites/compareMDRCompositesRelativeHumidity.pdf> <./figures/comboInd
+ex/composites/compareMDRCompositesSST.pdf>] [11 <./figures/comboIndex/composite
+s/compareMDRCompositesWindShear.pdf>] [12
+
+]
+<figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf, id=364, 472.
 02725pt x 401.85303pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf Graphic 
 file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf>
 Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
-estACE.pdf used on input line 691.
+estACE.pdf used on input line 381.
 (pdftex.def)             Requested size: 207.0021pt x 176.22722pt.
 
-<figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf, id=380
+<figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf, id=365
 , 475.54259pt x 395.46204pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf Gr
 aphic file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf>
 Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
-estMajorHurr.pdf used on input line 697.
+estMajorHurr.pdf used on input line 387.
 (pdftex.def)             Requested size: 207.0021pt x 172.14528pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 690--701
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 380--391
 [][]   [] 
  []
 
 
-<figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf, id=381, 474.
+<figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf, id=366, 474.
 50514pt x 395.52255pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf Graphic 
 file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf>
 Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
-estNTC.pdf used on input line 705.
+estNTC.pdf used on input line 395.
 (pdftex.def)             Requested size: 207.0021pt x 172.54579pt.
 
-<figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf, id=382, 468.
+<figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf, id=367, 468.
 26527pt x 397.74347pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf Graphic 
 file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf>
 Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
-estPDI.pdf used on input line 711.
+estPDI.pdf used on input line 401.
 (pdftex.def)             Requested size: 207.0021pt x 175.82698pt.
 
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 704--715
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 394--405
 [][]   [] 
  []
 
 
-<figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf, id=383, 470.
+<figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf, id=368, 470.
 68768pt x 394.22311pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf Graphic 
 file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf>
 Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
-estTCS.pdf used on input line 719.
+estTCS.pdf used on input line 409.
 (pdftex.def)             Requested size: 207.0021pt x 173.37448pt.
- [13
+
+<figures/nino_cartoon.pdf, id=369, 602.95613pt x 488.23453pt>
+File: figures/nino_cartoon.pdf Graphic file (type pdf)
+
+<use figures/nino_cartoon.pdf>
+Package pdftex.def Info: figures/nino_cartoon.pdf used on input line 431.
+(pdftex.def)             Requested size: 223.12708pt x 180.67499pt.
+ (./sst_index_draft.bbl [13
 
  <./figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf> <./figure
 s/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf> <./figures/co
 mboIndex/crossValidation/monthlySensitivityTestNTC.pdf> <./figures/comboIndex/c
 rossValidation/monthlySensitivityTestPDI.pdf>] [14 <./figures/comboIndex/crossV
-alidation/monthlySensitivityTestTCS.pdf>] (./sst_index_draft.bbl [15
-
-])
+alidation/monthlySensitivityTestTCS.pdf>] [15 <./figures/nino_cartoon.pdf>])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the sst_index_draft.maf file.
@@ -711,25 +722,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5887 strings out of 493763
- 88074 string characters out of 3144955
- 177096 words of memory out of 3000000
- 8912 multiletter control sequences out of 15000+200000
+ 5888 strings out of 493763
+ 88089 string characters out of 3144955
+ 194096 words of memory out of 3000000
+ 8913 multiletter control sequences out of 15000+200000
  8848 words of font info for 31 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  44i,7n,42p,1560b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
-<<<<<<< HEAD
-</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
-/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on sst_index_draft.pdf (12 pages, 1144211 bytes).
-=======
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -740,8 +739,7 @@ ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
 al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
 texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on sst_index_draft.pdf (16 pages, 1140586 bytes).
->>>>>>> clean up
+Output written on sst_index_draft.pdf (16 pages, 1144685 bytes).
 PDF statistics:
  517 PDF objects out of 1000 (max. 8388607)
  336 compressed objects within 4 object streams
