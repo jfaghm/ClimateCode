@@ -1,5 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2010)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
 The top-level auxiliary file: sst_index_draft.aux
 The style file: plain.bst
 Database file #1: hurricanes_copy.bib
@@ -9,43 +8,43 @@ Repeated entry---line 2571 of file hurricanes_copy.bib
 I'm skipping whatever remains of this entry
 You've used 19 entries,
             2118 wiz_defined-function locations,
-            629 strings with 6952 characters,
-and the built_in function-call counts, 6805 in all, are:
-= -- 661
-> -- 362
+            629 strings with 6801 characters,
+and the built_in function-call counts, 6547 in all, are:
+= -- 640
+> -- 331
 < -- 0
-+ -- 145
-- -- 124
-* -- 562
-:= -- 1176
++ -- 134
+- -- 112
+* -- 531
+:= -- 1132
 add.period$ -- 57
 call.type$ -- 19
-change.case$ -- 118
+change.case$ -- 112
 chr.to.int$ -- 0
 cite$ -- 19
-duplicate$ -- 207
-empty$ -- 493
-format.name$ -- 124
-if$ -- 1355
+duplicate$ -- 206
+empty$ -- 485
+format.name$ -- 112
+if$ -- 1306
 int.to.chr$ -- 0
 int.to.str$ -- 19
 missing$ -- 19
 newline$ -- 98
 num.names$ -- 38
-pop$ -- 80
+pop$ -- 74
 preamble$ -- 1
-purify$ -- 99
+purify$ -- 93
 quote$ -- 0
-skip$ -- 140
+skip$ -- 141
 stack$ -- 0
-substring$ -- 497
+substring$ -- 477
 swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 76
 warning$ -- 0
-while$ -- 65
+while$ -- 64
 width$ -- 21
 write$ -- 211
 (There was 1 error message)
