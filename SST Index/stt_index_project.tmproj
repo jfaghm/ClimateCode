@@ -16,7 +16,7 @@
 			<key>filename</key>
 			<string>sst_index_draft.tex</string>
 			<key>lastUsed</key>
-			<date>2012-08-14T19:11:21Z</date>
+			<date>2012-08-14T19:54:57Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -58,14 +58,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>803</integer>
 				<key>line</key>
-				<integer>171</integer>
+				<integer>303</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>144</integer>
+			<integer>279</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
