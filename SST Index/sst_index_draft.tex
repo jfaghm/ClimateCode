@@ -142,10 +142,8 @@ Combo Index & A linear combination of xxxx \\
 \label{ref:acronyms}
 \end{table}
 
-
-<<<<<<< HEAD
 Tables \ref{table:april_lead} through \ref{table:oct_lead} show the linear correlation coefficients between August-October TC Atlantic TC activity and our ENSO spatial index for Feb-April, April-June, and August-October respectively. In all cases our spatial ENSO index correlates better than traditional warming-based indices. The improvements increase as we increase lead time, with April lead times improving by more than an order of magnitude. This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}.
-=======
+
 \begin{table}
 \begin{tabular}{cccccc}
 \hline
@@ -334,7 +332,7 @@ Modoki EMI & -0.57 & -0.37 & -0.66 & -0.64 & -0.63\\
 \subsection{Impact on large-scale conditions over the Atlantic}
 To propose possible physical pathways by which our index impact Atlantic TC activity, we compute the composites for factors known to influence Atlantic TC activity: SST, central pressure, potential intensity (PI), and vertical wind shear. Each composite was for the August-October period - the peak hurricane season. To compare how well our index resolves the large-scale conditions that are critical to seasonal TC activity we compare our index' composites to those of the seasonal TC count composites (ground truth) and that of the NINO3.4 composites. The rational is that if our index is better able to distinguish between the large-scale conditions for active and inactive hurricane seasons its composite should closely resemble that of the ground truth (i.e. active minus inactive hurricane years).
 %Tables \ref{table:april_lead} through \ref{table:oct_lead} show the linear correlation coefficients between August-October TC Atlantic TC activity and our ENSO spatial index for Feb-April, April-June, and August-October respectively. In all cases our spatial ENSO index correlates better than traditional warming-based indices. The improvements increase as we increase lead time, with April lead times improving by more than an order of magnitude. This improvement is because traditional ENSO indices suffer from a ``predictability barrier" that make it difficult to use them to predict TC activity before June \cite{webster1992}.
->>>>>>> Add new section
+
 
 
 
@@ -637,6 +635,7 @@ To validate our results, we test the sensitivity of our results to the month ran
 \end{minipage}
 \end{figure}
 \end{comment}
+
 \section{Combination Index Composites}
 In this section, we compute four different indices, take the z-score of each, and then sum all of them up into one index.  The four indices are: the OLR value inside the box of the warmest SST box, the pressure value inside of the warmest SST box, the longitude of the box with the lowest pressure, and the longitudinal distance between the warmest SST box and the coolest SST box.  In this section we show the results where we get the years of the highest index, composite 5 different variables, do the same for the years of low index, and then subtract the composites.
 \newpage
@@ -684,8 +683,8 @@ In this section, we compute four different indices, take the z-score of each, an
 \end{minipage}
 \end{figure}
 \clearpage
-\section{Combo Index Cross Validation}
-In this section we compute the combination index in the same fashion as described int he previous section.  These results are for building the index with varying month ranges, and then performing leave one-out cross validation with the combination index and 5 different hurricane statistics 
+\subsection{Combo Index Cross Validation Month Range Sensitivity Experiment}
+In this section we compute the combination index in the same fashion as described in the previous section.  These results are for building the index with varying month ranges, and then performing leave one-out cross validation with the combination index and 5 different hurricane statistics 
 
 \begin{figure}[ht]
 \begin{minipage}[b]{0.6\linewidth}

@@ -1,22 +1,28 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  14 AUG 2012 17:15
+=======
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  14 AUG 2012 17:16
+>>>>>>> clean up
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **sst_index_draft.tex
 (./sst_index_draft.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, german-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, ar
-abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
-h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
-greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, ku
-rmanji, latin, latvian, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, po
-lish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, span
-ish, swedish, turkish, ukenglish, ukrainian, uppersorbian, welsh, loaded.
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/article.cls
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, spani
+sh, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -31,19 +37,19 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -193,7 +199,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -224,7 +230,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -248,18 +254,18 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2009/texmf-dist/tex/latex/subfig/subfig.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
 \captionmargin=\dimen103
 \captionmargin@=\dimen104
 \captionwidth=\dimen105
@@ -283,8 +289,8 @@ Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
 \sf@top=\skip46
 \sf@bottom=\skip47
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/ltxmisc/boxedminipage.sty)
-(/usr/local/texlive/2009/texmf-dist/tex/latex/listings/listings.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/boxedminipage/boxedminipage.sty)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count95
 \lst@gtempboxa=\box26
 \lst@token=\toks17
@@ -298,21 +304,21 @@ Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
 \lst@lineno=\count100
 \lst@maxwidth=\dimen113
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/listings/lstmisc.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count101
 \lst@skipnumbers=\count102
 \lst@framebox=\box27
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/listings/listings.cfg
+(/usr/local/texlive/2010/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/minitoc.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/minitoc.sty
 Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/mtcmess.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/mtcmess.sty
 Package: mtcmess 2006/03/14
 )
 Package minitoc Info: I0001
@@ -358,42 +364,52 @@ Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/english.mld
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/minitoc/english.mld
+(/usr/local/texlive/2010/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 ))
-(/usr/local/texlive/2009/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/comment/comment.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write4
 
 Excluding comment 'comment')
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2009/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2009/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+(/usr/local/texlive/2010/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/04/25 v0.06b Graphics/color for pdfTeX
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count107
 ))
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
 (./sst_index_draft.aux
+
+LaTeX Warning: Label `ref:l4o_corr' multiply defined.
+
 
 LaTeX Warning: Label `fig:figure38' multiply defined.
 
@@ -427,7 +443,7 @@ Package caption Info: End \AtBeginDocument code.
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
- (/usr/local/texlive/2009/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen116
@@ -439,143 +455,242 @@ Package minitoc(hints) Info: I0049
 \MPscratchDim=\dimen117
 \MPnumerator=\count119
 \everyMPtoPDFconversion=\toks20
+) (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
 )
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.jpg,.tif,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 68.
- [1
 
-{/usr/local/texlive/2009/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<figures/nino_nina_avg_diff.pdf, id=10, 507.57709pt x 573.60875pt>
+[1
+
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<figures/nino_nina_avg_diff.pdf, id=11, 507.57709pt x 573.60875pt>
 File: figures/nino_nina_avg_diff.pdf Graphic file (type pdf)
 
 <use figures/nino_nina_avg_diff.pdf>
+Package pdftex.def Info: figures/nino_nina_avg_diff.pdf used on input line 84.
+(pdftex.def)             Requested size: 191.85121pt x 216.81pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 85.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 85.
  [2 <./figures/nino_nina_avg_diff.pdf>]
-<figures/nino_cartoon.pdf, id=247, 602.95613pt x 488.23453pt>
+<figures/nino_cartoon.pdf, id=249, 602.95613pt x 488.23453pt>
 File: figures/nino_cartoon.pdf Graphic file (type pdf)
 
-<use figures/nino_cartoon.pdf> [3 <./figures/nino_cartoon.pdf>]
+<use figures/nino_cartoon.pdf>
+Package pdftex.def Info: figures/nino_cartoon.pdf used on input line 109.
+(pdftex.def)             Requested size: 223.12708pt x 180.67499pt.
+ [3 <./figures/nino_cartoon.pdf>]
 
-LaTeX Warning: Reference `table:acronyms' on page 4 undefined on input line 123
+LaTeX Warning: Reference `table:acronyms' on page 4 undefined on input line 126
 .
 
 
-Overfull \hbox (82.66742pt too wide) in paragraph at lines 126--138
+Overfull \hbox (82.66742pt too wide) in paragraph at lines 129--141
 [][] 
  []
 
 
 LaTeX Warning: Reference `table:april_lead' on page 4 undefined on input line 1
-43.
+45.
 
 
-LaTeX Warning: Reference `table:oct_lead' on page 4 undefined on input line 143
+LaTeX Warning: Reference `table:oct_lead' on page 4 undefined on input line 145
 .
 
 
-Overfull \hbox (0.3892pt too wide) in paragraph at lines 143--144
+Overfull \hbox (0.3892pt too wide) in paragraph at lines 145--146
 []\OT1/cmr/m/n/10 Tables [] through [] show the lin-ear cor-re-la-tion co-ef-fi
 -cients be-tween August-
  []
 
-[4] [5]
-<figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf, id=273,
+[4]
+Overfull \hbox (175.72314pt too wide) in paragraph at lines 176--196
+[][] 
+ []
+
+
+Overfull \hbox (198.63991pt too wide) in paragraph at lines 203--223
+[][] 
+ []
+
+
+LaTeX Warning: Reference `ref:l8o_corr' on page 5 undefined on input line 228.
+
+[5] [6] [7] [8] [9]
+<figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf, id=289,
  323.60559pt x 645.94217pt>
 File: figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf Gra
 phic file (type pdf)
 
 <use figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf>
-<figures/comboIndex/composites/compareMDRCompositesPI.pdf, id=274, 317.50679pt 
+Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesCent
+ralPressure.pdf used on input line 645.
+(pdftex.def)             Requested size: 189.75105pt x 378.76665pt.
+
+<figures/comboIndex/composites/compareMDRCompositesPI.pdf, id=290, 317.50679pt 
 x 653.9044pt>
 File: figures/comboIndex/composites/compareMDRCompositesPI.pdf Graphic file (ty
 pe pdf)
  <use figures/comboIndex/composites/compareMDRCompositesPI.pdf>
-Overfull \hbox (38.94653pt too wide) in paragraph at lines 451--462
+Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesPI.p
+df used on input line 651.
+(pdftex.def)             Requested size: 189.75105pt x 390.79912pt.
+
+Overfull \hbox (38.94653pt too wide) in paragraph at lines 644--655
 [][]   [] 
  []
 
 
-<figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf, id=275
+<figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf, id=291
 , 357.70065pt x 653.30003pt>
 File: figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf Gr
 aphic file (type pdf)
 
 <use figures/comboIndex/composites/compareMDRCompositesRelativeHumidity.pdf>
-<figures/comboIndex/composites/compareMDRCompositesSST.pdf, id=276, 313.39735pt
+Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesRela
+tiveHumidity.pdf used on input line 660.
+(pdftex.def)             Requested size: 189.75105pt x 346.56636pt.
+
+<figures/comboIndex/composites/compareMDRCompositesSST.pdf, id=292, 313.39735pt
  x 654.74036pt>
 File: figures/comboIndex/composites/compareMDRCompositesSST.pdf Graphic file (t
 ype pdf)
 
 <use figures/comboIndex/composites/compareMDRCompositesSST.pdf>
-Overfull \hbox (38.94653pt too wide) in paragraph at lines 466--477
+Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesSST.
+pdf used on input line 666.
+(pdftex.def)             Requested size: 189.75105pt x 396.42384pt.
+
+Overfull \hbox (38.94653pt too wide) in paragraph at lines 659--670
 [][]   [] 
  []
 
 
-<figures/comboIndex/composites/compareMDRCompositesWindShear.pdf, id=277, 318.7
+<figures/comboIndex/composites/compareMDRCompositesWindShear.pdf, id=293, 318.7
 4573pt x 662.82855pt>
 File: figures/comboIndex/composites/compareMDRCompositesWindShear.pdf Graphic f
 ile (type pdf)
 
-<use figures/comboIndex/composites/compareMDRCompositesWindShear.pdf> [6 <./fig
-ures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf> <./figures/
-comboIndex/composites/compareMDRCompositesPI.pdf>] [7 <./figures/comboIndex/com
-posites/compareMDRCompositesRelativeHumidity.pdf> <./figures/comboIndex/composi
-tes/compareMDRCompositesSST.pdf>] [8 <./figures/comboIndex/composites/compareMD
-RCompositesWindShear.pdf>]
-<figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf, id=363, 472.
+<use figures/comboIndex/composites/compareMDRCompositesWindShear.pdf>
+Package pdftex.def Info: figures/comboIndex/composites/compareMDRCompositesWind
+Shear.pdf used on input line 674.
+(pdftex.def)             Requested size: 189.75105pt x 394.59521pt.
+ [10 <./figures/comboIndex/composites/compareMDRCompositesCentralPressure.pdf> 
+<./figures/comboIndex/composites/compareMDRCompositesPI.pdf>] [11 <./figures/co
+mboIndex/composites/compareMDRCompositesRelativeHumidity.pdf> <./figures/comboI
+ndex/composites/compareMDRCompositesSST.pdf>] [12 <./figures/comboIndex/composi
+tes/compareMDRCompositesWindShear.pdf>]
+<figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf, id=379, 472.
 02725pt x 401.85303pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf Graphic 
 file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf>
-<figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf, id=364
+Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
+estACE.pdf used on input line 691.
+(pdftex.def)             Requested size: 207.0021pt x 176.22722pt.
+
+<figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf, id=380
 , 475.54259pt x 395.46204pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf Gr
 aphic file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 497--508
+Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
+estMajorHurr.pdf used on input line 697.
+(pdftex.def)             Requested size: 207.0021pt x 172.14528pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 690--701
 [][]   [] 
  []
 
 
-<figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf, id=365, 474.
+<figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf, id=381, 474.
 50514pt x 395.52255pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf Graphic 
 file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestNTC.pdf>
-<figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf, id=366, 468.
+Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
+estNTC.pdf used on input line 705.
+(pdftex.def)             Requested size: 207.0021pt x 172.54579pt.
+
+<figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf, id=382, 468.
 26527pt x 397.74347pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf Graphic 
 file (type pdf)
 
 <use figures/comboIndex/crossValidation/monthlySensitivityTestPDI.pdf>
-Overfull \hbox (73.44864pt too wide) in paragraph at lines 511--522
+Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
+estPDI.pdf used on input line 711.
+(pdftex.def)             Requested size: 207.0021pt x 175.82698pt.
+
+Overfull \hbox (73.44864pt too wide) in paragraph at lines 704--715
 [][]   [] 
  []
 
 
-<figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf, id=367, 470.
+<figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf, id=383, 470.
 68768pt x 394.22311pt>
 File: figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf Graphic 
 file (type pdf)
 
-<use figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf> [9
+<use figures/comboIndex/crossValidation/monthlySensitivityTestTCS.pdf>
+Package pdftex.def Info: figures/comboIndex/crossValidation/monthlySensitivityT
+estTCS.pdf used on input line 719.
+(pdftex.def)             Requested size: 207.0021pt x 173.37448pt.
+ [13
 
  <./figures/comboIndex/crossValidation/monthlySensitivityTestACE.pdf> <./figure
 s/comboIndex/crossValidation/monthlySensitivityTestMajorHurr.pdf> <./figures/co
 mboIndex/crossValidation/monthlySensitivityTestNTC.pdf> <./figures/comboIndex/c
-rossValidation/monthlySensitivityTestPDI.pdf>] [10 <./figures/comboIndex/crossV
-alidation/monthlySensitivityTestTCS.pdf>] (./sst_index_draft.bbl [11
+rossValidation/monthlySensitivityTestPDI.pdf>] [14 <./figures/comboIndex/crossV
+alidation/monthlySensitivityTestTCS.pdf>] (./sst_index_draft.bbl [15
 
 ])
 Package minitoc Info: I0009
@@ -586,7 +701,7 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the sst_index_draft.log file..
- [12]
+ [16]
 (./sst_index_draft.aux)
 
 LaTeX Warning: There were undefined references.
@@ -596,13 +711,14 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5344 strings out of 493848
- 78712 string characters out of 3149207
- 152375 words of memory out of 3000000
- 8377 multiletter control sequences out of 15000+200000
+ 5887 strings out of 493763
+ 88074 string characters out of 3144955
+ 177096 words of memory out of 3000000
+ 8912 multiletter control sequences out of 15000+200000
  8848 words of font info for 31 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
+ 715 hyphenation exceptions out of 8191
  44i,7n,42p,1560b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
+<<<<<<< HEAD
 </usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -613,8 +729,22 @@ cal/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
 /texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 Output written on sst_index_draft.pdf (12 pages, 1144211 bytes).
+=======
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
+texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on sst_index_draft.pdf (16 pages, 1140586 bytes).
+>>>>>>> clean up
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
+ 517 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
