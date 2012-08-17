@@ -61,7 +61,7 @@ sstMinLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
     box_east, sstLat, sstLon, box_row, box_col, 'minLon');
 sstDif = norm(sstMinLon - sstMaxLon);
 
-indexMat = [sstBoxPress, sstBoxOLR, pressureMinLon, sstDif];
+indexMat = [sstBoxPress, sstBoxOLR, sstDif];
 index = sum(indexMat, 2);
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
