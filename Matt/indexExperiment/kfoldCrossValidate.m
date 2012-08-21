@@ -1,4 +1,5 @@
-function [cc, ypred, target] = kfoldCrossValidate(indices, target, k)
+function [cc, ypred, target] = kfoldCrossValidate(indices, target, k, ...
+    varType, indexType)
 %This function performs k-fold cross validation, where we leave out k
 %elements to put into the testing set and use the rest for the training
 %set.  We train a linear regression model with the training set, and then
@@ -25,7 +26,7 @@ function [cc, ypred, target] = kfoldCrossValidate(indices, target, k)
     end
     
     for i = 1:k:length(target)
-        test = logical(zeros(length(target), 1)); %set the years to leave out.
+        test = false(length(target), 1); %set the years to leave out.
         test(i:i+k-1) = 1;
         train = ~test;
         mdl = LinearModel.fit(indices(train), target(train), 'linear');
@@ -34,7 +35,29 @@ function [cc, ypred, target] = kfoldCrossValidate(indices, target, k)
     %ypred = reshape(ypred, 32, []);
     cc = corr(ypred, target);
     
+    if nargin > 3
+        plotCrossVal(ypred, target, varType, indexType, 1979:2010);
+    end
+
+
+function[] = plotCrossVal(yVals, actuals, t, indexType, years)
+    fig(figure(1), 'units', 'inches', 'width', 9.5, 'height', 8)
+    plot(years, yVals, years, actuals);
+    legend('Predictions', 'Actual');
+    c = corr(yVals, actuals);
+    %title(strcat('Cross Validation ', indexType, ' correlation = ', num2str(c), ' (', t, ')'));
+    title(['Leave ' num2str(k) ' Out Cross Validation ' indexType ' correlation = ' ...
+        num2str(c) '(' t ')']);
+    ylabel(t);
+    xlabel('Year');
+    print(gcf, '-dpdf', '-r400', ['/project/expeditions/lem/ClimateCode/Matt/', ...
+        'indexExperiment/results/comboIndex349/crossValidationPlots/leave'...
+        num2str(k) 'Out' indexType t 'CrossValidationCorrelations.pdf']);
+end
+
 
 end
+
+
 
 
