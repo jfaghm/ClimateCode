@@ -24,7 +24,6 @@ function [] = createComposites(indexType, fileDest, pYears, nYears )
 %   createComposites('SSTIndex', 'composites/sstIndex', pYears, nYears);
 
 load matFiles/compositeVariables.mat
-load matFiles/PI3dMatrix.mat
 
 fileDest = [fileDest '/'];
 
@@ -73,6 +72,14 @@ eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);')
 
 eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(precipitableWater, pYears, nYears, dates, 8, 10);']);
 newFileDest = [fileDest 'precipitableWaterComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(satDef500, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'saturationDeficit500mbarComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(satDef850, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'saturationDeficit850mbarComposite'];
 eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
 end
 

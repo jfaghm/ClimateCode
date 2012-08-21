@@ -24,6 +24,10 @@ plotMDRDiffOnly('geoPotential500_1000DiffmbarComposite.mat', [-200 300], true, .
     'Geopotential Height (500-1000mbar Diff)');
 plotMDRDiffOnly('geoPotential500mbarComposite.mat', [-150 150], true, ...
     'Geopotential Height (500mbar)');
+plotMDRDiffOnly('saturationDeficit500mbarComposite.mat', [-.5 .5], true, ...
+    'Saturation Deficit (500mbar)');
+plotMDRDiffOnly('saturationDeficit850mbarComposite.mat', [-3 2], true, ...
+    'Saturation Deficit (850mbar)');
 end
 
 function [] = plotMDRDiffOnly(var, scaleDims, landMask, varName)
@@ -33,6 +37,7 @@ else
     scale = true;
 end
 
+%----Change these two variables when using a differnt index--------
 indexType = 'comboIndex349';
 suffix = 'ComboIndex349';
 
