@@ -24,6 +24,7 @@ function [] = createComposites(indexType, fileDest, pYears, nYears )
 %   createComposites('SSTIndex', 'composites/sstIndex', pYears, nYears);
 
 load matFiles/compositeVariables.mat
+load matFiles/PI3dMatrix.mat
 
 fileDest = [fileDest '/'];
 
@@ -36,21 +37,68 @@ timeString = 'dates';
 
 eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(PI, pYears , nYears, dates, 8, 10);']);
 newFileDest = [fileDest 'PIComposite'];
-eval(['save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);']);
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
 eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(sst, pYears, nYears, dates, 8, 10);']);
 newFileDest = [fileDest 'sstComposite'];
-eval(['save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);']);
-eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(centralPressure, pYears, nYears, dates, 8, 10);']);
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(pressure, pYears, nYears, dates, 8, 10);']);
 newFileDest = [fileDest 'CentralPressureComposite'];
-eval(['save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);']);
-eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(relHumid, pYears, nYears, dates, 8, 10);']);
-newFileDest = [fileDest 'relativeHumidityComposite'];
-eval(['save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);']);
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
 eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(windShear, pYears, nYears, dates, 8, 10);']);
 newFileDest = [fileDest 'windShearComposite'];
-eval(['save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);']);
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
 
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(geoPotential500, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'geoPotential500mbarComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(geoPotential500_1000Diff, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'geoPotential500_1000DiffmbarComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(relHumid500, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'relativeHumidity500mbarComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(relHumid850, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'relativeHumidity850mbarComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(relHumid850_500Diff, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'relativeHumidity850_500mbarDiffComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(precipitableWater, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'precipitableWaterComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

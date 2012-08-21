@@ -44,22 +44,22 @@ if nargin <= 4
 end
 
 box_west = 140;
-box_east = 270;
+box_east = 260;
 
 if nargin == 2
     box_row = 5;
     box_col = 10;
 end
 
-sstBoxPress = norm(sstBoxOtherVal(pressure, pressureLat, pressureLon, startMonth, endMonth));
-sstBoxOLR = norm(sstBoxOtherVal(olr, olrLat, olrLon, startMonth, endMonth));
-pressureMinLon = norm(buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
-    box_east, pressureLat, pressureLon, box_row, box_col, 'minLon'));
+sstBoxPress = zscore(sstBoxOtherVal(pressure, pressureLat, pressureLon, startMonth, endMonth));
+sstBoxOLR = zscore(sstBoxOtherVal(olr, olrLat, olrLon, startMonth, endMonth));
+%pressureMinLon = norm(buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
+%    box_east, pressureLat, pressureLon, box_row, box_col, 'minLon'));
 sstMaxLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
     box_east, sstLat, sstLon, box_row, box_col, 'maxLon');
 sstMinLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
     box_east, sstLat, sstLon, box_row, box_col, 'minLon');
-sstDif = norm(sstMinLon - sstMaxLon);
+sstDif = zscore(sstMinLon - sstMaxLon);
 
 indexMat = [sstBoxPress, sstBoxOLR, sstDif];
 index = sum(indexMat, 2);
@@ -70,10 +70,6 @@ cc(2) = corr(index, aso_major_hurricanes);
 cc(3) = corr(index, aso_ntc);
 cc(4) = corr(index, aso_pdi);
 cc(5) = corr(index, aso_ace);
-end
-
-function aNorm = norm(A)
-    aNorm = (A - mean(A)) ./ std(A);
 end
 
 %%%%Build Index
