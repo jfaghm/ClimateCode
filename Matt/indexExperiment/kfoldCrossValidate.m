@@ -1,4 +1,4 @@
-function [cc, ypred, target] = kfoldCrossValidate(indices, target, k, ...
+function [cc, ypred, actuals] = kfoldCrossValidate(indices, target, k, ...
     varType, indexType)
 %This function performs k-fold cross validation, where we leave out k
 %elements to put into the testing set and use the rest for the training
@@ -21,26 +21,27 @@ function [cc, ypred, target] = kfoldCrossValidate(indices, target, k, ...
 %--->target - target values that were originally provided as a parameter to
 %the function.
 
-    if mod(length(target), k) ~= 0
-        error('incorrect number of folds provided');
-    end
-    
-    for i = 1:k:length(target)
-        test = false(length(target), 1); %set the years to leave out.
-        test(i:i+k-1) = 1;
-        train = ~test;
-        mdl = LinearModel.fit(indices(train), target(train), 'linear');
-        ypred(i:i+k-1, 1) = predict(mdl, indices(test))';
-    end
-    %ypred = reshape(ypred, 32, []);
-    cc = corr(ypred, target);
-    
-    if nargin > 3
-        plotCrossVal(ypred, target, varType, indexType, 1979:2010);
-    end
 
+for i = 1:k:length(target)
+   if i+k-1 > length(target)
+       break
+   end
+   test = false(length(target) - mod(length(target), k), 1);
+   test(i:i+k-1) = 1;
+   train = ~test;
+   mdl = LinearModel.fit(indices(train), target(train), 'linear');
+   ypred(i:i+k-1, 1) = predict(mdl, indices(test))';
+   actuals(i:i+k-1, 1) = target(i:i+k-1);
+end
+ypred = reshape(ypred, length(target) - mod(length(target), k), []);
+actuals = reshape(actuals, length(target) - mod(length(target), k), []);
+cc = corr(ypred, actuals);
 
-function[] = plotCrossVal(yVals, actuals, t, indexType, years)
+if nargin > 3
+    plotCrossVal(ypred, actuals, varType, indexType, 1979:2010);
+end
+
+function[] = plotCrossVal(yVals, t, years)
     fig(figure(1), 'units', 'inches', 'width', 9.5, 'height', 8)
     plot(years, yVals, years, actuals);
     legend('Predictions', 'Actual');
