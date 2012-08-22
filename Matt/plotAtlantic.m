@@ -13,6 +13,7 @@ function [ ] = plotAtlantic()
 
 plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure');
 plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
+
 plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
 plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear');
 plotMDRDiffOnly('relativeHumidity850mbarComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)');
@@ -39,12 +40,12 @@ else
 end
 
 %----Change these two variables when using a differnt index--------
-indexType = 'combo349';
-suffix = 'ComboIndex349';
-dir = 'bestComboIndexMonthRange';
+indexType = 'comboIndex89';
+suffix = 'ComboIndex89';
+%dir = 'bestComboIndexMonthRange';
 
-eval(['load composites/' dir '/' indexType '/' var]);
-eval(['load composites/' dir '/nino3.4/' var]);
+eval(['load composites/'  '/' indexType '/' var]);
+eval(['load composites/'  '/ENSO_3.4/' var]);
 eval(['load composites/' '/hurricaneFrequency/' var]);
 
 lat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
@@ -61,7 +62,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference NINO3.4 ' varName ' May-Dec 1StdDev'])
+title(['Difference NINO3.4 ' varName '1StdDev'])
 colorbar
 
 subplot(3, 1, 2)
@@ -73,7 +74,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference ' indexType ' ' varName ' May-Dec 1StdDev'])
+title(['Difference ' indexType ' ' varName ' 1StdDev'])
 colorbar
 
 subplot(3, 1, 3)
@@ -90,8 +91,8 @@ colorbar
 if landMask == true
     %print('-dpdf', '-r400', ['indexExperiment/results/' indexType ...
     %    '/atlanticComposites/' varName 'Composite.pdf']);
-    print('-dpdf', '-r400', ['indexExperiment/results/comboIndex349' ...
-        '/bestComboIndexMonthRangeAtlanticComposites/' varName 'Composite.pdf']);
+    %print('-dpdf', '-r400', ['indexExperiment/results/comboIndex349' ...
+    %    '/bestComboIndexMonthRangeAtlanticComposites/' varName 'Composite.pdf']);
 end
 end
 
