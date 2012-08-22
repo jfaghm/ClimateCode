@@ -33,12 +33,10 @@ for i = 1:k:length(target)
    ypred(i:i+k-1, 1) = predict(mdl, indices(test))';
    actuals(i:i+k-1, 1) = target(i:i+k-1);
 end
-ypred = reshape(ypred, length(target) - mod(length(target), k), []);
-actuals = reshape(actuals, length(target) - mod(length(target), k), []);
 cc = corr(ypred, actuals);
 
 if nargin > 3
-    plotCrossVal(ypred, actuals, varType, indexType, 1979:2010);
+    plotCrossVal(ypred, varType, 1979:2010);
 end
 
 function[] = plotCrossVal(yVals, t, years)
