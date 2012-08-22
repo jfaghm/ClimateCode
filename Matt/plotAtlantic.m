@@ -41,11 +41,11 @@ end
 %----Change these two variables when using a differnt index--------
 indexType = 'combo349';
 suffix = 'ComboIndex349';
-dir = '12StdDev';
+dir = 'bestComboIndexMonthRange';
 
 eval(['load composites/' dir '/' indexType '/' var]);
 eval(['load composites/' dir '/nino3.4/' var]);
-eval(['load composites/' dir '/hurr/' var]);
+eval(['load composites/' '/hurricaneFrequency/' var]);
 
 lat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
 lon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
@@ -61,7 +61,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference NINO3.4 ' varName ' 1.2StdDev'])
+title(['Difference NINO3.4 ' varName ' May-Dec 1StdDev'])
 colorbar
 
 subplot(3, 1, 2)
@@ -73,7 +73,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference ' indexType ' ' varName ' 1.2StdDev'])
+title(['Difference ' indexType ' ' varName ' May-Dec 1StdDev'])
 colorbar
 
 subplot(3, 1, 3)
@@ -85,13 +85,13 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference Hurr ' varName ' 1.2StdDev'])
+title(['Difference Hurr ' varName ' 1StdDev'])
 colorbar
 if landMask == true
     %print('-dpdf', '-r400', ['indexExperiment/results/' indexType ...
     %    '/atlanticComposites/' varName 'Composite.pdf']);
     print('-dpdf', '-r400', ['indexExperiment/results/comboIndex349' ...
-        '/12StdDevAtlanticComposites/' varName 'Composite.pdf']);
+        '/bestComboIndexMonthRangeAtlanticComposites/' varName 'Composite.pdf']);
 end
 end
 
