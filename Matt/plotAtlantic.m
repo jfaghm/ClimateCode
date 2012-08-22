@@ -28,6 +28,7 @@ plotMDRDiffOnly('saturationDeficit500mbarComposite.mat', [-.5 .5], true, ...
     'Saturation Deficit (500mbar)');
 plotMDRDiffOnly('saturationDeficit850mbarComposite.mat', [-3 2], true, ...
     'Saturation Deficit (850mbar)');
+
 end
 
 function [] = plotMDRDiffOnly(var, scaleDims, landMask, varName)
@@ -38,12 +39,13 @@ else
 end
 
 %----Change these two variables when using a differnt index--------
-indexType = 'comboIndex349';
+indexType = 'combo349';
 suffix = 'ComboIndex349';
+dir = '75StdDev';
 
-eval(['load composites/' indexType '/' var]);
-eval(['load composites/ENSO_3.4/' var]);
-eval(['load composites/hurricaneFrequency/' var]);
+eval(['load composites/' dir '/' indexType '/' var]);
+eval(['load composites/' dir '/nino3.4/' var]);
+eval(['load composites/' dir '/hurr/' var]);
 
 lat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
 lon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
@@ -59,7 +61,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference ENSO ' varName])
+title(['Difference NINO3.4 ' varName ' .' dir])
 colorbar
 
 subplot(3, 1, 2)
@@ -71,7 +73,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference ' indexType ' ' varName])
+title(['Difference ' indexType ' ' varName ' .' dir])
 colorbar
 
 subplot(3, 1, 3)
@@ -83,11 +85,13 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference Hurr ' varName])
+title(['Difference Hurr ' varName ' .' dir])
 colorbar
 if landMask == true
-    print('-dpdf', '-r400', ['indexExperiment/results/' indexType ...
-        '/atlanticComposites/' varName 'Composite.pdf']);
+    %print('-dpdf', '-r400', ['indexExperiment/results/' indexType ...
+    %    '/atlanticComposites/' varName 'Composite.pdf']);
+    print('-dpdf', '-r400', ['indexExperiment/results/comboIndex349' ...
+        '/75StdDevAtlanticComposites/' varName 'Composite.pdf']);
 end
 end
 
