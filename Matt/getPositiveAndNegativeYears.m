@@ -30,6 +30,7 @@ hurrFrequency = zeros(numYears, 1);
 
 for i = 1:numYears
    currentHurricanes = hurricanes(hurricanes(:, 1) == baseYear + i-1, :);
+   currentHurricanes = currentHurricanes(currentHurricanes(:, 10) >= 0, :);
    hurrFrequency(i) = numelements(currentHurricanes);
 end
 

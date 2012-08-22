@@ -13,7 +13,6 @@ function [ ] = plotAtlantic()
 
 plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure');
 plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
-
 plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
 plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear');
 plotMDRDiffOnly('relativeHumidity850mbarComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)');
@@ -40,8 +39,8 @@ else
 end
 
 %----Change these two variables when using a differnt index--------
-indexType = 'comboIndex89';
-suffix = 'ComboIndex89';
+indexType = 'comboIndex34';
+suffix = 'ComboIndex34';
 %dir = 'bestComboIndexMonthRange';
 
 eval(['load composites/'  '/' indexType '/' var]);
@@ -89,8 +88,8 @@ end
 title(['Difference Hurr ' varName ' 1StdDev'])
 colorbar
 if landMask == true
-    %print('-dpdf', '-r400', ['indexExperiment/results/' indexType ...
-    %    '/atlanticComposites/' varName 'Composite.pdf']);
+    print('-dpdf', '-r400', ['indexExperiment/results/' indexType ...
+        '/atlanticComposites/' varName 'Composite.pdf']);
     %print('-dpdf', '-r400', ['indexExperiment/results/comboIndex349' ...
     %    '/bestComboIndexMonthRangeAtlanticComposites/' varName 'Composite.pdf']);
 end

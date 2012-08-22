@@ -48,20 +48,20 @@ box_east = 260;
 
 if nargin == 2
     box_row = 5;
-    box_col = 10;
+    box_col = 20;
 end
 
 sstBoxPress = zscore(sstBoxOtherVal(pressure, pressureLat, pressureLon, startMonth, endMonth));
 sstBoxOLR = zscore(sstBoxOtherVal(olr, olrLat, olrLon, startMonth, endMonth));
-%pressureMinLon = norm(buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
-%    box_east, pressureLat, pressureLon, box_row, box_col, 'minLon'));
+pressureMinLon = zscore(buildIndexGeneric(annualPressure, box_north, box_south, box_west, ...
+    box_east, pressureLat, pressureLon, box_row, box_col, 'minLon'));
 sstMaxLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
     box_east, sstLat, sstLon, box_row, box_col, 'maxLon');
 sstMinLon = buildIndexGeneric(annualSST, box_north, box_south, box_west, ...
     box_east, sstLat, sstLon, box_row, box_col, 'minLon');
 sstDif = zscore(sstMinLon - sstMaxLon);
 
-indexMat = [sstBoxPress, sstBoxOLR, sstDif];
+indexMat = [sstBoxPress, sstBoxOLR, pressureMinLon, sstDif];
 index = sum(indexMat, 2);
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
