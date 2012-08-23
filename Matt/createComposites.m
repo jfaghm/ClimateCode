@@ -74,6 +74,9 @@ eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposit
 newFileDest = [fileDest 'precipitableWaterComposite'];
 eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
 
+lat = satDefLat;
+lon = satDefLon;
+
 eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(satDef500, pYears, nYears, dates, 8, 10);']);
 newFileDest = [fileDest 'saturationDeficit500mbarComposite'];
 eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
