@@ -39,8 +39,9 @@ else
 end
 
 %----Change these two variables when using a differnt index--------
-indexType = 'comboIndex34';
-suffix = 'ComboIndex34';
+indexType = 'comboIndex9';
+suffix = 'ComboIndex9';
+indexName = 'sstBoxDiff';
 %dir = 'bestComboIndexMonthRange';
 
 eval(['load composites/'  '/' indexType '/' var]);
@@ -73,7 +74,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference ' indexType ' ' varName ' 1StdDev'])
+title(['Difference ' indexName ' ' varName ' 1StdDev'])
 colorbar
 
 subplot(3, 1, 3)
