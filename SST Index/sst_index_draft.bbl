@@ -1,15 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{ashok2007}
-K.~Ashok, S.K. Behera, S.A. Rao, H.~Weng, and T.~Yamagata.
-\newblock El ni{\~n}o modoki and its possible teleconnection.
-\newblock {\em J. Geophys. Res}, 112(10.1029), 2007.
-
-\bibitem{ashok2009}
-K.~Ashok and T.~Yamagata.
-\newblock The el nino with a difference.
-\newblock {\em Nature}, 461(7263), 2009.
-
 \bibitem{Bell2000}
 G~D Bell, M~S Halpert, R~C Schnell, R~W Higgins, J~Lawrimore, V~E Kousky,
   R~Tinker, W~Thiaw, M~Chelliah, and A~Artusa.
@@ -33,10 +23,11 @@ K.~Emanuel.
 \newblock The hurricane-climate connection.
 \newblock {\em Bulletin of the American Meteorological Society}, 89(5), 2008.
 
-\bibitem{emanuel1999}
-K.A. Emanuel.
-\newblock Thermodynamic control of hurricane intensity.
-\newblock {\em Nature}, 401(6754):665--669, 1999.
+\bibitem{emanuel2010comparison}
+K.~Emanuel, K.~Oouchi, M.~Satoh, H.~Tomita, and Y.~Yamada.
+\newblock Comparison of explicitly simulated and downscaled tropical cyclone
+  activity in a high-resolution global climate model.
+\newblock {\em Journal of Advances in Modeling Earth Systems}, 2:1--9, 2010.
 
 \bibitem{emanuel2005a}
 Kerry Emanuel.
@@ -62,48 +53,35 @@ Hye-Mi Kim, Peter~J. Webster, and Judith~A. Curry.
   Atlantic Tropical Cyclones}.
 \newblock {\em Science}, 325(5936):77--80, 2009.
 
-\bibitem{kirtman1997}
-B.P. Kirtman.
-\newblock Oceanic rossby wave dynamics and the enso period in a coupled model.
-\newblock {\em Journal of climate}, 10(7):1690--1704, 1997.
-
 \bibitem{klotzbach2011nino}
 P.J. Klotzbach.
 \newblock El ni{\~n}o-southern oscillation's impact on atlantic basin
   hurricanes and us landfalls.
 \newblock {\em Journal of Climate}, 24(4):1252--1263, 2011.
 
+\bibitem{knutson2007simulation}
+T.R. Knutson, J.J. Sirutis, S.T. Garner, I.M. Held, and R.E. Tuleya.
+\newblock Simulation of the recent multidecadal increase of atlantic hurricane
+  activity using an 18-km-grid regional model.
+\newblock {\em Bulletin of the American Meteorological Society},
+  88(10):1549--1565, 2007.
+
+\bibitem{menkes2012comparison}
+C.E. Menkes, M.~Lengaigne, P.~Marchesiello, N.C. Jourdain, E.M. Vincent,
+  J.~Lef{\`e}vre, F.~Chauvin, and J.F. Royer.
+\newblock Comparison of tropical cyclogenesis indices on seasonal to
+  interannual timescales.
+\newblock {\em Climate Dynamics}, pages 1--21, 2012.
+
 \bibitem{ren2011}
 H.L. Ren and F.F. Jin.
 \newblock Ni{\~n}o indices for two types of enso.
 \newblock {\em Geophysical Research Letters}, 38(4):L04704, 2011.
 
-\bibitem{smith2012}
-D.M. Smith, A.A. Scaife, and B.P. Kirtman.
-\newblock What is the current state of scientific knowledge with regard to
-  seasonal and decadal forecasting?
-\newblock {\em Environmental Research Letters}, 7:015602, 2012.
-
-\bibitem{tang2004}
-BH~Tang and JD~Neelin.
-\newblock Enso influence on atlantic hurricanes via tropospheric warming.
-\newblock {\em Geophys. Res. Lett}, 31:L24204, 2004.
-
 \bibitem{trenberth2001}
 K.E. Trenberth and D.P. Stepaniak.
 \newblock Indices of el ni{\~n}o evolution.
 \newblock {\em Journal of Climate}, 14(8):1697--1701, 2001.
-
-\bibitem{webster1992}
-P.J. Webster and S.~Yang.
-\newblock Monsoon and enso: Selectively interactive systems.
-\newblock {\em Quarterly Journal of the Royal Meteorological Society},
-  118(507):877--926, 1992.
-
-\bibitem{wittenberg2009}
-A.T. Wittenberg.
-\newblock Are historical records sufficient to constrain enso simulations.
-\newblock {\em Geophys. Res. Lett}, 36:L12702, 2009.
 
 \bibitem{yeh2009}
 S.W. Yeh, J.S. Kug, B.~Dewitte, M.H. Kwon, B.P. Kirtman, and F.F. Jin.
