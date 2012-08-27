@@ -11,9 +11,8 @@ function [ ] = plotAtlantic()
 %main development regions are printed to the directory specified in the
 %call to print.
 
-%plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure');
+plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure');
 plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI');
-%{
 plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST');
 plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear');
 plotMDRDiffOnly('relativeHumidity850mbarComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)');
@@ -29,7 +28,8 @@ plotMDRDiffOnly('saturationDeficit500mbarComposite.mat', [-.5 .5], true, ...
     'Saturation Deficit (500mbar)');
 plotMDRDiffOnly('saturationDeficit850mbarComposite.mat', [-3 2], true, ...
     'Saturation Deficit (850mbar)');
-%}
+plotMDRDiffOnly('saturationDeficit500_850DiffmbarComposite.mat', [-3, 2], true, ...
+    'Saturation Deficit (500-850mbar Diff)');
 end
 
 function [] = plotMDRDiffOnly(var, scaleDims, landMask, varName)
@@ -38,26 +38,28 @@ if isempty(scaleDims)
 else
     scale = true;
 end
-
+close all
 %----Change these two variables when using a differnt index--------
-indexType = 'comboIndex3489';
-suffix = 'ComboIndex3489';
+indexType = 'comboIndex9';
+suffix = 'ComboIndex9';
 %indexName = 'sstBoxDiff';
 indexName = indexType;
-%dir = 'bestComboIndexMonthRange';
+saveDir = '/project/expeditions/lem/ClimateCode/Matt/';
+saveDir = [saveDir 'indexExperiment/results/' indexType '/atlanticComposites/'...
+    varName];
 
-eval(['load composites/'  '/' indexType '/' var]);
-eval(['load composites/'  '/ENSO_3.4/' var]);
-eval(['load composites/' '/hurricaneFrequency/' var]);
+eval(['load composites'  '/' indexType '/' var]);
+eval(['load composites'  '/ENSO_3.4/' var]);
+eval(['load composites' '/hurricaneFrequency/' var]);
 
 lat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
 lon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
 lon(lon > 180) = lon(lon > 180) - 360;
-fig(figure(1), 'units', 'inches', 'width', 6, 'height', 11)
+fig(figure(1), 'units', 'inches', 'width', 8, 'height', 11)
 
 subplot(3, 1, 1)
-%worldmap([0 45], [-80, -15])
-worldmap world
+worldmap([0 45], [-80, -15])
+%worldmap world
 pcolorm(lat, lon, diffENSO)
 if scale == true
     caxis(scaleDims)
@@ -69,8 +71,8 @@ title(['Difference NINO3.4 ' varName '1StdDev'])
 colorbar
 
 subplot(3, 1, 2)
-%worldmap([0 45], [-80, -15])
-worldmap world
+worldmap([0 45], [-80, -15])
+%worldmap world
 pcolorm(lat, lon, eval(['diff' suffix]))
 if scale == true
     caxis(scaleDims)
@@ -82,8 +84,8 @@ title(['Difference ' indexName ' ' varName ' 1StdDev'])
 colorbar
 
 subplot(3, 1, 3)
-%worldmap([0 45], [-80, -15])
-worldmap world
+worldmap([0 45], [-80, -15])
+%worldmap world
 pcolorm(lat, lon, diffHurr)
 if scale == true
     caxis(scaleDims)
@@ -94,8 +96,9 @@ end
 title(['Difference Hurr ' varName ' 1StdDev'])
 colorbar
 if landMask == true
-    print('-dpdf', '-r400', ['indexExperiment/results/' ...
-        '/worldMapComposites/' indexType 'PIComposite.pdf']);
+    set(gcf, 'PaperPosition', [0, 0, 8, 11]);
+    set(gcf, 'PaperSize', [8, 11]);
+    saveas(gcf, saveDir, 'pdf');
 end
 end
 

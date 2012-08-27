@@ -23,7 +23,7 @@ function [] = createComposites(indexType, fileDest, pYears, nYears )
 %
 %   createComposites('SSTIndex', 'composites/sstIndex', pYears, nYears);
 
-load matFiles/compositeVariables.mat
+load /project/expeditions/lem/ClimateCode/Matt/matFiles/compositeVariables.mat
 
 fileDest = [fileDest '/'];
 
@@ -83,6 +83,10 @@ eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);')
 
 eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(satDef850, pYears, nYears, dates, 8, 10);']);
 newFileDest = [fileDest 'saturationDeficit850mbarComposite'];
+eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
+
+eval(['[pMean' indexType ', nMean' indexType ', diff' indexType '] = getComposites(satDef500_850Diff, pYears, nYears, dates, 8, 10);']);
+newFileDest = [fileDest 'saturationDeficit500_850DiffmbarComposite'];
 eval('save(newFileDest, pMean, nMean, diff, latString, lonString, timeString);');
 end
 

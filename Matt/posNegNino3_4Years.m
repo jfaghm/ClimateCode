@@ -25,14 +25,16 @@ function [ negYears, posYears, ENSO34] = posNegNino3_4Years( data, startMonth, e
 
 if data(1) < 1979
     data = data(data(:, 1) >= 1979, :);
+    lastYear = find(data(:, 1) == 2010);
+    data = data(1:lastYear(end), :);
 end
 
 baseYear = data(1);
-totalYears = data(end, 1) - data(1, 1);
-ENSO34 = zeros(totalYears, 1);
+
+ENSO34 = zeros(size(data, 1)/12, 1);
 
 year = 1;
-for i = 1:12:totalYears*12
+for i = 1:12:size(data, 1)
     ENSO34(year) = mean(data(i + startMonth - 1:i+endMonth - 1, 9));
     year = year+1;
 end
