@@ -40,18 +40,18 @@ else
 end
 close all
 %----Change these two variables when using a differnt index--------
-indexType = 'comboIndex9';
-suffix = 'ComboIndex9';
+indexType = 'comboIndex49';
+suffix = 'ComboIndex49';
 %indexName = 'sstBoxDiff';
 indexName = indexType;
 saveDir = '/project/expeditions/lem/ClimateCode/Matt/';
 saveDir = [saveDir 'indexExperiment/results/' indexType '/atlanticComposites/'...
-    varName];
+    varName '.pdf'];
 
 eval(['load composites'  '/' indexType '/' var]);
 eval(['load composites'  '/ENSO_3.4/' var]);
 eval(['load composites' '/hurricaneFrequency/' var]);
-
+%-------------------------------------------------------------------
 lat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lat');
 lon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
 lon(lon > 180) = lon(lon > 180) - 360;
@@ -67,7 +67,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference NINO3.4 ' varName '1StdDev'])
+title(['NINO3.4 ' varName '1StdDev'])
 colorbar
 
 subplot(3, 1, 2)
@@ -80,7 +80,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference ' indexName ' ' varName ' 1StdDev'])
+title([indexName ' ' varName ' 1StdDev'])
 colorbar
 
 subplot(3, 1, 3)
@@ -93,7 +93,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title(['Difference Hurr ' varName ' 1StdDev'])
+title(['Hurr ' varName ' 1StdDev'])
 colorbar
 if landMask == true
     set(gcf, 'PaperPosition', [0, 0, 8, 11]);
