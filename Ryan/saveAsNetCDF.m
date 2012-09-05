@@ -41,7 +41,8 @@ end
 if exist(savename, 'file')
     error('Specified file name already exists. Delete that file and try again.')
 end
-
+lats = gridInfo.lats;
+lons = gridInfo.lons;
 nccreate(savename, 'lon', 'Dimensions', {'lon', numLons})
 nccreate(savename, 'lat', 'Dimensions', {'lat', numLats})
 ncwrite(savename, 'lat', lats)
