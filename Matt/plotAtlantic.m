@@ -11,43 +11,44 @@ function [ ] = plotAtlantic()
 %main development regions are printed to the directory specified in the
 %call to print.
 
-pacificDir = '/project/expeditions/haasken/data/stormData/nonAtlanticStorms/nonAtlanticStorms_1945_2010.mat';
-t = load(pacificDir);
-[nYears, pYears] = getPosNegYearsPacificHurr(t.allStorms);
+sigma = 0.8;
+
+comboIndex = buildIndexVariations(34, 3, 10);
+[nYears, pYears] = getPosNegYearsFromVector(comboIndex, sigma, true, 1979);
 comboYears = struct('pYears', pYears, 'nYears', nYears);
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/monthly_nino_data.mat;
-[nYears, pYears] = posNegNino3_4Years(data, 3, 10, 1);
+[nYears, pYears] = posNegNino3_4Years(data, 3, 10, sigma);
 ninoYears = struct('nYears', nYears, 'pYears', pYears);
 
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/condensedHurDat.mat;
-[nYears, pYears] = getPositiveAndNegativeYears(condensedHurDat, 1);
+[nYears, pYears] = getPositiveAndNegativeYears(condensedHurDat, sigma);
 hurrYears = struct('nYears', nYears, 'pYears', pYears);
 
 years = struct('nino', ninoYears, 'hurr', hurrYears, 'combo', comboYears);
 
-plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure', years);
-plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI', years);
-plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST', years);
-plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear', years);
-plotMDRDiffOnly('relativeHumidity850mbarComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)', years);
-plotMDRDiffOnly('relativeHumidity500mbarComposite.mat', [-13 13], true, 'RelHumidity (500mbar)', years);
+plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure', years, sigma);
+plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI', years, sigma);
+plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST', years, sigma);
+plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear', years, sigma);
+plotMDRDiffOnly('relativeHumidity850mbarComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)', years, sigma);
+plotMDRDiffOnly('relativeHumidity500mbarComposite.mat', [-13 13], true, 'RelHumidity (500mbar)', years, sigma);
 plotMDRDiffOnly('relativeHumidity850_500mbarDiffComposite.mat', [-11 11], true, ...
-    'RelHumidity (850-500mbar Diff)', years);
-plotMDRDiffOnly('precipitableWaterComposite.mat', [-4 5], true, 'Precipitable Water', years);
+    'RelHumidity (850-500mbar Diff)', years, sigma);
+plotMDRDiffOnly('precipitableWaterComposite.mat', [-4 5], true, 'Precipitable Water', years, sigma);
 plotMDRDiffOnly('geoPotential500_1000DiffmbarComposite.mat', [-200 300], true, ...
-    'Geopotential Height (500-1000mbar Diff)', years);
+    'Geopotential Height (500-1000mbar Diff)', years, sigma);
 plotMDRDiffOnly('geoPotential500mbarComposite.mat', [-150 150], true, ...
-    'Geopotential Height (500mbar)', years);
+    'Geopotential Height (500mbar)', years, sigma);
 plotMDRDiffOnly('saturationDeficit500mbarComposite.mat', [-.5 .5], true, ...
-    'Saturation Deficit (500mbar)', years);
+    'Saturation Deficit (500mbar)', years, sigma);
 plotMDRDiffOnly('saturationDeficit850mbarComposite.mat', [-3 2], true, ...
-    'Saturation Deficit (850mbar)', years);
+    'Saturation Deficit (850mbar)', years, sigma);
 plotMDRDiffOnly('saturationDeficit500_850DiffmbarComposite.mat', [-3, 2], true, ...
-    'Saturation Deficit (500-850mbar Diff)', years);
+    'Saturation Deficit (500-850mbar Diff)', years, sigma);
 end
 
-function [] = plotMDRDiffOnly(var, scaleDims, landMask, varName, years)
+function [] = plotMDRDiffOnly(var, scaleDims, landMask, varName, years, sigma)
 if isempty(scaleDims)
     scale = false;
 else
@@ -57,8 +58,7 @@ close all
 %----Change these variables when using a differnt index--------
 indexType = 'pacificHurr';
 suffix = 'PacificHurr';
-%indexName = 'sstBoxDiff';
-indexName = indexType; 
+indexName = 'sstBoxDiff';
 saveDir = '/project/expeditions/lem/ClimateCode/Matt/';
 saveDir = [saveDir 'indexExperiment/results/' indexType '/atlanticComposites/'...
     varName '.pdf'];
@@ -82,7 +82,7 @@ end
 if landMask == true
     geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
 end
-title({['NINO3.4 ' varName '1StdDev']; ...
+title({['NINO3.4 ' varName ' ' num2str(sigma) 'StdDev']; ...
     ['pYears = ' num2str(years.nino.pYears')]; ['nYears = ' num2str(years.nino.nYears')]})
 colorbar
 
