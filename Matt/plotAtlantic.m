@@ -11,7 +11,7 @@ function [ ] = plotAtlantic()
 %main development regions are printed to the directory specified in the
 %call to print.
 
-sigma = 0.8;
+sigma = 1.0;
 
 comboIndex = buildIndexVariations(34, 3, 10);
 [nYears, pYears] = getPosNegYearsFromVector(comboIndex, sigma, true, 1979);
