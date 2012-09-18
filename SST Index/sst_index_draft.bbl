@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{ashok2007}
+K.~Ashok, S.K. Behera, S.A. Rao, H.~Weng, and T.~Yamagata.
+\newblock El ni{\~n}o modoki and its possible teleconnection.
+\newblock {\em J. Geophys. Res}, 112(10.1029), 2007.
+
 \bibitem{Bell2000}
 G~D Bell, M~S Halpert, R~C Schnell, R~W Higgins, J~Lawrimore, V~E Kousky,
   R~Tinker, W~Thiaw, M~Chelliah, and A~Artusa.
@@ -35,11 +40,23 @@ Kerry Emanuel.
   years.
 \newblock {\em Nature}, 436(7051):686--688, 2005.
 
+\bibitem{enfield97}
+D.B. Enfield and D.A. Mayer.
+\newblock {Tropical Atlantic sea surface temperature variability and its
+  relation to El Ni{\~n}o-Southern Oscillation}.
+\newblock {\em Journal of Geophysical Research}, 102(C1):929--945, 1997.
+
 \bibitem{goldenberg2001}
 S.B. Goldenberg, C.W. Landsea, A.M. Mestas-Nu{\~n}ez, and W.M. Gray.
 \newblock The recent increase in atlantic hurricane activity: Causes and
   implications.
 \newblock {\em Science}, 293(5529):474, 2001.
+
+\bibitem{goldenberg1996physical}
+S.B. Goldenberg and L.J. Shapiro.
+\newblock Physical mechanisms for the association of el nino and west african
+  rainfall with atlantic major hurricane activity.
+\newblock {\em Journal of Climate}, 9(6):1169--1187, 1996.
 
 \bibitem{gray1984a}
 W.M. Gray.
@@ -66,6 +83,12 @@ T.R. Knutson, J.J. Sirutis, S.T. Garner, I.M. Held, and R.E. Tuleya.
 \newblock {\em Bulletin of the American Meteorological Society},
   88(10):1549--1565, 2007.
 
+\bibitem{liu2004remote}
+Z.~Liu, Q.~Zhang, and L.~Wu.
+\newblock Remote impact on tropical atlantic climate variability: statistical
+  assessment and dynamic assessment.
+\newblock {\em Journal of Climate}, 17(7):1529--1549, 2004.
+
 \bibitem{menkes2012comparison}
 C.E. Menkes, M.~Lengaigne, P.~Marchesiello, N.C. Jourdain, E.M. Vincent,
   J.~Lef{\`e}vre, F.~Chauvin, and J.F. Royer.
@@ -73,15 +96,20 @@ C.E. Menkes, M.~Lengaigne, P.~Marchesiello, N.C. Jourdain, E.M. Vincent,
   interannual timescales.
 \newblock {\em Climate Dynamics}, pages 1--21, 2012.
 
-\bibitem{ren2011}
-H.L. Ren and F.F. Jin.
-\newblock Ni{\~n}o indices for two types of enso.
-\newblock {\em Geophysical Research Letters}, 38(4):L04704, 2011.
+\bibitem{tang2004}
+BH~Tang and JD~Neelin.
+\newblock Enso influence on atlantic hurricanes via tropospheric warming.
+\newblock {\em Geophys. Res. Lett}, 31:L24204, 2004.
 
 \bibitem{trenberth2001}
 K.E. Trenberth and D.P. Stepaniak.
 \newblock Indices of el ni{\~n}o evolution.
 \newblock {\em Journal of Climate}, 14(8):1697--1701, 2001.
+
+\bibitem{wittenberg2009}
+A.T. Wittenberg.
+\newblock Are historical records sufficient to constrain enso simulations.
+\newblock {\em Geophys. Res. Lett}, 36:L12702, 2009.
 
 \bibitem{yeh2009}
 S.W. Yeh, J.S. Kug, B.~Dewitte, M.H. Kwon, B.P. Kirtman, and F.F. Jin.

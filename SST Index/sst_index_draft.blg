@@ -3,44 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sst_index_draft.aux
 The style file: plain.bst
 Database file #1: hurricanes_copy.bib
-You've used 15 entries,
+Repeated entry---line 2602 of file hurricanes_copy.bib
+ : @article{tang2004
+ :                  ,
+I'm skipping whatever remains of this entry
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            605 strings with 6669 characters,
-and the built_in function-call counts, 5765 in all, are:
-= -- 558
-> -- 331
+            637 strings with 7537 characters,
+and the built_in function-call counts, 7438 in all, are:
+= -- 726
+> -- 410
 < -- 1
-+ -- 133
-- -- 116
-* -- 490
-:= -- 993
-add.period$ -- 45
-call.type$ -- 15
-change.case$ -- 102
++ -- 164
+- -- 142
+* -- 620
+:= -- 1279
+add.period$ -- 60
+call.type$ -- 20
+change.case$ -- 130
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 169
-empty$ -- 396
-format.name$ -- 116
-if$ -- 1141
+cite$ -- 20
+duplicate$ -- 223
+empty$ -- 523
+format.name$ -- 142
+if$ -- 1478
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 15
-newline$ -- 78
-num.names$ -- 30
-pop$ -- 74
+int.to.str$ -- 20
+missing$ -- 20
+newline$ -- 103
+num.names$ -- 40
+pop$ -- 92
 preamble$ -- 1
-purify$ -- 87
+purify$ -- 110
 quote$ -- 0
-skip$ -- 114
+skip$ -- 152
 stack$ -- 0
-substring$ -- 409
-swap$ -- 20
+substring$ -- 539
+swap$ -- 25
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
+type$ -- 80
 warning$ -- 0
-while$ -- 56
-width$ -- 17
-write$ -- 167
+while$ -- 73
+width$ -- 22
+write$ -- 222
+(There was 1 error message)

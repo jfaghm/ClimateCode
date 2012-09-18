@@ -10,13 +10,13 @@
 			<key>filename</key>
 			<string>hurricanes_copy.bib</string>
 			<key>lastUsed</key>
-			<date>2012-08-14T22:16:40Z</date>
+			<date>2012-09-12T19:29:46Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>sst_index_draft.tex</string>
 			<key>lastUsed</key>
-			<date>2012-08-24T20:11:19Z</date>
+			<date>2012-09-12T19:29:46Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -25,28 +25,43 @@
 	<integer>188</integer>
 	<key>metaData</key>
 	<dict>
+		<key>hurricanes_copy.bib</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>110</integer>
+				<key>line</key>
+				<integer>3279</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>3226</integer>
+		</dict>
 		<key>sst_index_draft.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>22</integer>
+				<integer>41</integer>
 				<key>line</key>
-				<integer>398</integer>
+				<integer>164</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
-			<integer>274</integer>
+			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>78</integer>
+			<integer>137</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>sst_index_draft.tex</string>
+		<string>hurricanes_copy.bib</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{191, 95}, {2093, 1323}}</string>
+	<string>{{-2093, -16}, {2093, 1323}}</string>
 </dict>
 </plist>
