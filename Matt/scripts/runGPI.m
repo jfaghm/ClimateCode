@@ -25,7 +25,7 @@ if ~exist('dataLoaded', 'var') || dataLoaded == false
     vWindSpeeds = ncread(dataPath, 'var132');
     vWindShear = sqrt(squeeze(uWindSpeeds(:, :, levels(:) == 200, :) - uWindSpeeds(:, :, levels(:) == 850, :)).^2);
     vWindShear = vWindShear + sqrt(squeeze(vWindSpeeds(:, :, levels(:) == 200, :) - vWindSpeeds(:,:,levels == 850, :)).^2);
-    load PIMaps.mat
+    load ../matFiles/PIMaps.mat
     %Each cell in the PIData is a 256x512 matrix, so that the data is more
     %readable when you take an image of it, however, the nc files have data
     %in the form 512x256, so here we are transposing each cell and then
@@ -38,12 +38,5 @@ end
 
 gpiMat = ((10^5 *absVorticity).^(3/2)) .* ((relHumidity./50).^3) .* (PI./70).^3 .* ((1+(0.1*vWindShear)).^-2);
 gpiMat(imag(gpiMat) ~= 0) = 0;
-%Here we are changing the three dimensional matrix that has all of the gpi
-%data to a cell array, that way it can be viewed by the matlab gui if
-%necessary.  Also, we are transposing each cell so that it is a 256x512
-%matrix, thus making it easier to view in imagesc.
-gpiMat = squeeze(mat2cell(gpiMat, 512, 256, 1*ones(1, 384)));
-gpiMat = cellfun(@transpose, gpiMat, 'UniformOutput', false);
-toc
-
-save('GPIData.mat', 'gpiMat', 'time', 'lat', 'lon');
+saveDir = '/project/expeditions/lem/ClimateCode/Matt/matFiles/GPIData.mat';
+save(saveDir, 'gpiMat', 'time', 'lat', 'lon');
