@@ -29,8 +29,9 @@ for i = 1:k:length(target)
    test = false(length(target) - mod(length(target), k), 1);
    test(i:i+k-1) = 1;
    train = ~test;
-   mdl = LinearModel.fit(indices(train), target(train), 'linear');
-   ypred(i:i+k-1, 1) = predict(mdl, indices(test))';
+   mdl = LinearModel.stepwise(indices(train, :), target(train));
+   mdl.Formula
+   ypred(i:i+k-1, 1) = predict(mdl, indices(test, :))';
    actuals(i:i+k-1, 1) = target(i:i+k-1);
 end
 cc = corr(ypred, actuals);
