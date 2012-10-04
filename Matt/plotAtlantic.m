@@ -27,25 +27,25 @@ hurrYears = struct('nYears', nYears, 'pYears', pYears);
 
 years = struct('nino', ninoYears, 'hurr', hurrYears, 'combo', comboYears);
 
-plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure', years, sigma);
+%plotMDRDiffOnly('CentralPressureComposite.mat', [-300 300], true, 'Central Pressure', years, sigma);
 plotMDRDiffOnly('PIComposite.mat', [-15 20], true, 'PI', years, sigma);
 plotMDRDiffOnly('sstComposite.mat', [-1 2], true, 'SST', years, sigma);
 plotMDRDiffOnly('windShearComposite.mat', [-10 10], true, 'Wind Shear', years, sigma);
-plotMDRDiffOnly('relativeHumidity850mbarComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)', years, sigma);
-plotMDRDiffOnly('relativeHumidity500mbarComposite.mat', [-13 13], true, 'RelHumidity (500mbar)', years, sigma);
-plotMDRDiffOnly('relativeHumidity850_500mbarDiffComposite.mat', [-11 11], true, ...
-    'RelHumidity (850-500mbar Diff)', years, sigma);
-plotMDRDiffOnly('precipitableWaterComposite.mat', [-4 5], true, 'Precipitable Water', years, sigma);
-plotMDRDiffOnly('geoPotential500_1000DiffmbarComposite.mat', [-200 300], true, ...
-    'Geopotential Height (500-1000mbar Diff)', years, sigma);
-plotMDRDiffOnly('geoPotential500mbarComposite.mat', [-150 150], true, ...
-    'Geopotential Height (500mbar)', years, sigma);
-plotMDRDiffOnly('saturationDeficit500mbarComposite.mat', [-.5 .5], true, ...
+%plotMDRDiffOnly('relativeHumidity850mbarComposite.mat', [-10.5 11], true, 'RelHumidity (850mbar)', years, sigma);
+%plotMDRDiffOnly('relativeHumidity500mbarComposite.mat', [-13 13], true, 'RelHumidity (500mbar)', years, sigma);
+%plotMDRDiffOnly('relativeHumidity850_500mbarDiffComposite.mat', [-11 11], true, ...
+%    'RelHumidity (850-500mbar Diff)', years, sigma);
+%plotMDRDiffOnly('precipitableWaterComposite.mat', [-4 5], true, 'Precipitable Water', years, sigma);
+%plotMDRDiffOnly('geoPotential500_1000DiffmbarComposite.mat', [-200 300], true, ...
+%    'Geopotential Height (500-1000mbar Diff)', years, sigma);
+%plotMDRDiffOnly('geoPotential500mbarComposite.mat', [-150 150], true, ...
+%    'Geopotential Height (500mbar)', years, sigma);
+%plotMDRDiffOnly('saturationDeficit500mbarComposite.mat', [-.5 .5], true, ...
     'Saturation Deficit (500mbar)', years, sigma);
-plotMDRDiffOnly('saturationDeficit850mbarComposite.mat', [-3 2], true, ...
-    'Saturation Deficit (850mbar)', years, sigma);
-plotMDRDiffOnly('saturationDeficit500_850DiffmbarComposite.mat', [-3, 2], true, ...
-    'Saturation Deficit (500-850mbar Diff)', years, sigma);
+%plotMDRDiffOnly('saturationDeficit850mbarComposite.mat', [-3 2], true, ...
+%    'Saturation Deficit (850mbar)', years, sigma);
+%plotMDRDiffOnly('saturationDeficit500_850DiffmbarComposite.mat', [-3, 2], true, ...
+%    'Saturation Deficit (500-850mbar Diff)', years, sigma);
 end
 
 function [] = plotMDRDiffOnly(var, scaleDims, landMask, varName, years, sigma)
