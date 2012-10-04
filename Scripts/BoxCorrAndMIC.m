@@ -3,15 +3,20 @@ addpath('../Ryan/')
 
 START_YEAR = 1979;
 END_YEAR = 2010;
-SST_MONTHS = 5:7;
+SST_MONTHS = 8:10;
 
 % Set up dataLims to search East Atlantic region during the preseason
-dataLims = struct('west', -45, 'east', -10, 'north', 45, 'south', 5, ... 
-    'minWidth', 8, 'maxWidth', 15, 'minHeight', 8, 'maxHeight', 15, 'step', 1, ... 
+dataLims = struct('west', -80, 'east', -10, 'north', 45, 'south', 0, ... 
+    'minWidth', 10, 'maxWidth', 25, 'minHeight', 10, 'maxHeight', 25, 'step', 5, ... 
     'months', SST_MONTHS, 'startYear', START_YEAR, 'endYear', END_YEAR);
 
 % Load the ERV3SST data set
-load /project/expeditions/haasken/data/ERSST/ersstv3.mat
+%load /project/expeditions/haasken/data/ERSST/ersstv3.mat
+t = load('/project/expeditions/lem/ClimateCode/Matt/matFiles/GPIData.mat');
+erv3sst = t.gpiMat;
+load dates.mat
+erv3GridInfo = struct('lats', double(t.lat)', 'lons', double(t.lon)');
+erv3GridInfo.lons(erv3GridInfo.lons > 180) = erv3GridInfo.lons(erv3GridInfo.lons > 180) - 360;
 % Get May-July seasonal data
 seasonal = monthlyToSeasonal(erv3sst, erv3Dates, SST_MONTHS, START_YEAR, END_YEAR);
 
@@ -21,8 +26,8 @@ allBoxSST = getAllBoxData(erv3sst, erv3Dates, erv3GridInfo, dataLims);
 % Load the storm data and get counts
 load /project/expeditions/haasken/data/stormData/atlanticStorms/condensedHurDat.mat
 storms = condensedHurDat(:, [1 2 6 7]);
-atlCounts = countStorms(storms, START_YEAR, END_YEAR, 6:10, [5 35], [-100 -10]);
-eatlCounts = countStorms(storms, START_YEAR, END_YEAR, 6:10, [5 25], [-45 -10]);
+atlCounts = countStorms(storms, START_YEAR, END_YEAR, 8:10, [5 35], [-90 -10]);
+eatlCounts = countStorms(storms, START_YEAR, END_YEAR, 8:10, [5 25], [-45 -10]);
 
 % Compute the pointwise correlations between SST and the storms
 atlCorrGrid = pointRelate(seasonal, atlCounts, @rowCorr);
@@ -45,6 +50,8 @@ sortedEatlMIC = [ eatlBoxMIC(indices) allBoxSST(indices, :) ];
 sortedAtlCorr = [ atlBoxCorr(indices) allBoxSST(indices, :) ];
 [ vals indices ] = sort(atlBoxMIC, 'descend');
 sortedAtlMIC = [ atlBoxMIC(indices) allBoxSST(indices, :) ];
+
+sortedAtlCorr = sortedAtlCorr(~isnan(sortedAtlCorr(:, 1)), :);
 
 save('BoxCorrAndMIC.mat', 'sortedAtlCorr', 'sortedAtlMIC', ...
     'sortedEatlCorr', 'sortedEatlMIC', 'atlCounts', 'eatlCounts', 'dataLims' )

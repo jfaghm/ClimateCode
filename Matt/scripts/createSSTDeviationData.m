@@ -1,4 +1,4 @@
-addpath('/project/expeditions/lem/ClimateCode/Matt/');
+ addpath('/project/expeditions/lem/ClimateCode/Matt/');
 
 
 dir = '/project/expeditions/jfagh/data/ersstv3/ersstv3_1948_2010_mon_anomalies.nc';
@@ -26,6 +26,8 @@ sstDeviations = sst - tropicalSST;
 for i = 1:size(sstDeviations, 3)
     temp(:, :, i) = flipud(sstDeviations(:, :, i));
 end
+sstLat = sort(sstLat, 'descend');
+
 sstDeviations = temp;
 save('/project/expeditions/lem/ClimateCode/Matt/matFiles/tropicalSSTDeviations.mat', ...
     'sstDeviations', 'sstLat', 'sstLon', 'sstDates');
