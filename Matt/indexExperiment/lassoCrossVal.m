@@ -3,7 +3,7 @@ function [ypred, model, cc] = lassoCrossVal(predictors, target, k)
 %   Detailed explanation goes here
 
 iteration = 1;
-model = zeros(length(target), floor(length(target)/k));
+model = zeros(size(predictors, 2), floor(length(target)/k));
 for i = 1:k:length(target)
    if i+k-1 > length(target)
        break
