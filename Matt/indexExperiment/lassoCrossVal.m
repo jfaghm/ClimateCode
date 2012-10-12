@@ -1,4 +1,4 @@
-function [ypred, model, cc, mse] = lassoCrossVal(predictors, target, k)
+function [ypred, model, cc, mse] = lassoCrossVal(predictors, target, k, lambda)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -13,9 +13,9 @@ for i = 1:k:length(target)
    test(i:i+k-1) = 1;
    train = ~test;
    [B, fitInfo] = lasso(predictors(train, :), target(train), 'NumLambda', 51);
-   ypred(i:i+k-1, 1) = predictors(test, :) * B(:, find(min(fitInfo.MSE)));
+   ypred(i:i+k-1, 1) = predictors(test, :) * B(:, closestVal(fitInfo.Lambda, lambda));
    actuals(i:i+k-1, 1) = target(i:i+k-1);
-   model(:, iteration) = B(:, find(min(fitInfo.MSE)));
+   model(:, iteration) = B(:, closestVal(fitInfo.Lambda, lambda));
    
    mse(iteration, :) = fitInfo.MSE(floor(length(fitInfo.MSE)/2));
    
@@ -25,3 +25,6 @@ cc = corr(ypred, actuals);
 
 end
 
+function n = closestVal(A, x)
+    [~,n] = min(abs(A-x));
+end

@@ -1,94 +1,34 @@
-function [] = atlanticSSTLassoScript(vars)
-%atlanticSSTLassoScriptHelper(vars, 1, 'Aug-OctBestSSTAnomalieBoxes');
-%atlanticSSTLassoScriptHelper(vars, 2, 'May-JulBestSSTAnomalieBoxes');
-%atlanticSSTLassoScriptHelper(vars, 3, 'Aug-OctBestRelativeSSTBoxes');
-atlanticSSTLassoScriptHelper(vars, 4, 'May-JulBestRelativeSSTBoxes');
-atlanticSSTLassoScriptHelper(vars, 5, 'Aug-OctBestGPIBoxes');
-atlanticSSTLassoScriptHelper(vars, 6, 'May-JulBestGPIBoxes');
-atlanticSSTLassoScriptHelper(vars, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRanges');
+function [] = atlanticSSTLassoScript(boxValues)
+cc(1) = atlanticSSTLassoScriptHelper(boxValues, 1, 'Aug-OctBestSSTAnomalieBoxesWithPacific');
+cc(2) = atlanticSSTLassoScriptHelper(boxValues, 2, 'May-JulBestSSTAnomalieBoxesWithPacific');
+cc(3) = atlanticSSTLassoScriptHelper(boxValues, 3, 'Aug-OctBestRelativeSSTBoxesWithPacific');
+cc(4) = atlanticSSTLassoScriptHelper(boxValues, 4, 'May-JulBestRelativeSSTBoxesWithPacific');
+cc(5) = atlanticSSTLassoScriptHelper(boxValues, 5, 'Aug-OctBestGPIBoxesWithPacific');
+cc(6) = atlanticSSTLassoScriptHelper(boxValues, 6, 'May-JulBestGPIBoxesWithPacific');
+%atlanticSSTLassoScriptHelper(vars, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRangesWithPacific');
 
 end
-function [] = atlanticSSTLassoScriptHelper(vars, n, boxes)
+function [cc] = atlanticSSTLassoScriptHelper(boxValues, n, boxes)
 load ../matFiles/asoHurricaneStats.mat
-indices = [];
+indices = getPacificIndices();
 for j = 1:length(n)
-switch n(j)
-    case 1
-%-------------------------Aug-OctBestSST Anomalies------------------------
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/augOctBestSSTAnomalyBoxes.mat;
-load ../matFiles/flippedSSTAnomalies.mat
-lon = vars.sstLon;
-lon(lon > 180) = lon(lon > 180) - 360;
-for i = 1:108
-    indices = [indices, getAtlanticSSTBox(sst, 8, 10, vars.sstLat, lon, ...
-        sortedAtlCorr(i, 2), sortedAtlCorr(i, 3), sortedAtlCorr(i, 4), ...
-        sortedAtlCorr(i, 5))];
-end
-    case 2
-%------------------------May-Jul Best SST Anomalies-----------------------
-clear nonzero B fitInfo sortedAtlCorr
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/mayJulBestSSTAnomalyBoxes.mat;
-load ../matFiles/flippedSSTAnomalies.mat
-lon = vars.sstLon;
-lon(lon > 180) = lon(lon > 180) - 360;
-for i = 1:108
-    indices = [indices, getAtlanticSSTBox(sst, 5, 7, vars.sstLat, lon, ...
-        sortedAtlCorr(i, 2), sortedAtlCorr(i, 3), sortedAtlCorr(i, 4), ...
-        sortedAtlCorr(i, 5))];
-end
-%---------------------Aug-Oct Best Relative SST Boxes---------------------
-    case 3
-clear nonzero B fitInfo sortedAtlCorr 
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/augOctBestRelativeSSTBoxes
-load ../matFiles/tropicalSSTDeviations.mat
-lon = vars.sstLon;
-lon(lon > 180) = lon(lon > 180) - 360;
-for i = 1:108
-    indices = [indices, getAtlanticSSTBox(sstDeviations, 8, 10, vars.sstLat, lon, ...
-        sortedAtlCorr(i, 2), sortedAtlCorr(i, 3), sortedAtlCorr(i, 4), ...
-        sortedAtlCorr(i, 5))];
-end
-
-%--------------------May-Jul Best Relative SST Boxes----------------------
-    case 4
-clear nonzero B fitInfo sortedAtlCorr
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/mayJulBestRelativeSSTBoxes
-load ../matFiles/tropicalSSTDeviations.mat
-lon = vars.sstLon;
-lon(lon > 180) = lon(lon > 180) - 360;
-for i = 1:108
-    indices = [indices, getAtlanticSSTBox(sstDeviations, 5, 7, vars.sstLat, lon, ...
-        sortedAtlCorr(i, 2), sortedAtlCorr(i, 3), sortedAtlCorr(i, 4), ...
-        sortedAtlCorr(i, 5))];
-end
-  
-%-----------------Aug-Oct Best GPI Boxes----------------------------------
-    case 5
-clear nonzero B fitInfo sortedAtlCorr
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/augOctBestGPIBoxes.mat
-load ../matFiles/GPIData.mat
-lon(lon > 180) = lon(lon > 180) - 360;
-for i = 1:108
-    indices = [indices, getAtlanticSSTBox(gpiMat, 8, 10, lat, lon, ...
-        sortedAtlCorr(i, 2), sortedAtlCorr(i, 3), sortedAtlCorr(i, 4), ...
-        sortedAtlCorr(i, 5))];
-end
-  
-%-----------------May-Jul Best GPI Boxes-----------------------------------
-    case 6
-clear nonzero B fitInfo sortedAtlCorr
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/mayJulBestGPIBoxes.mat
-load ../matFiles/GPIData.mat
-lon(lon > 180) = lon(lon > 180) - 360;
-for i = 1:108
-    indices = [indices, getAtlanticSSTBox(gpiMat, 5, 7, lat, lon, ...
-        sortedAtlCorr(i, 2), sortedAtlCorr(i, 3), sortedAtlCorr(i, 4), ...
-        sortedAtlCorr(i, 5))];
-end
+    switch n(j)
+        case 1
+            indices = [indices, boxValues.augOctBestSSTAnomalyValues];
+        case 2
+            indices = [indices, boxValues.mayJulBestSSTAnomalyBoxValues];
+        case 3
+            indices = [indices, boxValues.augOctBestRelativeSSTValues];
+        case 4
+            indices = [indices, boxValues.mayJulBestRelativeSSTBoxValues];
+        case 5
+            indices = [indices, boxValues.augOctBestGPIBoxValues];
+        case 6
+            indices = [indices, boxValues.mayJulBestGPIBoxValues];
+    end
 
 end
-end
-
+[ypred, model, cc, mse] = lassoCrossVal(indices, aso_tcs, 4, .5);
 [B, fitInfo] = lasso(indices, aso_tcs);
 nonzero = getNonZeroElements(B);
 plotFitInfo(fitInfo.Lambda, nonzero, fitInfo.MSE, boxes);
@@ -118,6 +58,18 @@ ylabel('MSE');
 saveDir = ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/'...
     'results/paperDraft/EOFPrincipalComponents/PredictorsVsLambda/predictorsVsLambda'];
 saveas(gcf, [saveDir boxes 'pdf'], 'pdf');
+end
+
+function indices = getPacificIndices()
+startMonth = 3;
+sstMaxLon = buildIndexVariations(1, startMonth, 10);
+sstBoxPress = buildIndexVariations(36, startMonth, 10);
+sstBoxOLR = buildIndexVariations(37, startMonth, 10);
+minPressureLon = buildIndexVariations(38, startMonth, 10);
+sstLonDiff = buildIndexVariations(39, startMonth, 10);
+
+indices = [sstMaxLon, sstBoxPress, sstBoxOLR, minPressureLon, sstLonDiff];
+
 end
 
 
