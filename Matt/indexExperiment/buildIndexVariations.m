@@ -19,10 +19,15 @@ function [index, cc] = buildIndexVariations(indexNum, startMonth, endMonth, ...
 %--->cc - a vector containing correlation coefficients between the index
 %and 5 hurricane statistics.
 
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/flippedSSTAnomalies.mat
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat;
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/olrAnomalies.mat;
-indexMat = [];
+%data_path ='/project/expeditions/lem/ClimateCode/Matt/matFiles/';
+data_path ='/Volumes/James@MSI/ClimateCodeMatFiles/';
+
+
+
+load(strcat(data_path,'flippedSSTAnomalies.mat'));
+load(strcat(data_path,'pressureAnomalies.mat'));
+load(strcat(data_path,'olrAnomalies.mat'));
+%indexMat = [];
 year = 1;
 for i = 1:12:size(olr, 3)
    sstMean(:, :, year) = nanmean(sst(:, :, i+startMonth - 1:i+endMonth - 1), 3); 
