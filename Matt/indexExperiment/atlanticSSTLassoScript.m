@@ -1,14 +1,14 @@
-function [] = atlanticSSTLassoScript(boxValues)
-cc(1) = atlanticSSTLassoScriptHelper(boxValues, 1, 'Aug-OctBestSSTAnomalieBoxesWithPacific');
-cc(2) = atlanticSSTLassoScriptHelper(boxValues, 2, 'May-JulBestSSTAnomalieBoxesWithPacific');
-cc(3) = atlanticSSTLassoScriptHelper(boxValues, 3, 'Aug-OctBestRelativeSSTBoxesWithPacific');
-cc(4) = atlanticSSTLassoScriptHelper(boxValues, 4, 'May-JulBestRelativeSSTBoxesWithPacific');
-cc(5) = atlanticSSTLassoScriptHelper(boxValues, 5, 'Aug-OctBestGPIBoxesWithPacific');
-cc(6) = atlanticSSTLassoScriptHelper(boxValues, 6, 'May-JulBestGPIBoxesWithPacific');
-%atlanticSSTLassoScriptHelper(vars, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRangesWithPacific');
+function [cc, ypred, model, bigModel] = atlanticSSTLassoScript(boxValues)
+[cc(1), ypred(:, 1), model(:, 1)] = atlanticSSTLassoScriptHelper(boxValues, 1, 'Aug-OctBestSSTAnomalieBoxesWithPacific');
+[cc(2), ypred(:, 2), model(:, 2)] = atlanticSSTLassoScriptHelper(boxValues, 2, 'May-JulBestSSTAnomalieBoxesWithPacific');
+[cc(3), ypred(:, 3), model(:, 3)]= atlanticSSTLassoScriptHelper(boxValues, 3, 'Aug-OctBestRelativeSSTBoxesWithPacific');
+[cc(4), ypred(:, 4), model(:, 4)] = atlanticSSTLassoScriptHelper(boxValues, 4, 'May-JulBestRelativeSSTBoxesWithPacific');
+[cc(5), ypred(:, 5), model(:, 5)] = atlanticSSTLassoScriptHelper(boxValues, 5, 'Aug-OctBestGPIBoxesWithPacific');
+[cc(6), ypred(:, 6), model(:, 6)] = atlanticSSTLassoScriptHelper(boxValues, 6, 'May-JulBestGPIBoxesWithPacific');
+[cc(7), ypred(:, 7), bigModel] = atlanticSSTLassoScriptHelper(boxValues, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRangesWithPacific');
 
 end
-function [cc] = atlanticSSTLassoScriptHelper(boxValues, n, boxes)
+function [cc, ypred, model] = atlanticSSTLassoScriptHelper(boxValues, n, boxes)
 load ../matFiles/asoHurricaneStats.mat
 indices = getPacificIndices();
 for j = 1:length(n)
@@ -28,10 +28,21 @@ for j = 1:length(n)
     end
 
 end
-[ypred, model, cc, mse] = lassoCrossVal(indices, aso_tcs, 4, .5);
+tic
 [B, fitInfo] = lasso(indices, aso_tcs);
+numVars = 10;
+toc
+for i = 1:size(B, 2)
+   if numelements(find(B(:, i) ~= 0)) <= numVars
+       indices = indices(:, B(:, i) ~= 0);
+       model = B(:, i);
+       break;
+   end
+end
+
+[ypred, ~, cc, mse] = lassoCrossVal(indices, aso_tcs, 4, .5);
 nonzero = getNonZeroElements(B);
-plotFitInfo(fitInfo.Lambda, nonzero, fitInfo.MSE, boxes);
+%plotFitInfo(fitInfo.Lambda, nonzero, fitInfo.MSE, boxes);
 
 end
 
