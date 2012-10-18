@@ -11,7 +11,11 @@ minPressureLon = buildIndexVariations(38, startMonth, 10);
 
 sstLonDiff = buildIndexVariations(39, startMonth, 10);%, 0, 10, 130 272);
 
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+data_path= '/Volumes/James@MSI/ClimateCodeMatFiles/';
+
+%data_path = '../matFiles/'; %use this path when running from MSI
+
+load(strcat(data_path,'asoHurricaneStats.mat'));
 
 indices = [sstMaxLon, sstBoxPress, sstBoxOLR, minPressureLon, sstLonDiff];
 
