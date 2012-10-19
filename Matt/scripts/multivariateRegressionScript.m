@@ -15,7 +15,8 @@ data_path= '/Volumes/James@MSI/ClimateCodeMatFiles/';
 
 %data_path = '../matFiles/'; %use this path when running from MSI
 
-load(strcat(data_path,'asoHurricaneStats.mat'));
+data = strcat(data_path,'asoHurricaneStats.mat')
+load(data);
 
 indices = [sstMaxLon, sstBoxPress, sstBoxOLR, minPressureLon, sstLonDiff];
 
