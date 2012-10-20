@@ -1,5 +1,5 @@
-%-----------------------Plot Hurricane Counts-----------------------------
-clear
+%% -----------------------Plot Hurricane Counts-----------------------------
+
 if ~exist('vars', 'var')
     vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
 end
@@ -9,8 +9,23 @@ addpath('/project/expeditions/lem/ClimateCode/Matt/indexExperiment/');
 load /project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat
 [nYears, pYears] = getPosNegYearsFromVector(aso_tcs, 1, true, 1979);
 
-plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'AugOct');
-plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'MarOct');
+plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'AugOct', '1StdDev');
+
+%% 
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat;
+[nYears, pYears] = getPosNegYearsFromVector(aso_tcs, 0.8, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'AugOct', '0.8StdDev');
+
+%% 
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat
+[nYears, pYears] = getPosNegYearsFromVector(aso_tcs, 1.2, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'AugOct', '1.2StdDev');
 
 %% -----------Aug-Oct-Atlantic EOF PC 1------------------------------------
 
@@ -22,6 +37,23 @@ load /project/expeditions/ClimateCodeMatFiles/augOctAtlanticBasinEOFPCs.mat
 [nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1, true, 1979);
 plotIndividualComposites(vars, nYears, pYears, 'AtlanticBasinEOF1stPC', 'AugOct');
 
+%% 
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+
+load /project/expeditions/ClimateCodeMatFiles/augOctAtlanticBasinEOFPCs.mat
+[nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 0.8, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'AtlanticBasinEOF1stPC', 'AugOct', '0.8StdDev');
+
+%%
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+
+load /project/expeditions/ClimateCodeMatFiles/augOctAtlanticBasinEOFPCs.mat
+[nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1.2, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'AtlanticBasinEOF1stPC', 'AugOct', '1.2StdDev');
 %% ---------------Aug-Oct Pacific EOF PC1----------------------------------
 if ~exist('vars', 'var')
     vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
