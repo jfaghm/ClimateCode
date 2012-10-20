@@ -9,8 +9,9 @@ load /project/expeditions/ClimateCodeMatFiles/condensedHurDat.mat
 [nYears, pYears] = getPositiveAndNegativeYears(condensedHurDat, 1);
 
 plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'AugOct');
+plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'MarOct');
 
-%% -------------------Atlantic EOF PC 1------------------------------------
+%% -----------Aug-Oct-Atlantic EOF PC 1------------------------------------
 
 if ~exist('vars', 'var')
     vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
@@ -19,3 +20,47 @@ end
 load /project/expeditions/ClimateCodeMatFiles/augOctAtlanticBasinEOFPCs.mat
 [nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1, true, 1979);
 plotIndividualComposites(vars, nYears, pYears, 'AtlanticBasinEOF1stPC', 'AugOct');
+
+%% ---------------Aug-Oct Pacific EOF PC1----------------------------------
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+
+load /project/expeditions/ClimateCodeMatFiles/augOctPacificBasinEOFPCs.mat;
+[nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'PacificBasinEOF1stPC', 'AugOct');
+
+%% ---------------Aug-Oct Joint Basins PC 1-------------------------------
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/augOctJointBasinsEOFPCs.mat;
+[nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'JointBasinsEOF1stPC', 'AugOct');
+
+%% ----------------Mar-Oct Atlantic EOF PC1-------------------------------
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/marOctAtlanticBasinEOFPCs.mat;
+[nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'AtlanticBasinEOF1stPC', 'MarOct');
+
+%% --------------Mar-Oct PacificEOF PC1-----------------------------------
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/marOctPacificBasinEOFPCs.mat
+[nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'PacificBasinEOF1stPC', 'MarOct');
+
+%% ----------------Mar-Oct Joint Basins PC 1------------------------------
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/marOctJointBasinsEOFPCs.mat
+[nYears, pYears] = getPosNegYearsFromVector(PCs(:, 1), 1, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'JointBasinsEOF1stPC', 'MarOct');
+
+
+
