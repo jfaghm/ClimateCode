@@ -1,15 +1,15 @@
 function [cc, ypred, model, bigModel] = atlanticSSTLassoScript(boxValues)
-[cc(1), ypred(:, 1), model(:, 1)] = atlanticSSTLassoScriptHelper(boxValues, 1, 'Aug-OctBestSSTAnomalieBoxesWithPacific');
-[cc(2), ypred(:, 2), model(:, 2)] = atlanticSSTLassoScriptHelper(boxValues, 2, 'May-JulBestSSTAnomalieBoxesWithPacific');
-[cc(3), ypred(:, 3), model(:, 3)]= atlanticSSTLassoScriptHelper(boxValues, 3, 'Aug-OctBestRelativeSSTBoxesWithPacific');
-[cc(4), ypred(:, 4), model(:, 4)] = atlanticSSTLassoScriptHelper(boxValues, 4, 'May-JulBestRelativeSSTBoxesWithPacific');
+%[cc(1), ypred(:, 1), model(:, 1)] = atlanticSSTLassoScriptHelper(boxValues, 1, 'Aug-OctBestSSTAnomalieBoxesWithPacific');
+%[cc(2), ypred(:, 2), model(:, 2)] = atlanticSSTLassoScriptHelper(boxValues, 2, 'May-JulBestSSTAnomalieBoxesWithPacific');
+%[cc(3), ypred(:, 3), model(:, 3)]= atlanticSSTLassoScriptHelper(boxValues, 3, 'Aug-OctBestRelativeSSTBoxesWithPacific');
+%[cc(4), ypred(:, 4), model(:, 4)] = atlanticSSTLassoScriptHelper(boxValues, 4, 'May-JulBestRelativeSSTBoxesWithPacific');
 [cc(5), ypred(:, 5), model(:, 5)] = atlanticSSTLassoScriptHelper(boxValues, 5, 'Aug-OctBestGPIBoxesWithPacific');
-[cc(6), ypred(:, 6), model(:, 6)] = atlanticSSTLassoScriptHelper(boxValues, 6, 'May-JulBestGPIBoxesWithPacific');
-[cc(7), ypred(:, 7), bigModel] = atlanticSSTLassoScriptHelper(boxValues, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRangesWithPacific');
+%[cc(6), ypred(:, 6), model(:, 6)] = atlanticSSTLassoScriptHelper(boxValues, 6, 'May-JulBestGPIBoxesWithPacific');
+%[cc(7), ypred(:, 7), bigModel] = atlanticSSTLassoScriptHelper(boxValues, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRangesWithPacific');
 
 end
 function [cc, ypred, model] = atlanticSSTLassoScriptHelper(boxValues, n, boxes)
-load ../matFiles/asoHurricaneStats.mat
+load asoHurricaneStats.mat
 indices = getPacificIndices();
 for j = 1:length(n)
     switch n(j)
