@@ -5,8 +5,9 @@ if ~exist('vars', 'var')
 end
 addpath('/project/expeditions/lem/ClimateCode/Matt/');
 addpath('/project/expeditions/lem/ClimateCode/Matt/indexExperiment/');
-load /project/expeditions/ClimateCodeMatFiles/condensedHurDat.mat
-[nYears, pYears] = getPositiveAndNegativeYears(condensedHurDat, 1);
+
+load /project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat
+[nYears, pYears] = getPosNegYearsFromVector(aso_tcs, 1, true, 1979);
 
 plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'AugOct');
 plotIndividualComposites(vars, nYears, pYears, 'hurricaneCounts', 'MarOct');
