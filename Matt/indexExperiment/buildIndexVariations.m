@@ -20,13 +20,13 @@ function [index, cc] = buildIndexVariations(indexNum, startMonth, endMonth, ...
 %and 5 hurricane statistics.
 
 %data_path ='/project/expeditions/lem/ClimateCode/Matt/matFiles/';
-data_path ='/Volumes/James@MSI/ClimateCodeMatFiles/';
 
 
 
-load(strcat(data_path,'flippedSSTAnomalies.mat'));
-load(strcat(data_path,'pressureAnomalies.mat'));
-load(strcat(data_path,'olrAnomalies.mat'));
+
+load('flippedSSTAnomalies.mat');
+load('pressureAnomalies.mat');
+load('olrAnomalies.mat');
 %indexMat = [];
 year = 1;
 for i = 1:12:size(olr, 3)
@@ -219,7 +219,7 @@ olrMinVals = olrValues.min;
 pressMinVals = pressureValues.min;
 %}
 
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/asoHurricaneStats.mat;
+load asoHurricaneStats.mat;
 
 cc(1) = corr(index, aso_tcs); 
 cc(2) = corr(index, aso_major_hurricanes);
