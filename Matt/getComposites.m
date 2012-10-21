@@ -45,8 +45,8 @@ for i = 1:length(pYears)
     endIndex = find(dates(:, 3) == endMonth&dates(:, 4) == pYears(i));
     posComposites(:, :, count) = nanmean(data(:, :, startIndex:endIndex), 3);
     count = count+1;
-end
-count = 1;
+end 
+count = 1; 
 %composite the negative years
 for i = 1:length(nYears)
     startIndex = find(dates(:, 3) == startMonth&dates(:, 4) == nYears(i));

@@ -1,4 +1,5 @@
 function [cc, ypred, model, boxesUsed, vars, coefficients] = atlanticSSTLassoScript(boxValues)
+%{
 [cc(1), ypred(:, 1), model(:, 1), boxesUsed{1}, vars{1}, coefficients{1}]...
     = atlanticSSTLassoScriptHelper(boxValues, 1, 'Aug-OctBestSSTAnomalieBoxesWithPacific');
 [cc(2), ypred(:, 2), model(:, 2), boxesUsed{2}, vars{2}, coefficients{2}]...
@@ -11,39 +12,44 @@ function [cc, ypred, model, boxesUsed, vars, coefficients] = atlanticSSTLassoScr
     atlanticSSTLassoScriptHelper(boxValues, 5, 'Aug-OctBestGPIBoxesWithPacific');
 [cc(6), ypred(:, 6), model(:, 6), boxesUsed{6}, vars{6}, coefficients{6}]...
     = atlanticSSTLassoScriptHelper(boxValues, 6, 'May-JulBestGPIBoxesWithPacific');
-%[cc(7), ypred(:, 7), bigModel] = atlanticSSTLassoScriptHelper(boxValues, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRangesWithPacific');
+%}
+[cc(7), ypred(:, 7), model(:, 7), boxesUsed{7}, vars{7}, coefficients{7}]...
+    = atlanticSSTLassoScriptHelper(boxValues, [1, 2, 3, 4, 5, 6], 'AllBoxesAllMonthRangesWithPacific');
+save('atlanticBoxCrossValResults5Predictors.mat', 'cc', 'boxesUsed', 'vars', 'coefficients');
 
 end
 function [cc, ypred, model, boxesUsed, vars, coefficients] = atlanticSSTLassoScriptHelper(boxValues, n, boxes)
 addpath('/project/expeditions/ClimateCodeMatFiles/');
 load asoHurricaneStats.mat
 indices = getPacificIndices();
+boxes = [];
+
 for j = 1:length(n)
     switch n(j)
         case 1
             indices = [indices, boxValues.augOctBestSSTAnomalyValues(:, 6:end)'];
-            boxes = boxValues.augOctBestSSTAnomalyValues;
+            boxes = [boxes, boxValues.augOctBestSSTAnomalyValues];
         case 2
             indices = [indices, boxValues.mayJulBestSSTAnomalyBoxValues(:, 6:end)'];
-            boxes = boxValues.mayJulBestSSTAnomalyBoxValues;
+            boxes = [boxes, boxValues.mayJulBestSSTAnomalyBoxValues];
         case 3
             indices = [indices, boxValues.augOctBestRelativeSSTValues(:, 6:end)'];
-            boxes = boxValues.augOctBestRelativeSSTValues;
+            boxes = [boxes, boxValues.augOctBestRelativeSSTValues];
         case 4
             indices = [indices, boxValues.mayJulBestRelativeSSTBoxValues(:, 6:end)'];
-            boxes = boxValues.mayJulBestRelativeSSTBoxValues;
+            boxes = [boxes, boxValues.mayJulBestRelativeSSTBoxValues];
         case 5
             indices = [indices, boxValues.augOctBestGPIBoxValues(:,6:end)'];
-            boxes = boxValues.augOctBestGPIBoxValues;
+            boxes = [boxes, boxValues.augOctBestGPIBoxValues];
         case 6
             indices = [indices, boxValues.mayJulBestGPIBoxValues(:,6:end)'];
-            boxes = boxValues.mayJulBestGPIBoxValues;
+            boxes = [boxes, boxValues.mayJulBestGPIBoxValues];
     end
 
 end
 tic
 [B, fitInfo] = lasso(indices, aso_tcs);
-numVars = 10;  %10, 5, 2
+numVars = 5;  %10, 5, 2, 1
 leaveK = 4; %do 8 and 4
 toc
 for i = 1:size(B, 2)
@@ -54,7 +60,7 @@ for i = 1:size(B, 2)
    end
 end
 
-[sortedCC, sortedIndices] = sort(model);
+[sortedCC, sortedIndices] = sort(abs(model));
 vars = 1:length(model);
 vars = vars(sortedIndices);
 
@@ -62,12 +68,11 @@ coefficients = sortedCC(sortedCC ~= 0);
 vars = vars(sortedCC ~= 0);
 
 i = model ~= 0;
-boxesUsed = boxes(i(7:end), 2:5);
+boxesUsed = boxes(i(6:end), 2:5);
 
 [ypred, ~, cc] = lassoCrossVal(indices, aso_tcs, leaveK, 0);
 
 %plotFitInfo(fitInfo.Lambda, nonzero, fitInfo.MSE, boxes);
-
 end
 
 function nonzero = getNonZeroElements(B)
