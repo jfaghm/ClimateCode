@@ -21,14 +21,19 @@ function [] = plotEOFHelper(map, lat, lon, i, basin)
 switch basin
     case 'PacificBasin'
         latRange = [-6, 36];
-        lonRange = [130, 272];
+        lonRange = [120, 272];
     case 'AtlanticBasin'
         latRange = [0, 40];
         lonRange = [280, 345];
     case 'JointBasins'
         latRange = [0, 40];
-        lonRange = [130, 345];
+        lonRange = [120, 345];
 end
+
+lat = lat(lat >= min(latRange) & lat <= max(latRange));
+lon = lon(lon >= min(lonRange) & lon <= max(lonRange));
+
+map(map == 0) = NaN;
 
 worldmap(latRange, lonRange);
 pcolorm(double(lat), double(lon), map);

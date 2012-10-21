@@ -2,7 +2,7 @@ function [index, cc] = sstBoxOtherVal(otherData, otherLat, otherLon, startMonth,
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
-load flippedSSTAnomalies.mat;
+load /project/expeditions/ClimateCodeMatFiles/flippedSSTAnomalies.mat;
 
 if size(otherData, 3) ~= 384
     error('data must only contain years 1979-2010');
@@ -28,7 +28,7 @@ box_col = 10;
 index = indexHelper(sstMean, otherMean, box_north, box_south, box_west, ...
     box_east, sstLat, sstLon, otherLat, otherLon, box_row, box_col);
 
-load asoHurricaneStats.mat
+load /project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat
 cc(1) = corr(index, aso_ace);
 cc(2) = corr(index, aso_major_hurricanes);
 cc(3) = corr(index, aso_ntc);
