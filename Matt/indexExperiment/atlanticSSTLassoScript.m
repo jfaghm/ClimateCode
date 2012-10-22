@@ -101,7 +101,7 @@ saveas(gcf, [saveDir boxes 'pdf'], 'pdf');
 end
 
 function indices = getPacificIndices()
-startMonth = 3;
+startMonth = 8;
 sstMaxLon = buildIndexVariations(1, startMonth, 10);
 sstBoxPress = buildIndexVariations(36, startMonth, 10);
 sstBoxOLR = buildIndexVariations(37, startMonth, 10);
