@@ -58,17 +58,6 @@ for i = 1:length(B)
 end
 
 
-<<<<<<< HEAD
-=======
-function indices = getPacificIndices()
-startMonth = 8;
-sstMaxLon = buildIndexVariations(1, startMonth, 10);
-sstBoxPress = buildIndexVariations(36, startMonth, 10);
-sstBoxOLR = buildIndexVariations(37, startMonth, 10);
-minPressureLon = buildIndexVariations(38, startMonth, 10);
-sstLonDiff = buildIndexVariations(39, startMonth, 10);
->>>>>>> 395d106df26b1c7c6cc68524b2d3964268688990
-
 
 
 
