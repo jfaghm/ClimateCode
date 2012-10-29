@@ -1,7 +1,7 @@
-addpath('../');
-addpath('../indexExperiment/');
+%addpath('../');
+%addpath('../indexExperiment/');
 if ~exist('vars', 'var')
-	vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+	vars = load('compositeVariables.mat');
 end
 members = {'sst', 'PI', 'pressure', 'windShear', 'windField850', 'windField500', 'windField200', 'relHumid850', 'relHumid500', 'relHumid850_500Diff', 'geoPotential500', 'geoPotential200', 'geoPotential500_1000Diff', 'precipitableWater', 'satDef850', 'satDef500', 'satDef500_850Avg', 'gpiMat', 'sstDeviations'};
 
