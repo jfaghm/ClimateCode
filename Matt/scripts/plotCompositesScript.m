@@ -136,7 +136,7 @@ if ~exist('vars', 'var')
     vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
 end
 index = buildIndexVariations(34, 3, 10);
-[nYears, pYears] = getPosNegYearsFromVector(ts, 1, true, 1979);
+[nYears, pYears] = getPosNegYearsFromVector(index, 1, true, 1979);
 plotIndividualComposites(vars, nYears, pYears, 'EOFBox', 'AugOct', '1StdDev');
 
 %% ---------------Combo Index 1.2 StdDev--------------------------------------
@@ -144,7 +144,30 @@ if ~exist('vars', 'var')
     vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
 end
 index = buildIndexVariations(34, 3, 10);
-[nYears, pYears] = getPosNegYearsFromVector(ts, 1.2, true, 1979);
+[nYears, pYears] = getPosNegYearsFromVector(index, 1.2, true, 1979);
 plotIndividualComposites(vars, nYears, pYears, 'EOFBox', 'AugOct', '1.2StdDev');
+
+%% ---------------Detrended Atlantic EOF Aug-Oct--------------------------
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/augOctAtlanticBasinEOFPCs.mat
+index = PCs(:, 1);
+index = detrend(index);
+[nYears, pYears] = getPosNegYearsFromVector(index, 1, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'DetrendedAtlanticEOF', 'AugOct', '1StdDev');
+
+
+%% ------------Detrended Pacific EOF Aug-Oct-------------------------------
+if ~exist('vars', 'var')
+    vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables.mat');
+end
+load /project/expeditions/ClimateCodeMatFiles/augOctPacificBasinEOFPCs.mat
+index = PCs(:, 1);
+index = detrend(index);
+[nYears, pYears] = getPosNegYearsFromVector(index, 1, true, 1979);
+plotIndividualComposites(vars, nYears, pYears, 'DetrendedPacificEOF', 'AugOct', '1StdDev');
+
+
 
 
