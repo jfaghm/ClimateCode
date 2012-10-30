@@ -21,7 +21,7 @@ function [nYears, pYears] = getPosNegYearsFromVector(vec, sigma,...
 %--->pYears - a vector containing all of the years associated with high
 %hurricane activity.
 
-zVec = zscore(vec);
+zVec = (vec - mean(vec)) ./ std(vec);
 if positivilyCorrelated == true
     nYears = find(zVec <= -sigma) + baseYear - 1;
     pYears = find(zVec >= sigma) + baseYear - 1;
