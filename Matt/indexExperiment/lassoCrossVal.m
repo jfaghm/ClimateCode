@@ -22,7 +22,7 @@ for i = 1:k:length(target)
    yHat = ypred(i:i+k-1, 1);
    mse(iteration, :) = mean((y - yHat).^2);
    
-   Bmat(:, :, iteration) = B;
+   Bmat{iteration} = B;
    
    iteration = iteration+1;
 end
