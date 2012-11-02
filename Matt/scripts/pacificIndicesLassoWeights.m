@@ -1,16 +1,36 @@
+%%
+clear
 load('/project/expeditions/ClimateCodeMatFiles/regression_model_sst_data.mat', 'pacific_indices_mar_oct')
 addpath('/project/expeditions/lem/ClimateCode/Matt/indexExperiment/');
 load /project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat
+load /project/expeditions/ClimateCodeMatFiles/augOctPacificBasinEOFPCs.mat
+%% 
+%predictors = [pacific_indices_mar_oct, zscore(pacific_indices_mar_oct)];
+predictors = [pacific_indices_mar_oct];%, PCs];
 
-predictors = [pacific_indices_mar_oct, zscore(pacific_indices_mar_oct)];
+trials = 1;
+for i = 1:trials
+    target = aso_tcs;%aso_tcs(randperm(32));
+    
+    [~,~,~,~,BmatLeave2Out] = lassoCrossVal(predictors, target, 2);
+    [~,~,~,~,BmatLeave4Out] = lassoCrossVal(predictors, target, 4);
+    [~,~,~,~,BmatLeave8Out] = lassoCrossVal(predictors, target, 8);
 
-[~,~,~,~,BmatLeave2Out] = lassoCrossVal(predictors, aso_tcs, 2);
-[~,~,~,~,BmatLeave4Out] = lassoCrossVal(predictors, aso_tcs, 4);
-[~,~,~,~,BmatLeave8Out] = lassoCrossVal(predictors, aso_tcs, 8);
+    leave2OutPred = predictForAllLambdasCrossVal(BmatLeave2Out, predictors);
+    leave4OutPred = predictForAllLambdasCrossVal(BmatLeave4Out, predictors);
+    leave8OutPred = predictForAllLambdasCrossVal(BmatLeave8Out, predictors);
 
-correlationsLeave2Out = zeros(size(BmatLeave2Out, 2), 1);
-correlationsLeave4Out = zeros(size(BmatLeave4Out, 2), 1);
-correlationsLeave8Out = zeros(size(BmatLeave8Out, 2), 1);
+    for j = 1:min([size(leave2OutPred, 2), size(leave4OutPred, 2), size(leave8OutPred, 2)])
+       correlationsLeave2Out(i, j) = corr(leave2OutPred(:, j), target);
+       correlationsLeave4Out(i, j) = corr(leave4OutPred(:, j), target);
+       correlationsLeave8Out(i, j) = corr(leave8OutPred(:, j), target);
+    end
+end
+
+
+%% 
+save('pacificIndicesLassoWeights.mat', 'BmatLeave2Out', 'BmatLeave4Out', ...
+'BmatLeave8Out', 'correlationsLeave2Out', 'correlationsLeave4Out', 'correlationsLeave8Out')
 
 %% 
 addpath('../datTextFiles/');
@@ -38,14 +58,3 @@ cc(12) = corr(sum(predictors(:, 6:end), 2), pdoMarOct);
 pred = predictors(:, 1:5) * B(:, 1);
 cc(13) = corr(pred, pdoAugOct);
 cc(14) = corr(pred, pdoMarOct);
-%% 
-for i = 1:size(BmatLeave2Out, 2)
-   correlationsLeave2Out(i) = corr(predictors * BmatLeave2Out(:, i), aso_tcs); 
-   correlationsLeave4Out(i) = corr(predictors * BmatLeave4Out(:, i), aso_tcs);
-   correlationsLeave8Out(i) = corr(predictors * BmatLeave8Out(:, i), aso_tcs);
-end
-
-
-%% 
-save('pacificIndicesLassoWeights.mat', 'BmatLeave2Out', 'BmatLeave4Out', ...
-'BmatLeave8Out', 'correlationsLeave2Out', 'correlationsLeave4Out', 'correlationsLeave8Out')
