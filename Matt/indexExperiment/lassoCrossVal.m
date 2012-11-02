@@ -1,4 +1,4 @@
-function [ypred, model, cc, mse, Bmat] = lassoCrossVal(predictors, target, k)
+function [ypred, model, cc, mse, Bmat, intercepts] = lassoCrossVal(predictors, target, k)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 iteration = 1;
@@ -21,7 +21,7 @@ for i = 1:k:length(target)
    y = actuals(i:i+k-1, 1);
    yHat = ypred(i:i+k-1, 1);
    mse(iteration, :) = mean((y - yHat).^2);
-   
+   intercepts{iteration} = fitInfo.Intercept;
    Bmat{iteration} = B;
    
    iteration = iteration+1;

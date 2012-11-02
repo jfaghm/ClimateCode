@@ -6,28 +6,89 @@ load /project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat
 load /project/expeditions/ClimateCodeMatFiles/augOctPacificBasinEOFPCs.mat
 %% 
 %predictors = [pacific_indices_mar_oct, zscore(pacific_indices_mar_oct)];
-predictors = [pacific_indices_mar_oct];%, PCs];
+predictors = [pacific_indices_mar_oct, PCs(:, 1:2)];
 
-trials = 1;
+trials = 100;
 for i = 1:trials
-    target = aso_tcs;%aso_tcs(randperm(32));
+    target = aso_tcs(randperm(32));
     
-    [~,~,~,~,BmatLeave2Out] = lassoCrossVal(predictors, target, 2);
-    [~,~,~,~,BmatLeave4Out] = lassoCrossVal(predictors, target, 4);
-    [~,~,~,~,BmatLeave8Out] = lassoCrossVal(predictors, target, 8);
+    [B, fitInfo] = lasso(predictors, target);
+    
+    for j = 1:size(B, 2)
+        randRegressionCorr(i, j) = corr(predictors * B(:, j) + fitInfo.Intercept(j), target);
+    end
+    
+    [~,~,~,~,BmatLeave2Out, intercepts2] = lassoCrossVal(predictors, target, 2);
+    [~,~,~,~,BmatLeave4Out, intercepts4] = lassoCrossVal(predictors, target, 4);
+    [~,~,~,~,BmatLeave8Out, intercepts8] = lassoCrossVal(predictors, target, 8);
 
-    leave2OutPred = predictForAllLambdasCrossVal(BmatLeave2Out, predictors);
-    leave4OutPred = predictForAllLambdasCrossVal(BmatLeave4Out, predictors);
-    leave8OutPred = predictForAllLambdasCrossVal(BmatLeave8Out, predictors);
+    leave2OutPred = predictForAllLambdasCrossVal(BmatLeave2Out, predictors, intercepts2);
+    leave4OutPred = predictForAllLambdasCrossVal(BmatLeave4Out, predictors, intercepts4);
+    leave8OutPred = predictForAllLambdasCrossVal(BmatLeave8Out, predictors, intercepts8);
 
     for j = 1:min([size(leave2OutPred, 2), size(leave4OutPred, 2), size(leave8OutPred, 2)])
-       correlationsLeave2Out(i, j) = corr(leave2OutPred(:, j), target);
-       correlationsLeave4Out(i, j) = corr(leave4OutPred(:, j), target);
-       correlationsLeave8Out(i, j) = corr(leave8OutPred(:, j), target);
+       randCorrelationsLeave2Out(i, j) = corr(leave2OutPred(:, j), target);
+       randCorrelationsLeave4Out(i, j) = corr(leave4OutPred(:, j), target);
+       randCorrelationsLeave8Out(i, j) = corr(leave8OutPred(:, j), target);
     end
+    
+end
+%%
+
+[BRegress, fi] = lasso(predictors, aso_tcs);
+for i = 1:size(BRegress, 2)
+    regressionCorr(i) = corr(predictors * BRegress(:, i) + fi.Intercept(i), aso_tcs);
 end
 
+[~,~,~,~,B2, int] = lassoCrossVal(predictors, aso_tcs, 2);
+leave2OutPred = predictForAllLambdasCrossVal(B2, predictors, int);
+[~,~,~,~,B2, int] = lassoCrossVal(predictors, aso_tcs, 4);
+leave4OutPred = predictForAllLambdasCrossVal(B2, predictors, int);
+[~,~,~,~,B2, int] = lassoCrossVal(predictors, aso_tcs, 8);
+leave8OutPred = predictForAllLambdasCrossVal(B2, predictors, int);
 
+for i = 1:min([size(leave2OutPred, 2), size(leave4OutPred, 2), size(leave8OutPred, 2)])
+    correlationsLeave2Out(i) = corr(leave2OutPred(:, i), aso_tcs);
+    correlationsLeave4Out(i) = corr(leave4OutPred(:, i), aso_tcs);
+    correlationsLeave8Out(i) = corr(leave8OutPred(:, i), aso_tcs);
+end
+
+%% -------make histogram if random trials are used
+% 1, end/2, 90, 95
+lambda = fitInfo.Lambda(95);
+lambdaInd = closestIndex(fitInfo.Lambda, lambda);
+
+n = size(randCorrelationsLeave2Out, 1);
+subplot(4, 1, 1)
+hist(randRegressionCorr(:, lambdaInd));
+title(['Straight Regression with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
+    ' nonRandCorr = ' num2str(regressionCorr(lambdaInd)) ])
+xlabel('correlation')
+
+subplot(4, 1, 2);
+hist(randCorrelationsLeave8Out(:, lambdaInd))
+title(['Leave 8 out cross validation with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
+    ' nonRandCorr = ' num2str(correlationsLeave8Out(lambdaInd))]);
+xlabel('Correlation');
+
+subplot(4, 1, 3);
+hist(randCorrelationsLeave4Out(:, lambdaInd))
+title(['Leave 4 out cross validation with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
+    ' nonRandCorr = ' num2str(correlationsLeave4Out(lambdaInd))]);
+xlabel('Correlation')
+
+subplot(4, 1, 4);
+hist(randCorrelationsLeave2Out(:, lambdaInd))
+title(['Leave 2 out Cross Validation with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
+    ' nonRandCorr = ' num2str(correlationsLeave2Out(lambdaInd))]);
+xlabel('Correlation')
+
+saveDir = ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/'...
+    'paperDraft/regressionWeights/histograms/lambda' num2str(lambda) '.pdf'];
+
+set(gcf, 'PaperPosition', [0, 0, 8, 11]);
+set(gcf, 'PaperSize', [8, 11]);
+saveas(gcf, saveDir, 'pdf');
 %% 
 save('pacificIndicesLassoWeights.mat', 'BmatLeave2Out', 'BmatLeave4Out', ...
 'BmatLeave8Out', 'correlationsLeave2Out', 'correlationsLeave4Out', 'correlationsLeave8Out')
