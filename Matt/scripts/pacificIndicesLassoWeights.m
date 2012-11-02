@@ -7,7 +7,7 @@ load /project/expeditions/ClimateCodeMatFiles/augOctPacificBasinEOFPCs.mat
 %% 
 %predictors = [pacific_indices_mar_oct, zscore(pacific_indices_mar_oct)];
 predictors = [pacific_indices_mar_oct, PCs(:, 1:2)];
-
+predictorsName = 'pacificIndicesWithEOFs';
 trials = 100;
 for i = 1:trials
     target = aso_tcs(randperm(32));
@@ -55,36 +55,49 @@ end
 
 %% -------make histogram if random trials are used
 % 1, end/2, 90, 95
-lambda = fitInfo.Lambda(95);
+lambda = fitInfo.Lambda(1);
 lambdaInd = closestIndex(fitInfo.Lambda, lambda);
 
 n = size(randCorrelationsLeave2Out, 1);
 subplot(4, 1, 1)
+hold on
 hist(randRegressionCorr(:, lambdaInd));
 title(['Straight Regression with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
-    ' nonRandCorr = ' num2str(regressionCorr(lambdaInd)) ])
+    ' nonRandCorr = ' num2str(regressionCorr(lambdaInd))])
 xlabel('correlation')
+vline(regressionCorr(lambdaInd), 'r');
+hold off
 
 subplot(4, 1, 2);
+hold on
 hist(randCorrelationsLeave8Out(:, lambdaInd))
 title(['Leave 8 out cross validation with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
     ' nonRandCorr = ' num2str(correlationsLeave8Out(lambdaInd))]);
 xlabel('Correlation');
+vline(correlationsLeave8Out(lambdaInd), 'r');
+hold off
 
 subplot(4, 1, 3);
+hold on
 hist(randCorrelationsLeave4Out(:, lambdaInd))
 title(['Leave 4 out cross validation with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
     ' nonRandCorr = ' num2str(correlationsLeave4Out(lambdaInd))]);
 xlabel('Correlation')
+vline(correlationsLeave4Out(lambdaInd), 'r');
+hold off
 
 subplot(4, 1, 4);
+hold on
 hist(randCorrelationsLeave2Out(:, lambdaInd))
 title(['Leave 2 out Cross Validation with ' num2str(n) ' random trials (Lambda = ' num2str(lambda) ')'...
     ' nonRandCorr = ' num2str(correlationsLeave2Out(lambdaInd))]);
 xlabel('Correlation')
+vline(correlationsLeave2Out(lambdaInd), 'r');
+hold off
+
 
 saveDir = ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/'...
-    'paperDraft/regressionWeights/histograms/lambda' num2str(lambda) '.pdf'];
+    'paperDraft/regressionWeights/histograms/' predictorsName '/lambda' num2str(lambda) '.pdf'];
 
 set(gcf, 'PaperPosition', [0, 0, 8, 11]);
 set(gcf, 'PaperSize', [8, 11]);
