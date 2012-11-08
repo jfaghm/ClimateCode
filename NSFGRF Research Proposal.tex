@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage[countmax]{subfloat}
+\usepackage{titling}
+\newcommand{\tab}{\hspace*{2em}}
+%opening
+\title{Efficiently Generating Code for the GPU}
+\author{Matthew Le}
+\setlength{\droptitle}{-12em}
+\begin{document}
+
+\maketitle
+
+\section{Problem Definition}
+Clock speeds in microprocessors are no longer increasing at the rate that they did years ago due to power consumption constraints and heat dissipation.  In order to increase the speed of computation, multicore computing must be exploited. Graphics Processing Units (GPU's) are used for image rendering, which is something that inherently benefits from being parallelized, so GPU's are built to meet this need.  Many GPU's are now shipping with as many as 3,000 cores \cite{nvideaGPU}, which can be used for general purpose computation, in addition to image rendering.\newline\newline
+Programming languages already exist that allow a programmer to run general purpose code on the GPU, such as CUDA and openCL, however, the programmer must do this explicitly, which can be difficult and error prone.  Additionally, it is not always optimal to run everything on the GPU that can be run on the GPU.  There is overhead in transferring data from the CPU to the GPU\cite{dymand}, and if the computation saved does not outweigh the transfer overhead, then it is not worth offloading the code.  Compilers have a difficult time with this issue because the size and shape of the data structure that should maybe be run on the GPU is not known until runtime, and the compiler can only perform static analysis.
+\newline\newline
+In addition to cores increasing while clock speeds remain stagnant, there exists the issue of dealing with rapidly increasing amounts of data.  Climate data alone is expected to reach 350 petabytes by 2030\cite{climateData}.  Increasing data directly implies more computation, being able to effectively parallelize code involving large data sets is necessary for many data analysis programs such as data mining and machine learning applications.  An interesting problem that data brings to the table is that there are many different ways to parallelize data, because it can be broken up in so many different ways.
+\section{Intent}
+A compiler is a program that reads in the source code of another program, performs semantic analysis and then generates some translated code.  While performing this semantic analysis, the compiler gleans quite a bit of information about the program it is compiling, some of which pertains to identifying opportunities to generate parallel code. This research aims to exploit both static (compile-time) and dynamic (run-time) analysis to generate code that can be offloaded to the GPU efficiently.  As mentioned in the problem definition, it is not always beneficial to offload code to the GPU.  In cases where it is not beneficial, we would also like to determine what is the best alternative (eg. parallelize on CPU, loop unrolling, etc.), and then in cases where it is beneficial, we will explore what is the best way to split up the data for parallelization on the GPU.  Since factors that determine the utility received from running code on the GPU can not all be determined statically, I am proposing that static analysis in conjunction with dynamic analysis can aid in the effort of generating efficient code for the GPU.  The purpose of this research is not to focus on finding more opportunities to parallelize code, but to find more efficient ways of parallelizing code that are already known to be able to be run in parallel.
+\section{Plan}
+There are two main components to this system, the compiler and the runtime system.  The compiler performs the static analysis and will be able to insert calls to the runtime system, as a form of communication.  The runtime system, will be implemented as a library, and will be able to determine the dynamic components of the program.  More specifically, the system should:
+\subsection{Identify Parallel Code}
+There are multiple ways that parallel code can be identified.  Programmer annotations are one path that can be pursued (programmer writes code specifying what should be run in parallel)\cite{annotations}, however, one of the main motivations for this research is to make writing parallel code easier, so programmer annotations should be kept to a minimum.  Another option is to create new data types and data structures that offer more obvious opportunities for parallelization, such as lists and matrices.  adding new constructs and functions to the language can also provide opportunities for parallelization, such as foreach loops (run some code for each element in a data structure) and map (apply a function to every element in a list).
+\subsection{Generate Possible Scenarios}
+Once a parallel region of code is identified, it needs to be determined exactly how to parallelize it.  Certain things that will influence this decision are not available to the compiler at compile-time, such as the size and shape of the data being used, where the data is located, etc.  The compiler will generate code for multiple scenarios, breaking the data up and parallelizing in various ways for the GPU.  Back up plans shall also be generated, so if it is determined at runtime that a segment of code should not be offloaded to the GPU, then we have an optimized alternative.  Such alternatives may be running code in parallel on the CPU, loop unrolling, loop fusion/fission, or combinations of these and more optimization techniques.  
+
+
+\subsection{Runtime Decision Making}
+At runtime, for each region that the compiler has identified as being fit for being run in parallel, the runtime system will make a decision as to which scenario to take that the compiler has generated.  The benefit of having the runtime system simply make a decision as to which scenario to pick is that the dynamic analysis takes up less runtime, than if the runtime system were in charge of making the decision of how to run the code.  The compiler shall either insert some sort of annotations within the program, or make calls to the runtime library so that the runtime system knows what scenarios are available to it.
+\section{Related Work}
+The Liberty Research Group at Princeton University has been working on two projects that work in conjunction to manage CPU-GPU communication for running parallel code on the GPU.  They have created a runtime library called DymanD (Dynamically Managed Data) \cite{dymand}, which works with the CPU-GPU Communication Manager(CGCM) compiler \cite{cgcm}, to efficiently transfer data structures to the GPU.  This research differs in that here we are not trying to offload everything we can to GPU and trying to optimize as best we can, but instead looking to see if it is worth it to offload to the GPU, and if so what is the best way to do it, and if not, what is the best alternative.  Another research project that is related to this is a domain specific language for image processing called Halide from an MIT-Stanford-Adobe collaboration\cite{halide}.  This project aims to use programmer annotations to tell the compiler how it should parallelize or optimize the code.  Similarly, this research aims to allow the programmer to specify different ways that code can be parallelized, instead of investigating new opportunities for parallelization.  What sets this apart is that it is up to the programmer to know how to parallelize the code, which requires knowledge of parallel algorithms.  Also, this language is specific to the image processing domain, so it is not as general as what this research aims to achieve.
+
+%The Liberty Research Group at Princeton University has been working on a project called DyManD (Dynamically Managed Data) \cite{dymand}, which is a runtime system that manages CPU-GPU communication, to more efficiently offload code to the GPU.  They have also implemented a compiler, known as CPU-GPU Communication Manager (CGCM)\cite{cgcm}, that works in conjunction with DyManD that inserts calls to this runtime library, in order to facilitate more efficient CPU-GPU communication.  What sets this research apart is that we are not offloading everything off to the GPU that we can, and trying to optimize communication.  Instead, this research is trying to analyze if it is worth it to offload the code, or if maybe there is a better alternative that will reduce runtime.  The main innovation of this research is that we are not trying to figure out when we can parallelize code, but looking into what's the best way to do it.
+\newpage
+\begin{thebibliography}{9}
+\bibitem{nvideaGPU} GeForce GTX 690. "World's Fastest Graphics Cards, GPU's, and Video Cards. N.p, n.d. Web. 10 Oct. 2012.
+ $<$http://www.geforce.com/hardware /desktop-gpus/geforce-gtx-690/specifications$>$
+\bibitem{annotations} C.A. Cunha, J.L. Sobral. An Annotation-Based Framework for Parallel Computing. In \textit{Proceedings of the 15th Euromicro International Conference on Parallel, Distributed and Network-Based Processing}, 2007
+\bibitem{dymand} T.B. Jablin, J.A. Jablin, P. Prabhu, F. Liu, D.I. August. Dynamically Managed Data for CPU-GPU Architectures. In \textit{Proceedings of the 2012 Internations Symposium on Code Generation and Optimization (CGO)}, March 2012.
+\bibitem{cgcm}T.B. Jablin, P. Prabhu, J.A. Jablin, N.P. Johnson, S.R. Beard, D.I. August. Automatic GPU-GPU Communication Management and Optimization. In \textit{Proceedings of the 32nd ACE SIGPLAN Conference on Programming Language Design and Implementation (PLDI)}, June 2011
+\bibitem{climateData} J.T. Overpeck, G.A. Meehl, S. Bony, D.R. Easterling.  Climate Data Challenges in the 21st Century.  In \textit{Science Magazine}, February 11, 2011.  Volume 331
+\bibitem{halide} J.R. Kelley, A. Adams, S. Paris, M. Levoy, S. Amarashinghe, F. Durande.  Decoupling Algorithms from Schedules for Easy Optimization of Image Processing Pipelines.  In \textit{ACM Transaction on Graphics - SIGGRAPH 2012 Conference Proceedings}, Volume 31 Issue 4, July 2012
+\end{thebibliography}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
