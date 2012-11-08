@@ -13,7 +13,7 @@ for i = 1:k:length(target)
    train = ~test;
    options = statset('UseParallel', 'always');
    [B, fitInfo] = lasso(predictors(train, :), target(train), 'Options', options, 'Lambda', lambda);
-   ypred(i:i+k-1, 1) = predictors(test, :) * B(:, fitInfo.MSE == min(fitInfo.MSE));
+   ypred(i:i+k-1, 1) = predictors(test, :) * B + fitInfo.Intercept;
    actuals(i:i+k-1, 1) = target(i:i+k-1);   
 
    Bmat{iteration} = B;

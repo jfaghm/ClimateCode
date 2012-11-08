@@ -55,7 +55,7 @@ end
 
 %% -------make histogram if random trials are used
 % 1, end/2, 90, 95
-lambda = fitInfo.Lambda(61);
+lambda = fitInfo.Lambda(22);
 lambdaInd = closestIndex(fitInfo.Lambda, lambda);
 
 close all
@@ -98,15 +98,15 @@ vline(correlationsLeave2Out(lambdaInd), 'r');
 hold off
 %}
 
-numPred = size(predictors, 2);
+%numPred = size(predictors, 2);
 
-saveDir = ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/'...
-    'paperDraft/regressionWeights/histograms/' predictorsName '/trials'...
-    num2str(trials)  '/' num2str(numPred) 'Predictors/lambda' num2str(lambda) '.pdf'];
-
-set(gcf, 'PaperPosition', [0, 0, 8, 11]);
-set(gcf, 'PaperSize', [8, 11]);
-saveas(gcf, saveDir, 'pdf');
+% saveDir = ['/project/expeditions/lem/ClimateCode/Matt/indexExperiment/results/'...
+%     'paperDraft/regressionWeights/histograms/' predictorsName '/trials'...
+%     num2str(trials)  '/' num2str(numPred) 'Predictors/lambda' num2str(lambda) '.pdf'];
+% 
+% set(gcf, 'PaperPosition', [0, 0, 8, 11]);
+% set(gcf, 'PaperSize', [8, 11]);
+% saveas(gcf, saveDir, 'pdf');
 %% 
 save('pacificIndicesLassoWeights.mat', 'BmatLeave2Out', 'BmatLeave4Out', ...
 'BmatLeave8Out', 'correlationsLeave2Out', 'correlationsLeave4Out', 'correlationsLeave8Out')
