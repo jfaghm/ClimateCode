@@ -20,6 +20,7 @@ for i=1:k:size(x,1)
     train_y = y; 
     train_y(i:i+k-1)=[];
     [B{count},F{count}] = lasso(train,train_y,'lambda',lambda);
+    assert(F{count}.DF>=1,'Lambda value is too high. All predictors are dropped.')
     y_pred{count} =test * B{count};
     
     if intercept == true
