@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99c (TeX Live 2009)
+The top-level auxiliary file: paper_overview.aux
+The style file: plain.bst
+Database file #1: hurricanes_copy.bib
+Repeated entry---line 1007 of file hurricanes_copy.bib
+ : @article{wang2010
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2611 of file hurricanes_copy.bib
+ : @article{tang2004
+ :                  ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "gray1984"
+You've used 9 entries,
+            2118 wiz_defined-function locations,
+            564 strings with 5362 characters,
+and the built_in function-call counts, 3068 in all, are:
+= -- 300
+> -- 159
+< -- 0
++ -- 64
+- -- 54
+* -- 245
+:= -- 537
+add.period$ -- 27
+call.type$ -- 9
+change.case$ -- 53
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 96
+empty$ -- 222
+format.name$ -- 54
+if$ -- 608
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 9
+newline$ -- 48
+num.names$ -- 18
+pop$ -- 35
+preamble$ -- 1
+purify$ -- 44
+quote$ -- 0
+skip$ -- 69
+stack$ -- 0
+substring$ -- 213
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 36
+warning$ -- 0
+while$ -- 29
+width$ -- 10
+write$ -- 101
+(There were 2 error messages)

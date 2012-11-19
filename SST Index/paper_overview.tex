@@ -1,0 +1,101 @@
+%
+%  sst_index_draft
+%
+%  Created by James on 2012-05-14.
+%  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+%
+\documentclass[]{article}
+%\documentclass[a4paper, 10pt]{article}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Setup for fullpage use
+%\usepackage{fullpage}
+
+% Uncomment some of the following if you use the features
+%
+% Running Headers and footers
+%\usepackage{fancyhdr}
+\usepackage{subfig}
+% Multipart figures
+%\usepackage{subfigure}
+
+% More symbols
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{latexsym}
+
+% Surround parts of graphics with box
+\usepackage{boxedminipage}
+
+% Package for including code in the document
+\usepackage{listings}
+
+% If you want to generate a toc for each chapter (use with book)
+\usepackage{minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+
+\usepackage{comment}
+
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue
+%\fi
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+\title{Abstracting ENSO Spatial Patterns' Impact on Atlantic Tropical Cyclone Seasonal Frequency}
+\author{  }
+
+\date{2012-05-14}
+
+
+
+\ifpdf
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+\else
+\DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+\begin{document}
+\maketitle
+
+The warming and cooling patterns along the near equatorial Pacific Ocean, known as the El-Ni\~no Southern Oscillation (ENSO), has been linked to impact Atlantic tropical cyclone activity on interannual time scales \cite{gray1984a, bove1998,elsner2001b, emanuel2008, klotzbach2011nino}. The dominating theory is that the deep convection associated with ENSO affects the large scale conditions over the Atlantic through vertical wind shear \cite{gray1984} or tropospheric warming \cite{tang2004}. However, the indices used to abstract such phenomena, commonly known as NINO indices, do not try to capture such pathways and instead simply monitor the SST anomalies of static regions in Pacific. Additionally, there have been an increasing number of reports on recent changes in ENSO warming patterns \cite{ashok2007,yeh2009}, which has lead to low empirical relationship between NINO indices and Atlantic TCs on interannual time scales.
+
+Instead of monitoring static regions in the Pacific, we propose to adopt an index that is more representative of the physical pathway that warming in the Pacific would impact the large scale conditions over the Atlantic, and subsequently TC activity. Our new index, S-ENSO, focuses on the spatial distribution of warming in the Pacific and its impact on deep convection. The index a linear combination (multivariate linear regression) of:
+\begin{enumerate}
+
+	\item The longitude of the warmest $10^\circ$ by $40^\circ$ region in the Pacific (using SST anomalies)
+
+	\item The mean surface pressure of the region identified in (1)
+
+	\item The mean OLR of the region identified in (1)
+
+	\item The longitude of the $10^\circ$ by $40^\circ$ region with the lowest surface pressure in the Pacific
+
+	\item The longitudinal distance between the warmest and coldest $10^\circ$ by $40^\circ$ region in the Pacific
+\end{enumerate}
+The first three elements of the index are selected to capture the impact of deep convection from SST warming. The fourth item is a proxy to identify the location of tropical cylones (typhoons) in the Pacific. The idea is that on an interannual scale low pressure systems such as TCs tend to organize along well defined tracks. Therefore identifying regions with low pressure is analogous to monitoring TC activity in the Pacific which has been weakly linked to TC activity in the Atlantic \cite{wang2010}. Finally, the last component was designed to better capture the evolving ENSO phenomenon by tracking the location warm and cold regions of the Pacific. When the cold region is to the west of the warm one it is more likely that El-Nino event is occurring. When the cold region is to the east, it is a La-Nina. We build S-ENSO by running a L1-regularized regression model on the 5 predictors and Aug-Oct TC counts.
+
+S-ENSO explains 60\% of the interannual variability in Atlantic TC counts, a near double improvement over traditional NINO indices. When analyzed further we found that the 0.82 linear correlation coefficient is significant at the 99\% interval using rigorous randomization tests to address the small sample size and the data's auto-correlated nature.
+
+%It has been proposed that enhanced convection as a result of anomalous Pacific Ocean warming is associated with strong westerly upper tropospheric wind over the Caribbean basin and tropical Atlantic, resulting in low TC activity during ENSO's warm phase and high TC activity during its cold phase \cite{gray1984}. Other studies have suggested that ENSO impacts Atlantic TC activity via tropospheric warming \cite{tang2004}.
+
+
+%Pacific Ocean sea surface temperatures (SSTs) have well documented global long-range teleconnections, including Atlantic tropical cyclone (TC) activity \cite{gray1984a, bove1998,elsner2001b, emanuel2008, klotzbach2011nino}. The quasi-periodic cycle (2-7 years) of warming and cooling of the near equatorial Pacific Ocean, known as the El-Ni\~no Southern Oscillation (ENSO), has been used to predict Atlantic TC activity for decades. However, due to the large amplitude variations in seasonal TC counts, the difference in Atlantic TC activity based on the phase of ENSO is not obvious (see Figure \ref{fig:enso_bars}).
+
+%Traditionally, ENSO has been quantified using warming-based indices where SST anomalies are averaged over fixed regions in the Pacific Ocean. An increasing number of studies suggest that monitoring static regions may not be enough to capture the complex ENSO phenomenon \cite{trenberth2001, ashok2007,yeh2009,kim2009}. Furthermore, other studies proposed that the Pacific Ocean warming patterns are changing - with warm anomalies shifting towards the Central Pacific. Such changes have been attributed to anthropogenic global warming \cite{yeh2009} as well as natural climate variability \cite{wittenberg2009}. Based on these findings, it is evident that in order to capture ENSO's long range impact on the tropical Atlantic a new measure of Pacific warming is needed. 
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{hurricanes_copy}
+\end{document}
