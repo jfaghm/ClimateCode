@@ -11,8 +11,8 @@ load('regression_model_sst_data','pac_pcs_aug_oct');
 load asoHurricaneStats
 predictors = [pacific_indices_mar_oct];
 num_iter = 1000;
-lambda = 0;
 leave_k_out = 8;
+lambda = .2;
 [W,f] = lasso(predictors,aso_tcs,'Lambda',lambda);
 real_cc = corr(predictors * W + f.Intercept,aso_tcs);
 
@@ -42,15 +42,22 @@ parfor i = 1:num_iter
 end
 
 %% 
-[~, ~, pred_y, mm] = lassoCrossValidation(predictors, aso_tcs ,leave_k_out,lambda, true);
+if matlabpool('size') == 0
+    matlabpool open
+end
+lambda = 0;
+[BBNoRand, ~, pred_y, mm] = lassoCrossValWithLambda(predictors, aso_tcs ,leave_k_out,lambda);
 real_xv_cc = corr(pred_y,aso_tcs);
+result = makeRes(BBNoRand);
+%% 
 parfor i=1:num_iter
-    %rand_ind = randperm(32);
-    %rand_tcs(:,i) = aso_tcs(rand_ind);
+    rand_ind = randperm(32);
+    rand_tcs(:,i) = aso_tcs(rand_ind);
+    
     [B{i}, FitInfo{i}] = lasso(predictors, rand_tcs(:,i),'Lambda',lambda);
     yhat{i} = predictors * B{i} + FitInfo{i}.Intercept;
     no_x_val_corr(i) = corr(yhat{i},rand_tcs(:,i));  
-    [BB{i},FF,x_val_y_hat{i}, mse{i}] = lassoCrossValidation(predictors, rand_tcs(:,i) ,leave_k_out,lambda, true);
+    [BB{i},FF,x_val_y_hat{i}, mse{i}] = lassoCrossValWithLambda(predictors, rand_tcs(:,i) ,leave_k_out,lambda);
     cc(i) = corr(x_val_y_hat{i},rand_tcs(:,i));
 end
 
