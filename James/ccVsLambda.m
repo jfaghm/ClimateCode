@@ -5,7 +5,7 @@ load('/project/expeditions/ClimateCodeMatFiles/asoHurricaneStats.mat', 'aso_tcs'
 
 lambdas = 0:0.2:2;
 
-leave_k_out = 8;
+leave_k_out = 2;
 predictors = pacific_indices_mar_oct;
 trials = 1000;
 
@@ -31,18 +31,18 @@ for i = 1:length(lambdas)
     subplot(2, 1, 1);
     hist(cc(i, :));
     hold on
-    vline(real_cc(i));
+    vline(real_cc(i), 'r');
     hold off
     title(['Randomized Lasso Regression Lambda = ' num2str(lambdas(i))]);
     
     subplot(2, 1, 2);
     hist(xv_cc(i, :));
     hold on
-    vline(real_xv_cc(i));
+    vline(real_xv_cc(i), 'r');
     hold off
     title(['Randomized Lass Cross Validation, Lambda = ' num2str(lambdas(i)) ...
         ', Leave ' num2str(leave_k_out) ' Out']);
-    saveas(gcf, ['histograms/leave' num2str(leave_k_out) 'Out'/histogramLambda' num2str(lambdas(i)) '.pdf'], 'pdf');
+    saveas(gcf, ['histograms/leave' num2str(leave_k_out) 'Out/histogramLambda' num2str(lambdas(i)) '.pdf'], 'pdf');
 end
 
 
