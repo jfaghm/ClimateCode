@@ -206,6 +206,11 @@ switch indexNum
     case 41
         index = sqrt((sstLonRegion(sstJ.min) - sstLonRegion(sstJ.max)).^2 + ...
             (sstLatRegion(sstI.min) - sstLatRegion(sstI.max)).^2);
+    case 42
+        index = zeros(32,1);
+        for i=1:32
+            [index(i), az] = distance(sstLatRegion(sstI.min(i)), sstLonRegion(sstJ.min(i)),sstLatRegion(sstI.max(i)),sstLonRegion(sstJ.max(i)));
+        end
 
 end
 

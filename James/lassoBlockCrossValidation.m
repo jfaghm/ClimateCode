@@ -2,7 +2,7 @@
 %Runs a leave-k-out cross validation and shifts by a single step to predict
 %the entire observed vector
 
-function [B, F, y_pred fold_mse, y, cc] =  lassoBlockCrossValidation(x,y,k, lambda)
+function [B, testMSE, y_pred fold_mse, y, cc] =  lassoBlockCrossValidation(x,y,k, lambda)
 assert(mod(size(x,1),k)==0,'X/k must be 0 i.e. 8 elements and leave 2 out.');
 assert(isscalar(lambda), 'lambda must be a scalar');
 count = 1;
@@ -28,6 +28,10 @@ for i=1:size(x,1)-k+1
     fold_mse(count) = mean(sqrt((y - y_pred(:, count)).^2));
    
     cc(:, count) = corr(y_pred(:, count), y);
+    
+    testPrediction = test * B{count} + F{count}.Intercept;
+    
+    testMSE(count) = mean(sqrt((y(i:i+k-1) - testPrediction).^2));
     
      count = count+1;
 end
