@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>paper_overview.tex</string>
+	<string>introduction.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -16,7 +16,13 @@
 			<key>filename</key>
 			<string>paper_overview.tex</string>
 			<key>lastUsed</key>
-			<date>2012-11-16T02:08:14Z</date>
+			<date>2012-11-20T19:17:51Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>introduction.tex</string>
+			<key>lastUsed</key>
+			<date>2012-11-20T19:44:27Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -24,7 +30,7 @@
 			<key>filename</key>
 			<string>sst_index_draft.tex</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T04:26:20Z</date>
+			<date>2012-11-20T19:44:27Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -61,6 +67,20 @@
 				<integer>9</integer>
 			</dict>
 		</dict>
+		<key>introduction.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>525</integer>
+				<key>line</key>
+				<integer>3</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>paper_overview.tex</key>
 		<dict>
 			<key>caret</key>
@@ -75,7 +95,7 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>67</integer>
+			<integer>9</integer>
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
@@ -98,33 +118,34 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>83</integer>
+				<integer>71</integer>
 			</dict>
 			<key>columnSelection</key>
 			<false/>
 			<key>firstVisibleColumn</key>
-			<integer>312</integer>
+			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>78</integer>
+			<integer>66</integer>
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>424</integer>
+				<integer>1012</integer>
 				<key>line</key>
-				<integer>83</integer>
+				<integer>78</integer>
 			</dict>
 			<key>selectTo</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>83</integer>
+				<integer>71</integer>
 			</dict>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>sst_index_draft.tex</string>
+		<string>introduction.tex</string>
 		<string>paper_overview.tex</string>
 		<string>hurricanes_copy.bib</string>
 	</array>
