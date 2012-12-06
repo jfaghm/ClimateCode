@@ -1,4 +1,4 @@
-function [annualSST] = getAnnualSSTAnomalies(startMonth, endMonth, startYear, endYear)
+function [annualSST, sstLat, sstLon] = getAnnualSSTAnomalies(startMonth, endMonth, startYear, endYear)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
