@@ -27,7 +27,7 @@ dir = '/project/expeditions/ClimateCodeMatFiles/';
 load([dir 'flippedSSTAnomalies.mat']);
 load([dir 'pressureAnomalies.mat']);
 load([dir 'olrAnomalies.mat']);
-%indexMat = [];
+
 year = 1;
 for i = 1:12:size(olr, 3)
    sstMean(:, :, year) = nanmean(sst(:, :, i+startMonth - 1:i+endMonth - 1), 3); 
