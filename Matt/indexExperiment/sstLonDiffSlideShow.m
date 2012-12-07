@@ -21,7 +21,7 @@ annualSSTMat(:, :, :, 13) = getAnnualSSTAnomalies(6, 10, 1979, 2010);
     buildSSTLonDiff(annualSSTMat(:, :, :, 13), lat, lon);
 
 F = makeSlideShow(maxI, maxJ, minI, minJ, annualSSTMat, lat, lon);
-
+F = reshape(F, [], 1);
 end
 
 function [F] = makeSlideShow(maxI, maxJ, minI, minJ, annualSSTMat, lat, lon)
@@ -121,12 +121,15 @@ else
     monthStr = num2str(month);
 end
 
+%{
 saveDir = ['sstLonDiffSlideShow/slide' num2str(years(year)) monthStr '.pdf'];
 set(gcf, 'PaperPosition', [0, 0, 8, 11]);
 set(gcf, 'PaperSize', [8, 11]);
 saveas(gcf, saveDir, 'pdf');
+%}
 
-F = getframe;
+
+F = getframe(gcf);
 end
 
 

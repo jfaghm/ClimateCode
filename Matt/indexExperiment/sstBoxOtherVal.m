@@ -20,10 +20,10 @@ end
 box_north = 36;
 box_south = -6;
 box_west = 140;
-box_east = 270;
+box_east = 260;
 
 box_row = 5;
-box_col = 10;
+box_col = 20;
 
 index = indexHelper(sstMean, otherMean, box_north, box_south, box_west, ...
     box_east, sstLat, sstLon, otherLat, otherLon, box_row, box_col);
@@ -72,7 +72,9 @@ for t=1:size(annual_pacific,3)
    ss(:,:,t) = sub_sum(annual_pacific(:,:,t),box_row,box_col); 
 end
 
-mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);%sub_sum pads the matrix so we can ignore the outer rows/columns
+mean_box_sst_pacific = ss(box_row:end-box_row+1, box_col:end-box_col+1, :) ./ (box_row *box_col);
+%mean_box_sst_pacific = ss(round(box_row/2)+1:end-round(box_row/2),round(box_col/2)+1:end-round(box_col/2),:)./(box_row*box_col);
+
 index = zeros(size(mean_box_sst_pacific, 3), 1);
 sst_lat_region = sstLat(sstLat >= box_south & sstLat <= box_north);
 sst_lon_region = sstLon(sstLon >= box_west & sstLon <= box_east);
@@ -123,20 +125,16 @@ figure(1);
 worldmap([box_south, box_north], [box_west, box_east]);
 title('Other Variable');
 pcolorm(otherLat, otherLon, other(:, :, 1));
-geoshow('landareas.shp', 'FaceColor', [.25 .2 .15]);
+%geoshow('landareas.shp', 'FaceColor', [.25 .2 .15]);
 
 figure(2)
 worldmap([box_south, box_north], [box_west, box_east]);
 title('SST');
 sst(sstLatIndex1:sstLatIndex2, sstLonIndex1:sstLonIndex2, :) = NaN;
 pcolorm(sstLat, sstLon, sst(:, :, 1));
-geoshow('landareas.shp', 'FaceColor', [.25, .2, .15]);
-
-end
-
-function val = closestVal(A, x)
-[~,ind] = min(abs(A-x));
-val = A(ind);
+%geoshow('landareas.shp', 'FaceColor', [.25, .2, .15]);
+caxis([-5 5]);
+pause
 end
 
 function index = closestIndex(A, x)

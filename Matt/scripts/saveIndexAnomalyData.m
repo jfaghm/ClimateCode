@@ -18,7 +18,7 @@ sstDates = dates(dates(:, 4) >= 1979, :);
 
 save('/project/expeditions/lem/ClimateCode/Matt/matFiles/sstAnomalies.mat', 'sst', 'sstDates', 'sstLon', 'sstLat');
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%Pressure Anomalies%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------------------------------Pressure Anomalies-----------------------
 clear all
 pressure = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'var134');
 pressure = permute(pressure, [2, 1, 3]);
@@ -38,7 +38,7 @@ pressureLat = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010
 pressureLon = ncread('/project/expeditions/lem/data/sst_slp_eraInterim_1979-2010.nc', 'lon');
 save('/project/expeditions/lem/ClimateCode/Matt/matFiles/pressureAnomalies.mat', 'pressure', 'pressureDates', 'pressureLon', 'pressureLat');
 
-%%%%%%%%%%%%%%%%%%%%%%%%%OLR Anomalies%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------------------------OLR Anomalies---------------------------------
 
 clear all
 olr = ncread('/project/expeditions/lem/data/olr.mon.mean.nc', 'olr');
