@@ -2,47 +2,50 @@ This is BibTeX, Version 0.99d (TeX Live 2010)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sst_index_draft.aux
 The style file: plain.bst
-I found no \citation commands---while reading file sst_index_draft.aux
 Database file #1: hurricanes_copy.bib
-You've used 0 entries,
+Repeated entry---line 1007 of file hurricanes_copy.bib
+ : @article{wang2010
+ :                  ,
+I'm skipping whatever remains of this entry
+You've used 1 entry,
             2118 wiz_defined-function locations,
-            497 strings with 4018 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            503 strings with 4135 characters,
+and the built_in function-call counts, 264 in all, are:
+= -- 24
+> -- 13
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 5
+- -- 4
+* -- 15
+:= -- 55
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 1
+duplicate$ -- 10
+empty$ -- 18
+format.name$ -- 4
+if$ -- 50
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 3
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 4
 quote$ -- 0
-skip$ -- 1
+skip$ -- 9
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 5
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 4
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
+while$ -- 2
+width$ -- 2
+write$ -- 13
 (There was 1 error message)

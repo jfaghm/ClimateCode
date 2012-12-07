@@ -1,0 +1,9 @@
+# Fdb version 2
+["latex"] 0 "claim1.tex" "claim1.dvi" "claim1" 
+  "claim1.tex" 1354923879 3261 a09eb77fed9590098c216a2f83bc3cdb ""
+["pdflatex"] 1354923881 "claim1.tex" "claim1.pdf" "claim1" 
+  "claim1.aux" 1354923881 8 a94a2480d3289e625eea47cd1b285758 ""
+  "claim1.tex" 1354923879 3261 a09eb77fed9590098c216a2f83bc3cdb ""
+  "e.g., `I\hbox'" 0 -1 0 ""
+  "e.g., `\hobx'" 0 -1 0 ""
+  "job aborted, no legal \end found" 0 -1 0 ""
