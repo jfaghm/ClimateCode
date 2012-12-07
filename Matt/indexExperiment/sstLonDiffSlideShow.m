@@ -29,8 +29,8 @@ function [F] = makeSlideShow(maxI, maxJ, minI, minJ, annualSSTMat, lat, lon)
     
     for month = 1:size(maxI, 2)
         for year = 1:size(maxI, 1)
-            plotCurrentBox(lat, lon, maxI(year), maxJ(year), minI(year), ...
-                minJ(year), annualSSTMat(:, :, year, month), month, year);
+            plotCurrentBox(lat, lon, maxI(year, month), maxJ(year, month), minI(year, month), ...
+                minJ(year, month), annualSSTMat(:, :, year, month), month, year);
             display(['printing ' num2str(month) ', ' num2str(year)]);
             F(month, year) = getframe;
         end
@@ -61,7 +61,7 @@ worldmap world
 setm(gca,'Origin',[0 180])
 
 pcolorm(double(lat),double(lon),double(sst_a(:,:)))
-geoshow('landareas.shp', 'FaceColor', [0.25 0.20 0.15])
+%geoshow('landareas.shp', 'FaceColor', [0.25 0.20 0.15])
 
 %----------------------------Plot Warm Box---------------------------------
 current_lon = lon_region(maxJ);
