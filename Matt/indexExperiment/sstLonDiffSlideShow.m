@@ -1,45 +1,17 @@
-function [F] = sstLonDiffSlideShow()
+function [F] = sstLonDiffSlideShow(sstStartMonth, sstEndMonth, hurricaneStartMonth, ...
+    hurricaneEndMonth)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
-if matlabpool('size') == 0
-    matlabpool open
-end
+[annualSST, lat, lon] = getAnnualSSTAnomalies(sstStartMonth, sstEndMonth, 1979, 2010);
+[~, maxI, maxJ, minI, minJ] = buildSSTLonDiff(annualSST, lat, lon);
 
-[annualSST,lat, lon] = getAnnualSSTAnomalies(1, 1, 1979, 2010);
-
-annualSSTMat = zeros(size(annualSST, 1), size(annualSST, 2), size(annualSST, 3), 12);
-
-parfor i = 1:12
-    annualSSTMat(:, :, :, i) = getAnnualSSTAnomalies(i, i, 1979, 2010);
-    [~, maxI(:, i), maxJ(:, i), minI(:, i), minJ(:, i)] = ...
-        buildSSTLonDiff(annualSSTMat(:, :, :, i), lat, lon);
-end
-
-annualSSTMat(:, :, :, 13) = getAnnualSSTAnomalies(6, 10, 1979, 2010);
-[~, maxI(:, 13), maxJ(:, 13), minI(:, 13), minJ(:, 13)] = ...
-    buildSSTLonDiff(annualSSTMat(:, :, :, 13), lat, lon);
-
-F = makeSlideShow(maxI, maxJ, minI, minJ, annualSSTMat, lat, lon);
-F = reshape(F, [], 1);
-end
-
-function [F] = makeSlideShow(maxI, maxJ, minI, minJ, annualSSTMat, lat, lon)
-
-    
-    for month = 1:size(maxI, 2)
-        for year = 1:size(maxI, 1)
-            plotCurrentBox(lat, lon, maxI(year, month), maxJ(year, month), minI(year, month), ...
-                minJ(year, month), annualSSTMat(:, :, year, month), month, year);
-            display(['printing ' num2str(month) ', ' num2str(year)]);
-            F(month, year) = getframe;
-        end
-    end
+for i = 1:length(maxI)
+   plotCurrentBox(i) 
 end
 
 
-
-function [F] = plotCurrentBox(lat, lon, maxI, maxJ, minI, minJ, sst_a, month, year)
+function [F] = plotCurrentBox(i)
 
 %---------------------------------Adjustable constants---------------------
 box_north = 36;
@@ -52,20 +24,17 @@ grid_size = 2;
 lon_region = lon(lon >= box_west & lon <= box_east);
 lat_region = lat(lat >= box_south & lat <= box_north);
 
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/condensedHurDat.mat;
-
 clmo('surface')
 clmo('Line')
 worldmap([-20 20],[140 -90])
 worldmap world
 setm(gca,'Origin',[0 180])
-
-pcolorm(double(lat),double(lon),double(sst_a(:,:)))
+pcolorm(double(lat),double(lon),double(annualSST(:,:, i)))
 %geoshow('landareas.shp', 'FaceColor', [0.25 0.20 0.15])
 
 %----------------------------Plot Warm Box---------------------------------
-current_lon = lon_region(maxJ);
-current_lat = lat_region(maxI);
+current_lon = lon_region(maxJ(i));
+current_lat = lat_region(maxI(i));
 box_lat1 = current_lat;
 box_lat2 = current_lat - (box_row-1) * grid_size;
 box_lon1 = current_lon;
@@ -80,8 +49,8 @@ plotm(double(lat3),double(lon3),'r-')
 plotm(double(lat4),double(lon4),'r-')
 
 %--------------------------Plot Cold Box-----------------------------------
-current_lon = lon_region(minJ);
-current_lat = lat_region(minI);
+current_lon = lon_region(minJ(i));
+current_lat = lat_region(minI(i));
 box_lat1 = current_lat;
 box_lat2 = current_lat - (box_row-1) * grid_size;
 box_lon1 = current_lon;
@@ -110,16 +79,25 @@ months = {'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',.
     'Nov', 'Dec', 'Jun-Oct'};
 years = 1979:2010;
 
-aso_tcs = getASOTCs(1979, 2010);
+stormData = load('/project/expeditions/ClimateCodeMatFiles/condensedHurDat.mat');
 
-title(['SST Warm and Cool Boxes ' months{month} ', ' num2str(years(year)) ', ASO TCs = ' ...
-    num2str(aso_tcs(year)) ]);
+[tcs, tcLats, tcLons] = countStorms(stormData.condensedHurDat(:, [1 2 6 7]), 1979, 2010, hurricaneStartMonth:hurricaneEndMonth, [5 25], [-90 -20]);
 
-if(month < 10)
-    monthStr = ['0' num2str(month)];
-else
-    monthStr = num2str(month);
+%------------------------Plot The Hurricanes-------------------------------
+tcLats = tcLats{i}; tcLons = tcLons{i};
+for j = 1:length(tcLats)
+    plotm(tcLats(j), tcLons(j), '*');
 end
+
+plotNinoBox(0, -10, -80, -90);   %Nino 1+2
+%plotNinoBox(5, -5, -90, -150);   %Nino 3
+%plotNinoBox(5, -5, -120, -170);  %Nino 4
+%plotNinoBox(5, -5, -150, -160);  %Nino 3.4
+title(['SST Warm and Cool Boxes ' months{sstStartMonth} '-' ...
+    months{sstEndMonth} ', ' num2str(years(i)) ', ASO TCs = ' ...
+    num2str(tcs(i)) ]);
+
+
 
 %{
 saveDir = ['sstLonDiffSlideShow/slide' num2str(years(year)) monthStr '.pdf'];
@@ -131,10 +109,19 @@ saveas(gcf, saveDir, 'pdf');
 
 F = getframe(gcf);
 end
+end
 
-
-
-
+function [] = plotNinoBox(box_lat1, box_lat2, box_lon1, box_lon2)
+%--------------------Plot Nino 1+2-------------------------------------
+[lat1,lon1] = track2('rh',box_lat1,box_lon1,box_lat2,box_lon1);
+[lat2,lon2] = track2('rh',box_lat2,box_lon1,box_lat2,box_lon2);
+[lat3,lon3] = track2('rh',box_lat2,box_lon2,box_lat1,box_lon2);
+[lat4,lon4] = track2('rh',box_lat1,box_lon1,box_lat1,box_lon2);
+plotm(double(lat1),double(lon1),'k-')
+plotm(double(lat2),double(lon2),'k-')
+plotm(double(lat3),double(lon3),'k-')
+plotm(double(lat4),double(lon4),'k-')
+end
 
 
 

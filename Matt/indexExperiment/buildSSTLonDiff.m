@@ -54,11 +54,9 @@ for t = 1:size(mean_box_sst_pacific,3)
 end
 
 lon_region = lon(lon >= boxWest & lon <= boxEast);
+lat_region = lat(lat >= boxSouth & lat <= boxNorth);
 
 index = lon_region(minJ) - lon_region(maxJ);
-
-
-
 end
 
 function [index] = closestIndex(A, x)
