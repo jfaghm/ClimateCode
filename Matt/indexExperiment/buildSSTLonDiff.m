@@ -19,7 +19,8 @@
 %with years 1979-2010
 
 
-function [index, maxI, maxJ, minI, minJ, maxValues, minValues] = buildSSTLonDiff(sst_a, lat, lon)
+function [index, maxI, maxJ, minI, minJ, maxValues, minValues] = ...
+    buildSSTLonDiff(sst_a, lat, lon)
 %-------------------------Adjustable Constants----------------------------
 boxNorth = 36;
 boxSouth = -6;

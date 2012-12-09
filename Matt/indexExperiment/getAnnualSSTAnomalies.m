@@ -5,8 +5,12 @@ function [annualSST, sstLat, sstLon] = getAnnualSSTAnomalies(startMonth, ...
 
 totalYears = endYear - startYear + 1;
 
-load /project/expeditions/ClimateCodeMatFiles/ersstv3Anomalies_1979_2010.mat
-%load /project/expeditions/ClimateCodeMatFiles/ersstv3Anom.mat
+%load /project/expeditions/ClimateCodeMatFiles/ersstv3Anomalies_1979_2010.mat
+
+%load /project/expeditions/ClimateCodeMatFiles/ersstv3Anomalies_1948_2012.mat
+
+load /project/expeditions/ClimateCodeMatFiles/ersstv3Anom.mat
+
 sst = sst(:, :, sstDates(:, 4) >= startYear & sstDates(:, 4) <= endYear);
 
 if nargin > 4 && relativeSST == true
