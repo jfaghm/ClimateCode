@@ -1,1 +1,28 @@
 \section{Claim 1: Monitoring the spatial warming patterns of the Tropical Pacific Ocean provides better insight on the Pacific's impact on Atlantic tropical cyclone (TC) frequency than warming-based indices}
+
+Instead of monitoring static regions in the Pacific, we propose to adopt an index that is more representative of the physical pathway that warming in the Pacific would impact the large scale conditions over the Atlantic, and subsequently TC activity. Our new index, S-ENSO, focuses on the spatial distribution of warming in the Pacific and its impact on deep convection. The index is a linear combination (multivariate linear regression) of:
+\begin{enumerate}
+
+	\item The longitude of the warmest $10^\circ$ (lat) by $40^\circ$ (lon) region in the Pacific (using SST anomalies)
+
+	\item The mean surface pressure of the region identified in (1)
+
+	\item The mean OLR of the region identified in (1)
+
+	\item The longitude of the $10^\circ$ by $40^\circ$ region with the lowest surface pressure in the Pacific
+
+	\item The longitudinal distance between the warmest and coldest $10^\circ$ by $40^\circ$ region in the Pacific
+\end{enumerate}
+
+The first three elements of the index are selected to capture the impact of deep convection from SST warming. The fourth item is a proxy to identify the location of tropical cyclones (typhoons) in the Pacific. The idea is that on an interannual scale low pressure systems such as TCs tend to organize along well defined tracks. Therefore identifying regions with low pressure is analogous to monitoring TC activity in the Pacific which has been weakly linked to TC activity in the Atlantic \cite{wang2010}. Finally, the last component was designed to better capture the evolving ENSO phenomenon by tracking the location warm and cold regions of the Pacific. When the cold region is to the west of the warm one it is more likely that El-Nino event is occurring. When the cold region is to the east, it is a La-Nina. We build S-ENSO by running a L1-regularized regression model on the 5 predictors and Aug-Oct TC counts.
+
+S-ENSO explains 60\% of the interannual variability in Atlantic TC counts, a near double improvement over traditional NINO indices. When analyzed further we found that the 0.82 linear correlation coefficient is significant at the 99\% interval using rigorous randomization tests to address the small sample size and the data's auto-correlated nature.
+
+We analyzed which variables within the index explain the majority of TC variability. We ran a variable importance analysis using a 1000-tree random forrest. Each tree in the forest is built using a random sample of available predictors. For each predictor, we analyze the trees in which it has appeared and the increase/decrease in prediction accuracy it contributed to the model. Our analysis found that the most important variables were: (i) The longitude of the warmest region; (2) its mean surface pressure; and (3) the distance between the warmest and coldest regions. This is further evidence that spatial information better explains TC variability than warming-based indices.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[height=3in]{figures/Random Forests - Null Distribution with Permutation Tests-1.pdf}
+	\caption{The null distributions for the impact each vaarible in S-ENSO has on predicting Aug-Oct Atlantic TCs. The null hypothesis that ``variable x has no influence on the model'' can only be rejected for $x_1$, $x_2$, and $x_5$: The longitude of the warmest region; its mean surface pressure; and the distance between the warmest and coldest regions respectively.}
+	\label{fig:Downloads_Random Forests - Null Distribution with Permutation Tests-1}
+\end{figure}
+
