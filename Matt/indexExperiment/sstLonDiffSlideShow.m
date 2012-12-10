@@ -1,9 +1,11 @@
 function [F] = sstLonDiffSlideShow(sstStartMonth, sstEndMonth, hurricaneStartMonth, ...
-    hurricaneEndMonth)
+    hurricaneEndMonth, startYear, endYear)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-
-[annualSST, lat, lon] = getAnnualSSTAnomalies(sstStartMonth, sstEndMonth, 1979, 2010);
+t = load('/project/expeditions/ClimateCodeMatFiles/ersstv3_1854_2012_raw.mat');
+lat = t.sstLat; lon = t.sstLon;
+[anomalies, anomalyDates] = getMonthlyAnomalies(t.sst, t.sstDates, 1948, 2012);
+annualSST = getAnnualSSTAnomalies(sstStartMonth, sstEndMonth, startYear, endYear, anomalies, anomalyDates);
 [~, maxI, maxJ, minI, minJ] = buildSSTLonDiff(annualSST, lat, lon);
 
 for i = 1:length(maxI)
@@ -77,11 +79,11 @@ colorbar('EastOutside');
 
 months = {'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',...
     'Nov', 'Dec', 'Jun-Oct'};
-years = 1979:2010;
+years = startYear:endYear;
 
 stormData = load('/project/expeditions/ClimateCodeMatFiles/condensedHurDat.mat');
 
-[tcs, tcLats, tcLons] = countStorms(stormData.condensedHurDat(:, [1 2 6 7]), 1979, 2010, hurricaneStartMonth:hurricaneEndMonth, [5 25], [-90 -20]);
+[tcs, tcLats, tcLons] = countStorms(stormData.condensedHurDat(:, [1 2 6 7]), startYear, endYear, hurricaneStartMonth:hurricaneEndMonth, [5 40], [-100 -10]);
 
 %------------------------Plot The Hurricanes-------------------------------
 tcLats = tcLats{i}; tcLons = tcLons{i};
@@ -98,9 +100,13 @@ title(['SST Warm and Cool Boxes ' months{sstStartMonth} '-' ...
     num2str(tcs(i)) ]);
 
 
-
-%{
-saveDir = ['sstLonDiffSlideShow/slide' num2str(years(year)) monthStr '.pdf'];
+if ~exist(['sstPlottedBoxesWithHurricanePlots/' months{sstStartMonth} '-' ...
+    months{sstEndMonth}], 'dir')
+    mkdir(['sstPlottedBoxesWithHurricanePlots/' months{sstStartMonth} '-' months{sstEndMonth}]);
+end
+saveDir = ['sstPlottedBoxesWithHurricanePlots/' months{sstStartMonth} '-' ...
+    months{sstEndMonth} '/sstLonDiff' months{sstStartMonth} '-' ...
+    months{sstEndMonth} ' ' num2str(years(i)) '.pdf'];
 set(gcf, 'PaperPosition', [0, 0, 8, 11]);
 set(gcf, 'PaperSize', [8, 11]);
 saveas(gcf, saveDir, 'pdf');
