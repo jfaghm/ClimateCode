@@ -26,8 +26,9 @@ boxNorth = 36;
 boxSouth = -6;
 boxWest = 140;
 boxEast = 260;
-boxRow = 5;
-boxCol = 20;
+
+boxRow = 10 / getResolution(lat);
+boxCol = 40 / get/getResolution(lon);
 %-------------------------------------------------------------------------
 
 addpath('/project/expeditions/lem/ClimateCode/sst_project/');

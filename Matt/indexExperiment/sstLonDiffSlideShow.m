@@ -1,10 +1,14 @@
-function [F] = sstLonDiffSlideShow(sstStartMonth, sstEndMonth, hurricaneStartMonth, ...
-    hurricaneEndMonth, startYear, endYear)
+function [F] = sstLonDiffSlideShow(sstStartMonth, sstEndMonth,...
+    startYear, endYear, data, lat, lon, dates, dir)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-t = load('/project/expeditions/ClimateCodeMatFiles/ersstv3_1854_2012_raw.mat');
-lat = t.sstLat; lon = t.sstLon;
-[anomalies, anomalyDates] = getMonthlyAnomalies(t.sst, t.sstDates, 1948, 2012);
+
+%----------------------Adjustable Constants----------------------------
+hurricaneStartMonth = 8;
+hurricaneEndMonth = 10;
+%-----------------------------------------------------------------------
+
+[anomalies, anomalyDates] = getMonthlyAnomalies(data, dates, 1948, 2010);
 annualSST = getAnnualSSTAnomalies(sstStartMonth, sstEndMonth, startYear, endYear, anomalies, anomalyDates);
 [~, maxI, maxJ, minI, minJ] = buildSSTLonDiff(annualSST, lat, lon);
 
@@ -20,9 +24,12 @@ box_north = 36;
 box_south = -6;
 box_east = 260;
 box_west = 140;
-box_row = 5;
-box_col = 20;
-grid_size = 2;
+box_row = round(10 / getResolution(lat));
+box_col = round(20 / getResolution(lon));
+if getResolution(lat) ~= getResolution(lon)
+    error('Lat and lon spatial resolutions do not agree.')
+end
+grid_size = getResolution(lat);
 lon_region = lon(lon >= box_west & lon <= box_east);
 lat_region = lat(lat >= box_south & lat <= box_north);
 
@@ -91,7 +98,7 @@ for j = 1:length(tcLats)
     plotm(tcLats(j), tcLons(j), '*');
 end
 
-plotNinoBox(0, -10, -80, -90);   %Nino 1+2
+plotNinoBox(0, -10, -80, -90);    %Nino 1+2
 %plotNinoBox(5, -5, -90, -150);   %Nino 3
 %plotNinoBox(5, -5, -120, -170);  %Nino 4
 %plotNinoBox(5, -5, -150, -160);  %Nino 3.4
@@ -100,11 +107,11 @@ title(['SST Warm and Cool Boxes ' months{sstStartMonth} '-' ...
     num2str(tcs(i)) ]);
 
 
-if ~exist(['sstPlottedBoxesWithHurricanePlots/' months{sstStartMonth} '-' ...
+if ~exist(['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-' ...
     months{sstEndMonth}], 'dir')
-    mkdir(['sstPlottedBoxesWithHurricanePlots/' months{sstStartMonth} '-' months{sstEndMonth}]);
+    mkdir(['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-' months{sstEndMonth}]);
 end
-saveDir = ['sstPlottedBoxesWithHurricanePlots/' months{sstStartMonth} '-' ...
+saveDir = ['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-' ...
     months{sstEndMonth} '/sstLonDiff' months{sstStartMonth} '-' ...
     months{sstEndMonth} ' ' num2str(years(i)) '.pdf'];
 set(gcf, 'PaperPosition', [0, 0, 8, 11]);
