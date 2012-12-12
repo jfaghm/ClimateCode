@@ -24,6 +24,7 @@ for i = 1:2:length(hGridInfo.lons)
     count = count+1;
 end
 
+%% 
 sstLonDiffSlideShow(6, 10, 1979, 2010, resizedHadley, resizedLat, resizedLon, ...
     hadleyDates, 'HadleyTwoDegree');
 

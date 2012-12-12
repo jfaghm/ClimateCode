@@ -25,7 +25,7 @@ box_south = -6;
 box_east = 260;
 box_west = 140;
 box_row = round(10 / getResolution(lat));
-box_col = round(20 / getResolution(lon));
+box_col = round(40 / getResolution(lon));
 if getResolution(lat) ~= getResolution(lon)
     error('Lat and lon spatial resolutions do not agree.')
 end
@@ -93,6 +93,7 @@ stormData = load('/project/expeditions/ClimateCodeMatFiles/condensedHurDat.mat')
 [tcs, tcLats, tcLons] = countStorms(stormData.condensedHurDat(:, [1 2 6 7]), startYear, endYear, hurricaneStartMonth:hurricaneEndMonth, [5 40], [-100 -10]);
 
 %------------------------Plot The Hurricanes-------------------------------
+colors = {'r', 'g', 'b'};
 tcLats = tcLats{i}; tcLons = tcLons{i};
 for j = 1:length(tcLats)
     plotm(tcLats(j), tcLons(j), '*');
