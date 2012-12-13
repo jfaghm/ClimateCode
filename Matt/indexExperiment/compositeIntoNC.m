@@ -27,15 +27,15 @@
 %  compositeIntoNC(index, 1, false, 1979, vars, 'sstMaxLon');
 
 function [] = compositeIntoNC(index, threshold, positivelyCorrelated,...
-    baseYear, vars, indexName)
+    baseYear, vars, indexName, var, varName)
 
 confidInterval = .95;
 
 [nYears, pYears] = getPosNegYearsFromVector(index, threshold, positivelyCorrelated, baseYear);
 
-[~,~,composite] = getComposites(vars.PI, pYears, nYears, vars.dates, 8, 10);
+[~,~,composite] = getComposites(var, pYears, nYears, vars.dates, 8, 10);
 
-[~,mask, pvalues] = getSignificantComposite(index, vars.PI, threshold, composite, ...
+[~,mask, pvalues] = getSignificantComposite(index, var, threshold, composite, ...
     confidInterval, positivelyCorrelated);
 
 lat = vars.lat;
@@ -53,8 +53,8 @@ ncwrite(savename, 'lat', lat);
 
 landMask = isnan(vars.sst(:, :, 1));
 
-composite(landMask) = -9999;
-pvalues(landMask) = -9999;
+%composite(landMask) = -9999;
+%pvalues(landMask) = -9999;
 nccreate(savename, 'index', 'Dimensions', {'lon', length(lon), 'lat', length(lat)});
 ncwrite(savename, 'index', composite')
 nccreate(savename, 'mask', 'Dimensions', {'lon', length(lon), 'lat', length(lat)});
