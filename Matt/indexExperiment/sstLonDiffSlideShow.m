@@ -90,14 +90,21 @@ years = startYear:endYear;
 
 stormData = load('/project/expeditions/ClimateCodeMatFiles/condensedHurDat.mat');
 
-[tcs, tcLats, tcLons] = countStorms(stormData.condensedHurDat(:, [1 2 6 7]), startYear, endYear, hurricaneStartMonth:hurricaneEndMonth, [5 40], [-100 -10]);
+[tcs, tcLats, tcLons, tcMonths] = countStorms(stormData.condensedHurDat(:, [1 2 6 7]), startYear, endYear, hurricaneStartMonth:hurricaneEndMonth, [5 40], [-100 -10]);
 
 %------------------------Plot The Hurricanes-------------------------------
-colors = {'r', 'g', 'b'};
-tcLats = tcLats{i}; tcLons = tcLons{i};
-for j = 1:length(tcLats)
-    plotm(tcLats(j), tcLons(j), '*');
+shapes = {'b*', 'bs', 'bo'};
+tcLats = tcLats{i}; tcLons = tcLons{i}; tcMonths = tcMonths{i};
+
+for j = hurricaneStartMonth:hurricaneEndMonth
+    plotStorms(tcLats(tcMonths == j), tcLons(tcMonths == j), shapes{j - hurricaneStartMonth+1});
 end
+
+    function [] = plotStorms(tcLats2, tcLons2, shape)
+        for k = 1:length(tcLats2)
+            plotm(tcLats2(k), tcLons2(k), shape, 'MarkerFaceColor', 'b');
+        end
+    end
 
 plotNinoBox(0, -10, -80, -90);    %Nino 1+2
 %plotNinoBox(5, -5, -90, -150);   %Nino 3
@@ -118,7 +125,7 @@ saveDir = ['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-
 set(gcf, 'PaperPosition', [0, 0, 8, 11]);
 set(gcf, 'PaperSize', [8, 11]);
 saveas(gcf, saveDir, 'pdf');
-%}
+
 
 
 F = getframe(gcf);
