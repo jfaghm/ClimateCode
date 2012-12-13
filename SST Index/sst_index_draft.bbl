@@ -1,8 +1,29 @@
 \begin{thebibliography}{1}
 
-\bibitem{wang2010}
-C.~Wang and SK~Lee.
-\newblock Is hurricane activity in one basin tied to another?
-\newblock {\em Eos, Trans. Amer. Geophys. Union}, 91, 2010.
+\bibitem{ashok2007}
+K.~Ashok, S.K. Behera, S.A. Rao, H.~Weng, and T.~Yamagata.
+\newblock El ni{\~n}o modoki and its possible teleconnection.
+\newblock {\em J. Geophys. Res}, 112(10.1029), 2007.
+
+\bibitem{gray1984a}
+W.M. Gray.
+\newblock Atlantic seasonal hurricane frequency. part i: El ni{\~n}o and 30 mb
+  quasi-biennial oscillation influences.
+\newblock {\em Mon. Wea. Rev}, 112(9):1649--1668, 1984.
+
+\bibitem{tang2004}
+BH~Tang and JD~Neelin.
+\newblock Enso influence on atlantic hurricanes via tropospheric warming.
+\newblock {\em Geophys. Res. Lett}, 31:L24204, 2004.
+
+\bibitem{wittenberg2009}
+A.T. Wittenberg.
+\newblock Are historical records sufficient to constrain enso simulations.
+\newblock {\em Geophys. Res. Lett}, 36:L12702, 2009.
+
+\bibitem{yeh2009}
+S.W. Yeh, J.S. Kug, B.~Dewitte, M.H. Kwon, B.P. Kirtman, and F.F. Jin.
+\newblock El ni{\~n}o in a changing climate.
+\newblock {\em Nature}, 461(7263):511--514, 2009.
 
 \end{thebibliography}
