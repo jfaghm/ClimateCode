@@ -1,3 +1,7 @@
+
+%Use this script to create the composites that will be used in the spatial
+%ENSO draft.  
+
 load /project/expeditions/ClimateCodeMatFiles/ersstv3_1854_2012_raw
 [anomalies, anomalyDates] = getMonthlyAnomalies(sst, sstDates, 1948, 2010);
 annualSST = getAnnualSSTAnomalies(6, 10, 1979, 2010, anomalies, anomalyDates);
@@ -10,6 +14,15 @@ vars = load('/project/expeditions/ClimateCodeMatFiles/compositeVariables');
 [nYears, pYears] = getPosNegYearsFromVector(index, 1, false, 1979);
 [~,~,composite] = getComposites(vars.PI, pYears, nYears, vars.dates, 8, 10);
 
+%% 
+[~,~,composite] = getComposites(vars.PI, pYears, nYears, vars.dates, 8, 10);
+worldmap([0, 40],[280, 345])
+pcolorm(lat, lon, composite);
+geoshow('landareas.shp', 'FaceColor', [.25 .2 .15])
+caxis([-18 18]);
+colorbar
+title('Spatial ENSO Jun-Oct PI Composite')
+saveas(gcf, 'ncComposites/spatialENSOPIComposite.pdf', 'pdf');
 
 %% 
 [~,~,composite] = getComposites(vars.gpiMat, pYears, nYears, vars.dates, 8, 10);
