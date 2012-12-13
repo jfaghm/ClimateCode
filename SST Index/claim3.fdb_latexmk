@@ -1,9 +1,0 @@
-# Fdb version 2
-["latex"] 0 "claim3.tex" "claim3.dvi" "claim3" 
-  "claim3.tex" 1354922847 149 15fc3bb69e5c34d7050027bbc702be3f ""
-["pdflatex"] 1354922849 "claim3.tex" "claim3.pdf" "claim3" 
-  "claim3.aux" 1354922849 8 a94a2480d3289e625eea47cd1b285758 ""
-  "claim3.tex" 1354922847 149 15fc3bb69e5c34d7050027bbc702be3f ""
-  "e.g., `I\hbox'" 0 -1 0 ""
-  "e.g., `\hobx'" 0 -1 0 ""
-  "job aborted, no legal \end found" 0 -1 0 ""
