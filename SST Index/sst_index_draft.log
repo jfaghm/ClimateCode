@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  12 DEC 2012 16:44
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  13 DEC 2012 15:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -494,17 +494,71 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 68.
 
-(./introduction.tex
 
-LaTeX Warning: Citation `tr' on page 1 undefined on input line 6.
+LaTeX Warning: No \author given.
+
+(./introduction.tex [1
+
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <figure
+s/nino_tc_bars.pdf, id=11, 580.94574pt x 322.15468pt>
+File: figures/nino_tc_bars.pdf Graphic file (type pdf)
+
+<use figures/nino_tc_bars.pdf>
+Package pdftex.def Info: figures/nino_tc_bars.pdf used on input line 18.
+(pdftex.def)             Requested size: 390.9868pt x 216.81pt.
+
+Overfull \hbox (45.9868pt too wide) in paragraph at lines 18--19
+ [][] 
+ []
 
 
-LaTeX Warning: Citation `kim2007' on page 1 undefined on input line 9.
+Overfull \hbox (2.95781pt too wide) in paragraph at lines 23--24
+[]\OT1/cmr/m/n/10 Given that ENSO im-pacts the large-scale con-di-tions over th
+e At-lantic through
+ []
 
-[1
+) (./shift_enso.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+ [2 <./figures/nino_tc_bars.pdf>]
+<figures/scatter.pdf, id=121, 470.89276pt x 377.5147pt>
+File: figures/scatter.pdf Graphic file (type pdf)
 
-{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
-(./sst_index_draft.bbl)
+<use figures/scatter.pdf>
+Package pdftex.def Info: figures/scatter.pdf used on input line 6.
+(pdftex.def)             Requested size: 270.44507pt x 216.81pt.
+ [3 <./figures/scatter.pdf>]) (./s_enso.tex
+<figures/lead_time_bar.pdf, id=148, 480.89764pt x 384.8515pt>
+File: figures/lead_time_bar.pdf Graphic file (type pdf)
+
+<use figures/lead_time_bar.pdf>
+Package pdftex.def Info: figures/lead_time_bar.pdf used on input line 36.
+(pdftex.def)             Requested size: 270.92252pt x 216.81pt.
+ [4] [5 <./figures/lead_time_bar.pdf>])
+(./s_enso_atlantic_composites.tex
+Overfull \hbox (7.61963pt too wide) in paragraph at lines 1--1
+[]\OT1/cmr/bx/n/14.4 S-ENSO's im-pact on large-scale con-di-tions over
+ []
+
+<figures/3_by_3_composites.pdf, id=176, 722.34694pt x 460.88802pt>
+File: figures/3_by_3_composites.pdf Graphic file (type pdf)
+
+<use figures/3_by_3_composites.pdf>
+Package pdftex.def Info: figures/3_by_3_composites.pdf used on input line 11.
+(pdftex.def)             Requested size: 505.89pt x 322.77412pt.
+
+Overfull \hbox (91.98033pt too wide) in paragraph at lines 10--12
+[]  [] 
+ []
+
+) (./future_work.tex [6] [7 <./figures/3_by_3_composites.pdf>]
+Overfull \hbox (27.88625pt too wide) in paragraph at lines 8--8
+[]\OT1/cmr/bx/n/14.4 Monitoring the spa-tial dis-tri-bu-tion of the warmest
+ []
+
+) (./sst_index_draft.bbl [8] [9])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the sst_index_draft.maf file.
@@ -513,29 +567,30 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the sst_index_draft.log file..
- [2] (./sst_index_draft.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [10] (./sst_index_draft.aux) ) 
 Here is how much of TeX's memory you used:
- 5776 strings out of 493763
- 84023 string characters out of 3144955
- 157096 words of memory out of 3000000
- 8821 multiletter control sequences out of 15000+200000
- 7934 words of font info for 28 fonts, out of 3000000 for 9000
+ 5854 strings out of 493763
+ 85316 string characters out of 3144955
+ 160096 words of memory out of 3000000
+ 8864 multiletter control sequences out of 15000+200000
+ 8241 words of font info for 29 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,4n,42p,1543b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on sst_index_draft.pdf (2 pages, 80607 bytes).
+ 44i,7n,42p,1543b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2010/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti10.pfb>
+Output written on sst_index_draft.pdf (10 pages, 2150921 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 245 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

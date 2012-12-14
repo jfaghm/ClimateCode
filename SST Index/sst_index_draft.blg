@@ -3,51 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sst_index_draft.aux
 The style file: plain.bst
 Database file #1: hurricanes_copy.bib
-Repeated entry---line 2611 of file hurricanes_copy.bib
+Repeated entry---line 2645 of file hurricanes_copy.bib
  : @article{tang2004
  :                  ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "tr"
-Warning--I didn't find a database entry for "kim2007"
-You've used 5 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            534 strings with 4736 characters,
-and the built_in function-call counts, 1710 in all, are:
-= -- 164
-> -- 88
-< -- 0
-+ -- 35
-- -- 30
-* -- 136
-:= -- 303
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 30
+            645 strings with 7505 characters,
+and the built_in function-call counts, 8241 in all, are:
+= -- 808
+> -- 436
+< -- 1
++ -- 174
+- -- 150
+* -- 688
+:= -- 1405
+add.period$ -- 66
+call.type$ -- 22
+change.case$ -- 141
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 54
-empty$ -- 125
-format.name$ -- 30
-if$ -- 338
+cite$ -- 22
+duplicate$ -- 246
+empty$ -- 594
+format.name$ -- 150
+if$ -- 1645
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 5
-newline$ -- 28
-num.names$ -- 10
-pop$ -- 20
+int.to.str$ -- 22
+missing$ -- 22
+newline$ -- 113
+num.names$ -- 44
+pop$ -- 99
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 119
 quote$ -- 0
-skip$ -- 37
+skip$ -- 165
 stack$ -- 0
-substring$ -- 117
-swap$ -- 5
-text.length$ -- 0
+substring$ -- 643
+swap$ -- 27
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 88
 warning$ -- 0
-while$ -- 16
-width$ -- 6
-write$ -- 57
+while$ -- 81
+width$ -- 24
+write$ -- 244
 (There was 1 error message)
