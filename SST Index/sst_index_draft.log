@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  13 DEC 2012 15:32
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  17 DEC 2012 13:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**sst_index_draft.tex
-(./sst_index_draft.tex
+**sst_indeX_draft.tex
+(./sst_indeX_draft.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -335,20 +335,20 @@ Package minitoc Info: I0028
 \mtc@hstrutbox=\box29
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
-\openout3 = `sst_index_draft.mtc0'.
+\openout3 = `sst_indeX_draft.mtc0'.
 
-\openout3 = `sst_index_draft.mtc'.
+\openout3 = `sst_indeX_draft.mtc'.
 
 
-(./sst_index_draft.mtc0)
+(./sst_indeX_draft.mtc0)
 Package minitoc Info: I0012
 (minitoc)             Long extensions (Unix-like) will be used.
 Package minitoc Info: I0031
 (minitoc)             ==> this version is configured for UNIX-like 
 (minitoc)                 (long extensions) file names.
-\openout3 = `sst_index_draft.mtc'.
+\openout3 = `sst_indeX_draft.mtc'.
 
-\openout3 = `sst_index_draft.mtc0'.
+\openout3 = `sst_indeX_draft.mtc0'.
 
 \c@ptc=\count103
 \c@parttocdepth=\count104
@@ -402,8 +402,8 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
-(./sst_index_draft.aux)
-\openout1 = `sst_index_draft.aux'.
+(./sst_indeX_draft.aux)
+\openout1 = `sst_indeX_draft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
@@ -517,12 +517,12 @@ Overfull \hbox (2.95781pt too wide) in paragraph at lines 23--24
 e At-lantic through
  []
 
-) (./shift_enso.tex
+[2 <./figures/nino_tc_bars.pdf>]) (./shift_enso.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
- [2 <./figures/nino_tc_bars.pdf>]
+
 <figures/scatter.pdf, id=121, 470.89276pt x 377.5147pt>
 File: figures/scatter.pdf Graphic file (type pdf)
 
@@ -534,44 +534,45 @@ Package pdftex.def Info: figures/scatter.pdf used on input line 6.
 File: figures/lead_time_bar.pdf Graphic file (type pdf)
 
 <use figures/lead_time_bar.pdf>
-Package pdftex.def Info: figures/lead_time_bar.pdf used on input line 36.
+Package pdftex.def Info: figures/lead_time_bar.pdf used on input line 34.
 (pdftex.def)             Requested size: 270.92252pt x 216.81pt.
  [4] [5 <./figures/lead_time_bar.pdf>])
-(./s_enso_atlantic_composites.tex
-Overfull \hbox (7.61963pt too wide) in paragraph at lines 1--1
-[]\OT1/cmr/bx/n/14.4 S-ENSO's im-pact on large-scale con-di-tions over
+(./methods.tex <figures/s_enso_graphic.pdf, id=176, 758.36418pt x 339.49635pt>
+File: figures/s_enso_graphic.pdf Graphic file (type pdf)
+
+<use figures/s_enso_graphic.pdf>
+Package pdftex.def Info: figures/s_enso_graphic.pdf used on input line 7.
+(pdftex.def)             Requested size: 361.34999pt x 161.76492pt.
+
+Overfull \hbox (16.34999pt too wide) in paragraph at lines 7--8
+ [][] 
  []
 
-<figures/3_by_3_composites.pdf, id=176, 722.34694pt x 460.88802pt>
-File: figures/3_by_3_composites.pdf Graphic file (type pdf)
+[6 <./figures/s_enso_graphic.pdf>] [7]) (./future_work.tex [8])
+(./sst_indeX_draft.bbl
+./sst_indeX_draft.bbl:51: Undefined control sequence.
+l.51 ...ly Weather Review}, 96(10):669{\Textendash
+                                                  }700, 1968.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-<use figures/3_by_3_composites.pdf>
-Package pdftex.def Info: figures/3_by_3_composites.pdf used on input line 11.
-(pdftex.def)             Requested size: 505.89pt x 322.77412pt.
-
-Overfull \hbox (91.98033pt too wide) in paragraph at lines 10--12
-[]  [] 
- []
-
-) (./future_work.tex [6] [7 <./figures/3_by_3_composites.pdf>]
-Overfull \hbox (27.88625pt too wide) in paragraph at lines 8--8
-[]\OT1/cmr/bx/n/14.4 Monitoring the spa-tial dis-tri-bu-tion of the warmest
- []
-
-) (./sst_index_draft.bbl [8] [9])
+[9])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
-(minitoc)             Creating the sst_index_draft.maf file.
-\openout3 = `sst_index_draft.maf'.
+(minitoc)             Creating the sst_indeX_draft.maf file.
+\openout3 = `sst_indeX_draft.maf'.
 
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
-(minitoc(hints))             in the sst_index_draft.log file..
- [10] (./sst_index_draft.aux) ) 
+(minitoc(hints))             in the sst_indeX_draft.log file..
+ [10] (./sst_indeX_draft.aux) ) 
 Here is how much of TeX's memory you used:
- 5854 strings out of 493763
- 85316 string characters out of 3144955
- 160096 words of memory out of 3000000
+ 5848 strings out of 493763
+ 85194 string characters out of 3144955
+ 158096 words of memory out of 3000000
  8864 multiletter control sequences out of 15000+200000
  8241 words of font info for 29 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -587,10 +588,10 @@ sfonts/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb>
-Output written on sst_index_draft.pdf (10 pages, 2150921 bytes).
+Output written on sst_indeX_draft.pdf (10 pages, 810106 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
+ 271 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

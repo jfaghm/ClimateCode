@@ -1,0 +1,20 @@
+\section{Summary of Methods}
+\subsection{S-ENSO}
+The S-ENSO index is computed by first averaging the SST anomalies over the June-October period to accurately capture ENSO's evolution prior to and during the Atlantic hurricane season (August-October). We then search the tropical Pacific ($5^\circ$S-$30^\circ$N) for a region of similar size to traditional ENSO indices that has the highest mean SST anomaly over the June-October period. We repeat this procedure for each year from 1979 to 2010. Monthly SST anomalies we computed from the ERSSTV3 monthly SST dataset \cite{reynolds2002}. See Figure \ref{fig:s_enso_graphic}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=5in]{figures/s_enso_graphic.pdf}
+	\caption{A schematic demonstrating how the S-ENSO index is built. First, SST anomalies over a certain month range are computed resulting in maps similar to those above. Next, we search the tropical Pacific for the region with the highest mean SST warming anomaly. Finally, we record the longitude of that region. We repeat this procedure for all years from 1979-2010. }
+	\label{fig:s_enso_graphic}
+\end{figure}
+
+\subsection{Lead Times Analysis}
+Figure \ref{fig:figures_lead_time_bar} shows the relative ability of each index to forecast Atlantic TC activity as a function of lead time. Each index (S-ENSO, NINO1.2, \emph{etc.}) is computed by first averaging SST anomalies over a certain month range denoted by a start and end month. The resulting index is then correlated with August-October Atlantic TC counts. For each month on the x-axis, we average the performance of all variations of the indices that end in the month indicated on the chart (end month varies from January to October). 
+For example, the first set of bars were obtained by averaging the performance of all indices end month was January. In this case, there is only one such index the January-January index. The values for the June lead month (number 6 on the x-axis) were obtained by averaging the performance of all indices that had a June end month. There are 6 such indices: January-June, February-June, March-June, April-June, May-June, and June-June. This procedure was repeated for all indices and end months ranging from January to October.
+
+%\subsection{Large-scale composites}
+%To compare the large-scale conditions over the Atlantic during active and inactive TC seasons we compute the composites of potential intensity (PI) , saturation deficit, and vertical wind shear -- all elements critical for TC activity. 
+
+
+\newpage

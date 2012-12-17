@@ -1,51 +1,51 @@
 This is BibTeX, Version 0.99d (TeX Live 2010)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: sst_index_draft.aux
-The style file: plain.bst
+The top-level auxiliary file: sst_indeX_draft.aux
+The style file: plain1.bst
 Database file #1: hurricanes_copy.bib
-Repeated entry---line 2645 of file hurricanes_copy.bib
- : @article{tang2004
+Repeated entry---line 2639 of file hurricanes_copy.bib
+ : @article{Tang2004
  :                  ,
 I'm skipping whatever remains of this entry
-You've used 22 entries,
-            2118 wiz_defined-function locations,
-            645 strings with 7505 characters,
-and the built_in function-call counts, 8241 in all, are:
-= -- 808
-> -- 436
-< -- 1
-+ -- 174
-- -- 150
-* -- 688
-:= -- 1405
-add.period$ -- 66
-call.type$ -- 22
-change.case$ -- 141
+You've used 23 entries,
+            2106 wiz_defined-function locations,
+            652 strings with 7568 characters,
+and the built_in function-call counts, 8246 in all, are:
+= -- 820
+> -- 414
+< -- 0
++ -- 163
+- -- 140
+* -- 690
+:= -- 1416
+add.period$ -- 69
+call.type$ -- 23
+change.case$ -- 116
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 246
-empty$ -- 594
-format.name$ -- 150
-if$ -- 1645
+cite$ -- 23
+duplicate$ -- 252
+empty$ -- 599
+format.name$ -- 140
+if$ -- 1644
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 22
-newline$ -- 113
-num.names$ -- 44
-pop$ -- 99
+int.to.str$ -- 23
+missing$ -- 23
+newline$ -- 118
+num.names$ -- 46
+pop$ -- 93
 preamble$ -- 1
-purify$ -- 119
+purify$ -- 116
 quote$ -- 0
-skip$ -- 165
+skip$ -- 168
 stack$ -- 0
-substring$ -- 643
-swap$ -- 27
-text.length$ -- 1
+substring$ -- 672
+swap$ -- 23
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 92
 warning$ -- 0
-while$ -- 81
-width$ -- 24
-write$ -- 244
+while$ -- 82
+width$ -- 25
+write$ -- 255
 (There was 1 error message)
