@@ -22,6 +22,13 @@
 function [index, maxI, maxJ, minI, minJ, maxValues, minValues] = ...
     buildSSTLon(sst_a, lat, lon)
 %-------------------------Adjustable Constants----------------------------
+% boxNorth = 0;
+% boxSouth = -50;
+% boxWest = 140;
+% boxEast = 260;
+% boxRow = 5;
+% boxCol = 20;
+% orignal vals
 boxNorth = 36;
 boxSouth = -6;
 boxWest = 140;
