@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  17 DEC 2012 13:00
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  17 DEC 2012 14:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -488,11 +488,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 68.
+(Font)              <12> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 68.
+(Font)              <8> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 68.
+(Font)              <6> on input line 69.
 
 
 LaTeX Warning: No \author given.
@@ -500,7 +500,7 @@ LaTeX Warning: No \author given.
 (./introduction.tex [1
 
 {/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <figure
-s/nino_tc_bars.pdf, id=11, 580.94574pt x 322.15468pt>
+s/nino_tc_bars.pdf, id=13, 580.94574pt x 322.15468pt>
 File: figures/nino_tc_bars.pdf Graphic file (type pdf)
 
 <use figures/nino_tc_bars.pdf>
@@ -523,21 +523,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
 
-<figures/scatter.pdf, id=121, 470.89276pt x 377.5147pt>
+<figures/scatter.pdf, id=123, 470.89276pt x 377.5147pt>
 File: figures/scatter.pdf Graphic file (type pdf)
 
 <use figures/scatter.pdf>
 Package pdftex.def Info: figures/scatter.pdf used on input line 6.
 (pdftex.def)             Requested size: 270.44507pt x 216.81pt.
  [3 <./figures/scatter.pdf>]) (./s_enso.tex
-<figures/lead_time_bar.pdf, id=148, 480.89764pt x 384.8515pt>
+<figures/lead_time_bar.pdf, id=150, 480.89764pt x 384.8515pt>
 File: figures/lead_time_bar.pdf Graphic file (type pdf)
 
 <use figures/lead_time_bar.pdf>
 Package pdftex.def Info: figures/lead_time_bar.pdf used on input line 34.
 (pdftex.def)             Requested size: 270.92252pt x 216.81pt.
  [4] [5 <./figures/lead_time_bar.pdf>])
-(./methods.tex <figures/s_enso_graphic.pdf, id=176, 758.36418pt x 339.49635pt>
+(./methods.tex <figures/s_enso_graphic.pdf, id=178, 758.36418pt x 339.49635pt>
 File: figures/s_enso_graphic.pdf Graphic file (type pdf)
 
 <use figures/s_enso_graphic.pdf>
@@ -570,28 +570,30 @@ Package minitoc(hints) Info: I0019
 (minitoc(hints))             in the sst_indeX_draft.log file..
  [10] (./sst_indeX_draft.aux) ) 
 Here is how much of TeX's memory you used:
- 5848 strings out of 493763
- 85194 string characters out of 3144955
+ 5852 strings out of 493763
+ 85230 string characters out of 3144955
  158096 words of memory out of 3000000
- 8864 multiletter control sequences out of 15000+200000
- 8241 words of font info for 29 fonts, out of 3000000 for 9000
+ 8866 multiletter control sequences out of 15000+200000
+ 8848 words of font info for 31 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  44i,7n,42p,1543b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr17.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb>
-Output written on sst_indeX_draft.pdf (10 pages, 810106 bytes).
+blic/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr17.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr9.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti10.pfb>
+Output written on sst_indeX_draft.pdf (10 pages, 825959 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
+ 279 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
