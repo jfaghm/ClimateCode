@@ -27,7 +27,7 @@
 %  compositeIntoNC(index, 1, false, 1979, vars, 'sstMaxLon');
 
 function [] = compositeIntoNC(index, threshold, positivelyCorrelated,...
-    baseYear, vars, indexName, var, varName)
+    baseYear, vars, indexName, var)
 
 confidInterval = .95;
 
@@ -47,14 +47,13 @@ function [] = saveFile()
 savename = ['ncComposites/' indexName num2str(confidInterval) 'Confidence.nc'];
 nccreate(savename, 'lon', 'Dimensions', {'lon', length(lon)})
 nccreate(savename, 'lat', 'Dimensions', {'lat', length(lat)})
-%nccreate(savename, 'time', 'Dimensions', {'time' 1});
 ncwrite(savename, 'lon', lon);
 ncwrite(savename, 'lat', lat);
 
 landMask = isnan(vars.sst(:, :, 1));
 
-%composite(landMask) = -9999;
-%pvalues(landMask) = -9999;
+composite(landMask) = -9999;
+pvalues(landMask) = -9999;
 nccreate(savename, 'index', 'Dimensions', {'lon', length(lon), 'lat', length(lat)});
 ncwrite(savename, 'index', composite')
 nccreate(savename, 'mask', 'Dimensions', {'lon', length(lon), 'lat', length(lat)});

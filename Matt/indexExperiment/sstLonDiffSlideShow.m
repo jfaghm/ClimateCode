@@ -18,8 +18,10 @@ end
 
 
 function [F] = plotCurrentBox(i)
-
 %---------------------------------Adjustable constants---------------------
+
+subplot(3, 1, mod(i - 1, 3)+1)
+
 box_north = 36;
 box_south = -6;
 box_east = 260;
@@ -119,13 +121,16 @@ if ~exist(['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-
     months{sstEndMonth}], 'dir')
     mkdir(['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-' months{sstEndMonth}]);
 end
-saveDir = ['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-' ...
-    months{sstEndMonth} '/sstLonDiff' months{sstStartMonth} '-' ...
-    months{sstEndMonth} ' ' num2str(years(i)) '.pdf'];
-set(gcf, 'PaperPosition', [0, 0, 8, 11]);
-set(gcf, 'PaperSize', [8, 11]);
-saveas(gcf, saveDir, 'pdf');
 
+if mod(i, 3) == 0 || years(i) == 2010
+    saveDir = ['sstPlottedBoxesWithHurricanePlots/' dir '/' months{sstStartMonth} '-' ...
+        months{sstEndMonth} '/sstLonDiff' months{sstStartMonth} '-' ...
+        months{sstEndMonth} ' ' num2str(years(i)) '.pdf'];
+    set(gcf, 'PaperPosition', [0, 0, 8, 11]);
+    set(gcf, 'PaperSize', [8, 11]);
+    saveas(gcf, saveDir, 'pdf');
+    close all
+end
 
 
 F = getframe(gcf);

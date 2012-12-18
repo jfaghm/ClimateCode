@@ -1,5 +1,5 @@
-function [averageElNino, averageNeutral, averageLaNina] =...
-    ENSOStats(hurCategory)
+%function [averageElNino, averageNeutral, averageLaNina] =...
+%    ENSOStats(hurCategory)
 %This function is used to calculate the average number of hurricanes that
 %occured in El Nino years, Neutral years, and La Nina years.
 %
@@ -17,15 +17,22 @@ function [averageElNino, averageNeutral, averageLaNina] =...
 %Neutral phases
 %--->AveargeLaNina - average number of hurricanes that occured during La
 %Nina phases.
-
-load /project/expeditions/lem/ClimateCode/Matt/matFiles/condensedHurDat.mat;
+hurCategory = 0;
+load /project/expeditions/ClimateCodeMatFiles/condensedHurDat.mat;
 load /project/expeditions/lem/ClimateCode/Matt/matFiles/ENSOType.mat
+%load /project/expeditions/ClimateCodeMatFiles/ENSOTypeWithWeakPhases.mat
 
-hurricanes = condensedHurDat(condensedHurDat(:, 1) >= 1950 & ...
-    condensedHurDat(:, 10) >= hurCategory, :);
+baseYear = 1981;
+endYear = 2011;
 
-baseYear = 1950;
+years = 1950:2011;
+
+hurricanes = condensedHurDat(condensedHurDat(:, 1) >= baseYear & ...
+    condensedHurDat(:, 1) <= endYear & condensedHurDat(:, 10) >= hurCategory, :);
+
 eIndex = 1; nIndex = 1; lIndex = 1;
+
+ENSOType = ENSOType(years >= baseYear & years <= endYear);
 
 ElNinoHurricanes = zeros(numelements(find(ENSOType == 1)), 1);
 NeutralHurricanes = zeros(numelements(find(ENSOType == 0)), 1);
@@ -47,7 +54,15 @@ for i = 1:length(ENSOType)
     end
 end
 
-averageElNino = sum(ElNinoHurricanes)/length(ElNinoHurricanes);
-averageNeutral = sum(NeutralHurricanes)/ length(NeutralHurricanes);
-averageLaNina = sum(LaNinaHurricanes)/ length(LaNinaHurricanes);
-end
+eIndex = eIndex-1
+nIndex = nIndex-1
+lIndex = lIndex-1
+
+averageElNino = sum(ElNinoHurricanes)/length(ElNinoHurricanes)
+averageNeutral = sum(NeutralHurricanes)/ length(NeutralHurricanes)
+averageLaNina = sum(LaNinaHurricanes)/ length(LaNinaHurricanes)
+
+elNinoStd = std(ElNinoHurricanes)
+neutralStd = std(NeutralHurricanes)
+laNinaStd = std(LaNinaHurricanes)
+%end

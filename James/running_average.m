@@ -1,4 +1,4 @@
-function y = running_ave ( x, n, usenan ) ;
+function y = running_average ( x, n, usenan )
 % function y = running_ave ( x, n, usenan ) ;
 %
 %  x = input matrix or vector
@@ -16,12 +16,12 @@ function y = running_ave ( x, n, usenan ) ;
   [mx,nx] = size(x);
   if (mx==1);
     x=x'; inverted=1; [mx,nx]=size(x);
-  else;
+  else
     inverted=0;
   end;
   
   if n==0; n=5; end;
-  if n<0; n=-n; cyclic=1; else; cycle=0; end;
+  if n<0; n=-n; cyclic=1; else cyclic=0; end;
   n = min(n,mx);
 %------------------------------------------------
   y = x;
