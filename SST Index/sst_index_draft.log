@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  17 DEC 2012 14:25
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.2)  18 DEC 2012 22:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -374,6 +374,34 @@ Package ifpdf Info: pdfTeX in PDF mode is detected.
 \CommentStream=\write4
 
 Excluding comment 'comment')
+(/usr/local/texlive/2010/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count107
+\Gm@cntv=\count108
+\c@Gm@tempcnt=\count109
+\Gm@bindingoffset=\dimen114
+\Gm@wd@mp=\dimen115
+\Gm@odd@mp=\dimen116
+\Gm@even@mp=\dimen117
+\Gm@layoutwidth=\dimen118
+\Gm@layoutheight=\dimen119
+\Gm@layouthoffset=\dimen120
+\Gm@layoutvoffset=\dimen121
+\Gm@dimlist=\toks19
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count110
+\cp@tempcnt=\count111
+)
 (/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -397,54 +425,88 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count107
+\Gread@gobject=\count112
 ))
-\Gin@req@height=\dimen114
-\Gin@req@width=\dimen115
+\Gin@req@height=\dimen122
+\Gin@req@width=\dimen123
 )
 (./sst_indeX_draft.aux)
 \openout1 = `sst_indeX_draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 67.
+LaTeX Info: Redefining \subref on input line 69.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count108
-\c@minilofdepth=\count109
-\c@minilotdepth=\count110
-\c@partlofdepth=\count111
-\c@partlotdepth=\count112
-\c@sectlofdepth=\count113
-\c@sectlotdepth=\count114
+\c@lstlisting=\count113
+\c@minilofdepth=\count114
+\c@minilotdepth=\count115
+\c@partlofdepth=\count116
+\c@partlotdepth=\count117
+\c@sectlofdepth=\count118
+\c@sectlotdepth=\count119
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 (/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen116
+\scratchcounter=\count120
+\scratchdimen=\dimen124
 \scratchbox=\box30
-\nofMPsegments=\count116
-\nofMParguments=\count117
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen117
-\MPnumerator=\count119
-\everyMPtoPDFconversion=\toks20
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen125
+\MPnumerator=\count124
+\everyMPtoPDFconversion=\toks21
 ) (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 
@@ -488,11 +550,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 69.
+(Font)              <12> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 69.
+(Font)              <8> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 69.
+(Font)              <6> on input line 71.
 
 
 LaTeX Warning: No \author given.
@@ -504,26 +566,15 @@ s/nino_tc_bars.pdf, id=13, 580.94574pt x 322.15468pt>
 File: figures/nino_tc_bars.pdf Graphic file (type pdf)
 
 <use figures/nino_tc_bars.pdf>
-Package pdftex.def Info: figures/nino_tc_bars.pdf used on input line 18.
+Package pdftex.def Info: figures/nino_tc_bars.pdf used on input line 26.
 (pdftex.def)             Requested size: 390.9868pt x 216.81pt.
-
-Overfull \hbox (45.9868pt too wide) in paragraph at lines 18--19
- [][] 
- []
-
-
-Overfull \hbox (2.95781pt too wide) in paragraph at lines 23--24
-[]\OT1/cmr/m/n/10 Given that ENSO im-pacts the large-scale con-di-tions over th
-e At-lantic through
- []
-
-[2 <./figures/nino_tc_bars.pdf>]) (./shift_enso.tex
+ [2 <./figures/nino_tc_bars.pdf>])
+(./shift_enso.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
-
-<figures/scatter.pdf, id=123, 470.89276pt x 377.5147pt>
+ <figures/scatter.pdf, id=123, 470.89276pt x 377.5147pt>
 File: figures/scatter.pdf Graphic file (type pdf)
 
 <use figures/scatter.pdf>
@@ -534,22 +585,28 @@ Package pdftex.def Info: figures/scatter.pdf used on input line 6.
 File: figures/lead_time_bar.pdf Graphic file (type pdf)
 
 <use figures/lead_time_bar.pdf>
-Package pdftex.def Info: figures/lead_time_bar.pdf used on input line 34.
+Package pdftex.def Info: figures/lead_time_bar.pdf used on input line 41.
 (pdftex.def)             Requested size: 270.92252pt x 216.81pt.
  [4] [5 <./figures/lead_time_bar.pdf>])
 (./methods.tex <figures/s_enso_graphic.pdf, id=178, 758.36418pt x 339.49635pt>
 File: figures/s_enso_graphic.pdf Graphic file (type pdf)
 
 <use figures/s_enso_graphic.pdf>
-Package pdftex.def Info: figures/s_enso_graphic.pdf used on input line 7.
+Package pdftex.def Info: figures/s_enso_graphic.pdf used on input line 23.
 (pdftex.def)             Requested size: 361.34999pt x 161.76492pt.
+ [6 <./figures/s_enso_graphic.pdf>]
+<figures/monthly_cc_matix.pdf, id=227, 749.02632pt x 187.42331pt>
+File: figures/monthly_cc_matix.pdf Graphic file (type pdf)
 
-Overfull \hbox (16.34999pt too wide) in paragraph at lines 7--8
+<use figures/monthly_cc_matix.pdf>
+Package pdftex.def Info: figures/monthly_cc_matix.pdf used on input line 38.
+(pdftex.def)             Requested size: 433.62pt x 108.50253pt.
+
+Overfull \hbox (3.61537pt too wide) in paragraph at lines 38--39
  [][] 
  []
 
-[6 <./figures/s_enso_graphic.pdf>] [7]) (./future_work.tex [8])
-(./sst_indeX_draft.bbl
+[7 <./figures/monthly_cc_matix.pdf>]) (./sst_indeX_draft.bbl
 ./sst_indeX_draft.bbl:51: Undefined control sequence.
 l.51 ...ly Weather Review}, 96(10):669{\Textendash
                                                   }700, 1968.
@@ -559,7 +616,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[9])
+[8])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the sst_indeX_draft.maf file.
@@ -568,32 +625,35 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the sst_indeX_draft.log file..
- [10] (./sst_indeX_draft.aux) ) 
+ [9] (./sst_indeX_draft.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5852 strings out of 493763
- 85230 string characters out of 3144955
- 158096 words of memory out of 3000000
- 8866 multiletter control sequences out of 15000+200000
+ 6372 strings out of 493763
+ 93113 string characters out of 3144955
+ 173747 words of memory out of 3000000
+ 9376 multiletter control sequences out of 15000+200000
  8848 words of font info for 31 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,7n,42p,1543b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr17.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr9.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti10.pfb>
-Output written on sst_indeX_draft.pdf (10 pages, 825959 bytes).
+ 44i,7n,42p,1543b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/tex
+live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
+e/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on sst_indeX_draft.pdf (9 pages, 873897 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 316 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
