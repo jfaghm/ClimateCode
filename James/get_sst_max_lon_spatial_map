@@ -1,0 +1,10 @@
+%build sst index spatial distribution map
+
+load('ersstv3_1854_2012_raw.mat')
+[sstA sstA_dates] = getMonthlyAnomalies(sst,sstDates,1948,2010);
+for year=1979:2012
+    for month =1:12
+    sstA_year = getAnnualSSTAnomalies(month,month,year,year,sstA,sstA_dates);
+    [index, maxI(year,month), maxJ, minI, minJ] = buildSSTLon(sstA_year, sstLat, sstLon);
+    end
+end

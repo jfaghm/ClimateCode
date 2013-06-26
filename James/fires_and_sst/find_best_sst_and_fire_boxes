@@ -1,0 +1,7 @@
+%test SST boxes and FSS
+
+load /project/expeditions/haasken/data/ERSST/ersstv3.mat
+
+dataLims = struct('west', -45, 'east', -10, 'north', 45, 'south', 5, ...
+     'minWidth', 5, 'maxWidth', 10, 'height', 5, 'step', 1, ...
+     'months', 6:10, 'startYear', 1971, 'endYear', 2010);

@@ -1,0 +1,3 @@
+%analyze the eddies temporal score samples
+
+load('temporalScoreData')
