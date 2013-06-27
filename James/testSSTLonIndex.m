@@ -3,7 +3,7 @@ load('ersstv3_1854_2012_raw.mat')
 [sstA sstA_dates] = getMonthlyAnomalies(sst,sstDates,1948,2010);
 load condensedHurDat
 
-start_month =8;
+start_month =6;
 end_month =10;
 min_speed = -8;
 start_year = 1979;
@@ -18,13 +18,13 @@ all_storms = condensedHurDat(condensedHurDat(:,10)>min_speed, [ 1 2 6 7 ]); %fil
 storms = countStorms(all_storms, start_year, end_year, [start_month:end_month],[min_lat max_lat], [min_lon max_lon]);
 % 
 
-% for i=1:6
-%     for j=10:10
-%         sstA_year = getAnnualSSTAnomalies(6,10,1979,2010,sstA,sstA_dates);
-%         [index, maxI, maxJ, minI, minJ] = buildSSTLon(sstA_year, sstLat, sstLon);
-%         cc(i,j) = corr(storms',index);
-%     end
-% end
+for i=6:6
+    for j=10:10
+        sstA_year = getAnnualSSTAnomalies(6,10,1979,2010,sstA,sstA_dates);
+        [index, maxI, maxJ, minI, minJ] = buildSSTLon(sstA_year, sstLat, sstLon);
+        cc(i,j) = corr(storms',index);
+    end
+end
 
 
 for i=1:12

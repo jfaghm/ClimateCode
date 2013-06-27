@@ -5,6 +5,7 @@ iteration = 1;
 model = zeros(size(predictors, 2), floor(length(target)/k));
 mse = zeros(floor(length(target)/k), 1);
 for i = 1:k:length(target)
+    disp(iteration)
    if i+k-1 > length(target)
        break
    end
